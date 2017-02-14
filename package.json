@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "angular": "^1.6.2",
     "angular-route": "^1.6.2",
     "body-parser": "^1.16.1",
+    "bootstrap": "^3.3.7",
     "express": "^4.14.1"
   }
 }
