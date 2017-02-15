@@ -34,26 +34,41 @@
 
     <div id="hexagon"></div>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <ul class="nav navbar-nav">
-        <li><a href="#!/home">Home</a></li>
-        </li>
-        <li><a href="#!/services">Services</a></li>
-        <li><a href="#!/media">Media</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">About<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#!/whoWeAre">Our Story</a></li>
-            <li><a href="#!/staff">Staff</a></li>
-            <li><a href="#!/careers">Careers</a></li>
+
+    <nav class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="nav-link" href="#!/home">Home</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#!/services">Services</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#!/media">Media</a>
+            </li>
+            <li class="nav-link" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="">About<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <liclass="nav-item">
+                  <a class="nav-link" href="#!/whoWeAre">Our Story</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/staff">Staff</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/careers">Careers</a>
+                </li>
+              </ul>
           </ul>
-      </ul>
-    </div>
+        </div>
+      </div>
   </nav>
 
   <main ng-view></main>
