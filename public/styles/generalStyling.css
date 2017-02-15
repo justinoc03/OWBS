@@ -1,5 +1,39 @@
+body {
+  margin-top: 50px;
+}
+
+/******************** Hexagon for Navbar ********************/
+#hexagon {
+	width: 100px;
+	height: 30px;
+	background: green;
+	position: fixed;
+  margin-left: 5%;
+  margin-top: -3.3%;
+}
+
+
+#hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid green;
+}
+
+/******************************** Typography *************************************/
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+
+/*********************************** Footer ************************************/
 footer {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;

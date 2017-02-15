@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
 
+    <!-- Source fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600" rel="stylesheet">
+
     <!-- Source Bootstrap, Custom Styling, and JQuery for bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="/vendors/bootstrap.min.css">
     <script src="/vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="/styles/generalStyling.css">
     <script src="/vendors/bootstrap.min.js" charset="utf-8"></script>
-
+    <link rel="stylesheet" href="/styles/generalStyling.css">
 
     <!-- Source client.js, Angular, and Angular Routes -->
     <script src="/vendors/angular.js"></script>
@@ -18,6 +21,10 @@
     <script src="/scripts/controllers/homeController.js"></script>
     <script src="/scripts/controllers/whoWeAreController.js"></script>
     <script src="/scripts/controllers/redirectNoticeController.js"></script>
+    <script src="/scripts/controllers/servicesController.js"></script>
+    <script src="/scripts/controllers/careersController.js"></script>
+    <script src="/scripts/controllers/mediaController.js"></script>
+    <script src="/scripts/controllers/staffController.js"></script>
 
     <title>One Way Building Services</title>
   </head>
@@ -25,18 +32,20 @@
   <!--///////////////////////////////////BODY//////////////////////////////////////-->
   <body>
 
-    <nav class="navbar navbar-default">
+    <div id="hexagon"></div>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <ul class="nav navbar-nav">
         <li><a href="#!/home">Home</a></li>
         </li>
-        <li><a href="#!/home">Services</a></li>
-        <li><a href="#!/home">Media</a></li>
+        <li><a href="#!/services">Services</a></li>
+        <li><a href="#!/media">Media</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">About<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#!/whoWeAre">Our Story</a></li>
-            <li><a href="#!/home">Staff</a></li>
-            <li><a href="#!/home">Careers</a></li>
+            <li><a href="#!/staff">Staff</a></li>
+            <li><a href="#!/careers">Careers</a></li>
           </ul>
       </ul>
     </div>
