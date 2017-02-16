@@ -31,32 +31,63 @@
 
   <!--///////////////////////////////////BODY//////////////////////////////////////-->
   <body>
+    <div id="mainBodyWrapper">  <!--mainBodyWrapper container-->
+      <div id="headerSection">  <!--header container-->
 
-    <div id="hexagon"></div>
+      <!-- shape that appears underneath the navbar -->
+      <div id="navShape"></div>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li><a href="#!/home">Home</a></li>
-        </li>
-        <li><a href="#!/services">Services</a></li>
-        <li><a href="#!/media">Media</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">About<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#!/whoWeAre">Our Story</a></li>
-            <li><a href="#!/staff">Staff</a></li>
-            <li><a href="#!/careers">Careers</a></li>
-          </ul>
-      </ul>
-    </div>
-  </nav>
+        <!-- navbar -->
+        <nav class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
+          <div class="container mainNav">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#!/home">Home</a>
+                </li>
+                <li>
+                  <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#!/services">Services</a>
+                </li>
+                <li>
+                  <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#!/media">Media</a>
+                </li>
+                <li class="nav-link" class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="">About<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <liclass="nav-item">
+                      <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#!/whoWeAre">Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#!/staff">Staff</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#!/careers">Careers</a>
+                    </li>
+                  </ul>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-  <main ng-view></main>
+      </div> <!--end of headerSection-->
 
-  <footer>
-    <h4>Test Footer</h4>
-  </footer>
+      <div id="contentSection"> <!--Main page content goes here (angular-routing will fill this section)-->
+        <main ng-view></main> <!-- controller view inside main controller -->
+      </div> <!--end of contentSection-->
 
+      <div id="footerSection"> <!--footerSection for contact info and such-->
+        <footer>
+          <h4>Test Footer</h4>
+        </footer>
+      </div> <!--end of footerSection-->
+
+
+    </div> <!--end of mainBodyWrapper-->
   </body>
 
 </html>
