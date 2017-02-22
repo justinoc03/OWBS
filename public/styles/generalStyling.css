@@ -1,65 +1,57 @@
 html, body {
-	margin:0;
-	padding:0;
-	height:100%;
-}
+  margin: 0;
+  padding: 0;
+  height: 100%; }
 
 body {
-  margin-top: 30px;
-}
+  margin-top: 30px; }
 
 /********************************* Navbar ****************************************/
 #navShape {
-	width: 100px;
-	height: 30px;
-	background: green;
-	position: fixed;
+  width: 100px;
+  height: 30px;
+  background: green;
+  position: fixed;
   margin-left: 5%;
-  margin-top: -2em;
-}
-
+  margin-top: -2em; }
 
 #navShape:after {
-	content: "";
-	position: absolute;
-	bottom: -25px;
-	left: 0;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 25px solid green;
-}
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid green; }
 
 .mainNav {
-  background-color: inherit;
-}
+  background-color: inherit; }
 
 /******************************** Typography *************************************/
 body {
-  font-family: 'Nunito Sans', sans-serif;
-}
-
+  font-family: 'Nunito Sans', sans-serif; }
 
 /*********************************** Footer ************************************/
-
 #mainBodyWrapper {
-	min-height:100%;
-	position:relative;
-}
+  min-height: 100%;
+  position: relative; }
+
 #headerSection {
-	background:;
-	padding:10px;
-}
+  padding: 10px; }
+
 #contentSection {
-	padding-bottom:75px; /* Height of the footer element */
-}
+  padding-bottom: 75px;
+  /* Height of the footer element */ }
+
 #footerSection {
-	background:#efefef;
-	width:100%;
-	height:50px;
-	position:absolute;
-	bottom:0;
-	left:0;
-  text-align: center;
-}
+  background: #efefef;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+/*# sourceMappingURL=generalStyling.css.map */
