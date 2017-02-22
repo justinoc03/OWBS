@@ -4,7 +4,8 @@ html, body {
   height: 100%; }
 
 body {
-  margin-top: 30px; }
+  margin-top: 30px;
+  font-family: 'Nunito Sans', sans-serif; }
 
 /********************************* Navbar ****************************************/
 #navShape {
@@ -25,13 +26,6 @@ body {
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   border-top: 25px solid green; }
-
-.mainNav {
-  background-color: inherit; }
-
-/******************************** Typography *************************************/
-body {
-  font-family: 'Nunito Sans', sans-serif; }
 
 /*********************************** Footer ************************************/
 #mainBodyWrapper {
