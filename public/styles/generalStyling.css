@@ -8,10 +8,13 @@ body {
   font-family: 'Nunito Sans', sans-serif; }
 
 /********************************* Navbar ****************************************/
+.navbar-default {
+  border-bottom: none; }
+
 #navShape {
   width: 100px;
-  height: 30px;
-  background: green;
+  height: 50px;
+  background: transparent;
   position: fixed;
   margin-left: 5%;
   margin-top: -2em; }
@@ -19,13 +22,13 @@ body {
 #navShape:after {
   content: "";
   position: absolute;
-  bottom: -25px;
-  left: 0;
+  bottom: -13px;
+  left: -40px;
   width: 0;
   height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 25px solid green; }
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 25px solid #f8f8f8; }
 
 /*********************************** Footer ************************************/
 #mainBodyWrapper {
