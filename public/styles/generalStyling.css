@@ -13,8 +13,20 @@ body {
 
 .logo {
   float: left;
-  margin-left: 107px;
-  margin-top: 10px; }
+  margin-left: 11rem;
+  margin-top: 1rem; }
+  @media (max-width: 375px) {
+    .logo {
+      margin-left: 6.25rem; } }
+  @media (min-width: 376px) and (max-width: 667px) {
+    .logo {
+      margin-left: 8rem; } }
+  @media (min-width: 668px) and (max-width: 768px) {
+    .logo {
+      margin-left: 8.5rem; } }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .logo {
+      margin-left: 9rem; } }
 
 .navbar-nav {
   margin-left: 50px; }

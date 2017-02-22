@@ -17,8 +17,25 @@ body {
 }
 .logo{
   float:left;
-  margin-left: 107px;
-  margin-top: 10px;
+  margin-left: 11rem;
+  margin-top: 1rem;
+  //iphone vertical
+  @media (max-width: 375px){
+    margin-left: 6.25rem;
+  }
+  //iphone landscape
+  @media (min-width: 376px) and (max-width: 667px){
+  margin-left: 8rem;
+  }
+  //ipad vertical
+  @media (min-width:668px ) and (max-width:768px){
+    margin-left: 8.5rem;
+  }
+  //ipad landscape
+  @media (min-width:769px) and (max-width:1024px){
+    margin-left: 9rem;
+  }
+
 }
 .navbar-nav{
   margin-left: 50px;
