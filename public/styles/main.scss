@@ -107,10 +107,9 @@ body {
   }
   .service-row{
     text-align: center;
-
       .col-xs-4{
         height: 15rem;
-        transition: all 0.5s;
+        transition: transform 0.5s, box-shadow 0.5s;
         &:hover{
           transform: scale(1.05);
           z-index: 50;
@@ -119,8 +118,17 @@ body {
       }
     .hidden{
       visibility: hidden;
-      transition: visibility 0.5s;
     }
+    .scale{
+      width: 100%;
+      height: 49.5rem;
+      transition: all 0.5s;
+      &:hover{
+        transform: none;
+        box-shadow: none;
+      }
+    }
+
   }
   .color-one{
     background-color:#008FBE;

@@ -91,14 +91,20 @@ body {
     text-align: center; }
     .services-container .service-row .col-xs-4 {
       height: 15rem;
-      transition: all 0.5s; }
+      transition: transform 0.5s, box-shadow 0.5s; }
       .services-container .service-row .col-xs-4:hover {
         transform: scale(1.05);
         z-index: 50;
         box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4); }
     .services-container .service-row .hidden {
-      visibility: hidden;
-      transition: visibility 0.5s; }
+      visibility: hidden; }
+    .services-container .service-row .scale {
+      width: 100%;
+      height: 49.5rem;
+      transition: all 0.5s; }
+      .services-container .service-row .scale:hover {
+        transform: none;
+        box-shadow: none; }
   .services-container .color-one {
     background-color: #008FBE; }
   .services-container .color-two {
