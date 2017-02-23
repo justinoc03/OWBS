@@ -112,6 +112,12 @@ body {
   .services-container .color-three {
     background-color: #698B96; }
 
+.close-icon {
+  width: 36px;
+  float: right;
+  margin-top: 1rem;
+  visibility: hidden; }
+
 /*********************************** Footer ************************************/
 #headerSection {
   padding: 10px; }
