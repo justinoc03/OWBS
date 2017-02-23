@@ -1,0 +1,114 @@
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+body {
+  margin-top: 30px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+
+/********************************* Navbar ****************************************/
+// Remove bootstraps default nabar border
+.navbar-default{
+  // Remove bootstraps default nabar border
+  border-bottom: none;
+}
+.logo{
+  float:left;
+  margin-left: 11rem;
+  margin-top: 0.5rem;
+  //iphone vertical
+  @media (max-width: 375px){
+    margin-left: 6.25rem;
+  }
+  //iphone landscape
+  @media (min-width: 376px) and (max-width: 667px){
+  margin-left: 8rem;
+  }
+  //ipad vertical
+  @media (min-width:668px ) and (max-width:768px){
+    margin-left: 8.5rem;
+  }
+  //ipad landscape
+  @media (min-width:769px) and (max-width:1024px){
+    margin-left: 9rem;
+  }
+
+}
+.navbar-nav{
+  margin-left: 50px;
+}
+#navShape {
+	width: 100px;
+	height: 50px;
+	background: transparent;
+	position: fixed;
+  margin-left: 5%;
+  margin-top: -2em;
+  z-index: 9999999;
+}
+
+
+#navShape:after {
+	content: "";
+	position: absolute;
+	bottom: -13px;
+	left: -40px;
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-top: 25px solid #f8f8f8;
+  z-index: 9999;
+}
+/*********************************** Home Styles ************************************/
+.home-container{
+  // Test Image until we have assets to use
+  background-image: url("../assets/images/cell-tower-1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1296px;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+#home-content{
+  text-align: center;
+  margin-top: 15%;
+  h1{
+    font-size: 5rem;
+  }
+  h3{
+    margin-top: 0.5rem;
+    font-size:3rem;
+  }
+  button{
+    width: 25rem;
+    background-color: transparent;
+    border-width: 3px;
+    color: black;
+  }
+}
+/*********************************** Footer ************************************/
+
+
+#headerSection {
+
+	padding:10px;
+}
+
+#footerSection {
+	background:#efefef;
+	width:100%;
+	height:50px;
+	position:fixed;
+	bottom:0px;
+	left:0;
+  text-align: center;
+}

@@ -39,6 +39,9 @@
 
         <!-- navbar -->
         <nav class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
+            <div class="logo">
+              <img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box">
+            </div>
           <div class="container mainNav">
             <!-- navigation button for smaller screens (phones/tablets) -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -80,16 +83,12 @@
 
       </div> <!--end of headerSection-->
 
-      <div id="contentSection"> <!--Main page content goes here (angular-routing will fill this section)-->
-        <main ng-view></main> <!-- controller view inside main controller -->
-      </div> <!--end of contentSection-->
-
+      <main ng-view></main> <!-- controller view inside main controller -->
       <div id="footerSection"> <!--footerSection for contact info and such-->
         <footer>
           <h4>Test Footer</h4>
         </footer>
       </div> <!--end of footerSection-->
-
 
     </div> <!--end of mainBodyWrapper-->
   </body>
