@@ -78,6 +78,26 @@ body {
     border-width: 3px;
     color: black; }
 
+/********************************* Services Styles *****************************/
+.services-container {
+  width: 98%;
+  position: fixed;
+  margin-left: 1%; }
+  .services-container h1 {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem; }
+  .services-container .service-row {
+    text-align: center; }
+    .services-container .service-row p {
+      height: 15rem; }
+  .services-container .color-one {
+    background-color: #008FBE; }
+  .services-container .color-two {
+    background-color: #91B1BC; }
+  .services-container .color-three {
+    background-color: #698B96; }
+
 /*********************************** Footer ************************************/
 #headerSection {
   padding: 10px; }

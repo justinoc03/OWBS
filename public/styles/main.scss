@@ -95,6 +95,32 @@ body {
     color: black;
   }
 }
+/********************************* Services Styles *****************************/
+.services-container{
+  width: 98%;
+  position: fixed;
+  margin-left: 1%;
+  h1{
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+  }
+  .service-row{
+    text-align: center;
+      p{
+        height: 15rem;
+      }
+  }
+  .color-one{
+    background-color:#008FBE;
+  }
+  .color-two{
+    background-color: #91B1BC;
+  }
+  .color-three{
+    background-color:#698B96;
+  }
+}
 /*********************************** Footer ************************************/
 
 
