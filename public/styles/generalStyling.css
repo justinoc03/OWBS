@@ -84,11 +84,11 @@ body {
   margin-left: -1%; }
   .services-container h1 {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 1rem;
     margin-bottom: 2.5rem; }
 
 .contain {
-  height: 52rem;
+  height: 49.5rem;
   perspective: 800px;
   position: relative; }
 
@@ -116,6 +116,63 @@ body {
 
 .card .front {
   background-color: #91B1BC; }
+
+#card-1 .front {
+  background-image: url("../assets/images/services/excavators-640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #card-1 .front h3 {
+    color: black; }
+
+#card-2 .front {
+  background-image: url("../assets/images/services/electric-640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#card-3 .front {
+  background-image: url("../assets/images/services/building-640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  #card-3 .front h3 {
+    color: black; }
+
+#card-4 .front {
+  background-image: url("../assets/images/services/maintenance-640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#card-5 .front {
+  background-image: url("../assets/images/services/tower-640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#card-6 .front {
+  background-image: url("../assets/images/services/tower-two-640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#card-7 .front {
+  background-image: url("../assets/images/services/trouble-shoot-640.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center; }
+
+#card-8 .front {
+  background-image: url("../assets/images/services/weld-640.jpg");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+#card-9 .front {
+  background-image: url("../assets/images/services/crane-640.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  #card-9 .front h3 {
+    color: black; }
 
 .card .back {
   background-color: #008FBE;
