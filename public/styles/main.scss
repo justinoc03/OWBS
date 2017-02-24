@@ -105,42 +105,38 @@ body {
     margin-top: 4rem;
     margin-bottom: 2.5rem;
   }
-  .service-row{
-    text-align: center;
-      .col-xs-4{
-        height: 15rem;
-        transition: all 0.75s;
-      }
-    .hidden{
-      visibility: hidden;
-			opacity: 0;
-    }
-		.visible{
-			visibility: visible;
-			opacity: 1;
-		}
-    .scale{
-      width: 100%;
-      height: 49.5rem;
-    }
-
-  }
-  .color-one{
-    background-color:#008FBE;
-  }
-  .color-two{
-    background-color: #91B1BC;
-  }
-  .color-three{
-    background-color:#698B96;
-  }
 }
-.close-icon{
-  width: 36px;
-  float: right;
-  margin-top: 1rem;
-	transition: opacity 0.5s;
-	transition-delay: 3s;
+// csss for card flip animation
+.contain {
+  width: 200px;
+  height: 260px;
+  perspective: 800px;
+	position: relative;
+}
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+#card .front {
+  background: red;
+}
+#card .back {
+  background: blue;
+  transform: rotateY( 180deg );
+}
+#card.flipped {
+  transform: rotateY( 180deg );
 }
 /*********************************** Footer ************************************/
 
