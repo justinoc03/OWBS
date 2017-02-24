@@ -109,24 +109,19 @@ body {
     text-align: center;
       .col-xs-4{
         height: 15rem;
-        transition: transform 0.5s, box-shadow 0.5s;
-        &:hover{
-          transform: scale(1.05);
-          z-index: 50;
-          box-shadow: (2px 2px 3px rgba( 0, 0, 0, 0.4));
-        }
+        transition: all 0.75s;
       }
     .hidden{
       visibility: hidden;
+			opacity: 0;
     }
+		.visible{
+			visibility: visible;
+			opacity: 1;
+		}
     .scale{
       width: 100%;
       height: 49.5rem;
-      transition: all 0.5s;
-      &:hover{
-        transform: none;
-        box-shadow: none;
-      }
     }
 
   }
@@ -144,7 +139,8 @@ body {
   width: 36px;
   float: right;
   margin-top: 1rem;
-  visibility: hidden;
+	transition: opacity 0.5s;
+	transition-delay: 3s;
 }
 /*********************************** Footer ************************************/
 
