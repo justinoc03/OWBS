@@ -105,42 +105,6 @@ body {
     margin-top: 4rem;
     margin-bottom: 2.5rem;
   }
-  .service-row{
-    text-align: center;
-      .col-xs-4{
-        height: 15rem;
-        transition: all 0.75s;
-      }
-    .hidden{
-      visibility: hidden;
-			opacity: 0;
-    }
-		.visible{
-			visibility: visible;
-			opacity: 1;
-		}
-    .scale{
-      width: 100%;
-      height: 49.5rem;
-    }
-
-  }
-  .color-one{
-    background-color:#008FBE;
-  }
-  .color-two{
-    background-color: #91B1BC;
-  }
-  .color-three{
-    background-color:#698B96;
-  }
-}
-.close-icon{
-  width: 36px;
-  float: right;
-  margin-top: 1rem;
-	transition: opacity 0.5s;
-	transition-delay: 3s;
 }
 /*********************************** Footer ************************************/
 
