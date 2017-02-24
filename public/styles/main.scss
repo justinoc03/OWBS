@@ -97,14 +97,56 @@ body {
 }
 /********************************* Services Styles *****************************/
 .services-container{
-  width: 98%;
-  position: fixed;
-  margin-left: 1%;
+  width: 100%;
+	margin-left: -1%;
+
   h1{
     text-align: center;
     margin-top: 4rem;
     margin-bottom: 2.5rem;
   }
+}
+// csss for card flip animation
+.contain {
+  height: 52rem;
+  perspective: 800px;
+	position: relative;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+	h3{
+		text-align: center;
+		color: white;
+		display: block;
+		margin-top: 21rem;
+		transition: margin-top 0.5s;
+		transition-delay: 0.15s;
+	}
+}
+.card .front {
+  background-color: #91B1BC;
+}
+.card .back {
+  background-color: #008FBE;
+  transform: rotateY( 180deg );
+}
+.card.flipped {
+  transform: rotateY( 180deg );
+	h3{
+		margin-top: 1rem;
+	}
 }
 /*********************************** Footer ************************************/
 
