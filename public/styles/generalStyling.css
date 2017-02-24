@@ -116,19 +116,6 @@ body {
 
 .card .front {
   background-color: #91B1BC; }
-  .card .front h3 {
-    text-align: center;
-    color: white;
-    display: block;
-    margin-top: 21rem;
-    transition: margin-top 0.5s;
-    transition-delay: 0.15s;
-    background-color: #91B1BC;
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 6px;
-    padding: 2px; }
 
 #card-1 .front {
   background-image: url("../assets/images/services/excavators-640.jpg");
