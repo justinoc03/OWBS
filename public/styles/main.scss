@@ -106,7 +106,7 @@ body {
     margin-bottom: 2.5rem;
   }
 }
-// csss for card flip animation
+// csss for card flip animation and card images
 .contain {
   height: 49.5rem;
   perspective: 800px;
@@ -200,6 +200,28 @@ body {
 		margin-top: 1rem;
 	}
 }
+
+/********************************* Who We Are **********************************/
+.who-container{
+	h1, h3{
+		text-align: center;
+	}
+	h1{
+		margin-top: 3rem;
+	}
+	h3{
+		margin-top: -1rem;
+	}
+	#who-content{
+		margin-top: 5rem;
+	}
+	#who-images{
+		img{
+			margin-bottom: 1rem;
+		}
+	}
+}
+
 /*********************************** Footer ************************************/
 
 
