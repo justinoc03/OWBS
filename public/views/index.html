@@ -86,7 +86,39 @@
       <main ng-view></main> <!-- controller view inside main controller -->
       <div id="footerSection"> <!--footerSection for contact info and such-->
         <footer>
-          <h4>Test Footer</h4>
+          <div class ="row">
+            <div class="col-xs-4" id="footer-contact">
+              <p>Contact</p>
+            </div>
+            <div class="col-xs-4" id="footer-connect">
+              <p> Connect </p>
+            </div>
+          </div>
+          <div class ="row">
+            <div class="col-xs-2">
+              <div id="footer-address">
+                <p>6811 Washington Avenue South</p>
+                <p>Edina, MN 55439</p>
+              </div>
+            </div>
+              <div class="col-xs-2">
+                <div id="footer-nums">
+                  <p>Phone: (952) 942-0412</p>
+                  <p>Fax:(952) 942-0526</p>
+                </div>
+              </div>
+            <div class ="col-xs-4">
+              <div id="footer-socials">
+                <!-- Icons from here https://www.iconfinder.com/iconsets/free-social-media-4 -->
+                <!-- CC Liscense for Icons https://creativecommons.org/licenses/by/3.0/ -->
+                <img class="social-icon" src="/assets/images/icons/linkedin-icon.png" alt="">
+                <img class="social-icon" src="/assets/images/icons/facebook-icon.png" alt="">
+              </div>
+            </div>
+            <div class="col-xs-4" id="copyright">
+              <p>&copy; 2017 One Way Building Services, Inc.</p>
+            </div>
+          </div>
         </footer>
       </div> <!--end of footerSection-->
 
