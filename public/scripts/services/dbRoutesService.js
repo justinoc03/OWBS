@@ -1,13 +1,14 @@
 myApp.service('dbRoutesService', function(){
 
-  console.log('in dbRoutesService!');
+  console.log('in dbRoutesService');
 
+  //test function in a service
   this.testFunction = function() {
     x = 5*2;
     console.log(x);
   };
 
-  ////////////////////Function: get all tasks already in DB///////////////////////
+  ////////////////////Function: getJobPostings in DB///////////////////////
   this.getJobPostings = function(){
     $.ajax({
       type: 'GET',
