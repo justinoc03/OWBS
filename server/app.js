@@ -26,7 +26,8 @@ app.listen(port, function(){
 });
 //.................End: General Server Startup................................//
 
-/////////////////////Get Route: getJobPostings in DB///////////////////////////////////////
+////////////////////////////////////////////////////////////////// GET ROUTES ///////////////////////////////////////////////////////////////////////////////////
+/////////////////////Get Route: getJobPostings in DB///////////////////////////
 app.get('/getJobPostings', function(req, res){
   console.log('in getJobPostings route');
 
@@ -47,7 +48,9 @@ app.get('/getJobPostings', function(req, res){
     } //end else
   }); //end pg.connect
 }); //end getJobPostings
-//.................End Get Route: getJobPostings in DB................................//
+//.................End Get Route: getJobPostings in DB.......................//
+//...............................................................End Get Routes........................................................................//
+
 
 //////////////////////////////generic app.get///////////////////////////////////
 app.get("/*", function(req,res){
