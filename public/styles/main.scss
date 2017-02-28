@@ -200,6 +200,36 @@ body {
 		margin-top: 1rem;
 	}
 }
+
+// Staff Profile flips
+.staff{
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.staff figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
+}
+.staff .front{
+	 background-color: #91B1BC;
+	}
+.staff .back {
+  background-color: #008FBE;
+  transform: rotateX( 180deg );
+
+}
+.staff.flipped {
+  transform: rotateX( 180deg );
+
+}
 /*********************************** Footer ************************************/
 
 
