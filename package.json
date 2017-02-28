@@ -22,7 +22,9 @@
     "angular-route": "^1.6.2",
     "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "pg": "^6.1.2",
+    "sql": "^0.74.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",

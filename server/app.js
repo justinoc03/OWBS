@@ -8,6 +8,17 @@ var bodyParserJson = bodyParser.json();
 var urlencodedParser =  bodyParser.urlencoded({extended: false});
 var port = process.env.PORT || 9000;
 
+
+if(process.env.DATABASE_URL !== undefined) {
+    console.log('env connection string');
+    connectionString = process.env.DATABASE_URL;
+    pg.defaults.ssl = true;
+} else {
+    connectionString = 'postgres://localhost:5432/OWBS';
+}
+
+// use public,bodyParserJson,urlencodedParser
+app.use(express.static('public'));
 app.use(bodyParserJson);
 app.use(urlencodedParser);
 
@@ -16,8 +27,6 @@ app.listen(port, function(){
   console.log('listening on port:', port);
 });
 
-// use public
-app.use(express.static('public'));
 
 
 
