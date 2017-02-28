@@ -203,6 +203,7 @@ body {
 
 /********************************* Who We Are **********************************/
 .who-container{
+	position: fixed;
 	h1, h3{
 		text-align: center;
 	}
@@ -214,8 +215,10 @@ body {
 	}
 	#who-content{
 		margin-top: 5rem;
+		margin-left: -5rem;
 	}
 	#who-images{
+		margin-top: -3.5rem;
 		img{
 			margin-bottom: 1rem;
 		}
