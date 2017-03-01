@@ -178,8 +178,8 @@ body {
     margin-top: 1rem; }
 
 .staff {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   position: absolute;
   transform-style: preserve-3d;
   transition: transform 1s; }
@@ -190,17 +190,45 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  border-radius: 50%; }
 
 .staff .front {
   background-color: #91B1BC; }
 
 .staff .back {
-  background-color: #008FBE;
+  background-color: #91B1BC;
   transform: rotateX(180deg); }
 
 .staff.flipped {
   transform: rotateX(180deg); }
+
+/***********************************Staff styles********************************/
+.staff-container {
+  color: white; }
+  .staff-container h1 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem; }
+  .staff-container section {
+    height: 275px; }
+  .staff-container h3 {
+    text-align: center;
+    font-size: 16px;
+    display: block; }
+  .staff-container .front h3 {
+    margin-top: 20rem; }
+  .staff-container .back p {
+    text-align: center;
+    width: 190px;
+    height: 190px;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #white; }
+  .staff-container #staff-1 .front, .staff-container #staff-3 .front, .staff-container #staff-6 .front, .staff-container #staff-8 .front {
+    background-image: url("../assets/images/staff/tie-640.jpg");
+    background-position: center; }
 
 /*********************************** Footer ************************************/
 #headerSection {
