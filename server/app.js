@@ -23,10 +23,10 @@ app.use(urlencodedParser);
 // spin up server
 app.listen(port, function(){
   console.log('listening on port:', port);
-});
-//.................End: General Server Startup................................//
+});//End: General Server Startup
 
-////////////////////////////////////////////////////////////////// GET ROUTES ///////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////// GET ROUTES //////////////////////////////////////////////////////////////////////////////
 /////////////////////Get Route: getJobPostings in DB///////////////////////////
 app.get('/getJobPostings', function(req, res){
   console.log('in getJobPostings route');
@@ -49,7 +49,7 @@ app.get('/getJobPostings', function(req, res){
   }); //end pg.connect
 }); //end getJobPostings
 //.................End Get Route: getJobPostings in DB.......................//
-//...............................................................End Get Routes........................................................................//
+
 
 
 //////////////////////////////generic app.get///////////////////////////////////

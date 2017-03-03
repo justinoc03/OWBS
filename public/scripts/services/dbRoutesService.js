@@ -1,23 +1,28 @@
-myApp.service('dbRoutesService', function(){
+///////////////////////////////////This service is ONLY for database calls////////////////////////////////////////////
+myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
+  console.log('in dbRoutesService');
 
-  console.log('in dbRoutesService!');
+  var dbRoutesService = this;
+  var jobPostingsFromDB = [];
 
-  this.testFunction = function() {
-    x = 5*2;
-    console.log(x);
-  };
 
-  ////////////////////Function: get all tasks already in DB///////////////////////
-  this.getJobPostings = function(){
-    $.ajax({
+  ////////////////////Function: getJobPostings in DB///////////////////////
+  dbRoutesService.getJobPostings = function(){
+    //dependency $q is used for promises when working with Async data from a database
+    var defer = $q.defer();
+
+    $http({
       type: 'GET',
-      url: '/getJobPostings',
-      success: function(data){
-        console.log('got this back from server:', data);
-        jobPostingsFromDB = data;
-      }
-    });
+      url: '/getJobPostings'
+    }).then(function success(responseObject){
+        jobPostingsFromDB = responseObject;
+        defer.resolve(responseObject);
+      }, function error(errorObject, status){
+        console.log('there was an error retreiving info from the DB', errorObject);
+        defer.reject(errorObject);
+      });
+      return defer.promise;
   };
 
 
-});
+}]);//end dbRoutesService

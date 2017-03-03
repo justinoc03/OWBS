@@ -4,8 +4,8 @@ myApp.controller("servicesController", ['$scope', function($scope){
   angular.element(document.getElementById("footerSection")).css("position","relative");
   //function to flip sercvice card
   $scope.flipCard = function(cardId){
-      var cardNum = "card-" + cardId;
-      var card = angular.element(document.getElementById(cardNum));
-      card.toggleClass('flipped');
+    var cardNum = "card-" + cardId;
+    var card = angular.element(document.getElementById(cardNum));
+    card.toggleClass('flipped');
   };
 }]);

@@ -1,14 +1,19 @@
 <h1>Careers</h1>
 
-<!-- Main Careers Section -->
+<!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
 <section>
 
-  <article class="">
+  <header class="">
     <p>When you work for One Way, you’re joining a highly successful organization at the forefront of Cellular Infrastructure. One Way offers exciting career opportunities, that extend your base knowledge.</p>
+  </header>
 
-  </article>
+  <button type="button" name="button" ng-click="getJobs()"></button>
 
+  <section>
+    <article class="" ng-repeat="x in jobsArray">
+      <h3>Job Title: {{x.jobposting_name}}</h3>
 
-
+    </article>
+  </section>
 
 </section>
