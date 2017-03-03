@@ -4,6 +4,6 @@ myApp.controller("redirectNoticeController", ['$scope','$timeout', '$location', 
   //create timeout redirect after 3 seconds
   $timeout(function(){
    $location.path('/home');
- }, 1500);
+  }, 1500);
 
 }]);

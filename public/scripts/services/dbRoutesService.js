@@ -2,6 +2,7 @@
 myApp.service('dbRoutesService', ['$http','$q', '$rootScope', function($http, $q, $rootScope){
   console.log('in dbRoutesService');
 
+  var dbRoutesService = this;
   var jobPostingsFromDB = [];
 
   //test function in a service
@@ -12,7 +13,7 @@ myApp.service('dbRoutesService', ['$http','$q', '$rootScope', function($http, $q
   // };
 
   ////////////////////Function: getJobPostings in DB///////////////////////
-  var getJobPostings = function(){
+  dbRoutesService.getJobPostings = function(){
     $http({
       type: 'GET',
       url: '/getJobPostings'
@@ -22,25 +23,12 @@ myApp.service('dbRoutesService', ['$http','$q', '$rootScope', function($http, $q
       }, function error(errorObject){
         console.log(errorObject);
       });
+      return jobPostingsFromDB;
   };
 
-  return {
-    getJobPostings: getJobPostings,
-    // testFunction: testFunction
-  };
+  // return {
+  //   getJobPostings: getJobPostings,
+  //   // testFunction: testFunction
+  // };
 
 }]);//end dbRoutesService
-
-// $scope.getItems = function () {
-//   console.log('in getItems');
-//   $http({
-//     method: 'GET',
-//     url: '/getItems'
-//   }).then(function success(responseObject) {
-//     console.log('got these items from server/db:', responseObject);
-//     $scope.allItemsInStash = responseObject.data;
-//   }, function error(errorObject){
-//     console.log(errorObject);
-//   });
-//   // console.log($scope.allItemsInStash);
-// };
