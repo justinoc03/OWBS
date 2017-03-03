@@ -5,12 +5,6 @@ myApp.service('dbRoutesService', ['$http','$q', '$rootScope', function($http, $q
   var dbRoutesService = this;
   var jobPostingsFromDB = [];
 
-  //test function in a service
-  // var testFunction = function(x) {
-  //   z = x*2;
-  //   console.log(z);
-  //   return z;
-  // };
 
   ////////////////////Function: getJobPostings in DB///////////////////////
   dbRoutesService.getJobPostings = function(){
@@ -26,9 +20,5 @@ myApp.service('dbRoutesService', ['$http','$q', '$rootScope', function($http, $q
       return jobPostingsFromDB;
   };
 
-  // return {
-  //   getJobPostings: getJobPostings,
-  //   // testFunction: testFunction
-  // };
 
 }]);//end dbRoutesService
