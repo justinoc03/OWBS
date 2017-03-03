@@ -2,7 +2,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', function($sc
   console.log('In careersController');
   $scope.jobsArray = [];
 
-  dbRoutesService.testFunction(25);
+  // dbRoutesService.testFunction(25);
   jobsArray = dbRoutesService.getJobPostings();
   console.log(jobsArray);
 
