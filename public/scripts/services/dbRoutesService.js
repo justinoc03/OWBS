@@ -6,7 +6,7 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
   var jobPostingsFromDB = [];
 
 
-  ////////////////////Function: getJobPostings in DB///////////////////////
+  ////////////////////Function: getJobPostings from DB///////////////////////
   dbRoutesService.getJobPostings = function(){
     //dependency $q is used for promises when working with Async data from a database
     var defer = $q.defer();
