@@ -1,5 +1,5 @@
 ///////////////////////////////////This service is ONLY for database calls////////////////////////////////////////////
-myApp.service('dbRoutesService', ['$http','$q', '$rootScope', function($http, $q, $rootScope){
+myApp.service('dbRoutesService', ['$http','$q', function($http, $q){
   console.log('in dbRoutesService');
 
   var dbRoutesService = this;
@@ -8,16 +8,20 @@ myApp.service('dbRoutesService', ['$http','$q', '$rootScope', function($http, $q
 
   ////////////////////Function: getJobPostings in DB///////////////////////
   dbRoutesService.getJobPostings = function(){
+    var defer = $q.defer();
+
+
     $http({
       type: 'GET',
       url: '/getJobPostings'
     }).then(function success(responseObject){
-        console.log('got this back from server:', responseObject);
-        jobPostingsFromDB = responseObject.data;
-      }, function error(errorObject){
+        jobPostingsFromDB = responseObject;
+        defer.resolve(responseObject);
+      }, function error(errorObject, status){
         console.log(errorObject);
+        defer.reject(errorObject);
       });
-      return jobPostingsFromDB;
+      return defer.promise;
   };
 
 

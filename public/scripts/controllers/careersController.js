@@ -1,14 +1,25 @@
 myApp.controller("careersController", ['$scope', 'dbRoutesService', function($scope, dbRoutesService){
   console.log('In careersController');
+
   $scope.jobsArray = [];
+
+  $scope.init = function(){
+    $scope.getJobs();
+  };
 
 
   $scope.getJobs = function(){
-    jobsArray = dbRoutesService.getJobPostings();
-    console.log(jobsArray);
+    dbRoutesService.getJobPostings()
+    .then(function (jobPostingsFromDB){
+      //success
+      $scope.jobsArray = jobPostingsFromDB.data;
+      console.log('jobsArray', $scope.jobsArray);
+    }, function(errorObject){
+      //err
+    });
   };
 
-  $scope.getJobs();
+  $scope.init();
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css("position","fixed");
 }]);
