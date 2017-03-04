@@ -10,7 +10,7 @@
   <button type="button" name="button" ng-click="getJobs()"></button>
 
   <section>
-    <article class="" ng-repeat="jobs in jobsArray" ng-show="jobs.jobposting_open == true" >
+    <article class="" ng-repeat="jobs in jobsArray" ng-show="jobs.jobposting_open === true" >
       <h4>Job Title: {{jobs.jobposting_name}}</h4>
       <h5 > Description: </h5>
       <p>{{jobs.jobposting_description}}</p>
