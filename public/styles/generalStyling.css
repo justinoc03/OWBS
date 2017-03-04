@@ -194,11 +194,27 @@ body {
   border-radius: 50%; }
 
 .staff .front {
-  background-color: #91B1BC; }
+  background-color: #91B1BC;
+  background-image: url("../assets/images/staff/tie-640.jpg");
+  background-position: center; }
 
 .staff .back {
-  background-color: #91B1BC;
   transform: rotateX(180deg); }
+  .staff .back::after {
+    border-radius: 50%;
+    content: "";
+    background: url("../assets/images/staff/tie-640.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    -webkit-filter: grayscale(2);
+    /* Old WebKit */
+    filter: grayscale(2); }
 
 .staff.flipped {
   transform: rotateX(180deg); }
@@ -225,10 +241,7 @@ body {
     font-size: 10px;
     margin-left: auto;
     margin-right: auto;
-    color: #white; }
-  .staff-container #staff-1 .front, .staff-container #staff-3 .front, .staff-container #staff-6 .front, .staff-container #staff-8 .front {
-    background-image: url("../assets/images/staff/tie-640.jpg");
-    background-position: center; }
+    color: black; }
 
 /*********************************** Footer ************************************/
 #headerSection {
