@@ -203,13 +203,14 @@ body {
 
 // Staff Profile flips
 .staff{
+
   width: 250px;
   height: 250px;
   position: absolute;
   transform-style: preserve-3d;
   transition: transform 1s;
+	}
 
-}
 .staff figure {
   margin: 0;
   display: block;
@@ -250,8 +251,9 @@ body {
 
 /***********************************Staff styles********************************/
 .staff-container{
-	color: white;
+	padding-bottom: 50px;
 	h1{
+		color: black;
 		text-align: center;
 		margin-top: 1rem;
 		margin-bottom: 2rem;
@@ -262,9 +264,8 @@ body {
 	 h3{
 		text-align: center;
 		font-size: 16px;
-
+		color: white;
 		display: block;
-
 	}
 	.front h3{
 		margin-top: 20rem;
