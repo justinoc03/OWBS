@@ -53,7 +53,8 @@ app.get('/getJobPostings', function(req, res){
 //.................End Get Route: getJobPostings in DB.......................//
 
 
-
+////////////////////////////////////////////////////////////////// PUT ROUTES //////////////////////////////////////////////////////////////////////////////
+/////////////////////Put Route: modifyJobStatus in DB///////////////////////////
 app.put('/modifyJobStatus', function(req, res){
   console.log('in modifyJobStatus route req.body', req.body);
 
@@ -84,7 +85,7 @@ app.put('/modifyJobStatus', function(req, res){
     } //end else
   }); //end pg.connect
 }); //end getJobPostings
-//.................End Get Route: getJobPostings in DB.......................//
+//.................End Put Route: modifyJobStatus in DB.......................//
 
 
 //////////////////////////////generic app.get///////////////////////////////////

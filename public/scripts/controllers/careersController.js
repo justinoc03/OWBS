@@ -1,12 +1,15 @@
 myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', function($scope, dbRoutesService, $timeout){
   console.log('In careersController');
 
+  //global variables
   $scope.jobsArray = [];
 
+  //init function that is run at the bottom of this careersController
   $scope.init = function(){
     $scope.getJobs();
   };
 
+  ////////////////////Function GET Route: getJobs from DB ///////////////////////
   $scope.getJobs = function(){
     dbRoutesService.getJobPostings()
     .then(function (jobPostingsFromDB){
@@ -19,8 +22,9 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     });
   };
 
-  $scope.clickedJobPosting = function(job){
-
+  ////////////////////Function: modifyJobPosting in DB///////////////////////
+  $scope.modifyJobPosting = function(job){
+    //create object to send to DB put route
     jobToModify = {
       jobPostingID: job.jobposting_id,
       jobPostingName: job.jobposting_name,
@@ -29,17 +33,18 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       jobPostingStart: job.jobposting_start
     };
 
+    //if the job posting status is true, change to false and vice versa
     if(jobToModify.jobPostingOpen === true){
       jobToModify.jobPostingOpen = false;
     } else {
       jobToModify.jobPostingOpen = true;
     }
 
+    //route status and promise to get the information back properly.
     dbRoutesService.modifyJobStatus(jobToModify)
     .then(function (responseObject){
       //success responseObject
-      console.log('Success!!', responseObject.data);
-      // $scope.jobsArray = responseObject.data;
+      //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
       $timeout(function(){
        $scope.getJobs();
      }, 250);
@@ -49,9 +54,11 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //err
     });
 
-  };
+  };//end modifyJobPosting
 
+  //initialize any functions on load
   $scope.init();
+
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css("position","fixed");
 }]);
