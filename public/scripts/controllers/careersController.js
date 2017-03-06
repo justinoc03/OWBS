@@ -1,4 +1,4 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', function($scope, dbRoutesService){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', function($scope, dbRoutesService, $timeout){
   console.log('In careersController');
 
   $scope.jobsArray = [];
@@ -37,9 +37,14 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', function($sc
 
     dbRoutesService.modifyJobStatus(jobToModify)
     .then(function (responseObject){
-      $scope.getJobs();
       //success responseObject
-      console.log('Success!!', responseObject.config.data);
+      console.log('Success!!', responseObject.data);
+      // $scope.jobsArray = responseObject.data;
+      $timeout(function(){
+       $scope.getJobs();
+     }, 250);
+
+      console.log('new jobsArray:', $scope.jobsArray);
     }, function(errorObject){
       //err
     });

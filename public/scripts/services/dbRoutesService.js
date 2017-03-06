@@ -30,8 +30,6 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
     //dependency $q is used for promises when working with Async data from a database
     var defer = $q.defer();
 
-    console.log('objectToSend', jobToModify);
-
     $http({
       method: 'PUT',
       url: '/modifyJobStatus',
