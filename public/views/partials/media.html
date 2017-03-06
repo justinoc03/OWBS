@@ -1,1 +1,23 @@
-<h1>Media</h1>
+<div class="media-container container">
+  <h1> Media gallery </h1>
+  <div class="media-select" ng-hide="hideMediaSelect">
+    <div class="photo-wrapper col-md-6 col-xs-12">
+      <div class="wrapper-content">
+        <h3> Photos </h3>
+        <img id="photos" ng-click="launchGallery('photos')"src="/assets/images/icons/photo_gallery_cc.svg" alt=""> <!-- Created by Raz Cohen from the Noun Project -->
+      </div>
+    </div>
+    <div class=" video-wrapper col-md-6 col-xs-12">
+      <div class="wrapper-content">
+        <h3> Videos </h3>
+        <img id="videos" ng-click="launchGallery('videos')" src="/assets/images/icons/video_gallery_cc.svg" alt="">  <!-- Created by Diego Naive from the Noun Project -->
+      </div>
+    </div>
+  </div>
+  <div class="photo-gallery" ng-show="showPhotoGallery">
+    <p> This would be where photos go </p>
+  </div>
+  <div class="vide0-gallery" ng-show="showVideoGallery">
+    <p> this is where the videos go </p>
+  </div>
+</div>
