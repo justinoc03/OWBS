@@ -22,9 +22,34 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     });
   };
 
+  ////////////////////Function: addNewJob in DB///////////////////////
+  $scope.addNewJob = function(){
+    //assemble object with new job details
+    var newJobToPost = {
+      jobPostingName: $scope.newJobTitle,
+      jobPostingDescription: $scope.newJobDescription,
+      jobPostingOpen: true
+    };
+
+    dbRoutesService.newJobPosting(newJobToPost)
+    .then(function (responseObject){
+      //success responseObject
+      //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
+      $timeout(function(){
+       $scope.getJobs();
+     }, 250);
+
+     console.log('new jobsArray:', $scope.jobsArray);
+   }, function(errorObject){
+     //err
+   });
+
+ };//end addNewJob
+
+
   ////////////////////Function: modifyJobPosting in DB///////////////////////
   $scope.modifyJobPosting = function(job){
-    //create object to send to DB put route
+    //assemble object to send to DB put route
     jobToModify = {
       jobPostingID: job.jobposting_id,
       jobPostingName: job.jobposting_name,

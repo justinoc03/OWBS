@@ -55,14 +55,46 @@ app.get('/getJobPostings', function(req, res){
 
 ////////////////////////////////////////////////////////////////// PUT ROUTES //////////////////////////////////////////////////////////////////////////////
 /////////////////////Put Route: modifyJobStatus in DB///////////////////////////
+app.put('/newJobPosting', function(req, res){
+  console.log('in newJobPosting route req.body', req.body);
+
+    var jobPostingName = req.body.jobPostingName;
+    var jobPostingDescription = req.body.jobPostingDescription;
+    var jobPostingOpen = req.body.jobPostingOpen;
+    var jobPostingStart = 'now()';
+
+  pg.connect(connectionString, function (err, client, done){
+    if(err){
+      console.log(err);
+    } else{
+
+      //array to hold results
+      var newJobPostingsArray = [];
+
+      client.query('INSERT INTO jobpostings (jobposting_name, jobposting_description, jobposting_open, jobposting_start) VALUES ($1, $2, $3, $4);', [jobPostingName, jobPostingDescription, jobPostingOpen, jobPostingStart]);
+
+      var queryResults = client.query('select * FROM jobPostings ORDER BY lower(jobposting_name);');
+      queryResults.on('row', function(row){
+        newJobPostingsArray.push(row);
+      });
+      queryResults.on('end', function(){
+        done();
+        return res.json(newJobPostingsArray);
+      }); // end queryResults
+    } //end else
+  }); //end pg.connect
+}); //end getJobPostings
+//.................End Put Route: modifyJobStatus in DB.......................//
+
+/////////////////////Put Route: modifyJobStatus in DB///////////////////////////
 app.put('/modifyJobStatus', function(req, res){
   console.log('in modifyJobStatus route req.body', req.body);
 
-    jobPostingID = req.body.jobPostingID;
-    jobPostingName = req.body.jobPostingName;
-    jobPostingDescription = req.body.jobPostingDescription;
-    jobPostingOpen = req.body.jobPostingOpen;
-    jobPostingStart = req.body.jobPostingStart;
+    var jobPostingID = req.body.jobPostingID;
+    var jobPostingName = req.body.jobPostingName;
+    var jobPostingDescription = req.body.jobPostingDescription;
+    var jobPostingOpen = req.body.jobPostingOpen;
+    var jobPostingStart = req.body.jobPostingStart;
 
   pg.connect(connectionString, function (err, client, done){
     if(err){
