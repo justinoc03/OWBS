@@ -303,6 +303,30 @@ body {
 		color: black;
 	}
 }
+/***********************************Media**************************************/
+	.media-container{
+
+		position: fixed;
+		text-align: center;
+		height: 595px;
+		width: 100%;
+		.photo-wrapper, .video-wrapper{
+			img{
+				margin-top: -50px;
+				width: 250px;
+				transition: transform 0.5s;
+				&:hover{
+					transform: scale(1.1);
+				}
+			}
+		}
+		.wrapper-content{
+			margin-top: 100px;
+		}
+		.photo-wrapper .wrapper-content{
+			border-right: 5px solid black;
+		}
+	}
 /*********************************** Footer ************************************/
 
 
