@@ -7,7 +7,13 @@
     <p>When you work for One Way, you’re joining a highly successful organization at the forefront of Cellular Infrastructure. One Way offers exciting career opportunities, that extend your base knowledge.</p>
   </header>
 
-  <button type="button" name="button" ng-click="getJobs()"></button>
+  <input type="text" placeholder="New Job Title" ng-model="newJobTitle" >
+  <input type="text" placeholder="New Job Description" ng-model="newJobDescription" >
+  <button type="button" name="button" ng-click="addNewJob()">Post Job</button>
+  <br><br>
+
+  <button type="button" name="button" ng-click="getJobs()">Refresh Posts</button>
+  <br>
 
   <section>
     <article class="" ng-repeat="job in jobsArray">
@@ -15,7 +21,8 @@
       <h4>Job Title: {{job.jobposting_name}}</h4>
       <h5 > Description: </h5>
       <p>{{job.jobposting_description}}</p>
-      <!-- Rectangular switch -->
+      <button type="button" name="button" ng-click="deleteJobPosting(job)">Delete Post</button>
+      <!-- switch -->
       <label class="switch" >
         <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="modifyJobPosting(job)" >
         <div class="slider round"></div>

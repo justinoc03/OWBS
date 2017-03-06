@@ -16,15 +16,69 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //success
       $scope.jobsArray = jobPostingsFromDB.data;
       console.log('jobsArray', $scope.jobsArray);
-
     }, function(errorObject){
       //err
     });
   };
 
-  ////////////////////Function: modifyJobPosting in DB///////////////////////
+  ////////////////////Function: addNewJob in DB///////////////////////////////////
+  $scope.addNewJob = function(){
+    //assemble object with new job details
+    var newJobToPost = {
+      jobPostingName: $scope.newJobTitle,
+      jobPostingDescription: $scope.newJobDescription,
+      jobPostingOpen: true
+    };
+
+    dbRoutesService.newJobPosting(newJobToPost)
+    .then(function (responseObject){
+      //success responseObject
+      //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
+      $timeout(function(){
+       $scope.getJobs();
+     }, 250);
+
+     console.log('new jobsArray:', $scope.jobsArray);
+   }, function(errorObject){
+     //err
+   });
+ };//end addNewJob
+
+ ////////////////////Function: deleteJobPosting in DB///////////////////////
+ $scope.deleteJobPosting = function(job){
+
+   var test = confirm(job.jobposting_name + " job posting will be delete forever, would you like to proceed?");
+      if (test === false){
+      } else {
+
+     console.log('job', job);
+     //assemble object to send to DB put route
+     jobToDelete = {
+       jobPostingID: job.jobposting_id,
+     };
+
+     console.log('job', jobToDelete);
+
+     //route status and promise to get the information back properly.
+     dbRoutesService.deleteJob(jobToDelete)
+     .then(function (responseObject){
+       //success responseObject
+       //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
+       $timeout(function(){
+        $scope.getJobs();
+      }, 250);
+
+      console.log('new jobsArray:', $scope.jobsArray);
+     }, function(errorObject){
+       //err
+     });
+     alert(job.jobposting_name + " job posting has been deleted");
+  }//end of else statement
+ };//end modifyJobPosting
+
+  ////////////////////Function: modifyJobPosting in DB///////////////////////////
   $scope.modifyJobPosting = function(job){
-    //create object to send to DB put route
+    //assemble object to send to DB put route
     jobToModify = {
       jobPostingID: job.jobposting_id,
       jobPostingName: job.jobposting_name,
@@ -53,7 +107,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     }, function(errorObject){
       //err
     });
-
   };//end modifyJobPosting
 
   //initialize any functions on load
