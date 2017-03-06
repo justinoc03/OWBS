@@ -43,7 +43,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
    }, function(errorObject){
      //err
    });
-
  };//end addNewJob
 
 
@@ -78,7 +77,32 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     }, function(errorObject){
       //err
     });
+  };//end modifyJobPosting
 
+  ////////////////////Function: modifyJobPosting in DB///////////////////////
+  $scope.deleteJobPosting = function(job){
+
+    console.log('job', job);
+    //assemble object to send to DB put route
+    jobToDelete = {
+      jobPostingID: job.jobposting_id,
+    };
+
+    console.log('job', jobToDelete);
+
+    //route status and promise to get the information back properly.
+    dbRoutesService.deleteJob(jobToDelete)
+    .then(function (responseObject){
+      //success responseObject
+      //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
+      $timeout(function(){
+       $scope.getJobs();
+     }, 250);
+
+      console.log('new jobsArray:', $scope.jobsArray);
+    }, function(errorObject){
+      //err
+    });
   };//end modifyJobPosting
 
   //initialize any functions on load

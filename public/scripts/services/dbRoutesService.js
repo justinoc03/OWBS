@@ -31,7 +31,7 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
     var defer = $q.defer();
 
     $http({
-      method: 'PUT',
+      method: 'POST',
       url: '/newJobPosting',
       data: newJobToPost
     }).then(function success(responseObject){
@@ -53,6 +53,24 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
       method: 'PUT',
       url: '/modifyJobStatus',
       data: jobToModify
+    }).then(function success(responseObject){
+        defer.resolve(responseObject);
+      }, function error(errorObject, status){
+        console.log('there was an error modifying info in the DB', errorObject);
+        defer.reject(errorObject);
+      });
+      return defer.promise;
+  };
+
+  ////////////////////Function PUT Route: deleteJobPosting in DB///////////////////////
+  dbRoutesService.deleteJob = function(jobToDelete){
+    console.log('in dbRoutesService delete:', jobToDelete.jobPostingID );
+    //dependency $q is used for promises when working with Async data from a database
+    var defer = $q.defer();
+
+    $http({
+      method: 'DELETE',
+      url: '/deleteJob?q=' + jobToDelete.jobPostingID,
     }).then(function success(responseObject){
         defer.resolve(responseObject);
       }, function error(errorObject, status){

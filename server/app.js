@@ -53,9 +53,9 @@ app.get('/getJobPostings', function(req, res){
 //.................End Get Route: getJobPostings in DB.......................//
 
 
-////////////////////////////////////////////////////////////////// PUT ROUTES //////////////////////////////////////////////////////////////////////////////
-/////////////////////Put Route: modifyJobStatus in DB///////////////////////////
-app.put('/newJobPosting', function(req, res){
+////////////////////////////////////////////////////////////////// POST ROUTES //////////////////////////////////////////////////////////////////////////////
+/////////////////////POST Route: newJobPosting in DB///////////////////////////
+app.post('/newJobPosting', function(req, res){
   console.log('in newJobPosting route req.body', req.body);
 
     var jobPostingName = req.body.jobPostingName;
@@ -86,6 +86,7 @@ app.put('/newJobPosting', function(req, res){
 }); //end getJobPostings
 //.................End Put Route: modifyJobStatus in DB.......................//
 
+////////////////////////////////////////////////////////////////// PUT ROUTES //////////////////////////////////////////////////////////////////////////////
 /////////////////////Put Route: modifyJobStatus in DB///////////////////////////
 app.put('/modifyJobStatus', function(req, res){
   console.log('in modifyJobStatus route req.body', req.body);
@@ -118,6 +119,36 @@ app.put('/modifyJobStatus', function(req, res){
   }); //end pg.connect
 }); //end getJobPostings
 //.................End Put Route: modifyJobStatus in DB.......................//
+
+////////////////////////////////////////////////////////////////// DELETE ROUTES //////////////////////////////////////////////////////////////////////////////
+/////////////////////Put Route: deleteJob in DB///////////////////////////
+app.delete('/deleteJob', function(req, res){
+  console.log('in deleteJob route req.body', req.query.q);
+
+    var jobPostingID = req.query.q;
+
+  pg.connect(connectionString, function (err, client, done){
+    if(err){
+      console.log(err);
+    } else{
+
+      //array to hold results
+      var newJobPostingsArray = [];
+
+      client.query('DELETE FROM jobpostings WHERE jobposting_id = ($1)', [jobPostingID]);
+
+      var queryResults = client.query('select * FROM jobPostings ORDER BY lower(jobposting_name);');
+      queryResults.on('row', function(row){
+        newJobPostingsArray.push(row);
+      });
+      queryResults.on('end', function(){
+        done();
+        return res.json(newJobPostingsArray);
+      }); // end queryResults
+    } //end else
+  }); //end pg.connect
+}); //end getJobPostings
+//.................End Put Route: deleteJob in DB.......................//
 
 
 //////////////////////////////generic app.get///////////////////////////////////

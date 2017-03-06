@@ -21,7 +21,8 @@
       <h4>Job Title: {{job.jobposting_name}}</h4>
       <h5 > Description: </h5>
       <p>{{job.jobposting_description}}</p>
-      <!-- Rectangular switch -->
+      <button type="button" name="button" ng-click="deleteJobPosting(job)">Delete Post</button>
+      <!-- switch -->
       <label class="switch" >
         <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="modifyJobPosting(job)" >
         <div class="slider round"></div>
