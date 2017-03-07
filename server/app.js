@@ -5,7 +5,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var bpJason = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded( { extended: false } );
-var port = process.env.PORT || 9001;
+var port = process.env.PORT || 9000;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
 
