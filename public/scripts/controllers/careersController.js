@@ -1,4 +1,4 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', function($scope, dbRoutesService, $timeout){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal', function($scope, dbRoutesService, $timeout, $uibModal){
   console.log('In careersController');
 
   //global variables
@@ -23,6 +23,11 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
   ////////////////////Function: addNewJob in DB///////////////////////////////////
   $scope.addNewJob = function(){
+    var modalInstance = $uibModal.open({
+      template: '../views/modals/createJobPostModal.html',
+      controller: 'createJobPostController'
+    });
+
     //assemble object with new job details
     var newJobToPost = {
       jobPostingName: $scope.newJobTitle,
