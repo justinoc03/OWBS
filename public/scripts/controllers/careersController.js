@@ -24,7 +24,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   ////////////////////Function: addNewJob in DB///////////////////////////////////
   $scope.addNewJob = function(){
     var modalInstance = $uibModal.open({
-      template: '../views/modals/createJobPostModal.html',
+      templateUrl: '../views/modals/createJobPostModal.html',
       controller: 'createJobPostController'
     });
 
@@ -77,7 +77,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
      }, function(errorObject){
        //err
      });
-     alert(job.jobposting_name + " job posting has been deleted");
   }//end of else statement
  };//end modifyJobPosting
 
