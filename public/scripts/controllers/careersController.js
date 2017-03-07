@@ -12,7 +12,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   ////////////////////Function: startAddNewJob ///////////////////////
   $scope.startAddNewJob = function(){
     var modalInstance = $uibModal.open({
-      templateUrl: './views/modals/createJobPostModal.html',
+      templateUrl: './views/modalViews/createJobPostModal.html',
       controller: 'createJobPostControllerModal'
     });
 
