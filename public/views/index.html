@@ -19,6 +19,7 @@
     <script src="/vendors/angular-route.min.js"></script>
     <script src="/vendors/ui-bootstrap-tpls.js" charset="utf-8"></script>
     <script src="/scripts/client.js"></script>
+    <script src="/vendors/angular-ui-router.min.js" charset="utf-8"></script>
     <script src="/scripts/controllers/homeController.js"></script>
     <script src="/scripts/controllers/whoWeAreController.js"></script>
     <script src="/scripts/controllers/redirectNoticeController.js"></script>
@@ -88,7 +89,7 @@
 
       </div> <!--end of headerSection-->
 
-      <main ng-view></main> <!-- controller view inside main controller -->
+      <main ui-view></main> <!-- controller view inside main controller -->
       <div id="footerSection"> <!--footerSection for contact info and such-->
         <footer>
           <div class ="row">
