@@ -13,7 +13,15 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   $scope.startAddNewJob = function(){
     var modalInstance = $uibModal.open({
       templateUrl: './views/modals/createJobPostModal.html',
-      controller: 'createJobPostController'
+      controller: 'createJobPostControllerModal'
+    });
+
+    modalInstance.result.then(function(res){
+      //success
+      $scope.getJobs();
+    }, function(err){
+      //success
+      $scope.getJobs();
     });
   };
 
@@ -29,30 +37,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //err
     });
   };
-
-  ////////////////////Function: addNewJob in DB///////////////////////////////////
-  $scope.addNewJob = function(){
-
-    //assemble object with new job details
-    var newJobToPost = {
-      jobPostingName: $scope.newJobTitle,
-      jobPostingDescription: $scope.newJobDescription,
-      jobPostingOpen: true
-    };
-
-    dbRoutesService.newJobPosting(newJobToPost)
-    .then(function (responseObject){
-      //success responseObject
-      //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
-      $timeout(function(){
-       $scope.getJobs();
-     }, 250);
-
-     console.log('new jobsArray:', $scope.jobsArray);
-   }, function(errorObject){
-     //err
-   });
- };//end addNewJob
 
  ////////////////////Function: deleteJobPosting in DB///////////////////////
  $scope.deleteJobPosting = function(job){
