@@ -1,4 +1,4 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', function($scope, dbRoutesService, $timeout){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal', function($scope, dbRoutesService, $timeout, $uibModal){
   console.log('In careersController');
 
   //global variables
@@ -9,6 +9,23 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     $scope.getJobs();
   };
 
+  ////////////////////Function: startAddNewJob ///////////////////////
+  $scope.startAddNewJob = function(){
+    var modalInstance = $uibModal.open({
+      templateUrl: './views/modals/createJobPostModal.html',
+      controller: 'createJobPostControllerModal'
+    });
+
+    modalInstance.result.then(function(res){
+      //success
+      $scope.getJobs();
+    }, function(err){
+      //success
+      $scope.getJobs();
+    });
+  };
+
+  /////////////////////////////////////////////Database calls to dbRoutesService//////////////////////////////////////////////
   ////////////////////Function GET Route: getJobs from DB ///////////////////////
   $scope.getJobs = function(){
     dbRoutesService.getJobPostings()
@@ -20,29 +37,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //err
     });
   };
-
-  ////////////////////Function: addNewJob in DB///////////////////////////////////
-  $scope.addNewJob = function(){
-    //assemble object with new job details
-    var newJobToPost = {
-      jobPostingName: $scope.newJobTitle,
-      jobPostingDescription: $scope.newJobDescription,
-      jobPostingOpen: true
-    };
-
-    dbRoutesService.newJobPosting(newJobToPost)
-    .then(function (responseObject){
-      //success responseObject
-      //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
-      $timeout(function(){
-       $scope.getJobs();
-     }, 250);
-
-     console.log('new jobsArray:', $scope.jobsArray);
-   }, function(errorObject){
-     //err
-   });
- };//end addNewJob
 
  ////////////////////Function: deleteJobPosting in DB///////////////////////
  $scope.deleteJobPosting = function(job){
@@ -72,7 +66,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
      }, function(errorObject){
        //err
      });
-     alert(job.jobposting_name + " job posting has been deleted");
   }//end of else statement
  };//end modifyJobPosting
 
@@ -108,6 +101,8 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //err
     });
   };//end modifyJobPosting
+  //..................................End Database calls to dbRoutesService.......................................//
+
 
   //initialize any functions on load
   $scope.init();
