@@ -9,6 +9,15 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     $scope.getJobs();
   };
 
+  ////////////////////Function: startAddNewJob ///////////////////////
+  $scope.startAddNewJob = function(){
+    var modalInstance = $uibModal.open({
+      templateUrl: './views/modals/createJobPostModal.html',
+      controller: 'createJobPostController'
+    });
+  };
+
+  /////////////////////////////////////////////Database calls to dbRoutesService//////////////////////////////////////////////
   ////////////////////Function GET Route: getJobs from DB ///////////////////////
   $scope.getJobs = function(){
     dbRoutesService.getJobPostings()
@@ -23,10 +32,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
   ////////////////////Function: addNewJob in DB///////////////////////////////////
   $scope.addNewJob = function(){
-    var modalInstance = $uibModal.open({
-      templateUrl: '../views/modals/createJobPostModal.html',
-      controller: 'createJobPostController'
-    });
 
     //assemble object with new job details
     var newJobToPost = {
@@ -112,6 +117,8 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //err
     });
   };//end modifyJobPosting
+  //..................................End Database calls to dbRoutesService.......................................//
+
 
   //initialize any functions on load
   $scope.init();
