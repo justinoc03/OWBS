@@ -120,6 +120,42 @@ app.put('/modifyJobStatus', function(req, res){
 }); //end getJobPostings
 //.................End Put Route: modifyJobStatus in DB.......................//
 
+/////////////////////Put Route: modifyJobStatus in DB///////////////////////////
+app.put('/checkCredentials', function(req, res){
+  console.log('in checkCredentials route req.body', req.body);
+
+    var userName = req.body.userName;
+    var userPassword = req.body.userPassword;
+
+  pg.connect(connectionString, function (err, client, done){
+    if(err){
+      console.log(err);
+    } else{
+
+      // //array to hold results
+      var responseFromDB = [];
+
+      var queryResults = client.query('SELECT * FROM adminLogin WHERE admin_username = ($1) AND admin_password = ($2)', [userName, userPassword]);
+
+      // var queryResults = client.query('SELECT admin_username FROM adminLogin;');
+      queryResults.on('row', function(row){
+        responseFromDB.push(row);
+        // responseFromDB = 'Successful Login';
+        if(responseFromDB.length === 1){
+          responseFromDB = 'AWESOME';
+        }
+      });
+      queryResults.on('end', function(){
+        done();
+        return res.json(responseFromDB);
+      }); // end queryResults
+    } //end else
+  }); //end pg.connect
+}); //end getJobPostings
+//.................End Put Route: modifyJobStatus in DB.......................//
+
+
+
 ////////////////////////////////////////////////////////////////// DELETE ROUTES //////////////////////////////////////////////////////////////////////////////
 /////////////////////Put Route: deleteJob in DB///////////////////////////
 app.delete('/deleteJob', function(req, res){

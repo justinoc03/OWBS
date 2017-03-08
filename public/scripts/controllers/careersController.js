@@ -1,12 +1,29 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal', function($scope, dbRoutesService, $timeout, $uibModal){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location', function($scope, dbRoutesService, $timeout, $uibModal, $location){
   console.log('In careersController');
-
-  //global variables
-  $scope.jobsArray = [];
 
   //init function that is run at the bottom of this careersController
   $scope.init = function(){
+    //global variables
+    $scope.jobsArray = [];
+    //functions to run on load
     $scope.getJobs();
+  };
+
+  ////////////////////Function: adminLogin ///////////////////////
+  $scope.adminLogin = function(){
+    var modalInstance = $uibModal.open({
+      templateUrl: './views/modalViews/adminLoginModal.html',
+      controller: 'adminLoginControllerModal'
+    });
+
+    modalInstance.result.then(function(res){
+      //success
+      console.log('logged in properly');
+      $location.path('/adminEditCareers');
+    }, function(err){
+      //success
+      console.log('error loggin in');
+    });
   };
 
   ////////////////////Function: startAddNewJob ///////////////////////
