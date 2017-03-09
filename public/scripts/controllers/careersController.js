@@ -19,7 +19,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     modalInstance.result.then(function(res){
       //success
       console.log('logged in properly');
-      $location.path('/adminEditCareers');
     }, function(err){
       //success
       console.log('error loggin in');
