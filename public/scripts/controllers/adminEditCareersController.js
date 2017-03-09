@@ -1,5 +1,19 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location', function($scope, dbRoutesService, $timeout, $uibModal, $location){
-  console.log('In careersController');
+myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal', '$location', function($scope, dbRoutesService, $timeout, $uibModal, $location){
+  console.log('In adminEditCareersController');
+  $scope.init = function(){
+    $scope.verifyUser();
+  };
+
+  $scope.verifyUser = function(){
+    console.log("hit verify employee");
+    if (sessionStorage.user === undefined){
+      alert("You must have a valid login");
+      sessionStorage.clear();
+      $location.path('/home');
+    } else{
+      console.log('verified');
+    }
+  };
 
   //init function that is run at the bottom of this careersController
   $scope.init = function(){
@@ -122,7 +136,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
   //initialize any functions on load
   $scope.init();
-
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css("position","fixed");
 }]);

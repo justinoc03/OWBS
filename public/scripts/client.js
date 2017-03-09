@@ -1,7 +1,7 @@
 console.log("ClientJS is sourced");
 
 //source in angular
-var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router']);
+var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize']);
 
 ///////////////////////////Angular Routing///////////////////////////////////////
 // config method doesnt take a name, we are just configuring myApp,
@@ -38,6 +38,11 @@ myApp.config(function($stateProvider, $urlRouterProvider){
       url:"/careers",
       templateUrl: "/views/partials/careers.html",
       controller: "careersController"
+    })
+    .state('adminEditCareers',{
+      url:"/adminEditCareers",
+      templateUrl: "/views/partials/adminEditCareers.html",
+      controller: "adminEditCareersController"
     })
     .state('redirectNotice',{
       url:'/redirectNotice',
