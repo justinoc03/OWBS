@@ -17,7 +17,7 @@
     <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
       <h4>Job Title: {{job.jobposting_name}}</h4>
       <h5 > Description: </h5>
-      <p>{{job.jobposting_description}}</p>
+      <div ng-bind-html="job.jobposting_description"></div>
       <!-- br and hr just for easy reading but should delete -->
       <br><hr>
 
