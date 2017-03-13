@@ -27,25 +27,50 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   };
 
 
-  ////////////////////Function: submitApplication ///////////////////////
-  $scope.submitApplication = function(job){
-    console.log(job.jobposting_id);
+  // ////////////////////Function: submitApplication ///////////////////////
+  // $scope.submitApplication = function(job){
+  //   console.log(job.jobposting_id);
+  //
+  //     //dependency $q is used for promises when working with Async data from a database
+  //     var defer = $q.defer();
+  //
+  //     $http({
+  //       method: 'POST',
+  //       url: '/testEmail',
+  //       // data: job
+  //     }).then(function success(responseObject){
+  //         defer.resolve(responseObject);
+  //       }, function error(errorObject, status){
+  //         console.log('there was an error modifying info in the DB', errorObject);
+  //         defer.reject(errorObject);
+  //       });
+  //       return defer.promise;
+  //   };
 
-      //dependency $q is used for promises when working with Async data from a database
-      var defer = $q.defer();
+    ////////////////////Function: addNewJob in DB///////////////////////////////////
+    $scope.submitJobApplication = function(job){
 
-      $http({
-        method: 'POST',
-        url: '/testEmail',
-        // data: job
-      }).then(function success(responseObject){
-          defer.resolve(responseObject);
-        }, function error(errorObject, status){
-          console.log('there was an error modifying info in the DB', errorObject);
-          defer.reject(errorObject);
-        });
-        return defer.promise;
-    };
+      console.log('job', job);
+
+      //assemble object with new job details
+      var emailInfoToOBWBS = {
+        applicantName: job.applicantName,
+        applicantEmail: job.applicantEmail
+      };
+
+      console.log('emailInfo', emailInfoToOBWBS);
+
+        dbRoutesService.emailJobApplication(emailInfoToOBWBS)
+        .then(function (responseObject){
+          //success
+          console.log('applicantEmail responseObject:', responseObject);
+
+       }, function(errorObject){
+         //err
+         console.log('applicantEmail errorObject:', errorObject);
+       });
+
+   };//end addNewJob
 
   /////////////////////////////////////////////Database calls to dbRoutesService//////////////////////////////////////////////
   ////////////////////Function GET Route: getJobs from DB ///////////////////////
