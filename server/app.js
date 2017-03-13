@@ -198,10 +198,10 @@ app.delete('/deleteJob', function(req, res){
 app.post('/testEmail', function(req, res){
   console.log('in newJobPosting route req.body', req.body);
 
-  var from_email = new helper.Email("test@example.com");
-  var to_email = new helper.Email("test@example.com");
-  var subject = "Sending with SendGrid is Fun";
-  var content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
+  var from_email = new helper.Email("oconnor.justin.r@gmail.com");
+  var to_email = new helper.Email("justin.oc03@gmail.com");
+  var subject = "Does this really work";
+  var content = new helper.Content("text/plain", "From my own email? I don't really understand why it works...");
   var mail = new helper.Mail(from_email, subject, to_email, content);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
