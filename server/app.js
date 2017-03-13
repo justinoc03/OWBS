@@ -9,6 +9,12 @@ var port = process.env.PORT || 9000;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
 
+
+// using SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
+var helper = require('sendgrid').mail;
+
+
 if(process.env.DATABASE_URL !== undefined) {
     console.log('env connection string');
     connectionString = process.env.DATABASE_URL;
@@ -16,6 +22,8 @@ if(process.env.DATABASE_URL !== undefined) {
 } else {
     connectionString = 'postgres://localhost:5432/OWBS';
 }
+
+
 
 // use public,bodyParserJson,urlencodedParser
 app.use(express.static('public'));
@@ -185,6 +193,52 @@ app.delete('/deleteJob', function(req, res){
   }); //end pg.connect
 }); //end getJobPostings
 //.................End Put Route: deleteJob in DB.......................//
+
+/////////////////////POST Route: newJobPosting in DB///////////////////////////
+app.post('/testEmail', function(req, res){
+  console.log('in newJobPosting route req.body', req.body);
+
+  var from_email = new helper.Email("test@example.com");
+  var to_email = new helper.Email("test@example.com");
+  var subject = "Sending with SendGrid is Fun";
+  var content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
+  var mail = new helper.Mail(from_email, subject, to_email, content);
+
+  var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+  var request = sg.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: mail.toJSON()
+  });
+
+  sg.API(request, function(error, response) {
+    console.log(response.statusCode);
+    console.log(response.body);
+    console.log(response.headers);
+  });
+
+}); //end getJobPostings
+//.................End Put Route: modifyJobStatus in DB.......................//
+
+// from_email = new helper.Email("test@example.com");
+// to_email = new helper.Email("test@example.com");
+// subject = "Sending with SendGrid is Fun";
+// content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
+// mail = new helper.Mail(from_email, subject, to_email, content);
+//
+// var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+// var request = sg.emptyRequest({
+//   method: 'POST',
+//   path: '/v3/mail/send',
+//   body: mail.toJSON()
+// });
+//
+// sg.API(request, function(error, response) {
+//   console.log(response.statusCode);
+//   console.log(response.body);
+//   console.log(response.headers);
+// });
+
 
 
 //////////////////////////////generic app.get///////////////////////////////////

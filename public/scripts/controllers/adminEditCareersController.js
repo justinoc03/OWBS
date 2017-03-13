@@ -71,6 +71,8 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
  ////////////////////Function: deleteJobPosting in DB///////////////////////
  $scope.deleteJobPosting = function(job){
 
+   console.log('job', job);
+
    var test = confirm(job.jobposting_name + " job posting will be delete forever, would you like to proceed?");
       if (test === false){
       } else {
