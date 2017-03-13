@@ -1,4 +1,4 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location', function($scope, dbRoutesService, $timeout, $uibModal, $location){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q){
   console.log('In careersController');
 
   //init function that is run at the bottom of this careersController
@@ -8,6 +8,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     //functions to run on load
     $scope.getJobs();
   };
+
 
   ////////////////////Function: adminLogin ///////////////////////
   $scope.adminLogin = function(){
@@ -25,21 +26,26 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     });
   };
 
-  ////////////////////Function: startAddNewJob ///////////////////////
-  $scope.startAddNewJob = function(){
-    var modalInstance = $uibModal.open({
-      templateUrl: './views/modalViews/createJobPostModal.html',
-      controller: 'createJobPostControllerModal'
-    });
 
-    modalInstance.result.then(function(res){
-      //success
-      $scope.getJobs();
-    }, function(err){
-      //success
-      $scope.getJobs();
-    });
-  };
+  ////////////////////Function: submitApplication ///////////////////////
+  $scope.submitApplication = function(job){
+    console.log(job.jobposting_id);
+
+      //dependency $q is used for promises when working with Async data from a database
+      var defer = $q.defer();
+
+      $http({
+        method: 'POST',
+        url: '/testEmail',
+        // data: job
+      }).then(function success(responseObject){
+          defer.resolve(responseObject);
+        }, function error(errorObject, status){
+          console.log('there was an error modifying info in the DB', errorObject);
+          defer.reject(errorObject);
+        });
+        return defer.promise;
+    };
 
   /////////////////////////////////////////////Database calls to dbRoutesService//////////////////////////////////////////////
   ////////////////////Function GET Route: getJobs from DB ///////////////////////

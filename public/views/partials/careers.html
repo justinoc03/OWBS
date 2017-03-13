@@ -18,6 +18,10 @@
       <h4>Job Title: {{job.jobposting_name}}</h4>
       <h5 > Description: </h5>
       <div ng-bind-html="job.jobposting_description"></div>
+      <input type="text" placeholder="Name" ng-model="contactName" >
+      <input type="text" placeholder="Email" ng-model="contactEmailAddress" >
+      <input type="text" placeholder="Comments or Questions" ng-model="commentsQuestions" >
+      <button type="submit" name="button" ng-click="submitApplication(job)">SUBMIT</button>
       <!-- br and hr just for easy reading but should delete -->
       <br><hr>
 

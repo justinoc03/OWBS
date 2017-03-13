@@ -19,7 +19,7 @@ myApp.config(function($stateProvider, $urlRouterProvider){
       templateUrl: "/views/partials/services.html",
       controller: "servicesController"
     })
-    .state('media',{
+    .state('media',{  
       url:'/media',
       templateUrl: "/views/partials/media.html",
       controller: "mediaController"
