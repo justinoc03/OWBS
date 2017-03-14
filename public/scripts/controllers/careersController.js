@@ -47,28 +47,54 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   //       return defer.promise;
   //   };
 
-    ////////////////////Function: addNewJob in DB///////////////////////////////////
-    $scope.submitJobApplication = function(job){
+  $scope.testUpload = function(filename){
+    // $scope.fileInputs = [1,2,3];
+    // var file = $scope[filename];
+    // console.log('file is ' + JSON.stringify(file));
+    // console.dir(file);
 
+
+    // $scope.fileInputs = [1,2,3];
+    // var file = $scope[myFile];
+    // console.log('file is ' + JSON.stringify(file));
+    // console.dir(file);
+
+      // var file = $scope[myFile];
+      // var emailInfoToOWBS = {
+      //   applicantName: job.applicantName,
+      //   applicantEmail: job.applicantEmail,
+      //   file: job.myFile
+      // };
+      // console.dir(file);
+
+  };
+
+    ////////////////////Function: addNewJob in DB///////////////////////////////////
+    $scope.submitJobApplication = function(job, fileToUpload){
+
+      $scope.fileInputs = [1,2,3];
+      var file = $scope[fileToUpload];
+      console.dir(file);
       console.log('job', job);
 
       //assemble object with new job details
-      var emailInfoToOBWBS = {
+      var emailInfoToOWBS = {
         applicantName: job.applicantName,
-        applicantEmail: job.applicantEmail
+        applicantEmail: job.applicantEmail,
+        file: file,
       };
 
-      console.log('emailInfo', emailInfoToOBWBS);
+      console.log('emailInfo', emailInfoToOWBS);
 
-        dbRoutesService.emailJobApplication(emailInfoToOBWBS)
-        .then(function (responseObject){
-          //success
-          console.log('applicantEmail responseObject:', responseObject);
-
-       }, function(errorObject){
-         //err
-         console.log('applicantEmail errorObject:', errorObject);
-       });
+      //   dbRoutesService.emailJobApplication(emailInfoToOWBS)
+      //   .then(function (responseObject){
+      //     //success
+      //     console.log('applicantEmail responseObject:', responseObject);
+       //
+      //  }, function(errorObject){
+      //    //err
+      //    console.log('applicantEmail errorObject:', errorObject);
+      //  });
 
    };//end addNewJob
 

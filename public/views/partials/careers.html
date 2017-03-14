@@ -14,16 +14,16 @@
 
   <section>
     <!-- <article class="" ng-repeat="job in jobsArray"> -->
-    <article class="" ng-repeat="job in jobsArray track by $index" ng-show="job.jobposting_open == true" >
+    <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
       <h4>Job Title: {{job.jobposting_name}}</h4>
       <h5 > Description: </h5>
       <div ng-bind-html="job.jobposting_description"></div>
       <input type="text" placeholder="Name" ng-model="job.applicantName" >
       <input type="text" placeholder="Email" ng-model="job.applicantEmail" >
       <input type="text" placeholder="Comments or Questions" ng-model="commentsQuestions" >
-      <button type="submit" name="button" ng-click="submitJobApplication(job)">SUBMIT</button>
-      <!-- <button type="submit" name="button" ng-click="testClick(job)">SUBMIT</button> -->
-
+      <input id="filePicker" type="file" file-model="{{'myFile' + $index}}"/>
+      <button type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</button>
+ <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
       <!-- br and hr just for easy reading but should delete -->
       <br><hr>
 

@@ -100,15 +100,15 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
   };
 
   ////////////Function POST Route: sendgrid API for job applications sent via email//////////
-  dbRoutesService.emailJobApplication = function(emailInfoToOBWBS){
-    console.log('in dbRoutesService emailJobApplication:', emailInfoToOBWBS );
+  dbRoutesService.emailJobApplication = function(emailInfoToOWBS){
+    console.log('in dbRoutesService emailJobApplication:', emailInfoToOWBS );
     //dependency $q is used for promises when working with Async data from a database
     var defer = $q.defer();
 
     $http({
       method: 'POST',
       url: '/testEmail',
-      data: emailInfoToOBWBS
+      data: emailInfoToOWBS
     }).then(function success(responseObject){
         defer.resolve(responseObject);
       }, function error(errorObject, status){
