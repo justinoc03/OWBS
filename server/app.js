@@ -5,7 +5,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var bpJason = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded( { extended: false } );
-var port = process.env.PORT || 9000;
+var port = process.env.PORT || 9001;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
 
@@ -205,7 +205,16 @@ app.post('/testEmail', function(req, res){
   var to_email = new helper.Email("oconnor.justin.r@gmail.com");
   var subject = "Application from: " + applicantName;
   var content = new helper.Content("text/plain", "Hello! My name is " + applicantName + ". My application is attached to this email. Thank you!");
+
+  attachment = new helper.Attachment();
+  attachment.setContent("TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gQ3JhcyBwdW12");
+  attachment.setType("application/pdf");
+  attachment.setFilename("balance_001.pdf");
+  attachment.setDisposition("attachment");
+  // mail.addAttachment(attachment);
+
   var mail = new helper.Mail(from_email, subject, to_email, content);
+  mail.addAttachment(attachment);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
   var request = sg.emptyRequest({
