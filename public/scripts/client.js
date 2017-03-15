@@ -51,14 +51,15 @@ myApp.config(function($stateProvider, $urlRouterProvider){
     });
   });
 
-
 // JQuery to collapse mobile-style navbar menu button after clicking on link
 $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
         $(this).collapse('hide');
     }
-});
+}); //end of myApp
 
+
+//directive to allow the file chooser on the careers section to properly find the file inside ng-repeat
 myApp.directive('fileModel', ['$parse', function ($parse) {
   console.log('in fileModel directive');
   return {

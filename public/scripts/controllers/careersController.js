@@ -71,8 +71,8 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
     ////////////////////Function: addNewJob in DB///////////////////////////////////
     $scope.submitJobApplication = function(job, fileToUpload){
-
-      $scope.fileInputs = [1,2,3];
+      //fileModel directive allows theinput file chooser to work inside ng-repeat
+      // $scope.fileInputs = [1,2,3];
       var file = $scope[fileToUpload];
       console.dir(file);
       console.log('job', job);
