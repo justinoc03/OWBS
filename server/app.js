@@ -202,7 +202,6 @@ app.post('/testEmail', function(req, res){
   var applicantEmail = req.body.applicantEmail;
   var fileToSend = req.body.base64File;
 
-
   var from_email = new helper.Email(applicantEmail);
   var to_email = new helper.Email("oconnor.justin.r@gmail.com");
   var subject = "Application from: " + applicantName;
@@ -213,7 +212,6 @@ app.post('/testEmail', function(req, res){
   attachment.setType("application/pdf");
   attachment.setFilename("balance_001.pdf");
   attachment.setDisposition("attachment");
-  // mail.addAttachment(attachment);
 
   var mail = new helper.Mail(from_email, subject, to_email, content);
   mail.addAttachment(attachment);
