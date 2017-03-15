@@ -5,7 +5,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var bpJason = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded( { extended: false } );
-var port = process.env.PORT || 9001;
+var port = process.env.PORT || 9000;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
 
@@ -200,6 +200,8 @@ app.post('/testEmail', function(req, res){
 
   var applicantName = req.body.applicantName;
   var applicantEmail = req.body.applicantEmail;
+  var fileToSend = req.body.base64File;
+
 
   var from_email = new helper.Email(applicantEmail);
   var to_email = new helper.Email("oconnor.justin.r@gmail.com");
@@ -207,7 +209,7 @@ app.post('/testEmail', function(req, res){
   var content = new helper.Content("text/plain", "Hello! My name is " + applicantName + ". My application is attached to this email. Thank you!");
 
   attachment = new helper.Attachment();
-  attachment.setContent("TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gQ3JhcyBwdW12");
+  attachment.setContent('JVBERi0xLjMKJcTl8uXrp/Og0MTGCjQgMCBvYmoKPDwgL0x…M4MGE5MjVjMTUyMGVjNmQzNTZhNDdkMDUzNj4gXSA+PgpzdGFydHhyZWYKNjI4MwolJUVPRgo=');
   attachment.setType("application/pdf");
   attachment.setFilename("balance_001.pdf");
   attachment.setDisposition("attachment");

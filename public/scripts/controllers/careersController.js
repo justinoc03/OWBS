@@ -74,15 +74,31 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //fileModel directive allows theinput file chooser to work inside ng-repeat
       // $scope.fileInputs = [1,2,3];
       var file = $scope[fileToUpload];
-      console.dir(file);
-      console.log('job', job);
+      // console.dir(file);
+      // console.log('job', job);
 
-      //assemble object with new job details
-      var emailInfoToOWBS = {
-        applicantName: job.applicantName,
-        applicantEmail: job.applicantEmail,
-        file: file,
-      };
+      var base64File = '';
+
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+        //  console.log('base64:', reader.result);
+         base64File = reader.result;
+         console.log(base64File);
+
+        reader.onerror = function (error) {
+          console.log('Error: ', error);
+       };
+
+       console.log(base64File);
+
+       //assemble object with new job details
+       var emailInfoToOWBS = {
+         applicantName: job.applicantName,
+         applicantEmail: job.applicantEmail,
+         base64File: base64File,
+       };
+
 
       console.log('emailInfo', emailInfoToOWBS);
 
@@ -95,6 +111,8 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
          //err
          console.log('applicantEmail errorObject:', errorObject);
        });
+
+      };
 
    };//end addNewJob
 
