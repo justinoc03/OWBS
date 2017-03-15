@@ -27,49 +27,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   };
 
 
-  // ////////////////////Function: submitApplication ///////////////////////
-  // $scope.submitApplication = function(job){
-  //   console.log(job.jobposting_id);
-  //
-  //     //dependency $q is used for promises when working with Async data from a database
-  //     var defer = $q.defer();
-  //
-  //     $http({
-  //       method: 'POST',
-  //       url: '/testEmail',
-  //       // data: job
-  //     }).then(function success(responseObject){
-  //         defer.resolve(responseObject);
-  //       }, function error(errorObject, status){
-  //         console.log('there was an error modifying info in the DB', errorObject);
-  //         defer.reject(errorObject);
-  //       });
-  //       return defer.promise;
-  //   };
-
-  $scope.testUpload = function(filename){
-    // $scope.fileInputs = [1,2,3];
-    // var file = $scope[filename];
-    // console.log('file is ' + JSON.stringify(file));
-    // console.dir(file);
-
-
-    // $scope.fileInputs = [1,2,3];
-    // var file = $scope[myFile];
-    // console.log('file is ' + JSON.stringify(file));
-    // console.dir(file);
-
-      // var file = $scope[myFile];
-      // var emailInfoToOWBS = {
-      //   applicantName: job.applicantName,
-      //   applicantEmail: job.applicantEmail,
-      //   file: job.myFile
-      // };
-      // console.dir(file);
-
-  };
-
-    ////////////////////Function: addNewJob in DB///////////////////////////////////
+    ////////////////////Function: submitJobApplication in DB///////////////////////////////////
     $scope.submitJobApplication = function(job, fileToUpload){
       //fileModel directive allows theinput file chooser to work inside ng-repeat
       // $scope.fileInputs = [1,2,3];
