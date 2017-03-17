@@ -32,31 +32,32 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //fileModel directive allows theinput file chooser to work inside ng-repeat
       // $scope.fileInputs = [1,2,3];
       var file = $scope[fileToUpload];
-      // console.dir(file);
-      // console.log('job', job);
+      console.dir(file);
+      console.log(job);
 
       var base64File = '';
 
         var reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function () {
-        //  console.log('base64:', reader.result);
-         base64File = reader.result;
-         console.log(base64File);
+        base64File = reader.result.split(',')[1];
+        //  console.log(base64File);
 
         reader.onerror = function (error) {
           console.log('Error: ', error);
        };
 
-       console.log(base64File);
+      //  console.log(base64File);
 
        //assemble object with new job details
        var emailInfoToOWBS = {
          applicantName: job.applicantName,
          applicantEmail: job.applicantEmail,
+         jobPostingTitle: job.jobposting_name,
+         fileName: file.name,
+         fileType: file.type,
          base64File: base64File,
        };
-
 
       console.log('emailInfo', emailInfoToOWBS);
 
@@ -94,27 +95,27 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       if (test === false){
       } else {
 
-     console.log('job', job);
-     //assemble object to send to DB put route
-     jobToDelete = {
-       jobPostingID: job.jobposting_id,
-     };
+        console.log('job', job);
+        //assemble object to send to DB put route
+        jobToDelete = {
+          jobPostingID: job.jobposting_id,
+        };
 
-     console.log('job', jobToDelete);
+         console.log('job', jobToDelete);
 
-     //route status and promise to get the information back properly.
-     dbRoutesService.deleteJob(jobToDelete)
-     .then(function (responseObject){
-       //success responseObject
-       //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
-       $timeout(function(){
-        $scope.getJobs();
-      }, 250);
+        //route status and promise to get the information back properly.
+        dbRoutesService.deleteJob(jobToDelete)
+        .then(function (responseObject){
+          //success responseObject
+          //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
+          $timeout(function(){
+          $scope.getJobs();
+        }, 250);
 
-      console.log('new jobsArray:', $scope.jobsArray);
-     }, function(errorObject){
-       //err
-     });
+        console.log('new jobsArray:', $scope.jobsArray);
+        }, function(errorObject){
+          //err
+        });
   }//end of else statement
  };//end modifyJobPosting
 
