@@ -18,8 +18,8 @@
       <h4>Job Title: {{job.jobposting_name}}</h4>
       <h5 > Description: </h5>
       <div ng-bind-html="job.jobposting_description"></div>
-      <input type="text" placeholder="Name" ng-model="job.applicantName" >
-      <input type="text" placeholder="Email" ng-model="job.applicantEmail" >
+      <input type="text" placeholder="Name" method="POST" autocomplete="on" ng-model="job.applicantName" >
+      <input type="text" placeholder="Email" method="POST" autocomplete="on" ng-model="job.applicantEmail" >
       <input type="text" placeholder="Comments or Questions" ng-model="commentsQuestions" >
       <input id="filePicker" type="file" file-model="{{'myFile' + $index}}"/>
       <button type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</button>
