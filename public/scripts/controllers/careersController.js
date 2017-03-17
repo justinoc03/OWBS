@@ -68,7 +68,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
         .then(function (responseObject){
           //success
           console.log('applicantEmail responseObject:', responseObject);
-
+       
        }, function(errorObject){
          //err
          console.log('applicantEmail errorObject:', errorObject);
