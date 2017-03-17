@@ -3,8 +3,8 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var bpJason = bodyParser.json();
-var urlencodedParser = bodyParser.urlencoded( { extended: false } );
+var bpJason = bodyParser.json({limit: '50mb'});
+var urlencodedParser = bodyParser.urlencoded({limit: '50mb', extended: true} );
 var port = process.env.PORT || 9000;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
@@ -23,12 +23,10 @@ if(process.env.DATABASE_URL !== undefined) {
     connectionString = 'postgres://localhost:5432/OWBS';
 }
 
-
-
 // use public,bodyParserJson,urlencodedParser
 app.use(express.static('public'));
-app.use(urlencodedParser);
 app.use(bpJason);
+app.use(urlencodedParser);
 
 // spin up server
 app.listen(port, function(){
@@ -196,13 +194,28 @@ app.delete('/deleteJob', function(req, res){
 
 /////////////////////POST Route: newJobPosting in DB///////////////////////////
 app.post('/testEmail', function(req, res){
-  console.log('in newJobPosting route req.body', req.body);
+  console.log('in testEmail route req.body', req.body);
 
-  var from_email = new helper.Email("oconnor.justin.r@gmail.com");
-  var to_email = new helper.Email("justin.oc03@gmail.com");
-  var subject = "Does this really work";
-  var content = new helper.Content("text/plain", "From my own email? I don't really understand why it works...");
+  var applicantName = req.body.applicantName;
+  var applicantEmail = req.body.applicantEmail;
+  var jobPostingTitle = req.body.jobPostingTitle;
+  var fileName = req.body.fileName;
+  var fileType = req.body.fileType;
+  var base64File = req.body.base64File;
+
+  var from_email = new helper.Email(applicantEmail);
+  var to_email = new helper.Email("oconnor.justin.r@gmail.com");
+  var subject = "Application from: " + applicantName;
+  var content = new helper.Content("text/plain", "Hello! My name is " + applicantName + ". My application is attached to this email. Thank you!");
+
+  attachment = new helper.Attachment();
+  attachment.setContent(base64File);
+  attachment.setType(fileType);
+  attachment.setFilename(fileName);
+  attachment.setDisposition("attachment");
+
   var mail = new helper.Mail(from_email, subject, to_email, content);
+  mail.addAttachment(attachment);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
   var request = sg.emptyRequest({
@@ -212,32 +225,14 @@ app.post('/testEmail', function(req, res){
   });
 
   sg.API(request, function(error, response) {
-    console.log(response.statusCode);
-    console.log(response.body);
-    console.log(response.headers);
+    console.log('response statusCode', response.statusCode);
+    console.log('response body', response.body);
+    console.log('response headers', response.headers);
   });
-
+  // done();
+  // return res.json(responseObject);
 }); //end getJobPostings
 //.................End Put Route: modifyJobStatus in DB.......................//
-
-// from_email = new helper.Email("test@example.com");
-// to_email = new helper.Email("test@example.com");
-// subject = "Sending with SendGrid is Fun";
-// content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
-// mail = new helper.Mail(from_email, subject, to_email, content);
-//
-// var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-// var request = sg.emptyRequest({
-//   method: 'POST',
-//   path: '/v3/mail/send',
-//   body: mail.toJSON()
-// });
-//
-// sg.API(request, function(error, response) {
-//   console.log(response.statusCode);
-//   console.log(response.body);
-//   console.log(response.headers);
-// });
 
 
 

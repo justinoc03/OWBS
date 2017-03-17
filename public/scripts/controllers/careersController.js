@@ -27,25 +27,53 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   };
 
 
-  ////////////////////Function: submitApplication ///////////////////////
-  $scope.submitApplication = function(job){
-    console.log(job.jobposting_id);
+    ////////////////////Function: submitJobApplication in DB///////////////////////////////////
+    $scope.submitJobApplication = function(job, fileToUpload){
+      //fileModel directive allows theinput file chooser to work inside ng-repeat
+      // $scope.fileInputs = [1,2,3];
+      var file = $scope[fileToUpload];
+      console.dir(file);
+      console.log(job);
 
-      //dependency $q is used for promises when working with Async data from a database
-      var defer = $q.defer();
+      var base64File = '';
 
-      $http({
-        method: 'POST',
-        url: '/testEmail',
-        // data: job
-      }).then(function success(responseObject){
-          defer.resolve(responseObject);
-        }, function error(errorObject, status){
-          console.log('there was an error modifying info in the DB', errorObject);
-          defer.reject(errorObject);
-        });
-        return defer.promise;
-    };
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+        base64File = reader.result.split(',')[1];
+        //  console.log(base64File);
+
+        reader.onerror = function (error) {
+          console.log('Error: ', error);
+       };
+
+      //  console.log(base64File);
+
+       //assemble object with new job details
+       var emailInfoToOWBS = {
+         applicantName: job.applicantName,
+         applicantEmail: job.applicantEmail,
+         jobPostingTitle: job.jobposting_name,
+         fileName: file.name,
+         fileType: file.type,
+         base64File: base64File,
+       };
+
+      console.log('emailInfo', emailInfoToOWBS);
+
+        dbRoutesService.emailJobApplication(emailInfoToOWBS)
+        .then(function (responseObject){
+          //success
+          console.log('applicantEmail responseObject:', responseObject);
+
+       }, function(errorObject){
+         //err
+         console.log('applicantEmail errorObject:', errorObject);
+       });
+
+      };
+
+   };//end addNewJob
 
   /////////////////////////////////////////////Database calls to dbRoutesService//////////////////////////////////////////////
   ////////////////////Function GET Route: getJobs from DB ///////////////////////
@@ -67,27 +95,27 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       if (test === false){
       } else {
 
-     console.log('job', job);
-     //assemble object to send to DB put route
-     jobToDelete = {
-       jobPostingID: job.jobposting_id,
-     };
+        console.log('job', job);
+        //assemble object to send to DB put route
+        jobToDelete = {
+          jobPostingID: job.jobposting_id,
+        };
 
-     console.log('job', jobToDelete);
+         console.log('job', jobToDelete);
 
-     //route status and promise to get the information back properly.
-     dbRoutesService.deleteJob(jobToDelete)
-     .then(function (responseObject){
-       //success responseObject
-       //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
-       $timeout(function(){
-        $scope.getJobs();
-      }, 250);
+        //route status and promise to get the information back properly.
+        dbRoutesService.deleteJob(jobToDelete)
+        .then(function (responseObject){
+          //success responseObject
+          //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
+          $timeout(function(){
+          $scope.getJobs();
+        }, 250);
 
-      console.log('new jobsArray:', $scope.jobsArray);
-     }, function(errorObject){
-       //err
-     });
+        console.log('new jobsArray:', $scope.jobsArray);
+        }, function(errorObject){
+          //err
+        });
   }//end of else statement
  };//end modifyJobPosting
 

@@ -19,7 +19,7 @@ myApp.config(function($stateProvider, $urlRouterProvider){
       templateUrl: "/views/partials/services.html",
       controller: "servicesController"
     })
-    .state('media',{  
+    .state('media',{
       url:'/media',
       templateUrl: "/views/partials/media.html",
       controller: "mediaController"
@@ -51,10 +51,32 @@ myApp.config(function($stateProvider, $urlRouterProvider){
     });
   });
 
-
 // JQuery to collapse mobile-style navbar menu button after clicking on link
 $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
         $(this).collapse('hide');
     }
-});
+}); //end of myApp
+
+
+//directive to allow the file chooser on the careers section to properly find the file inside ng-repeat
+myApp.directive('fileModel', ['$parse', function ($parse) {
+  console.log('in fileModel directive');
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      var model, modelSetter;
+
+      attrs.$observe('fileModel', function(fileModel){
+        model = $parse(attrs.fileModel);
+        modelSetter = model.assign;
+      });
+
+      element.bind('change', function(){
+        scope.$apply(function(){
+          modelSetter(scope.$parent, element[0].files[0]);
+        });
+      });
+    }
+  };
+}]);
