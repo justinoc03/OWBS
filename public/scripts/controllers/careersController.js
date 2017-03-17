@@ -51,8 +51,11 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
        //assemble object with new job details
        var emailInfoToOWBS = {
-         applicantName: job.applicantName,
+         applicantFirstName: job.applicantFirstName,
+         applicantLastName: job.applicantLastName,
          applicantEmail: job.applicantEmail,
+         applicantPhone: job.applicantPhone,
+         commentsQuestions: job.commentsQuestions,
          jobPostingTitle: job.jobposting_name,
          fileName: file.name,
          fileType: file.type,

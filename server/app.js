@@ -9,12 +9,6 @@ var port = process.env.PORT || 9000;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
 
-
-// using SendGrid's v3 Node.js Library
-// https://github.com/sendgrid/sendgrid-nodejs
-var helper = require('sendgrid').mail;
-
-
 if(process.env.DATABASE_URL !== undefined) {
     console.log('env connection string');
     connectionString = process.env.DATABASE_URL;
@@ -33,6 +27,9 @@ app.listen(port, function(){
   console.log('listening on port:', port);
 });//End: General Server Startup
 
+// using SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
+var helper = require('sendgrid').mail;
 
 ////////////////////////////////////////////////////////////////// GET ROUTES //////////////////////////////////////////////////////////////////////////////
 /////////////////////Get Route: getJobPostings in DB///////////////////////////
@@ -159,7 +156,6 @@ app.put('/checkCredentials', function(req, res){
   }); //end pg.connect
 }); //end getJobPostings
 //.................End Put Route: modifyJobStatus in DB.......................//
-
 
 
 ////////////////////////////////////////////////////////////////// DELETE ROUTES //////////////////////////////////////////////////////////////////////////////

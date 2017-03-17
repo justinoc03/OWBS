@@ -11,20 +11,27 @@
 
   <button type="button" name="button" ng-click="getJobs()">Refresh Posts</button>
   <br>
-
   <section>
     <!-- <article class="" ng-repeat="job in jobsArray"> -->
     <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
       <h4>Job Title: {{job.jobposting_name}}</h4>
       <h5 > Description: </h5>
       <div ng-bind-html="job.jobposting_description"></div>
-      <input type="text" placeholder="Name" method="POST" autocomplete="on" ng-model="job.applicantName" >
-      <input type="text" placeholder="Email" method="POST" autocomplete="on" ng-model="job.applicantEmail" >
-      <input type="text" placeholder="Comments or Questions" ng-model="commentsQuestions" >
-      <input id="filePicker" type="file" file-model="{{'myFile' + $index}}"/>
-      <button type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</button>
- <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
-      <!-- br and hr just for easy reading but should delete -->
+
+      <button type="button" name="button" ng-click="applyNowWrapper= !applyNowWrapper">Apply Now!</button>
+
+      <div class="applyNow" ng-show='applyNowWrapper'>
+        <br> <!-- br and hr just for easy reading but should delete -->
+        <input type="text" placeholder="First Name" method="POST" autocomplete="on" ng-model="job.applicantFirstName" >
+        <input type="text" placeholder="Last Name" method="POST" autocomplete="on" ng-model="job.applicantLastName" >
+        <input type="text" placeholder="Email" method="POST" autocomplete="on" ng-model="job.applicantEmail" >
+        <input type="text" placeholder="Phone Number" method="POST" autocomplete="on" ng-model="job.applicantPhone" >
+        <input type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions" >
+        <input id="filePicker" type="file" file-model="{{'myFile' + $index}}"/>
+        <button type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</button>
+   <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
+        <!-- br and hr just for easy reading but should delete -->
+        </div>
       <br><hr>
 
     </article>
