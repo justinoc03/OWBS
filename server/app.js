@@ -214,7 +214,7 @@ app.post('/testEmail', function(req, res){
 
   var from_email = new helper.Email(applicantEmail);
   var to_email = new helper.Email("oconnor.justin.r@gmail.com");
-  var subject =  jobPostingTitle + " Application Received from: " + applicantFirstName + " " + applicantLastName;
+  var subject =  jobPostingTitle + " application received from: " + applicantFirstName + " " + applicantLastName;
   var content = new helper.Content("text/html", "<h3><strong>Position:</strong></h3> " + jobPostingTitle + "<br><h3><strong>Applicant Information:</strong></h3> " + "Name: " + applicantFirstName + " " + applicantLastName + "<br> Applicant Email: " + applicantEmail + "<br> Applicant Phone: " + applicantPhone + "<br><br><h3><strong>Comments/Questions:</strong></h3> " + "<blockquote>" + commentsQuestions + '</blockquote>');
 
   attachment = new helper.Attachment();
