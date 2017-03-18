@@ -9,12 +9,6 @@ var port = process.env.PORT || 9000;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
 
-
-// using SendGrid's v3 Node.js Library
-// https://github.com/sendgrid/sendgrid-nodejs
-var helper = require('sendgrid').mail;
-
-
 if(process.env.DATABASE_URL !== undefined) {
     console.log('env connection string');
     connectionString = process.env.DATABASE_URL;
@@ -33,6 +27,9 @@ app.listen(port, function(){
   console.log('listening on port:', port);
 });//End: General Server Startup
 
+// using SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
+var helper = require('sendgrid').mail;
 
 ////////////////////////////////////////////////////////////////// GET ROUTES //////////////////////////////////////////////////////////////////////////////
 /////////////////////Get Route: getJobPostings in DB///////////////////////////
@@ -161,7 +158,6 @@ app.put('/checkCredentials', function(req, res){
 //.................End Put Route: modifyJobStatus in DB.......................//
 
 
-
 ////////////////////////////////////////////////////////////////// DELETE ROUTES //////////////////////////////////////////////////////////////////////////////
 /////////////////////Put Route: deleteJob in DB///////////////////////////
 app.delete('/deleteJob', function(req, res){
@@ -196,17 +192,30 @@ app.delete('/deleteJob', function(req, res){
 app.post('/testEmail', function(req, res){
   console.log('in testEmail route req.body', req.body);
 
-  var applicantName = req.body.applicantName;
+  var applicantFirstName = req.body.applicantFirstName;
+  var applicantLastName = req.body.applicantLastName;
   var applicantEmail = req.body.applicantEmail;
+  var applicantPhone = req.body.applicantPhone;
+  var commentsQuestions = req.body.commentsQuestions;
   var jobPostingTitle = req.body.jobPostingTitle;
   var fileName = req.body.fileName;
   var fileType = req.body.fileType;
   var base64File = req.body.base64File;
 
+  console.log(applicantFirstName);
+  console.log(applicantLastName);
+  console.log(applicantEmail);
+  console.log(applicantPhone);
+  console.log(commentsQuestions);
+  console.log(jobPostingTitle);
+  console.log(fileName);
+  console.log(fileType);
+  console.log(base64File);
+
   var from_email = new helper.Email(applicantEmail);
   var to_email = new helper.Email("oconnor.justin.r@gmail.com");
-  var subject = "Application from: " + applicantName;
-  var content = new helper.Content("text/plain", "Hello! My name is " + applicantName + ". My application is attached to this email. Thank you!");
+  var subject =  jobPostingTitle + " Application Received from: " + applicantFirstName + " " + applicantLastName;
+  var content = new helper.Content("text/html", "<h3><strong>Position:</strong></h3> " + jobPostingTitle + "<br><h3><strong>Applicant Information:</strong></h3> " + "Name: " + applicantFirstName + " " + applicantLastName + "<br> Applicant Email: " + applicantEmail + "<br> Applicant Phone: " + applicantPhone + "<br><br><h3><strong>Comments/Questions:</strong></h3> " + "<blockquote>" + commentsQuestions + '</blockquote>');
 
   attachment = new helper.Attachment();
   attachment.setContent(base64File);
