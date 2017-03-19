@@ -75,6 +75,11 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
           job.applicantPhone = "";
           job.commentsQuestions = "";
           job.jobposting_name = "";
+          angular.forEach(
+            angular.element("input[type='file']"),
+            function(inputElem) {
+            angular.element(inputElem).val(null);
+            });
 
        }, function(errorObject){
          //err
