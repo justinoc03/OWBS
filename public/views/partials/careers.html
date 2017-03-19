@@ -25,9 +25,9 @@
         <input type="text" placeholder="First Name" method="POST" autocomplete="on" ng-model="job.applicantFirstName" >
         <input type="text" placeholder="Last Name" method="POST" autocomplete="on" ng-model="job.applicantLastName" >
         <input type="text" placeholder="Email" method="POST" autocomplete="on" ng-model="job.applicantEmail" >
-        <input type="text" placeholder="Phone Number" method="POST" autocomplete="on" ng-model="job.applicantPhone" >
+        <input type="text" placeholder="Phone Number" mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" >
         <input type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions" >
-        <input id="filePicker" type="file" file-model="{{'myFile' + $index}}"/>
+        <input id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
         <button type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</button>
    <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
         <!-- br and hr just for easy reading but should delete -->

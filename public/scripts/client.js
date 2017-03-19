@@ -1,7 +1,7 @@
 console.log("ClientJS is sourced");
 
 //source in angular
-var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize']);
+var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask']);
 
 ///////////////////////////Angular Routing///////////////////////////////////////
 // config method doesnt take a name, we are just configuring myApp,
