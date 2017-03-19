@@ -69,6 +69,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
           //success
           console.log('applicantEmail responseObject:', responseObject);
 
+          // clear inputs after promise success response
           job.applicantFirstName = "";
           job.applicantLastName = "";
           job.applicantEmail = "";
