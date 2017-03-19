@@ -190,7 +190,7 @@ app.delete('/deleteJob', function(req, res){
 
 /////////////////////POST Route: newJobPosting in DB///////////////////////////
 app.post('/testEmail', function(req, res){
-  console.log('in testEmail route req.body', req.body);
+  // console.log('in testEmail route req.body', req.body);
 
   var applicantFirstName = req.body.applicantFirstName;
   var applicantLastName = req.body.applicantLastName;
@@ -237,9 +237,10 @@ app.post('/testEmail', function(req, res){
     console.log('response statusCode', response.statusCode);
     console.log('response body', response.body);
     console.log('response headers', response.headers);
+
+    return res.json(response);
   });
-  // done();
-  // return res.json(responseObject);
+
 }); //end getJobPostings
 //.................End Put Route: modifyJobStatus in DB.......................//
 
