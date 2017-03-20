@@ -9,6 +9,19 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     $scope.getJobs();
   };
 
+  ////////////////////Function: adminLogin ///////////////////////
+  $scope.validatePhoneNumber = function(evt) {
+    console.log('in validate');
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    var regex = /[0-9]/;
+    if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  };
+
 
   ////////////////////Function: adminLogin ///////////////////////
   $scope.adminLogin = function(){
