@@ -9,6 +9,19 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     $scope.getJobs();
   };
 
+  ////////////////////Function: adminLogin ///////////////////////
+  $scope.validatePhoneNumber = function(evt) {
+    console.log('in validate');
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    var regex = /[0-9]/;
+    if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  };
+
 
   ////////////////////Function: adminLogin ///////////////////////
   $scope.adminLogin = function(){
@@ -26,6 +39,68 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     });
   };
 
+  ////////////////////Function: fileReaderFunction ///////////////////////
+  $scope.fileReaderFunction = function(file, base64File){
+    console.log(' in fileReaderFunction');
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      base64File = reader.result.split(',')[1];
+
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+        file = undefined;
+        $scope[fileToUpload] = undefined;
+      };
+    };
+    console.log(file);
+    return file && base64File;
+  };
+
+  ////////////////////Function: emailInfo ///////////////////////
+  $scope.emailInfo = function(job, file, base64File){
+  //assemble object with new job details
+  var emailInfoToOWBS = {
+    applicantFirstName: job.applicantFirstName,
+    applicantLastName: job.applicantLastName,
+    applicantEmail: job.applicantEmail,
+    applicantPhone: job.applicantPhone,
+    commentsQuestions: job.commentsQuestions,
+    jobPostingTitle: job.jobposting_name,
+    fileName: file.name,
+    fileType: file.type,
+    base64File: base64File,
+  };
+
+ console.log('emailInfo', emailInfoToOWBS);
+
+   dbRoutesService.emailJobApplication(emailInfoToOWBS)
+     .then(function (responseObject){
+       //success
+       console.log('applicantEmail responseObject:', responseObject);
+
+       // clear inputs after promise success response
+       job.applicantFirstName = undefined;
+       job.applicantLastName = undefined;
+       job.applicantEmail = undefined;
+       job.applicantPhone = undefined;
+       job.commentsQuestions = undefined;
+       job.jobposting_name = undefined;
+       angular.forEach(
+         angular.element("input[type='file']"),
+         function(inputElem) {
+         angular.element(inputElem).val(null);
+         });
+       file = undefined;
+       job.filePicker = undefined;
+      //  $scope[fileToUpload] = undefined;
+
+    }, function(errorObject){
+      //err
+      console.log('applicantEmail errorObject:', errorObject);
+    });
+  };
 
     ////////////////////Function: submitJobApplication in DB///////////////////////////////////
     $scope.submitJobApplication = function(job, fileToUpload){
@@ -37,57 +112,22 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
       var base64File = '';
 
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-        base64File = reader.result.split(',')[1];
-        //  console.log(base64File);
-
-        reader.onerror = function (error) {
-          console.log('Error: ', error);
-       };
-
-      //  console.log(base64File);
-
-       //assemble object with new job details
-       var emailInfoToOWBS = {
-         applicantFirstName: job.applicantFirstName,
-         applicantLastName: job.applicantLastName,
-         applicantEmail: job.applicantEmail,
-         applicantPhone: job.applicantPhone,
-         commentsQuestions: job.commentsQuestions,
-         jobPostingTitle: job.jobposting_name,
-         fileName: file.name,
-         fileType: file.type,
-         base64File: base64File,
-       };
-
-      console.log('emailInfo', emailInfoToOWBS);
-
-        dbRoutesService.emailJobApplication(emailInfoToOWBS)
-        .then(function (responseObject){
-          //success
-          console.log('applicantEmail responseObject:', responseObject);
-
-          // clear inputs after promise success response
-          job.applicantFirstName = "";
-          job.applicantLastName = "";
-          job.applicantEmail = "";
-          job.applicantPhone = "";
-          job.commentsQuestions = "";
-          job.jobposting_name = "";
-          angular.forEach(
-            angular.element("input[type='file']"),
-            function(inputElem) {
-            angular.element(inputElem).val(null);
-            });
-
-       }, function(errorObject){
-         //err
-         console.log('applicantEmail errorObject:', errorObject);
-       });
-
-      };
+      if(job.applicantFirstName === undefined || job.applicantLastName === undefined || job.applicantEmail === undefined || job.applicantPhone === undefined) {
+        console.log('need to fill in data');
+      } else if (file === undefined) {
+          var test = confirm("You have not selected a file to send, would you like to proceed?");
+            if (test === false){
+            } else {
+              $scope.fileReaderFunction(file, base64File);
+              $scope.emailInfo(job, file, base64File);
+              $scope[fileToUpload] = undefined;
+            }
+          }
+      else {
+        $scope.fileReaderFunction(file, base64File);
+        $scope.emailInfo(job, file, base64File);
+        $scope[fileToUpload] = undefined;
+     }
 
    };//end addNewJob
 

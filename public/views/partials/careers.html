@@ -22,13 +22,15 @@
 
       <div class="applyNow" ng-show='applyNowWrapper'>
         <br> <!-- br and hr just for easy reading but should delete -->
-        <input type="text" placeholder="First Name" method="POST" autocomplete="on" ng-model="job.applicantFirstName" >
-        <input type="text" placeholder="Last Name" method="POST" autocomplete="on" ng-model="job.applicantLastName" >
-        <input type="text" placeholder="Email" method="POST" autocomplete="on" ng-model="job.applicantEmail" >
-        <input type="text" placeholder="Phone Number" mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" >
-        <input type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions" >
-        <input id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
-        <button type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</button>
+        <form class="">
+          <input type="text" placeholder="First Name" maxlength="20" ng-model="job.applicantFirstName" required>
+          <input type="text" placeholder="Last Name"  maxlength="40" ng-model="job.applicantLastName" required>
+          <input type="email" placeholder="Email" ng-model="job.applicantEmail" required>
+          <input type="text" placeholder="Phone Number" ng-keypress='validatePhoneNumber(event)' mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" required>
+          <input type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions" >
+          <input id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
+          <input type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</input>
+        </form>
    <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
         <!-- br and hr just for easy reading but should delete -->
         </div>
