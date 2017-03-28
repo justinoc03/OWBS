@@ -39,6 +39,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     });
   };
 
+  ////////////////////Function: fileReaderFunction ///////////////////////
   $scope.fileReaderFunction = function(file, base64File){
     console.log(' in fileReaderFunction');
     var reader = new FileReader();
@@ -57,6 +58,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     return file && base64File;
   };
 
+  ////////////////////Function: emailInfo ///////////////////////
   $scope.emailInfo = function(job, file, base64File){
   //assemble object with new job details
   var emailInfoToOWBS = {
