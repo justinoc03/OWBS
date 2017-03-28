@@ -44,6 +44,11 @@ myApp.config(function($stateProvider, $urlRouterProvider){
       templateUrl: "/views/partials/adminEditCareers.html",
       controller: "adminEditCareersController"
     })
+    .state('contactUs',{
+      url:"/contactUs",
+      templateUrl: "/views/partials/contactUs.html",
+      controller: "contactUsController"
+    })
     .state('redirectNotice',{
       url:'/redirectNotice',
       templateUrl: "/views/partials/redirectNotice.html",
