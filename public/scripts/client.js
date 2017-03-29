@@ -1,7 +1,7 @@
 
 var init = function(){
   //turn all logs on or off
-  logsOnOff('off');
+  logsOnOff('on');
   //test logs
   console.log("ClientJS is sourced");
 };
@@ -75,6 +75,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
 var logsOnOff = function(status) {
   if(status === 'off'){
     console.log = function() {};
+    console.dir = function() {};
   }
 };
 
