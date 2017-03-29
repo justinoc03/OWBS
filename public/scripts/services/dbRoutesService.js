@@ -43,15 +43,15 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
       return defer.promise;
   };
 
-  ////////////////////Function PUT Route: jobStatusChange in DB///////////////////////
-  dbRoutesService.jobStatusChange = function(jobToModify){
+  ////////////////////Function PUT Route: modifyJobPosting in DB///////////////////////
+  dbRoutesService.modifyJobPosting = function(jobToModify){
     console.log('in dbRoutesService modify:', jobToModify );
     //dependency $q is used for promises when working with Async data from a database
     var defer = $q.defer();
 
     $http({
       method: 'PUT',
-      url: '/modifyJobStatus',
+      url: '/modifyJobPosting',
       data: jobToModify
     }).then(function success(responseObject){
         defer.resolve(responseObject);
@@ -63,23 +63,23 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
   };
 
   ////////////////////Function PUT Route: jobStatusChange in DB///////////////////////
-  dbRoutesService.editJobPosting = function(jobToModify){
-    console.log('in dbRoutesService modify:', jobToModify );
-    //dependency $q is used for promises when working with Async data from a database
-    var defer = $q.defer();
-
-    $http({
-      method: 'PUT',
-      url: '/modifyJobStatus',
-      data: jobToModify
-    }).then(function success(responseObject){
-        defer.resolve(responseObject);
-      }, function error(errorObject, status){
-        console.log('there was an error modifying info in the DB', errorObject);
-        defer.reject(errorObject);
-      });
-      return defer.promise;
-  };
+  // dbRoutesService.editJobPosting = function(jobToModify){
+  //   console.log('in dbRoutesService modify:', jobToModify );
+  //   //dependency $q is used for promises when working with Async data from a database
+  //   var defer = $q.defer();
+  //
+  //   $http({
+  //     method: 'PUT',
+  //     url: '/modifyJobStatus',
+  //     data: jobToModify
+  //   }).then(function success(responseObject){
+  //       defer.resolve(responseObject);
+  //     }, function error(errorObject, status){
+  //       console.log('there was an error modifying info in the DB', errorObject);
+  //       defer.reject(errorObject);
+  //     });
+  //     return defer.promise;
+  // };
 
   ////////////////////Function DELETE Route: deleteJobPosting in DB///////////////////////
   dbRoutesService.deleteJob = function(jobToDelete){

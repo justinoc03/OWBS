@@ -120,7 +120,7 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
     }
 
     //route status and promise to get the information back properly.
-    dbRoutesService.jobStatusChange(jobStatusToChange)
+    dbRoutesService.modifyJobPosting(jobStatusToChange)
     .then(function (responseObject){
       //success responseObject
       //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt

@@ -1,9 +1,8 @@
 <h3>Edit Job Post</h3>
 
-<button type="button" name="button" ng-click="editJob()">Post Job</button>
+<button type="button" name="button" ng-click="editJobPosting(job)">Edit Job</button>
 <br><br>
-<input type="text" placeholder="New Job Title" ng-model="currentJobTitle" >
+<input type="text" placeholder="Current Job Title" ng-model="currentJobTitle" >
 <br><br>
-<!-- <textarea rows="15" cols="50" placeholder="New Job Description" ng-model="newJobDescription"></textarea> -->
-<trix-editor angular-trix placeholder="New Job Description" ng-model="currentJobDescription"></trix-editor>
+<trix-editor angular-trix placeholder="Current Job Description" ng-model="currentJobDescription"></trix-editor>
 <br>
