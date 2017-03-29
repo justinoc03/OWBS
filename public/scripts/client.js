@@ -1,7 +1,7 @@
 
 var init = function(){
   //turn all logs on or off
-  logsOnOff('on');
+  logsOnOff('off');
   //test logs
   console.log("ClientJS is sourced");
 };
