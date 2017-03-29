@@ -99,12 +99,12 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
        //err
      });
   }//end of else statement
- };//end modifyJobPosting
+};//end deleteJobPosting
 
-  ////////////////////Function: modifyJobPosting in DB///////////////////////////
-  $scope.modifyJobPosting = function(job){
+  ////////////////////Function: changePostStatus in DB///////////////////////////
+  $scope.changePostStatus = function(job){
     //assemble object to send to DB put route
-    jobToModify = {
+    jobStatusToChange = {
       jobPostingID: job.jobposting_id,
       jobPostingName: job.jobposting_name,
       jobPostingDescription: job.jobposting_description,
@@ -113,14 +113,14 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
     };
 
     //if the job posting status is true, change to false and vice versa
-    if(jobToModify.jobPostingOpen === true){
-      jobToModify.jobPostingOpen = false;
+    if(jobStatusToChange.jobPostingOpen === true){
+      jobStatusToChange.jobPostingOpen = false;
     } else {
-      jobToModify.jobPostingOpen = true;
+      jobStatusToChange.jobPostingOpen = true;
     }
 
     //route status and promise to get the information back properly.
-    dbRoutesService.modifyJobStatus(jobToModify)
+    dbRoutesService.modifyJobPosting(jobStatusToChange)
     .then(function (responseObject){
       //success responseObject
       //timeout is used to make sure the slider visual is completed before the jobsArray object is rebuilt
@@ -132,7 +132,29 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
     }, function(errorObject){
       //err
     });
-  };//end modifyJobPosting
+  };//end changePostStatus
+
+  ////////////////////Function: startAddNewJob ///////////////////////
+  $scope.editJobPost = function(job){
+    var modalInstance = $uibModal.open({
+      templateUrl: './views/modalViews/editJobPostModal.html',
+      controller: 'editJobPostControllerModal',
+      resolve: {
+        job: function () {
+          return job;
+        },
+      }
+    });
+
+    modalInstance.result.then(function(res){
+      //success
+      $scope.getJobs();
+    }, function(err){
+      //success
+      $scope.getJobs();
+    });
+  };
+
   //..................................End Database calls to dbRoutesService.......................................//
 
 

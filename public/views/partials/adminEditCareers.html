@@ -18,15 +18,21 @@
     <article class="" ng-repeat="job in jobsArray">
     <!-- <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" > -->
       <h4>Job Title: {{job.jobposting_name}}</h4>
-      <h5 > Description: </h5>
-      <div ng-bind-html="job.jobposting_description"></div>
-      <button type="button" name="button" ng-click="deleteJobPosting(job)">Delete Post</button>
-      <!-- switch -->
-      <h5>Turn Posting On/Off</h5>
-      <label class="switch" >
-        <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="modifyJobPosting(job)" >
-        <div class="slider round"></div>
-      </label>
+      <button type="button" name="button" ng-click="applyNowWrapper= !applyNowWrapper">Job Post Details</button>
+
+      <div class="applyNow" ng-show='applyNowWrapper'>
+
+        <h5 > Description: </h5>
+        <div ng-bind-html="job.jobposting_description"></div>
+        <button type="button" name="button" ng-click="deleteJobPosting(job)">Delete Post</button>
+        <button type="button" name="button" ng-click="editJobPost(job)">Edit Post</button>
+        <!-- switch -->
+        <h5>Turn Posting On/Off</h5>
+        <label class="switch" >
+          <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="changePostStatus(job)" >
+          <div class="slider round"></div>
+        </label>
+      </div>
       <!-- br and hr just for easy reading but should delete -->
       <br><hr>
 

@@ -90,9 +90,9 @@ app.post('/newJobPosting', function(req, res){
 //.................End Put Route: modifyJobStatus in DB.......................//
 
 ////////////////////////////////////////////////////////////////// PUT ROUTES //////////////////////////////////////////////////////////////////////////////
-/////////////////////Put Route: modifyJobStatus in DB///////////////////////////
-app.put('/modifyJobStatus', function(req, res){
-  console.log('in modifyJobStatus route req.body', req.body);
+/////////////////////Put Route: modifyJobPosting in DB///////////////////////////
+app.put('/modifyJobPosting', function(req, res){
+  console.log('in modifyJobPosting route req.body', req.body);
 
     var jobPostingID = req.body.jobPostingID;
     var jobPostingName = req.body.jobPostingName;
@@ -121,9 +121,9 @@ app.put('/modifyJobStatus', function(req, res){
     } //end else
   }); //end pg.connect
 }); //end getJobPostings
-//.................End Put Route: modifyJobStatus in DB.......................//
+//.................End Put Route: modifyJobPosting in DB.......................//
 
-/////////////////////Put Route: modifyJobStatus in DB///////////////////////////
+/////////////////////Put Route: checkCredentials in DB///////////////////////////
 app.put('/checkCredentials', function(req, res){
   console.log('in checkCredentials route req.body', req.body);
 
