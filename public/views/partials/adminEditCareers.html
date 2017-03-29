@@ -21,10 +21,11 @@
       <h5 > Description: </h5>
       <div ng-bind-html="job.jobposting_description"></div>
       <button type="button" name="button" ng-click="deleteJobPosting(job)">Delete Post</button>
+      <button type="button" name="button" ng-click="editJobPost(job)">Edit Post</button>
       <!-- switch -->
       <h5>Turn Posting On/Off</h5>
       <label class="switch" >
-        <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="modifyJobPosting(job)" >
+        <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="changePostStatus(job)" >
         <div class="slider round"></div>
       </label>
       <!-- br and hr just for easy reading but should delete -->
