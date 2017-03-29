@@ -58,7 +58,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     return file && base64File;
   };
 
-  ////////////////////Function: emailInfo ///////////////////////
+  //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
   //assemble object with new job details
   var emailInfoToOWBS = {

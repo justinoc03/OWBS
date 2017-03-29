@@ -5,5 +5,4 @@ myApp.controller("redirectNoticeController", ['$scope','$timeout', '$location', 
   $timeout(function(){
    $location.path('/home');
  }, 1000);
-
 }]);
