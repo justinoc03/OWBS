@@ -1,4 +1,12 @@
-console.log("ClientJS is sourced");
+
+var init = function(){
+  //turn all logs on or off
+  logsOnOff('off');
+  //test logs
+  console.log("ClientJS is sourced");
+};
+
+
 
 //source in angular
 var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask']);
@@ -63,6 +71,12 @@ $(document).on('click','.navbar-collapse.in',function(e) {
     }
 }); //end of myApp
 
+//Turns on or off all console.log
+var logsOnOff = function(status) {
+  if(status === 'off'){
+    console.log = function() {};
+  }
+};
 
 //directive to allow the file chooser on the careers section to properly find the file inside ng-repeat
 myApp.directive('fileModel', ['$parse', function ($parse) {
@@ -85,3 +99,5 @@ myApp.directive('fileModel', ['$parse', function ($parse) {
     }
   };
 }]);
+
+init();
