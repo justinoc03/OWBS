@@ -1,7 +1,7 @@
 
 var init = function(){
   //turn all logs on or off
-  logsOnOff('off');
+  logsOnOff('on');
   //test logs
   console.log("ClientJS is sourced");
 };
@@ -9,7 +9,7 @@ var init = function(){
 
 
 //source in angular
-var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask']);
+var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngToast']);
 
 ///////////////////////////Angular Routing///////////////////////////////////////
 // config method doesnt take a name, we are just configuring myApp,

@@ -26,7 +26,7 @@
     "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",
     "express": "^4.14.1",
-    "nodemailer": "^3.1.5",
+    "ng-toast": "^2.0.0",
     "pg": "^6.1.2",
     "sendgrid": "^4.8.0",
     "sql": "^0.74.0"
