@@ -19,6 +19,7 @@
   "homepage": "https://github.com/justinoc03/OWBS#readme",
   "dependencies": {
     "angular": "^1.6.2",
+    "angular-animate": "^1.6.2",
     "angular-sanitize": "^1.6.2",
     "angular-trix": "^1.0.2",
     "angular-ui-bootstrap": "^2.5.0",

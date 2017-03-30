@@ -322,6 +322,18 @@ body {
   #footerSection .social-icon {
     width: 30px; }
 
+.my-animation.ng-enter {
+  -webkit-animation: flipInY 1s;
+  -moz-animation: flipInY 1s;
+  animation: flipInY 1s;
+}
+
+.my-animation.ng-leave {
+  -webkit-animation: flipOutY 1s;
+  -moz-animation: flipOutY 1s;
+  animation: flipOutY 1s;
+}
+
     /*Strong is for the bolding options in the WYSIWYG editor*/
         strong {
           text-shadow: 0px 0px black;

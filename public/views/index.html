@@ -14,6 +14,7 @@
     <script src="/vendors/bootstrap.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/styles/generalStyling.css">
     <link rel="stylesheet" href="/vendors/ngToast.min.css">
+    <link rel="stylesheet" href="/vendors/ngToast-animations.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.css">
 
     <!-- Source client.js, Angular, and Angular Routes -->
@@ -36,14 +37,27 @@
     <script src="/scripts/controllers/modalControllers/adminLoginControllerModal.js"></script>
     <script src="/scripts/services/dbRoutesService.js" charset="utf-8"></script>
 
+    <script src="vendors/angular-animate.min.js" charset="utf-8"></script>
     <script src="vendors/angular-sanitize.min.js"></script>
     <script src="vendors/ngToast.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.js"></script>
     <script src="vendors/angular-trix.min.js"></script>
     <script src='vendors/ngMask.min.js'></script>
 
+  <style>
+    .my-animation.ng-enter {
+        -webkit-animation: flipInY 1s;
+        -moz-animation: flipInY 1s;
+        animation: flipInY 1s;
+    }
 
+    .my-animation.ng-leave {
+        -webkit-animation: flipOutY 1s;
+        -moz-animation: flipOutY 1s;
+        animation: flipOutY 1s;
+    }
 
+    </style>
 
     <title>One Way Building Services</title>
   </head>

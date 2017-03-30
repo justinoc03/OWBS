@@ -1,4 +1,4 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval){
   console.log('In careersController');
 
   //init function that is run at the bottom of this careersController
@@ -11,6 +11,17 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
   // create a simple toast:
   ngToast.create('a toast message...');
+
+  function toast() {
+      ngToast.create("Here I am a-flippin'");
+    }
+    $timeout(function() {
+      toast();
+    }, 0);
+    $interval(function() {
+      toast();
+    }, 2000);
+
 
   ////////////////////Function: adminLogin ///////////////////////
   $scope.validatePhoneNumber = function(evt) {

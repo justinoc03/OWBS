@@ -11,7 +11,9 @@
 
   <button type="button" name="button" ng-click="getJobs()">Refresh Posts</button>
   <br>
+
   <toast></toast>
+
   <section>
     <!-- <article class="" ng-repeat="job in jobsArray"> -->
     <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
@@ -39,5 +41,3 @@
 
     </article>
   </section>
-
-</section>
