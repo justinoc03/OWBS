@@ -12,15 +12,16 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   // create a simple toast:
   ngToast.create('a toast message...');
 
-  function toast() {
-      ngToast.create("Here I am a-flippin'");
-    }
-    $timeout(function() {
-      toast();
-    }, 0);
-    $interval(function() {
-      toast();
-    }, 2000);
+  $scope.toast = function(job) {
+      ngToast.create("Thank you for your application for the " + job.jobposting_name);
+    };
+
+    // $timeout(function() {
+    //   toast();
+    // }, 0);
+    // $interval(function() {
+    //   toast();
+    // }, 5000);
 
 
   ////////////////////Function: adminLogin ///////////////////////
@@ -61,6 +62,8 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
     reader.onload = function () {
       base64File = reader.result.split(',')[1];
+      // console.log(reader.result.split(',')[1]);
+      // console.log(base64File);
 
       reader.onerror = function (error) {
         console.log('Error: ', error);
@@ -69,25 +72,30 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       };
     };
     console.log(file);
+    console.log('base64File', base64File);
     return file && base64File;
   };
 
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
-  //assemble object with new job details
-  var emailInfoToOWBS = {
-    applicantFirstName: job.applicantFirstName,
-    applicantLastName: job.applicantLastName,
-    applicantEmail: job.applicantEmail,
-    applicantPhone: job.applicantPhone,
-    commentsQuestions: job.commentsQuestions,
-    jobPostingTitle: job.jobposting_name,
-    fileName: file.name,
-    fileType: file.type,
-    base64File: base64File,
-  };
+    if (job.commentsQuestions === undefined){
+      job.commentsQuestions = "";
+    }
 
- console.log('emailInfo', emailInfoToOWBS);
+    //assemble object with new job details
+    var emailInfoToOWBS = {
+      applicantFirstName: job.applicantFirstName,
+      applicantLastName: job.applicantLastName,
+      applicantEmail: job.applicantEmail,
+      applicantPhone: job.applicantPhone,
+      commentsQuestions: job.commentsQuestions,
+      jobPostingTitle: job.jobposting_name,
+      fileName: file.name,
+      fileType: file.type,
+      base64File: base64File,
+    };
+
+   console.log('emailInfo', emailInfoToOWBS);
 
    dbRoutesService.emailJobApplication(emailInfoToOWBS)
      .then(function (responseObject){
@@ -132,15 +140,20 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
           var test = confirm("You have not selected a file to send, would you like to proceed?");
             if (test === false){
             } else {
-              $scope.fileReaderFunction(file, base64File);
+              // $scope.fileReaderFunction(file, base64File);
+              file = {
+                name: "",
+                type: "",
+              };
               $scope.emailInfo(job, file, base64File);
               $scope[fileToUpload] = undefined;
             }
           }
       else {
         $scope.fileReaderFunction(file, base64File);
-        $scope.emailInfo(job, file, base64File);
+        // $scope.emailInfo(job, file, base64File);
         $scope[fileToUpload] = undefined;
+        $scope.toast(job);
      }
 
    };//end addNewJob
