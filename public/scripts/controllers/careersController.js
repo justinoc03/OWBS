@@ -70,9 +70,12 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
         file = undefined;
         $scope[fileToUpload] = undefined;
       };
+      console.log(file);
+      console.log('base64File', base64File);
+      return file && base64File;
     };
+    console.log(base64File);
     console.log(file);
-    console.log('base64File', base64File);
     return file && base64File;
   };
 
@@ -97,31 +100,31 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
    console.log('emailInfo', emailInfoToOWBS);
 
-   dbRoutesService.emailJobApplication(emailInfoToOWBS)
-     .then(function (responseObject){
-       //success
-       console.log('applicantEmail responseObject:', responseObject);
-
-       // clear inputs after promise success response
-       job.applicantFirstName = undefined;
-       job.applicantLastName = undefined;
-       job.applicantEmail = undefined;
-       job.applicantPhone = undefined;
-       job.commentsQuestions = undefined;
-       job.jobposting_name = undefined;
-       angular.forEach(
-         angular.element("input[type='file']"),
-         function(inputElem) {
-         angular.element(inputElem).val(null);
-         });
-       file = undefined;
-       job.filePicker = undefined;
-      //  $scope[fileToUpload] = undefined;
-
-    }, function(errorObject){
-      //err
-      console.log('applicantEmail errorObject:', errorObject);
-    });
+  //  dbRoutesService.emailJobApplication(emailInfoToOWBS)
+  //    .then(function (responseObject){
+  //      //success
+  //      console.log('applicantEmail responseObject:', responseObject);
+   //
+  //      // clear inputs after promise success response
+  //      job.applicantFirstName = undefined;
+  //      job.applicantLastName = undefined;
+  //      job.applicantEmail = undefined;
+  //      job.applicantPhone = undefined;
+  //      job.commentsQuestions = undefined;
+  //      job.jobposting_name = undefined;
+  //      angular.forEach(
+  //        angular.element("input[type='file']"),
+  //        function(inputElem) {
+  //        angular.element(inputElem).val(null);
+  //        });
+  //      file = undefined;
+  //      job.filePicker = undefined;
+  //     //  $scope[fileToUpload] = undefined;
+   //
+  //   }, function(errorObject){
+  //     //err
+  //     console.log('applicantEmail errorObject:', errorObject);
+  //   });
   };
 
     ////////////////////Function: submitJobApplication in DB///////////////////////////////////
@@ -132,7 +135,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       console.dir(file);
       console.log(job);
 
-      var base64File = '';
+      var base64File = 'TEST'; 
 
       if(job.applicantFirstName === undefined || job.applicantLastName === undefined || job.applicantEmail === undefined || job.applicantPhone === undefined) {
         console.log('need to fill in data');
@@ -151,7 +154,8 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
           }
       else {
         $scope.fileReaderFunction(file, base64File);
-        // $scope.emailInfo(job, file, base64File);
+        console.log(base64File);
+        $scope.emailInfo(job, file, base64File);
         $scope[fileToUpload] = undefined;
         $scope.toast(job);
      }
