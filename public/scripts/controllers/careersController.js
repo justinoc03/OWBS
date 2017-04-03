@@ -55,31 +55,31 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   };
 
   ////////////////////Function: fileReaderFunction ///////////////////////
-  // $scope.fileReaderFunction = function(file, base64File){
-  //   console.log(' in fileReaderFunction');
-  //
-  //   var reader = new FileReader();
-  //   reader.readAsDataURL(file);
-  //
-  //   reader.onload = function () {
-  //     console.log(base64File);
-  //     base64File = reader.result.split(',')[1];
-  //     // console.log(reader.result.split(',')[1]);
-  //     // console.log(base64File);
-  //
-  //     reader.onerror = function (error) {
-  //       console.log('Error: ', error);
-  //       file = undefined;
-  //       $scope[fileToUpload] = undefined;
-  //     };
-  //
-  //     console.log(file);
-  //     console.log('base64File', base64File);
-  //   };
-  //   console.log(base64File);
-  //   console.log(file);
-  //   return file && base64File;
-  // };
+  $scope.fileReaderFunction = function(file, base64File){
+    console.log(' in fileReaderFunction');
+
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      console.log(base64File);
+      base64File = reader.result.split(',')[1];
+      // console.log(reader.result.split(',')[1]);
+      // console.log(base64File);
+
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+        file = undefined;
+        $scope[fileToUpload] = undefined;
+      };
+
+      console.log(file);
+      console.log('base64File', base64File);
+    };
+    console.log(base64File);
+    console.log(file);
+    return file && base64File;
+  };
 
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
@@ -155,26 +155,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
             }
           }
       else {
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-
-        reader.onload = function () {
-          console.log(base64File);
-          base64File = reader.result.split(',')[1];
-          // console.log(reader.result.split(',')[1]);
-          // console.log(base64File);
-
-          reader.onerror = function (error) {
-            console.log('Error: ', error);
-            file = undefined;
-            $scope[fileToUpload] = undefined;
-          };
-
-          console.log(file);
-          console.log('base64File', base64File);
-        };
-
-        // $scope.fileReaderFunction(file, base64File);
+        $scope.fileReaderFunction(file, base64File);
         console.log(base64File);
         $scope.emailInfo(job, file, base64File);
         $scope[fileToUpload] = undefined;
