@@ -12,9 +12,9 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   // create a simple toast:
   ngToast.create('a toast message...');
 
-  $scope.toast = function(job) {
-      ngToast.create("Thank you for your application for the " + job.jobposting_name);
-    };
+  // $scope.toast = function(job) {
+  //     ngToast.create("Thank you for your application for the " + job.jobposting_name);
+  //   };
 
     // $timeout(function() {
     //   toast();
@@ -108,11 +108,11 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
        console.log('applicantEmail responseObject:', responseObject);
 
        // clear inputs after promise success response
-       job.applicantFirstName = undefined;
-       job.applicantLastName = undefined;
-       job.applicantEmail = undefined;
-       job.applicantPhone = undefined;
-       job.commentsQuestions = undefined;
+       job.applicantFirstName = null;
+       job.applicantLastName = null;
+       job.applicantEmail = null;
+       job.applicantPhone = null;
+       job.commentsQuestions = null;
        angular.forEach(
          angular.element("input[type='file']"),
          function(inputElem) {
@@ -121,6 +121,8 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
        file = undefined;
        job.filePicker = undefined;
       //  $scope[fileToUpload] = undefined;
+
+      ngToast.create("Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle);
 
     }, function(errorObject){
       //err
@@ -172,11 +174,11 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
           console.log(file);
           // console.log('base64File', base64File);
 
-        // $scope.fileReaderFunction(file, base64File);
-        $scope.emailInfo(job, file, base64File);
-        $scope[fileToUpload] = undefined;
-        $scope.toast(job);
-        };
+          $scope.fileReaderFunction(file, base64File);
+          $scope.emailInfo(job, file, base64File);
+          $scope[fileToUpload] = undefined;
+        }; //end onload
+
      }
 
    };//end addNewJob
