@@ -68,7 +68,9 @@ myApp.config(function($stateProvider, $urlRouterProvider){
   myApp.config(['ngToastProvider', function(ngToastProvider) {
     ngToastProvider.configure({
       animation: 'slide', // or 'fade'
-      dismissOnClick: true,
+      dismissOnClick: false,
+      dismissButton: true,
+      timeout: 30000,
     });
   }]);
 
