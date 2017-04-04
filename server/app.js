@@ -216,15 +216,19 @@ app.post('/testEmail', function(req, res){
   var to_email = new helper.Email("oconnor.justin.r@gmail.com");
   var subject =  jobPostingTitle + " application received from: " + applicantFirstName + " " + applicantLastName;
   var content = new helper.Content("text/html", "<h3><strong>Position:</strong></h3> " + jobPostingTitle + "<br><h3><strong>Applicant Information:</strong></h3> " + "Name: " + applicantFirstName + " " + applicantLastName + "<br> Applicant Email: " + applicantEmail + "<br> Applicant Phone: " + applicantPhone + "<br><br><h3><strong>Comments/Questions:</strong></h3> " + "<blockquote>" + commentsQuestions + '</blockquote>');
-
-  attachment = new helper.Attachment();
-  attachment.setContent(base64File);
-  attachment.setType(fileType);
-  attachment.setFilename(fileName);
-  attachment.setDisposition("attachment");
-
   var mail = new helper.Mail(from_email, subject, to_email, content);
-  mail.addAttachment(attachment);
+
+  if(base64File === undefined){
+    console.log('in if statement');
+  } else{
+    console.log('in else statement');
+    attachment = new helper.Attachment();
+    attachment.setContent(base64File);
+    attachment.setType(fileType);
+    attachment.setFilename(fileName);
+    attachment.setDisposition("attachment");
+    mail.addAttachment(attachment);
+  }
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
   var request = sg.emptyRequest({

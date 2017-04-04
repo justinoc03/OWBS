@@ -1,4 +1,4 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval){
   console.log('In careersController');
 
   //init function that is run at the bottom of this careersController
@@ -8,6 +8,21 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     //functions to run on load
     $scope.getJobs();
   };
+
+  // create a simple toast:
+  ngToast.create('a toast message...');
+
+  $scope.toast = function(job) {
+      ngToast.create("Thank you for your application for the " + job.jobposting_name);
+    };
+
+    // $timeout(function() {
+    //   toast();
+    // }, 0);
+    // $interval(function() {
+    //   toast();
+    // }, 5000);
+
 
   ////////////////////Function: adminLogin ///////////////////////
   $scope.validatePhoneNumber = function(evt) {
@@ -42,38 +57,50 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   ////////////////////Function: fileReaderFunction ///////////////////////
   $scope.fileReaderFunction = function(file, base64File){
     console.log(' in fileReaderFunction');
+
     var reader = new FileReader();
     reader.readAsDataURL(file);
 
     reader.onload = function () {
+      console.log(base64File);
       base64File = reader.result.split(',')[1];
+      // console.log(reader.result.split(',')[1]);
+      // console.log(base64File);
 
       reader.onerror = function (error) {
         console.log('Error: ', error);
         file = undefined;
         $scope[fileToUpload] = undefined;
       };
+
+      console.log(file);
+      console.log('base64File', base64File);
     };
+    console.log(base64File);
     console.log(file);
     return file && base64File;
   };
 
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
-  //assemble object with new job details
-  var emailInfoToOWBS = {
-    applicantFirstName: job.applicantFirstName,
-    applicantLastName: job.applicantLastName,
-    applicantEmail: job.applicantEmail,
-    applicantPhone: job.applicantPhone,
-    commentsQuestions: job.commentsQuestions,
-    jobPostingTitle: job.jobposting_name,
-    fileName: file.name,
-    fileType: file.type,
-    base64File: base64File,
-  };
+    if (job.commentsQuestions === undefined){
+      job.commentsQuestions = "";
+    }
 
- console.log('emailInfo', emailInfoToOWBS);
+    //assemble object with new job details
+    var emailInfoToOWBS = {
+      applicantFirstName: job.applicantFirstName,
+      applicantLastName: job.applicantLastName,
+      applicantEmail: job.applicantEmail,
+      applicantPhone: job.applicantPhone,
+      commentsQuestions: job.commentsQuestions,
+      jobPostingTitle: job.jobposting_name,
+      fileName: file.name,
+      fileType: file.type,
+      base64File: base64File,
+    };
+
+   console.log('emailInfo', emailInfoToOWBS);
 
    dbRoutesService.emailJobApplication(emailInfoToOWBS)
      .then(function (responseObject){
@@ -86,7 +113,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
        job.applicantEmail = undefined;
        job.applicantPhone = undefined;
        job.commentsQuestions = undefined;
-       job.jobposting_name = undefined;
        angular.forEach(
          angular.element("input[type='file']"),
          function(inputElem) {
@@ -110,7 +136,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       console.dir(file);
       console.log(job);
 
-      var base64File = '';
+      var base64File;
 
       if(job.applicantFirstName === undefined || job.applicantLastName === undefined || job.applicantEmail === undefined || job.applicantPhone === undefined) {
         console.log('need to fill in data');
@@ -118,15 +144,39 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
           var test = confirm("You have not selected a file to send, would you like to proceed?");
             if (test === false){
             } else {
-              $scope.fileReaderFunction(file, base64File);
+              // $scope.fileReaderFunction(file, base64File);
+              file = {
+                name: "",
+                type: "",
+              };
               $scope.emailInfo(job, file, base64File);
               $scope[fileToUpload] = undefined;
             }
           }
       else {
-        $scope.fileReaderFunction(file, base64File);
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = function () {
+          console.log(base64File);
+          base64File = reader.result.split(',')[1];
+          // console.log(reader.result.split(',')[1]);
+          // console.log(base64File);
+
+          reader.onerror = function (error) {
+            console.log('Error: ', error);
+            file = undefined;
+            $scope[fileToUpload] = undefined;
+          };
+
+          console.log(file);
+          // console.log('base64File', base64File);
+
+        // $scope.fileReaderFunction(file, base64File);
         $scope.emailInfo(job, file, base64File);
         $scope[fileToUpload] = undefined;
+        $scope.toast(job);
+        };
      }
 
    };//end addNewJob

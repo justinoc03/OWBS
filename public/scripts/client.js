@@ -1,7 +1,7 @@
 
 var init = function(){
   //turn all logs on or off
-  logsOnOff('off');
+  logsOnOff('on');
   //test logs
   console.log("ClientJS is sourced");
 };
@@ -9,7 +9,7 @@ var init = function(){
 
 
 //source in angular
-var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask']);
+var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngAnimate', 'ngToast']);
 
 ///////////////////////////Angular Routing///////////////////////////////////////
 // config method doesnt take a name, we are just configuring myApp,
@@ -64,6 +64,14 @@ myApp.config(function($stateProvider, $urlRouterProvider){
     });
   });
 
+  //configure ngToast animation options as slide or fade
+  myApp.config(['ngToastProvider', function(ngToastProvider) {
+    ngToastProvider.configure({
+      animation: 'slide', // or 'fade'
+      dismissOnClick: true,
+    });
+  }]);
+
 // JQuery to collapse mobile-style navbar menu button after clicking on link
 $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
@@ -100,5 +108,6 @@ myApp.directive('fileModel', ['$parse', function ($parse) {
     }
   };
 }]);
+
 
 init();

@@ -19,14 +19,16 @@
   "homepage": "https://github.com/justinoc03/OWBS#readme",
   "dependencies": {
     "angular": "^1.6.2",
+    "angular-animate": "^1.6.2",
     "angular-sanitize": "^1.6.2",
     "angular-trix": "^1.0.2",
     "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-router": "^0.4.2",
+    "animate.css": "^3.5.2",
     "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",
     "express": "^4.14.1",
-    "nodemailer": "^3.1.5",
+    "ng-toast": "^2.0.0",
     "pg": "^6.1.2",
     "sendgrid": "^4.8.0",
     "sql": "^0.74.0"
