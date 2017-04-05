@@ -19,6 +19,9 @@ myApp.service('authService', ['$http', '$q', 'lock', 'authManager', function($ht
       localStorage.setItem('id_token', authResult.idToken);
       authManager.authenticate();
     });
+    lock.on('authorization_error', function (err) {
+        console.log(err);
+      });
   }
 
   return {
@@ -27,15 +30,11 @@ myApp.service('authService', ['$http', '$q', 'lock', 'authManager', function($ht
     registerAuthenticationListener: registerAuthenticationListener
   };
 
-  
-
 
 }]);//end authService
 
 
-
 //////////////////////////////////Other auth0 version/////////////////////////////////////////////////
-
 // (function () {
 //
 //   'use strict';

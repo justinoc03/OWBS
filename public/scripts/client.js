@@ -13,7 +13,7 @@ var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix',
 ///////////////////////////Angular Routing///////////////////////////////////////
 // config method doesnt take a name, we are just configuring myApp,
 // It does take in a dependency injection array
-myApp.config(function($stateProvider, $urlRouterProvider, lockProvider){
+myApp.config(function($stateProvider, $urlRouterProvider, lockProvider, jwtOptionsProvider){
   $urlRouterProvider.otherwise('/redirectNotice');
   $stateProvider
     .state('home', {
@@ -63,6 +63,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, lockProvider){
       templateUrl: "/views/partials/redirectNotice.html",
       controller: "redirectNoticeController"
     });
+
     lockProvider.init({
       clientID: 'oCyvgO2rUP0v7qJi8yHloIz9kNQcbzLj',
       domain: 'oconnorjustin.auth0.com',
@@ -70,6 +71,14 @@ myApp.config(function($stateProvider, $urlRouterProvider, lockProvider){
         _idTokenVerification: false
       }
     });
+
+    // Configuration for angular-jwt
+    jwtOptionsProvider.config({
+      tokenGetter: function () {
+        return localStorage.getItem('id_token');
+      }
+    });
+
   });
 
   //configure ngToast animation options as slide or fade
