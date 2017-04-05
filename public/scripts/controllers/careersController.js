@@ -9,24 +9,26 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     $scope.getJobs();
   };
 
+  //////////////////////////////////auth0 login functionality/////////////////////////////////////////////////
   var vm = this;
   vm.authService = authService;
+  //........................................
 
-
+  //////////////////////////////////toast info//////////////////////////////////////////////////////////////
   // create a simple toast:
-  ngToast.create('a toast message...');
+  // ngToast.create('a toast message...');
 
   // $scope.toast = function(job) {
   //     ngToast.create("Thank you for your application for the " + job.jobposting_name);
   //   };
 
-    // $timeout(function() {
-    //   toast();
-    // }, 0);
-    // $interval(function() {
-    //   toast();
-    // }, 5000);
-
+  // $timeout(function() {
+  //   toast();
+  // }, 0);
+  // $interval(function() {
+  //   toast();
+  // }, 5000);
+  //........................................
 
   ////////////////////Function: adminLogin ///////////////////////
   $scope.validatePhoneNumber = function(evt) {

@@ -62,13 +62,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, lockProvider){
       url:'/redirectNotice',
       templateUrl: "/views/partials/redirectNotice.html",
       controller: "redirectNoticeController"
-    })
-    .state('login', {
-        url: '/login',
-        controller: 'loginController',
-        templateUrl: '/views/partials/loginController.html',
-        controllerAs: 'vm'
-      });
+    });
     lockProvider.init({
       clientID: 'oCyvgO2rUP0v7qJi8yHloIz9kNQcbzLj',
       domain: 'oconnorjustin.auth0.com',
