@@ -7,20 +7,20 @@ var init = function(){
 };
 
 
-
 //source in angular
-var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngAnimate', 'ngToast']);
+var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngAnimate', 'ngToast', 'auth0.lock', 'angular-jwt']);
 
 ///////////////////////////Angular Routing///////////////////////////////////////
 // config method doesnt take a name, we are just configuring myApp,
 // It does take in a dependency injection array
-myApp.config(function($stateProvider, $urlRouterProvider){
+myApp.config(function($stateProvider, $urlRouterProvider, lockProvider){
   $urlRouterProvider.otherwise('/redirectNotice');
   $stateProvider
     .state('home', {
       url:'/home',
       templateUrl: '/views/partials/home.html',
-      controller: 'homeController'
+      controller: 'homeController',
+      controllerAs: 'vm'
     })
     .state('services',{
       url:'/services',
@@ -45,7 +45,8 @@ myApp.config(function($stateProvider, $urlRouterProvider){
     .state('careers',{
       url:"/careers",
       templateUrl: "/views/partials/careers.html",
-      controller: "careersController"
+      controller: "careersController",
+      controllerAs: 'vm'
     })
     .state('adminEditCareers',{
       url:"/adminEditCareers",
@@ -61,6 +62,19 @@ myApp.config(function($stateProvider, $urlRouterProvider){
       url:'/redirectNotice',
       templateUrl: "/views/partials/redirectNotice.html",
       controller: "redirectNoticeController"
+    })
+    .state('login', {
+        url: '/login',
+        controller: 'loginController',
+        templateUrl: '/views/partials/loginController.html',
+        controllerAs: 'vm'
+      });
+    lockProvider.init({
+      clientID: 'oCyvgO2rUP0v7qJi8yHloIz9kNQcbzLj',
+      domain: 'oconnorjustin.auth0.com',
+      options: {
+        _idTokenVerification: false
+      }
     });
   });
 

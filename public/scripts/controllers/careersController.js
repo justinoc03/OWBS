@@ -1,6 +1,6 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval, authService){
   console.log('In careersController');
-
+ 
   //init function that is run at the bottom of this careersController
   $scope.init = function(){
     //global variables
@@ -8,6 +8,15 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     //functions to run on load
     $scope.getJobs();
   };
+
+  function careersController(authService) {
+    console.log('in careersController authService');
+
+    var vm = this;
+
+    vm.authService = authService;
+
+  }
 
   // create a simple toast:
   ngToast.create('a toast message...');
