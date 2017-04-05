@@ -1,5 +1,7 @@
 myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootScope, authService, lock, authManager){
   console.log('in run function');
+  var profileParsed = JSON.parse(localStorage.getItem('profile'));
+  console.log(profileParsed);
 
   // Put the authService on $rootScope so its methods
   // can be accessed from the nav bar

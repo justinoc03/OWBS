@@ -1,5 +1,7 @@
 myApp.service('authService', ['$http', '$q', 'lock', 'authManager', function($http, $q, lock, authManager){
 
+  var deferredProfile = $q.defer();
+
   function login() {
     lock.show();
   }
@@ -16,9 +18,24 @@ myApp.service('authService', ['$http', '$q', 'lock', 'authManager', function($ht
   // This method is called from app.run.js
   function registerAuthenticationListener() {
     lock.on('authenticated', function (authResult) {
+
+      lock.getProfile(authResult.idToken, function (error, profile) {
+          if (error) {
+            return console.log(error);
+          }
+          localStorage.setItem('profile', JSON.stringify(profile));
+          deferredProfile.resolve(profile);
+          
+          var profileParsed = JSON.parse(localStorage.getItem('profile'));
+          console.log(profileParsed);
+        });
+
+
       localStorage.setItem('id_token', authResult.idToken);
       authManager.authenticate();
+
     });
+
     lock.on('authorization_error', function (err) {
         console.log(err);
       });
