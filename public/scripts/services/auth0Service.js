@@ -1,4 +1,4 @@
-myApp.service('authService', ['$http', '$q', 'lock', 'authManager', '$rootScope', function($http, $q, lock, authManager, $rootScope){
+myApp.service('authService', ['$http', '$q', 'lock', 'authManager', '$rootScope', '$location' ,function($http, $q, lock, authManager, $rootScope, $location){
 
 
   var userProfile = JSON.parse(localStorage.getItem('profile')) || null;
@@ -37,6 +37,7 @@ myApp.service('authService', ['$http', '$q', 'lock', 'authManager', '$rootScope'
            localStorage.setItem('profile', JSON.stringify(profile));
            userProfile = profile;
            deferredProfile.resolve(profile);
+           //edited so when user is logged in they are redirected to adminEditCareersController
          });
 
        });
@@ -53,7 +54,7 @@ myApp.service('authService', ['$http', '$q', 'lock', 'authManager', '$rootScope'
      function isAdmin() {
        return userProfile && userProfile.app_metadata
          && userProfile.app_metadata.roles
-         && userProfile.app_metadata.roles.indexOf('admin') > -1;
+         && userProfile.app_metadata.roles.indexOf('adminOWBS') > -1;
      }
 
      $rootScope.$on('$stateChangeStart', function(event, nextRoute) {

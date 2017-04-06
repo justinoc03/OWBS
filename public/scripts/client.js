@@ -68,7 +68,11 @@ myApp.config(function($stateProvider, $urlRouterProvider, lockProvider, jwtOptio
       clientID: 'oCyvgO2rUP0v7qJi8yHloIz9kNQcbzLj',
       domain: 'oconnorjustin.auth0.com',
       options: {
-        _idTokenVerification: false
+        _idTokenVerification: false,
+        // auth: {
+        //   redirectUrl: 'http://localhost:9000/#!/adminEditCareers/callback',
+        //   responseType: 'token',
+        // }
       }
     });
 

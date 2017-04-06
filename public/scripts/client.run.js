@@ -1,5 +1,7 @@
 myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootScope, authService, lock, authManager){
   console.log('in run function');
+  // localStorage.clear();
+
   var profileParsed = JSON.parse(localStorage.getItem('profile'));
   console.log(profileParsed);
 
@@ -23,7 +25,7 @@ myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootSc
 
 
 }]);//end dbRoutesService
- 
+
 
 //////////////////////////////////Other auth0 version/////////////////////////////////////////////////
 // // app.run.js

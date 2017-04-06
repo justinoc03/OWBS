@@ -9,10 +9,20 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     $scope.getJobs();
   };
 
-  //////////////////////////////////auth0 login functionality/////////////////////////////////////////////////
-  var vm = this;
-  vm.authService = authService;
-  //........................................
+  $scope.auth0Login = function(){
+    var vm = this;
+    vm.authService = authService;
+    vm.authService.login();
+    // $scope.locationChange();
+  };
+
+  $scope.auth0Logout = function(){
+    var vm = this;
+    vm.authService = authService;
+    vm.authService.logout();
+    // $scope.locationChange();
+  };
+
 
   //////////////////////////////////toast info//////////////////////////////////////////////////////////////
   // create a simple toast:
