@@ -1,5 +1,6 @@
 myApp.service('authService', ['$http', '$q', 'lock', 'authManager', '$rootScope', function($http, $q, lock, authManager, $rootScope){
 
+
   var userProfile = JSON.parse(localStorage.getItem('profile')) || null;
      var deferredProfile = $q.defer();
 

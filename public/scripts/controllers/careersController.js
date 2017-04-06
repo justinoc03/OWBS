@@ -30,7 +30,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   // }, 5000);
   //........................................
 
-  ////////////////////Function: adminLogin ///////////////////////
+  ////////////////////Function: validatePhoneNumber ///////////////////////
   $scope.validatePhoneNumber = function(evt) {
     console.log('in validate');
     var theEvent = evt || window.event;

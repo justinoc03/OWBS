@@ -14,7 +14,7 @@ var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix',
 // config method doesnt take a name, we are just configuring myApp,
 // It does take in a dependency injection array
 myApp.config(function($stateProvider, $urlRouterProvider, lockProvider, jwtOptionsProvider){
-  $urlRouterProvider.otherwise('/redirectNotice');
+  $urlRouterProvider.otherwise('/home');
   $stateProvider
     .state('home', {
       url:'/home',

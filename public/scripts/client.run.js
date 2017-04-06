@@ -20,8 +20,10 @@ myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootSc
   // when using UI Router
   lock.interceptHash();
 
-}]);//end dbRoutesService
 
+
+}]);//end dbRoutesService
+ 
 
 //////////////////////////////////Other auth0 version/////////////////////////////////////////////////
 // // app.run.js
