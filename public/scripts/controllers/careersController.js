@@ -23,7 +23,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     // $scope.locationChange();
   };
 
-THIS IS A TEST LINE
+
 
   //////////////////////////////////toast info//////////////////////////////////////////////////////////////
   // create a simple toast:
