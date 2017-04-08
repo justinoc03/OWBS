@@ -2,8 +2,7 @@ myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootSc
   console.log('in run function');
   // localStorage.clear();
 
-  var profileParsed = JSON.parse(localStorage.getItem('profile'));
-  console.log(profileParsed);
+
 
   // Put the authService on $rootScope so its methods
   // can be accessed from the nav bar
@@ -21,6 +20,9 @@ myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootSc
   // Register the synchronous hash parser
   // when using UI Router
   lock.interceptHash();
+
+  var profileParsed = JSON.parse(localStorage.getItem('profile'));
+  console.log(profileParsed);
 
 
 

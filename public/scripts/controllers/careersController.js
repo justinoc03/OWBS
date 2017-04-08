@@ -13,14 +13,13 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     var vm = this;
     vm.authService = authService;
     vm.authService.login();
-    // $scope.locationChange();
+
   };
 
   $scope.auth0Logout = function(){
     var vm = this;
     vm.authService = authService;
     vm.authService.logout();
-    // $scope.locationChange();
   };
 
 

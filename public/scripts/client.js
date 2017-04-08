@@ -70,8 +70,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, lockProvider, jwtOptio
       options: {
         _idTokenVerification: false,
         // auth: {
-        //   redirectUrl: 'http://localhost:9000/#!/adminEditCareers/callback',
-        //   responseType: 'token',
+        //   redirectUrl: 'http://localhost:9000/#!/adminEditCareers',
         // }
       }
     });
