@@ -20,6 +20,12 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     var vm = this;
     vm.authService = authService;
     vm.authService.logout();
+
+    //redirect to careers page after logout
+    $location.path('/careers');
+    //checks localStorage to see if profile is cleared/null
+    var profileParsed = JSON.parse(localStorage.getItem('profile'));
+    console.log(profileParsed);
   };
 
 

@@ -38,18 +38,18 @@ myApp.service('authService', ['$http', '$q', 'lock', 'authManager', '$rootScope'
         localStorage.setItem('profile', JSON.stringify(profile));
         userProfile = profile;
         deferredProfile.resolve(profile);
+        //reroute authenticated user to adminEditCareers
         $location.path('/adminEditCareers');
-
+        //log profile from localStorage
+        var profileParsed = JSON.parse(localStorage.getItem('profile'));
+        console.log(profileParsed);
       });
-      // $timeout(function(){
-      //   $location.path('/adminEditCareers');
-      // }, 300);
    });
 
    lock.on('authorization_error', function (err) {
      console.log(err);
    });
- }
+ } //end registerAuthenticationListener
 
  function getProfileDeferred() {
    return deferredProfile.promise;
@@ -69,7 +69,9 @@ myApp.service('authService', ['$http', '$q', 'lock', 'authManager', '$rootScope'
    if (nextRoute.controller === 'adminEditCareersController') {
      if (!isAdmin()) {
        alert('You are not allowed to see the Admin content');
-       return event.preventDefault();
+
+      //  return event.preventDefault();
+       return $location.path('/careers');
      }
    }
  });

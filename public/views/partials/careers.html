@@ -1,14 +1,11 @@
 <h1>Careers</h1>
-<!-- <button class="btn btn-primary" ng-click="vm.authService.login()">Log In</button> -->
-<button class="btn btn-primary" ng-click="auth0Login()">Auth0 Log In</button>
+
+<!-- auth0 login -->
+<button ng-if="!isAuthenticated" class="btn btn-primary" ng-click="auth0Login()" ng-cloak>Auth0 Log In</button>
 
 
-<div ng-if="isAuthenticated">
-  <p>Thank you for logging in!</p>
-  <button ng-click="auth0Logout()">Log Out</button>
-</div>
-
-<button type="button" name="button" ng-click="adminLogin()">Admin Login</button>
+<!-- older, no authentication login -->
+<!-- <button type="button" name="button" ng-click="adminLogin()">Admin Login</button> -->
 
 <!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
 <section>

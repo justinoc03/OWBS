@@ -23,6 +23,7 @@
     <script src="/vendors/ui-bootstrap-tpls.js" charset="utf-8"></script>
     <script src="/scripts/client.js"></script>
     <script src="/vendors/angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/navController.js"></script>
     <script src="/scripts/controllers/homeController.js"></script>
     <script src="/scripts/controllers/whoWeAreController.js"></script>
     <script src="/scripts/controllers/redirectNoticeController.js"></script>
@@ -68,7 +69,7 @@
       <div id="navShape"></div>
 
         <!-- navbar -->
-        <nav class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
+        <nav ng-controller="navController" class="navbar navbar-default navbar-toggleable-md navbar-fixed-top" >
             <div class="logo">
               <img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box">
             </div>
@@ -108,6 +109,9 @@
                       <a  href="#!/contactUs">Contact Us</a>
                     </li>
                   </ul>
+                </li>
+                <li ng-if="isAuthenticated" ng-cloak>
+                  <button ng-click="auth0Logout()">Log Out</button>
                 </li>
               </ul>
             </div>

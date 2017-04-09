@@ -1,4 +1,4 @@
-
+//////////////////Turn console.log on or off//////////////////
 var init = function(){
   //turn all logs on or off
   logsOnOff('on');
@@ -6,8 +6,7 @@ var init = function(){
   console.log("ClientJS is sourced");
 };
 
-
-//source in angular
+//////////////////Create Angular App//////////////////
 var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngAnimate', 'ngToast', 'auth0.lock', 'angular-jwt']);
 
 ///////////////////////////Angular Routing///////////////////////////////////////
@@ -131,5 +130,5 @@ myApp.directive('fileModel', ['$parse', function ($parse) {
   };
 }]);
 
-
+/////////////////Run init function////////////////////////
 init();

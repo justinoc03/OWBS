@@ -1,8 +1,5 @@
 myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootScope, authService, lock, authManager){
   console.log('in run function');
-  // localStorage.clear();
-
-
 
   // Put the authService on $rootScope so its methods
   // can be accessed from the nav bar
@@ -23,7 +20,6 @@ myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootSc
 
   var profileParsed = JSON.parse(localStorage.getItem('profile'));
   console.log(profileParsed);
-
 
 
 }]);//end dbRoutesService
