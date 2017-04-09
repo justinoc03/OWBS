@@ -81,23 +81,26 @@ myApp.config(function($stateProvider, $urlRouterProvider, lockProvider, jwtOptio
       }
     });
 
-  });
+  }); //end of myApp.config()
 
   //configure ngToast animation options as slide or fade
   myApp.config(['ngToastProvider', function(ngToastProvider) {
     ngToastProvider.configure({
-      animation: 'slide', // or 'fade'
-      dismissOnClick: false,
-      dismissButton: true,
-      timeout: 30000,
+      animation: 'slide', // 'slide' or 'fade'
+      // dismissOnClick: false,
+      // dismissButton: true,
+      // timeout: 30000,
     });
   }]);
 
-// JQuery to collapse mobile-style navbar menu button after clicking on link
-$(document).on('click','.navbar-collapse.in',function(e) {
+
+  //JQuery to collapse mobile-style navbar menu button after clicking on link
+  $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
         $(this).collapse('hide');
     }
+
+
 }); //end of myApp
 
 //Turns on or off all console.log

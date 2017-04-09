@@ -34,9 +34,14 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   // create a simple toast:
   // ngToast.create('a toast message...');
 
-  // $scope.toast = function(job) {
-  //     ngToast.create("Thank you for your application for the " + job.jobposting_name);
-  //   };
+//   ngToast.create({
+//     className: 'info',
+//     dismissOnClick: false,
+//     dismissButton: true,
+//     // timeout: 4000,
+//     content: "HELLO!"
+// });
+
 
   // $timeout(function() {
   //   toast();
@@ -126,25 +131,35 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
    dbRoutesService.emailJobApplication(emailInfoToOWBS)
      .then(function (responseObject){
+       console.log(responseObject);
        //success
-       console.log('applicantEmail responseObject:', responseObject);
+       if(responseObject.data.statusCode === 202) {
+        console.log('applicantEmail responseObject:', responseObject);
 
-       // clear inputs after promise success response
-       job.applicantFirstName = null;
-       job.applicantLastName = null;
-       job.applicantEmail = null;
-       job.applicantPhone = null;
-       job.commentsQuestions = null;
-       angular.forEach(
-         angular.element("input[type='file']"),
-         function(inputElem) {
-         angular.element(inputElem).val(null);
-         });
-       file = undefined;
-       job.filePicker = undefined;
-      //  $scope[fileToUpload] = undefined;
+        // clear inputs after promise success response
+        job.applicantFirstName = null;
+        job.applicantLastName = null;
+        job.applicantEmail = null;
+        job.applicantPhone = null;
+        job.commentsQuestions = null;
+        angular.forEach(
+          angular.element("input[type='file']"),
+          function(inputElem) {
+          angular.element(inputElem).val(null);
+          });
+        file = undefined;
+        job.filePicker = undefined;
+        //  $scope[fileToUpload] = undefined;
 
-      ngToast.create("Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle);
+        ngToast.create({
+          content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",
+        });
+      } else{
+      ngToast.create({
+        className: 'danger',
+        content: "There was an error sending the information. Please try again or contact us",
+      });
+    }
 
     }, function(errorObject){
       //err

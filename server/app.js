@@ -242,7 +242,7 @@ app.post('/testEmail', function(req, res){
     console.log('response body', response.body);
     console.log('response headers', response.headers);
 
-    return res.json(response);
+    return res.json(error || response);
   });
 
 }); //end getJobPostings
