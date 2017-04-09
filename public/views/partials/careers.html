@@ -1,6 +1,11 @@
 <h1>Careers</h1>
 
-<button type="button" name="button" ng-click="adminLogin()">Admin Login</button>
+<!-- auth0 login -->
+<button ng-if="!isAuthenticated" class="btn btn-primary" ng-click="auth0Login()" ng-cloak>Auth0 Log In</button>
+
+
+<!-- older, no authentication login -->
+<!-- <button type="button" name="button" ng-click="adminLogin()">Admin Login</button> -->
 
 <!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
 <section>

@@ -1,4 +1,4 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', 'authService', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval, authService, careersController){
   console.log('In careersController');
 
   //init function that is run at the bottom of this careersController
@@ -9,22 +9,44 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     $scope.getJobs();
   };
 
+  $scope.auth0Login = function(){
+    var vm = this;
+    vm.authService = authService;
+    vm.authService.login();
+
+  };
+
+  $scope.auth0Logout = function(){
+    var vm = this;
+    vm.authService = authService;
+    vm.authService.logout();
+
+    //redirect to careers page after logout
+    $location.path('/careers');
+    //checks localStorage to see if profile is cleared/null
+    var profileParsed = JSON.parse(localStorage.getItem('profile'));
+    console.log(profileParsed);
+  };
+
+
+
+  //////////////////////////////////toast info//////////////////////////////////////////////////////////////
   // create a simple toast:
-  ngToast.create('a toast message...');
+  // ngToast.create('a toast message...');
 
   // $scope.toast = function(job) {
   //     ngToast.create("Thank you for your application for the " + job.jobposting_name);
   //   };
 
-    // $timeout(function() {
-    //   toast();
-    // }, 0);
-    // $interval(function() {
-    //   toast();
-    // }, 5000);
+  // $timeout(function() {
+  //   toast();
+  // }, 0);
+  // $interval(function() {
+  //   toast();
+  // }, 5000);
+  //........................................
 
-
-  ////////////////////Function: adminLogin ///////////////////////
+  ////////////////////Function: validatePhoneNumber ///////////////////////
   $scope.validatePhoneNumber = function(evt) {
     console.log('in validate');
     var theEvent = evt || window.event;

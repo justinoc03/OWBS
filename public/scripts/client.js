@@ -1,4 +1,4 @@
-
+//////////////////Turn console.log on or off//////////////////
 var init = function(){
   //turn all logs on or off
   logsOnOff('on');
@@ -6,21 +6,20 @@ var init = function(){
   console.log("ClientJS is sourced");
 };
 
-
-
-//source in angular
-var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngAnimate', 'ngToast']);
+//////////////////Create Angular App//////////////////
+var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngAnimate', 'ngToast', 'auth0.lock', 'angular-jwt']);
 
 ///////////////////////////Angular Routing///////////////////////////////////////
 // config method doesnt take a name, we are just configuring myApp,
 // It does take in a dependency injection array
-myApp.config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/redirectNotice');
+myApp.config(function($stateProvider, $urlRouterProvider, lockProvider, jwtOptionsProvider){
+  $urlRouterProvider.otherwise('/home');
   $stateProvider
     .state('home', {
       url:'/home',
       templateUrl: '/views/partials/home.html',
-      controller: 'homeController'
+      controller: 'homeController',
+      controllerAs: 'vm'
     })
     .state('services',{
       url:'/services',
@@ -45,7 +44,8 @@ myApp.config(function($stateProvider, $urlRouterProvider){
     .state('careers',{
       url:"/careers",
       templateUrl: "/views/partials/careers.html",
-      controller: "careersController"
+      controller: "careersController",
+      controllerAs: 'vm'
     })
     .state('adminEditCareers',{
       url:"/adminEditCareers",
@@ -62,6 +62,25 @@ myApp.config(function($stateProvider, $urlRouterProvider){
       templateUrl: "/views/partials/redirectNotice.html",
       controller: "redirectNoticeController"
     });
+
+    lockProvider.init({
+      clientID: 'oCyvgO2rUP0v7qJi8yHloIz9kNQcbzLj',
+      domain: 'oconnorjustin.auth0.com',
+      options: {
+        _idTokenVerification: false,
+        // auth: {
+        //   redirectUrl: 'http://localhost:9000/#!/adminEditCareers',
+        // }
+      }
+    });
+
+    // Configuration for angular-jwt
+    jwtOptionsProvider.config({
+      tokenGetter: function () {
+        return localStorage.getItem('id_token');
+      }
+    });
+
   });
 
   //configure ngToast animation options as slide or fade
@@ -111,5 +130,5 @@ myApp.directive('fileModel', ['$parse', function ($parse) {
   };
 }]);
 
-
+/////////////////Run init function////////////////////////
 init();
