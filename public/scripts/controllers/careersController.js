@@ -133,6 +133,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
      .then(function (responseObject){
        console.log(responseObject);
        //success
+       //if statement checks if a successful statusCode has been sent back meaning sendgrid properly sent the emailInfo
        if(responseObject.data.statusCode === 202) {
         console.log('applicantEmail responseObject:', responseObject);
 
@@ -154,6 +155,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
         ngToast.create({
           content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",
         });
+        //else statement to indiciate the email was not properly sent
       } else{
       ngToast.create({
         className: 'danger',
