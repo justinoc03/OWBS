@@ -1,6 +1,6 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', 'authService', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval, authService, careersController){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', 'authService','$window', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval, authService, $window, careersController){
   console.log('In careersController');
-
+  $window.scrollTo(0, 0);
   //init function that is run at the bottom of this careersController
   $scope.init = function(){
     //global variables
