@@ -26,10 +26,15 @@ myApp.config(function($stateProvider, $urlRouterProvider, lockProvider, jwtOptio
       templateUrl: "/views/partials/services.html",
       controller: "servicesController"
     })
-    .state('media',{
-      url:'/media',
-      templateUrl: "/views/partials/media.html",
-      controller: "mediaController"
+
+    .state('photos',{
+        url:'/photos',
+        templateUrl: "/views/partials/photos.html",
+        controller: "photoController"
+    }).state('videos',{
+        url:'/videos',
+        templateUrl: "/views/partials/videos.html",
+        controller: "videoController",
     })
     .state('whoWeAre',{
       url:'/whoWeAre',
