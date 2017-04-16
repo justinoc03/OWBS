@@ -74,6 +74,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
     modalInstance.result.then(function(res){
       //success
+      console.log(res);
       console.log('logged in properly');
     }, function(err){
       //success

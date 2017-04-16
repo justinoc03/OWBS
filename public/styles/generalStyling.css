@@ -266,6 +266,13 @@ body {
     margin-right: auto;
     color: black; }
 
+/************************************Jobs***************************************/
+.job-posting {
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 1%;
+  padding-top: 1%; }
+
 /*********************************** Footer ************************************/
 #headerSection {
   padding: 10px; }

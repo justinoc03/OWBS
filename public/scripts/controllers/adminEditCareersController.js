@@ -73,7 +73,7 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
 
    console.log('job', job);
 
-   var test = confirm(job.jobposting_name + " job posting will be delete forever, would you like to proceed?");
+   var test = confirm(job.jobposting_name + " job posting will be deleted forever, would you like to proceed?");
       if (test === false){
       } else {
 
