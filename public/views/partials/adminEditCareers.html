@@ -1,38 +1,41 @@
-<h1>Admin Edit Careers</h1>
-
 
 <!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
 <section>
-
-  <header class="">
+  <header class="admin-edit-header">
+    <h1>Admin Edit Careers</h1>
     <p>When you work for One Way, you’re joining a highly successful organization at the forefront of Cellular Infrastructure. One Way offers exciting career opportunities, that extend your base knowledge.</p>
+    <div class="add-buttons">
+      <button class=" btn btn-info" type="button" name="button" ng-click="startAddNewJob()">Add a New Job</button>
+      <button class=" btn btn-info" type="button" name="button" ng-click="getJobs()">Refresh Posts</button>
+    </div>
   </header>
-
-  <button class="btn btn-info" type="button" name="button" ng-click="startAddNewJob()">Add a New Job</button>
-  <br><br>
-
-  <button class="btn btn-info" type="button" name="button" ng-click="getJobs()">Refresh Posts</button>
-  <br>
 </section>
 <section>
   <article class="job-posting row" ng-repeat="job in jobsArray">
   <!-- <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" > -->
-    <h4 class="col-xs-3">Job Title: {{job.jobposting_name}}</h4>
+  <div class="col-xs-3">
+    <h4>Job Title</h4>
+    <p>{{job.jobposting_name}}</p>
+  </div>
     <!-- <button  class="btn btn-info" type="button" name="button" ng-click="editPostNowWrapper= !editPostNowWrapper">View Post Details</button> -->
     <!-- ng-show='editPostNowWrapper' may need to ad dback in bellow / uncomment above-->
     <div class="editPostNow col-xs-3" >
-      <h5 > Description: </h5>
-      <div ng-bind-html="job.jobposting_description"></div>
+      <h4 > Description</h4>
+      <p>{{job.jobposting_description}}</p>
     </div>
     <!-- switch -->
     <div class="job-post-controls col-xs-6">
       <button type="button" name="button"  class="btn btn-danger" ng-click="deleteJobPosting(job)">Delete Post</button>
       <button type="button" name="button" class="btn btn-info" ng-click="editJobPost(job)">Edit Post</button>
-      <h5>Turn Posting On/Off</h5>
-      <label class="switch" >
-        <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="changePostStatus(job)" >
-        <div class="slider round"></div>
-      </label>
+      <div class="onOffSwitch">
+        <p> Off </p>
+        <label class="switch">
+          <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="changePostStatus(job)" >
+            <div class="slider round">
+            </div>
+        </label>
+        <p> On </p>
+    </div>
     </div>
   </article>
 </section>

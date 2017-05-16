@@ -1,3 +1,12 @@
+//////Pallette
+$blue: #008FBE;
+$orange: #FF9B42;
+$white: #ffffff;
+$lightGrey: #CECECE;
+$mediumGrey: #AAAAAA;
+$darkGrey:#848C8E;
+$black: #302D2D;
+
 html, body {
 	margin:0;
 	padding:0;
@@ -64,6 +73,9 @@ body {
 	border-top: 25px solid #f8f8f8;
   z-index: 998;
 }
+main{
+	padding-top: 10px;
+}
 /*********************************** Home Styles ************************************/
 .home-container{
   // Test Image until we have assets to use
@@ -92,7 +104,7 @@ body {
     width: 25rem;
     background-color: transparent;
     border-width: 3px;
-    color: black;
+    color: $black;
   }
 }
 /********************************* Services Styles *****************************/
@@ -277,7 +289,7 @@ body {
 .staff-container{
 	padding-bottom: 50px;
 	h1{
-		color: black;
+		color: $black;
 		text-align: center;
 		margin-top: 1rem;
 		margin-bottom: 2rem;
@@ -288,7 +300,7 @@ body {
 	 h3{
 		text-align: center;
 		font-size: 16px;
-		color: white;
+		color: $white;
 		display: block;
 	}
 	.front h3{
@@ -301,21 +313,82 @@ body {
 		font-size: 10px;
 		margin-left: auto;
 		margin-right: auto;
-		color: black;
+		color: $black;
 	}
 }
 /************************************Jobs***************************************/
+.admin-edit-header{
+	padding: 30px 0;
+	width: 95%;
+	margin: 0 auto;
+	.add-buttons{
+		display: inline-block;
+	}
+}
+.add-buttons{
+	width: 100%;
+	text-align: center;
+	button{
+		width: 25%;
+		&:first-of-type{
+			margin-right: 5%;
+		}
+	}
+}
 .job-posting{
 	text-align: center;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid $black;
 	padding-bottom: 1%;
 	padding-top: 1%;
+	&:first-of-type{
+		border-top: 2px solid $black;
+	}
+	&:last-of-type{
+		border-bottom: none;
+	}
+}
+.job-post-controls{
+	margin-top: 25px;
+
+	.btn{
+		margin-top: -34px;
+		margin-right: 15px;
+	}
+}
+
+.onOffSwitch{
+	display: inline-block;
+	p, label{
+		display: inline-block;
+	}
+	p{
+		margin-top: -24px;
+		vertical-align: middle;
+	}
+}
+//slider button
+.slider{
+	background-color: $lightGrey;
+}
+input:checked + .slider {
+  background-color: $blue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $blue;
+}
+.job-posting{
+	&:nth-child(odd){
+		background-color:$lightGrey;
+	}
+	&:nth-child(even){
+		background-color: $white;
+	}
 }
 /*********************************** Footer ************************************/
 
 
 #headerSection {
-
 	padding:10px;
 }
 
@@ -364,5 +437,25 @@ body {
 }
 	.social-icon{
 		width: 30px;
+	}
+}
+//// Utility Classes
+.btn-info{
+	background-color: $blue;
+	border-color: $blue;
+	&:hover{
+		background-color: $blue;
+		border-color: $blue;
+		opacity:0.5;
+	}
+}
+
+.btn-danger{
+	background-color: $orange;
+	border-color: $orange;
+	&:hover{
+		background-color: $orange;
+		border-color: $orange;
+		opacity:0.5;
 	}
 }
