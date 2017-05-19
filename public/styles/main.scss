@@ -321,6 +321,10 @@ main{
 	padding: 30px 0;
 	width: 95%;
 	margin: 0 auto;
+	text-align: center;
+	h1{
+		color: $orange;
+	}
 	.add-buttons{
 		display: inline-block;
 	}
@@ -343,8 +347,12 @@ main{
 	&:first-of-type{
 		border-top: 2px solid $black;
 	}
-	&:last-of-type{
-		border-bottom: none;
+
+	&:nth-child(odd){
+		background-color:$lightGrey;
+	}
+	&:nth-child(even){
+		background-color: $white;
 	}
 }
 .job-post-controls{
@@ -367,6 +375,9 @@ main{
 	}
 }
 //slider button
+.posting-section{
+	margin-bottom: 5%;
+}
 .slider{
 	background-color: $lightGrey;
 }
@@ -377,19 +388,19 @@ input:checked + .slider {
 input:focus + .slider {
   box-shadow: 0 0 1px $blue;
 }
-.job-posting{
-	&:nth-child(odd){
-		background-color:$lightGrey;
-	}
-	&:nth-child(even){
-		background-color: $white;
-	}
+.highlight-title strong{
+	color: $blue;
 }
-//edit modal
+//Modals Content
 .modal-content{
 	padding:20px;
 	h3{
-
+		margin-top: 0;
+		color: $black;
+	}
+	label{
+		font-size: 16px;
+		color: $black;
 	}
 	button{
 			background-color: $blue;
@@ -401,17 +412,24 @@ input:focus + .slider {
 			border-radius: 4px;
 			border: 1px solid transparent;
 			color: $white;
+			width: 25%;
+			margin: auto;
 	}
-	input{
-
+	input, trix-editor {
+		appearance: none;
+		border: 1px solid $mediumGrey;
+		border-radius: 5px;
+		margin-bottom: 9%;
 	}
 	trix-toolbar{
+		margin-bottom: 5%;
 		button{
 			background-color: transparent;
 		}
 	}
 	trix-editor{
-
+		height: 200px;
+		margin-bottom: 3%
 	}
 }
 /*********************************** Footer ************************************/
