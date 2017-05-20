@@ -7,6 +7,13 @@ $mediumGrey: #AAAAAA;
 $darkGrey:#848C8E;
 $black: #302D2D;
 
+///Fonts
+$heading: 'Neuton', serif;
+$body: 'Raleway', sans-serif;
+$subHeading: 21px;
+$pageHeading: 64px;
+$jobs: 18px;
+
 html, body {
 	margin:0;
 	padding:0;
@@ -15,9 +22,14 @@ html, body {
 
 body {
   margin-top: 30px;
-  font-family: 'Nunito Sans', sans-serif;
+	font-family: $body;
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-family: $heading;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
 
 /********************************* Navbar ****************************************/
 // Remove bootstraps default nabar border
@@ -322,8 +334,10 @@ main{
 	width: 95%;
 	margin: 0 auto;
 	text-align: center;
+	font-size: $subHeading;
 	h1{
 		color: $orange;
+		font-size: $pageHeading;
 	}
 	.add-buttons{
 		display: inline-block;
@@ -344,6 +358,12 @@ main{
 	border-bottom: 2px solid $black;
 	padding-bottom: 1%;
 	padding-top: 1%;
+	h4{
+		font-size: $subHeading;
+	}
+	p{
+		font-size: $jobs;
+	}
 	&:first-of-type{
 		border-top: 2px solid $black;
 	}

@@ -5,7 +5,12 @@ html, body {
 
 body {
   margin-top: 30px;
-  font-family: 'Nunito Sans', sans-serif; }
+  font-family: "Raleway", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Neuton", serif;
+  font-weight: 800;
+  letter-spacing: 1px; }
 
 /********************************* Navbar ****************************************/
 .navbar-default {
@@ -274,9 +279,11 @@ main {
   padding: 30px 0;
   width: 95%;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  font-size: 21px; }
   .admin-edit-header h1 {
-    color: #FF9B42; }
+    color: #FF9B42;
+    font-size: 64px; }
   .admin-edit-header .add-buttons {
     display: inline-block; }
 
@@ -293,6 +300,10 @@ main {
   border-bottom: 2px solid #302D2D;
   padding-bottom: 1%;
   padding-top: 1%; }
+  .job-posting h4 {
+    font-size: 21px; }
+  .job-posting p {
+    font-size: 18px; }
   .job-posting:first-of-type {
     border-top: 2px solid #302D2D; }
   .job-posting:nth-child(odd) {
