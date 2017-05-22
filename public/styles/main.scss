@@ -31,6 +31,12 @@ h1, h2, h3, h4, h5, h6{
 	letter-spacing: 1px;
 }
 
+h1{
+	color: $orange;
+	font-size: $pageHeading;
+	text-align: center;
+}
+
 /********************************* Navbar ****************************************/
 // Remove bootstraps default nabar border
 .navbar-default{
@@ -353,12 +359,12 @@ main{
 		}
 	}
 }
-.job-posting{
+.job-posting, .apply-posting{
 	text-align: center;
 	border-bottom: 2px solid $black;
 	padding-bottom: 1%;
 	padding-top: 1%;
-	h4{
+	h4, h5{
 		font-size: $subHeading;
 	}
 	p{
@@ -452,6 +458,10 @@ input:focus + .slider {
 		margin-bottom: 3%
 	}
 }
+.applyNow{
+	margin:auto;
+	width: 50%
+}
 /*********************************** Footer ************************************/
 
 
@@ -525,4 +535,10 @@ input:focus + .slider {
 		border-color: $orange;
 		opacity:0.5;
 	}
+}
+.subheading{
+	width: 95%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: $subHeading;
 }

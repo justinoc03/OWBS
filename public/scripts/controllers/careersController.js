@@ -8,7 +8,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     //functions to run on load
     $scope.getJobs();
   };
-
   $scope.auth0Login = function(){
     var vm = this;
     vm.authService = authService;
@@ -108,7 +107,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     console.log(file);
     return file && base64File;
   };
-
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
     if (job.commentsQuestions === undefined){
@@ -229,8 +227,12 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     dbRoutesService.getJobPostings()
     .then(function (jobPostingsFromDB){
       //success
-      $scope.jobsArray = jobPostingsFromDB.data;
-      console.log('jobsArray', $scope.jobsArray);
+      console.log(jobPostingsFromDB.data);
+      for (var i = 0; i < jobPostingsFromDB.data.length; i++) {
+        if(jobPostingsFromDB.data[i].jobposting_open){
+          $scope.jobsArray.push(jobPostingsFromDB.data[i]);
+        }
+      }
     }, function(errorObject){
       //err
     });

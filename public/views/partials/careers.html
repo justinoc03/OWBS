@@ -10,7 +10,7 @@
 <!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
 <section>
 
-  <header class="">
+  <header class="subheading">
     <p>When you work for One Way, you’re joining a highly successful organization at the forefront of Cellular Infrastructure. One Way offers exciting career opportunities, that extend your base knowledge.</p>
   </header>
 
@@ -21,28 +21,32 @@
 
   <section>
     <!-- <article class="" ng-repeat="job in jobsArray"> -->
-    <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
-      <h4>Job Title: {{job.jobposting_name}}</h4>
-      <h5 > Description: </h5>
-      <div ng-bind-html="job.jobposting_description"></div>
-
-      <button type="button" name="button" ng-click="applyNowWrapper= !applyNowWrapper">Apply Now!</button>
-
-      <div class="applyNow" ng-show='applyNowWrapper'>
-        <br> <!-- br and hr just for easy reading but should delete -->
-        <form class="">
-          <input type="text" placeholder="First Name" maxlength="20" ng-model="job.applicantFirstName" required>
-          <input type="text" placeholder="Last Name"  maxlength="40" ng-model="job.applicantLastName" required>
-          <input type="email" placeholder="Email" ng-model="job.applicantEmail" required>
-          <input type="text" placeholder="Phone Number" ng-keypress='validatePhoneNumber(event)' mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" required>
-          <input type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions" >
-          <input id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
-          <input type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</input>
-        </form>
-   <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
-        <!-- br and hr just for easy reading but should delete -->
+    <article class="apply-posting" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
+      <div class="row">
+        <div class="col-xs-4">
+          <h4 class="highlight-title"><strong>Job Title:</strong></h4>
+          <p>{{job.jobposting_name}}</p>
         </div>
-      <br><hr>
-
+        <div class="col-xs-4">
+          <h5 class="highlight-title"> <strong>Job Description:</strong> </h5>
+          <p ng-bind-html="job.jobposting_description"></p>
+        </div>
+        <div class="col-xs-4">
+          <button class="btn btn-info" type="button" name="button" ng-click="applyNowWrapper = !applyNowWrapper">Apply Now!</button>
+        </div>
+      </div>
+        <div class="applyNow row" ng-show='applyNowWrapper'>
+          <form class="">
+            <input type="text" placeholder="First Name" maxlength="20" ng-model="job.applicantFirstName" required>
+            <input type="text" placeholder="Last Name"  maxlength="40" ng-model="job.applicantLastName" required>
+            <input type="email" placeholder="Email" ng-model="job.applicantEmail" required>
+            <input type="text" placeholder="Phone Number" ng-keypress='validatePhoneNumber(event)' mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" required>
+            <input type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions"  style="width: 95%; height: 50px;">
+            <input id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
+            <input type="submit" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)">SUBMIT</input>
+          </form>
+     <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
+          <!-- br and hr just for easy reading but should delete -->
+          </div>
     </article>
   </section>
