@@ -460,7 +460,52 @@ input:focus + .slider {
 }
 .applyNow{
 	margin:auto;
-	width: 50%
+	width: 50%;
+	form{
+		padding: 10px;
+	}
+	input{
+		margin-bottom: 15px;
+		margin-right: 10px;
+		width: 40%;
+		&.large-input{
+			width: calc(80% + 15px);
+		}
+	}
+	input[type=file]{
+		margin: auto;
+		margin-bottom: 15px;
+	}
+	input[type=file]:focus{
+		outline: none;
+	}
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Upload Resume';
+	-webkit-user-select: none;
+	color: $white;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.custom-file-input{
+  color: transparent;
+
+	&:hover, &:active, &:focus,  {
+		color: transparent;
+		outline: none;
+	}
+	&.btn-info{
+		&:active{
+		&:focus{
+			color: transparent;
+			outline: none;
+			}
+		}
+	}
 }
 /*********************************** Footer ************************************/
 
