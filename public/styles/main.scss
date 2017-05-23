@@ -128,8 +128,13 @@ main{
 /********************************* Services Styles *****************************/
 .services-container{
   width: 100%;
-	margin-left: -1%;
-
+	margin:auto;
+	.col-md-4{
+		width: calc(33% - 20px);
+	}
+	.less-margin{
+		margin-left: 0;
+	}
   h1{
     text-align: center;
     margin-top: 1rem;
@@ -138,9 +143,10 @@ main{
 }
 // csss for card flip animation
 .contain {
-  height: 49.5rem;
+  height: 35.5rem;
   perspective: 800px;
 	position: relative;
+	margin: 10px;
 }
 .card {
   width: 100%;
@@ -150,9 +156,9 @@ main{
   transition: transform 1s;
 	h3{
 		text-align: center;
-		color: white;
+		color: $white;
 		display: block;
-		margin-top: 21rem;
+		margin-top: 10rem;
 		transition: margin-top 0.5s;
 		transition-delay: 0.15s;
 	}

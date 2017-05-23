@@ -94,16 +94,21 @@ main {
 /********************************* Services Styles *****************************/
 .services-container {
   width: 100%;
-  margin-left: -1%; }
+  margin: auto; }
+  .services-container .col-md-4 {
+    width: calc(33% - 20px); }
+  .services-container .less-margin {
+    margin-left: 0; }
   .services-container h1 {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 2.5rem; }
 
 .contain {
-  height: 49.5rem;
+  height: 35.5rem;
   perspective: 800px;
-  position: relative; }
+  position: relative;
+  margin: 10px; }
 
 .card {
   width: 100%;
@@ -113,9 +118,9 @@ main {
   transition: transform 1s; }
   .card h3 {
     text-align: center;
-    color: white;
+    color: #ffffff;
     display: block;
-    margin-top: 21rem;
+    margin-top: 10rem;
     transition: margin-top 0.5s;
     transition-delay: 0.15s; }
 
