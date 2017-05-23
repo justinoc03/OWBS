@@ -21,7 +21,7 @@
     <!-- ng-show='editPostNowWrapper' may need to ad dback in bellow / uncomment above-->
     <div class="editPostNow col-xs-3" >
       <h4 class="highlight-title" ><strong>Description:</strong></h4>
-      <p>{{job.jobposting_description}}</p>
+      <p ng-bind-html="job.jobposting_description"></p>
     </div>
     <!-- switch -->
     <div class="job-post-controls col-xs-6">
