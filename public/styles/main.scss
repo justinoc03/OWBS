@@ -14,6 +14,7 @@ $subHeading: 21px;
 $pageHeading: 64px;
 $jobs: 18px;
 
+
 html, body {
 	margin:0;
 	padding:0;
@@ -129,6 +130,7 @@ main{
 .services-container{
   width: 100%;
 	margin:auto;
+
 	.col-md-4{
 		width: calc(33% - 20px);
 	}
@@ -140,6 +142,20 @@ main{
     margin-top: 1rem;
     margin-bottom: 2.5rem;
   }
+	p{
+		font-size: 1.5em;
+		width: 85%;
+		margin-left: auto;
+		margin-right: auto;
+		&:first-of-type{
+			margin-bottom: 30px;
+		}
+	}
+	.learn-more{
+		color: $blue;
+		text-align: center;
+			font-size: 6em;
+	}
 }
 // csss for card flip animation
 .contain {
@@ -592,4 +608,11 @@ input:focus + .slider {
 	margin: 0 auto;
 	text-align: center;
 	font-size: $subHeading;
+}
+.fade {
+    transition: all linear 1s;
+    opacity: 1;
+}
+.fade.ng-hide {
+    opacity: 0;
 }

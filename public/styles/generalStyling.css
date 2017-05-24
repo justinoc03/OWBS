@@ -103,6 +103,17 @@ main {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 2.5rem; }
+  .services-container p {
+    font-size: 1.5em;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto; }
+    .services-container p:first-of-type {
+      margin-bottom: 30px; }
+  .services-container .learn-more {
+    color: #008FBE;
+    text-align: center;
+    font-size: 6em; }
 
 .contain {
   height: 35.5rem;
@@ -482,5 +493,12 @@ input:focus + .slider {
   margin: 0 auto;
   text-align: center;
   font-size: 21px; }
+
+.fade {
+  transition: all linear 1s;
+  opacity: 1; }
+
+.fade.ng-hide {
+  opacity: 0; }
 
 /*# sourceMappingURL=generalStyling.css.map */
