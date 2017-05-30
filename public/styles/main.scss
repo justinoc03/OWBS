@@ -1,3 +1,19 @@
+//////Pallette
+$blue: #008FBE;
+$orange: #FF9B42;
+$white: #ffffff;
+$lightGrey: #CECECE;
+$mediumGrey: #AAAAAA;
+$darkGrey:#848C8E;
+$black: #302D2D;
+
+///Fonts
+$heading: 'Neuton', serif;
+$body: 'Raleway', sans-serif;
+$subHeading: 21px;
+$pageHeading: 64px;
+$jobs: 18px;
+
 html, body {
 	margin:0;
 	padding:0;
@@ -6,9 +22,20 @@ html, body {
 
 body {
   margin-top: 30px;
-  font-family: 'Nunito Sans', sans-serif;
+	font-family: $body;
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-family: $heading;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+
+h1{
+	color: $orange;
+	font-size: $pageHeading;
+	text-align: center;
+}
 
 /********************************* Navbar ****************************************/
 // Remove bootstraps default nabar border
@@ -48,7 +75,7 @@ body {
 	position: fixed;
   margin-left: 5%;
   margin-top: -2em;
-  z-index: 9999999;
+  z-index: 999;
 }
 
 
@@ -62,7 +89,10 @@ body {
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
 	border-top: 25px solid #f8f8f8;
-  z-index: 9999;
+  z-index: 998;
+}
+main{
+	padding-top: 10px;
 }
 /*********************************** Home Styles ************************************/
 .home-container{
@@ -92,14 +122,19 @@ body {
     width: 25rem;
     background-color: transparent;
     border-width: 3px;
-    color: black;
+    color: $black;
   }
 }
 /********************************* Services Styles *****************************/
 .services-container{
   width: 100%;
-	margin-left: -1%;
-
+	margin:auto;
+	.col-md-4{
+		width: calc(33% - 20px);
+	}
+	.less-margin{
+		margin-left: 0;
+	}
   h1{
     text-align: center;
     margin-top: 1rem;
@@ -108,9 +143,10 @@ body {
 }
 // csss for card flip animation
 .contain {
-  height: 49.5rem;
+  height: 35.5rem;
   perspective: 800px;
 	position: relative;
+	margin: 10px;
 }
 .card {
   width: 100%;
@@ -120,9 +156,9 @@ body {
   transition: transform 1s;
 	h3{
 		text-align: center;
-		color: white;
+		color: $white;
 		display: block;
-		margin-top: 21rem;
+		margin-top: 10rem;
 		transition: margin-top 0.5s;
 		transition-delay: 0.15s;
 	}
@@ -201,25 +237,26 @@ body {
 	}
 }
 /********************************* Who We Are **********************************/
-.who-container{
+.who-wrapper{
+	padding-top: 5%;
+	margin-left: 3.5%;
 	position: fixed;
-	h1, h3{
+}
+.who-container{
+	margin-left: -5%;
+	h1,h3{
 		text-align: center;
 	}
-	h1{
-		margin-top: 3rem;
-	}
 	h3{
-		margin-top: -1rem;
+		margin-top: 0;
 	}
-	#who-content{
-		margin-top: 5rem;
-		margin-left: -5rem;
-	}
-	#who-images{
-		margin-top: -3.5rem;
-		img{
-			margin-bottom: 1rem;
+}
+.who-images{
+	margin-top: 1%;
+	img{
+		margin-bottom: 1%;
+		&:last-child{
+			margin-bottom: 0;
 		}
 	}
 }
@@ -276,7 +313,7 @@ body {
 .staff-container{
 	padding-bottom: 50px;
 	h1{
-		color: black;
+		color: $black;
 		text-align: center;
 		margin-top: 1rem;
 		margin-bottom: 2rem;
@@ -287,7 +324,7 @@ body {
 	 h3{
 		text-align: center;
 		font-size: 16px;
-		color: white;
+		color: $white;
 		display: block;
 	}
 	.front h3{
@@ -300,38 +337,186 @@ body {
 		font-size: 10px;
 		margin-left: auto;
 		margin-right: auto;
-		color: black;
+		color: $black;
 	}
 }
-/***********************************Media**************************************/
-	.media-container{
-
-		position: fixed;
-		text-align: center;
-		height: 595px;
-		width: 100%;
-		.photo-wrapper, .video-wrapper{
-			img{
-				margin-top: -50px;
-				width: 250px;
-				transition: transform 0.5s;
-				&:hover{
-					transform: scale(1.1);
-				}
-			}
-		}
-		.wrapper-content{
-			margin-top: 100px;
-		}
-		.photo-wrapper .wrapper-content{
-			border-right: 5px solid black;
+/************************************Jobs***************************************/
+.admin-edit-header{
+	padding: 30px 0;
+	width: 95%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: $subHeading;
+	h1{
+		color: $orange;
+		font-size: $pageHeading;
+	}
+	.add-buttons{
+		display: inline-block;
+	}
+}
+.add-buttons{
+	width: 100%;
+	text-align: center;
+	button{
+		width: 25%;
+		&:first-of-type{
+			margin-right: 5%;
 		}
 	}
+}
+.job-posting, .apply-posting{
+	text-align: center;
+	border-bottom: 2px solid $black;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	h4, h5{
+		font-size: $subHeading;
+	}
+	p{
+		font-size: $jobs;
+	}
+	&:first-of-type{
+		border-top: 2px solid $black;
+	}
+
+	&:nth-child(odd){
+		background-color:$lightGrey;
+	}
+	&:nth-child(even){
+		background-color: $white;
+	}
+}
+.job-post-controls{
+	margin-top: 25px;
+
+	.btn{
+		margin-top: -34px;
+		margin-right: 15px;
+	}
+}
+
+.onOffSwitch{
+	display: inline-block;
+	p, label{
+		display: inline-block;
+	}
+	p{
+		margin-top: -24px;
+		vertical-align: middle;
+	}
+}
+//slider button
+.posting-section{
+	margin-bottom: 5%;
+}
+.slider{
+	background-color: $lightGrey;
+}
+input:checked + .slider {
+  background-color: $blue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $blue;
+}
+.highlight-title strong{
+	color: $blue;
+}
+//Modals Content
+.modal-content{
+	padding:20px;
+	h3{
+		margin-top: 0;
+		color: $black;
+	}
+	label{
+		font-size: 16px;
+		color: $black;
+	}
+	button{
+			background-color: $blue;
+			padding: 6px 12px;
+			font-size: 14px;
+			text-align: center;
+    	white-space: nowrap;
+    	vertical-align: middle;
+			border-radius: 4px;
+			border: 1px solid transparent;
+			color: $white;
+			width: 25%;
+			margin: auto;
+	}
+	input, trix-editor {
+		appearance: none;
+		border: 1px solid $mediumGrey;
+		border-radius: 5px;
+		margin-bottom: 9%;
+	}
+	trix-toolbar{
+		margin-bottom: 5%;
+		button{
+			background-color: transparent;
+		}
+	}
+	trix-editor{
+		height: 200px;
+		margin-bottom: 3%
+	}
+}
+.applyNow{
+	margin:auto;
+	width: 50%;
+	form{
+		padding: 10px;
+	}
+	input{
+		margin-bottom: 15px;
+		margin-right: 10px;
+		width: 40%;
+		&.large-input{
+			width: calc(80% + 15px);
+		}
+	}
+	input[type=file]{
+		margin: auto;
+		margin-bottom: 15px;
+	}
+	input[type=file]:focus{
+		outline: none;
+	}
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Upload Resume';
+	-webkit-user-select: none;
+	color: $white;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.custom-file-input{
+  color: transparent;
+
+	&:hover, &:active, &:focus,  {
+		color: transparent;
+		outline: none;
+	}
+	&.btn-info{
+		&:active{
+		&:focus{
+			color: transparent;
+			outline: none;
+			}
+		}
+	}
+}
 /*********************************** Footer ************************************/
 
 
 #headerSection {
-
 	padding:10px;
 }
 
@@ -381,4 +566,30 @@ body {
 	.social-icon{
 		width: 30px;
 	}
+}
+//// Utility Classes
+.btn-info{
+	background-color: $blue;
+	border-color: $blue;
+	&:hover{
+		background-color: $blue;
+		border-color: $blue;
+		opacity:0.5;
+	}
+}
+
+.btn-danger{
+	background-color: $orange;
+	border-color: $orange;
+	&:hover{
+		background-color: $orange;
+		border-color: $orange;
+		opacity:0.5;
+	}
+}
+.subheading{
+	width: 95%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: $subHeading;
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <!-- Source fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neuton|Raleway" rel="stylesheet">
 
     <!-- Source Bootstrap, Custom Styling, and JQuery for bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,7 @@
     <script src="/vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
     <script src="/vendors/bootstrap.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/styles/generalStyling.css">
+    <link rel="stylesheet" href="/styles/cssFromJustin.css">
     <link rel="stylesheet" href="/vendors/ngToast.min.css">
     <link rel="stylesheet" href="/vendors/ngToast-animations.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.css">
@@ -29,7 +30,8 @@
     <script src="/scripts/controllers/redirectNoticeController.js"></script>
     <script src="/scripts/controllers/servicesController.js"></script>
     <script src="/scripts/controllers/careersController.js"></script>
-    <script src="/scripts/controllers/mediaController.js"></script>
+    <script src="/scripts/controllers/photoController.js"></script>
+    <script src="/scripts/controllers/videoController.js"></script>
     <script src="/scripts/controllers/staffController.js"></script>
     <script src="/scripts/controllers/adminEditCareersController.js"></script>
     <script src="/scripts/controllers/contactUsController.js"></script>
@@ -89,8 +91,16 @@
                 <li>
                   <a href="#!/services">Services</a>
                 </li>
-                <li>
-                  <a  href="#!/media">Media</a>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown">Media<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#!/photos">Photos</a>
+                    </li>
+                    <li>
+                      <a href="#!/videos">Videos</a>
+                    </li>
+                  </ul>
                 </li>
                 <!-- start of dropdown menu -->
                 <li class="dropdown">

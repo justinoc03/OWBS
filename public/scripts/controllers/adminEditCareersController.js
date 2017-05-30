@@ -73,7 +73,7 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
 
    console.log('job', job);
 
-   var test = confirm(job.jobposting_name + " job posting will be delete forever, would you like to proceed?");
+   var test = confirm(job.jobposting_name + " job posting will be deleted forever, would you like to proceed?");
       if (test === false){
       } else {
 
@@ -115,8 +115,12 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
     //if the job posting status is true, change to false and vice versa
     if(jobStatusToChange.jobPostingOpen === true){
       jobStatusToChange.jobPostingOpen = false;
+      
+
     } else {
       jobStatusToChange.jobPostingOpen = true;
+
+
     }
 
     //route status and promise to get the information back properly.
@@ -161,5 +165,8 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
   //initialize any functions on load
   $scope.init();
   // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","fixed");
+  angular.element(document.getElementById("footerSection")).css("position","relative");
+
+
+
 }]);

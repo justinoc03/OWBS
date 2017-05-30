@@ -1,6 +1,6 @@
-myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', 'authService', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval, authService, careersController){
+myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', '$uibModal','$location','$http','$q', 'ngToast', '$interval', 'authService','$window', function($scope, dbRoutesService, $timeout, $uibModal, $location, $http, $q, ngToast, $interval, authService, $window, careersController){
   console.log('In careersController');
-
+  $window.scrollTo(0, 0);
   //init function that is run at the bottom of this careersController
   $scope.init = function(){
     //global variables
@@ -8,7 +8,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     //functions to run on load
     $scope.getJobs();
   };
-
   $scope.auth0Login = function(){
     var vm = this;
     vm.authService = authService;
@@ -74,6 +73,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
     modalInstance.result.then(function(res){
       //success
+      console.log(res);
       console.log('logged in properly');
     }, function(err){
       //success
@@ -107,7 +107,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     console.log(file);
     return file && base64File;
   };
-
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
     if (job.commentsQuestions === undefined){
@@ -228,8 +227,12 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     dbRoutesService.getJobPostings()
     .then(function (jobPostingsFromDB){
       //success
-      $scope.jobsArray = jobPostingsFromDB.data;
-      console.log('jobsArray', $scope.jobsArray);
+      console.log(jobPostingsFromDB.data);
+      for (var i = 0; i < jobPostingsFromDB.data.length; i++) {
+        if(jobPostingsFromDB.data[i].jobposting_open){
+          $scope.jobsArray.push(jobPostingsFromDB.data[i]);
+        }
+      }
     }, function(errorObject){
       //err
     });
