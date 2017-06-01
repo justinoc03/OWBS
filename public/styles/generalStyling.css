@@ -103,6 +103,17 @@ main {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 2.5rem; }
+  .services-container p {
+    font-size: 1.5em;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto; }
+    .services-container p:first-of-type {
+      margin-bottom: 30px; }
+  .services-container .learn-more {
+    color: #008FBE;
+    text-align: center;
+    font-size: 6em; }
 
 .contain {
   height: 35.5rem;
@@ -306,14 +317,14 @@ main {
       margin-right: 5%; }
 
 .job-posting, .apply-posting {
-  text-align: center;
+  text-align: left;
   border-bottom: 2px solid #302D2D;
   padding-bottom: 1%;
   padding-top: 1%; }
   .job-posting h4, .job-posting h5, .apply-posting h4, .apply-posting h5 {
-    font-size: 21px; }
+    font-size: 32px; }
   .job-posting p, .apply-posting p {
-    font-size: 18px; }
+    font-size: 32px; }
   .job-posting:first-of-type, .apply-posting:first-of-type {
     border-top: 2px solid #302D2D; }
   .job-posting:nth-child(odd), .apply-posting:nth-child(odd) {
@@ -339,7 +350,7 @@ main {
   margin-bottom: 5%; }
 
 .slider {
-  background-color: #CECECE; }
+  background-color: #848C8E; }
 
 input:checked + .slider {
   background-color: #008FBE; }
@@ -395,8 +406,10 @@ input:focus + .slider {
     .applyNow input.large-input {
       width: calc(80% + 15px); }
   .applyNow input[type=file] {
-    margin: auto;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    width: 82%; }
+  .applyNow input[type=submit] {
+    margin-left: 20%; }
   .applyNow input[type=file]:focus {
     outline: none; }
 
@@ -408,7 +421,7 @@ input:focus + .slider {
   -webkit-user-select: none;
   color: #ffffff;
   position: absolute;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, 0); }
 
 .custom-file-input {
@@ -419,6 +432,9 @@ input:focus + .slider {
   .custom-file-input.btn-info:active:focus {
     color: transparent;
     outline: none; }
+
+.job-content {
+  text-align: left; }
 
 /*********************************** Footer ************************************/
 #headerSection {
@@ -482,5 +498,12 @@ input:focus + .slider {
   margin: 0 auto;
   text-align: center;
   font-size: 21px; }
+
+.fade {
+  transition: all linear 1s;
+  opacity: 1; }
+
+.fade.ng-hide {
+  opacity: 0; }
 
 /*# sourceMappingURL=generalStyling.css.map */

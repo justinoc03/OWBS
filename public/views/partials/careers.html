@@ -20,16 +20,18 @@
     <!-- <article class="" ng-repeat="job in jobsArray"> -->
     <article class="apply-posting" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-offset-1 col-xs-6">
           <h4 class="highlight-title"><strong>Job Title:</strong></h4>
           <p>{{job.jobposting_name}}</p>
         </div>
-        <div class="col-xs-4">
-          <h5 class="highlight-title"> <strong>Job Description:</strong> </h5>
-          <p ng-bind-html="job.jobposting_description"></p>
-        </div>
-        <div class="col-xs-4">
+        <div class=" col-xs-offset-2 col-xs-3">
           <button class="btn btn-info" type="button" name="button" ng-click="applyNowWrapper = !applyNowWrapper">Apply Now!</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <h5 class="highlight-title"> <strong>Job Description:</strong> </h5>
+          <div class="job-content" ng-bind-html="job.jobposting_description"></div>
         </div>
       </div>
         <div class="applyNow row" ng-show='applyNowWrapper'>
@@ -46,7 +48,9 @@
             <input class="large-input" type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions"  style="height: 50px; padding-right: 10px;">
           </div>
           <div class="row">
-            <input  class="btn btn-info custom-file-input" id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
+             <input  class="btn btn-info custom-file-input" id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
+          </div>
+          <div class="row">
             <input  type="submit" class="btn btn-info" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)"></input>
           </div>
           </form>
