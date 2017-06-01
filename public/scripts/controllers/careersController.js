@@ -308,5 +308,5 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   $scope.init();
 
   // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","fixed");
+  angular.element(document.getElementById("footerSection")).css("position","static");
 }]);
