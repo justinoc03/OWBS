@@ -11,20 +11,25 @@
   </header>
 </section>
 <section class="posting-section">
-  <article class="job-posting row" ng-repeat="job in jobsArray">
+  <article class="job-posting" ng-repeat="job in jobsArray">
   <!-- <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" > -->
-  <div class="col-xs-3">
-    <h4 class="highlight-title"><strong>Job Title:</strong></h4>
-    <p>{{job.jobposting_name}}</p>
-  </div>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-1">
+        <h4 class="highlight-title"><strong>Job Title:</strong></h4>
+        <p>{{job.jobposting_name}}</p>
+      </div>
+    </div>
     <!-- <button  class="btn btn-info" type="button" name="button" ng-click="editPostNowWrapper= !editPostNowWrapper">View Post Details</button> -->
     <!-- ng-show='editPostNowWrapper' may need to ad dback in bellow / uncomment above-->
-    <div class="editPostNow col-xs-3" >
+  <div class="row">
+    <div class="editPostNow col-xs-10 col-xs-offset-1" >
       <h4 class="highlight-title" ><strong>Description:</strong></h4>
       <p ng-bind-html="job.jobposting_description"></p>
     </div>
+  </div>
     <!-- switch -->
-    <div class="job-post-controls col-xs-6">
+  <div class="row">
+    <div class="job-post-controls  col-xs-offset-1 col-xs-6">
       <button type="button" name="button"  class="btn btn-danger" ng-click="deleteJobPosting(job)">Delete Post</button>
       <button type="button" name="button" class="btn btn-info" ng-click="editJobPost(job)">Edit Post</button>
       <div class="onOffSwitch">
@@ -37,5 +42,6 @@
         <p> On </p>
     </div>
     </div>
+  </div>
   </article>
 </section>
