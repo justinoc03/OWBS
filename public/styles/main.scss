@@ -5,14 +5,14 @@ $white: #ffffff;
 $lightGrey: #CECECE;
 $mediumGrey: #AAAAAA;
 $darkGrey:#848C8E;
-$black: #302D2D;
+$black: #343839;
 
 ///Fonts
-$heading: 'Neuton', serif;
+$heading: 'Montserrat', sans-serif;
 $body: 'Raleway', sans-serif;
 $subHeading: 21px;
 $pageHeading: 64px;
-$jobs: 32px;
+$jobs: 18px;
 
 
 html, body {
@@ -29,7 +29,7 @@ body {
 h1, h2, h3, h4, h5, h6{
 	font-family: $heading;
 	font-weight: 800;
-	letter-spacing: 1px;
+	letter-spacing: normal;
 }
 
 h1{
@@ -43,6 +43,33 @@ h1{
 .navbar-default{
   // Remove bootstraps default nabar border
   border-bottom: none;
+	background-color: $black
+}
+.navbar-default .navbar-nav>li>a{
+	color: $white;
+	&:hover{
+		color: $blue;
+	}
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus{
+	color: $blue !important;
+	background-color: $black !important;
+}
+.navbar-default .navbar-nav>li>a:focus{
+	color:$white;
+}
+.dropdown-menu{
+	background-color: $black;
+	border-top:none;
+}
+.dropdown-menu>li>a{
+	color: $white;
+}
+.dropdown-menu>li>a:hover{
+	background-color: $blue;
 }
 .logo{
   float:left;
@@ -68,6 +95,7 @@ h1{
 }
 .navbar-nav{
   margin-left: 50px;
+	background-color: $black;
 }
 #navShape {
 	width: 100px;
@@ -89,7 +117,7 @@ h1{
 	height: 0;
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
-	border-top: 25px solid #f8f8f8;
+	border-top: 25px solid $black;
   z-index: 998;
 }
 main{
@@ -390,7 +418,7 @@ main{
 		font-size: $jobs;
 	}
 	p{
-		font-size: $jobs;
+		font-size: $subHeading;
 	}
 	&:first-of-type{
 		border-top: 2px solid $black;
@@ -545,13 +573,14 @@ input:focus + .slider {
 }
 
 #footerSection {
-	background:#efefef;
+	background:$black;
 	width:100%;
 	height:55px;
 	position:fixed;
 	bottom:0px;
 	left:0;
   text-align: center;
+	color: $lightGrey;
 	#footer-contact, #footer-connect{
 		margin-top: 3px;
 		p{
