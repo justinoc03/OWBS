@@ -8,8 +8,8 @@ body {
   font-family: "Raleway", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
   letter-spacing: normal; }
 
 h1 {
@@ -93,29 +93,44 @@ main {
 
 /*********************************** Home Styles ************************************/
 .home-container {
-  background-image: url("../assets/images/cell-tower-1920.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 1296px;
-  height: 600px;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  z-index: 1; }
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0; }
+
+#home-images {
+  z-index: 1;
+  position: relative; }
+  #home-images img {
+    height: 600px;
+    width: 100%;
+    display: block; }
 
 #home-content {
+  background-image: url("../assets/images/concrete_wall_2.png");
+  width: 100%;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
   text-align: center;
-  margin-top: 15%; }
+  border-bottom: 3px solid #008FBE; }
   #home-content h1 {
     font-size: 5rem; }
   #home-content h3 {
     margin-top: 0.5rem;
-    font-size: 3rem; }
-  #home-content button {
-    width: 25rem;
-    background-color: transparent;
-    border-width: 3px;
-    color: #343839; }
+    font-size: 3rem;
+    font-family: "Raleway", sans-serif; }
+
+.home-sub-content {
+  border-top: 3px solid #FF9B42; }
+  .home-sub-content:last-of-type {
+    border-top: none;
+    padding-bottom: 20px; }
+  .home-sub-content .col-xs-6 {
+    padding-left: 40px; }
+    .home-sub-content .col-xs-6:last-child {
+      padding-left: 0;
+      padding-right: 40px; }
 
 /********************************* Services Styles *****************************/
 .services-container {
@@ -532,5 +547,8 @@ input:focus + .slider {
 
 .fade.ng-hide {
   opacity: 0; }
+
+.blue-highlight {
+  color: #008FBE; }
 
 /*# sourceMappingURL=generalStyling.css.map */

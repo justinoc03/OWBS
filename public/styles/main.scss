@@ -8,7 +8,7 @@ $darkGrey:#848C8E;
 $black: #343839;
 
 ///Fonts
-$heading: 'Montserrat', sans-serif;
+$heading: 'Roboto Slab', serif;
 $body: 'Raleway', sans-serif;
 $subHeading: 21px;
 $pageHeading: 64px;
@@ -28,7 +28,7 @@ body {
 
 h1, h2, h3, h4, h5, h6{
 	font-family: $heading;
-	font-weight: 800;
+	font-weight: 700;
 	letter-spacing: normal;
 }
 
@@ -125,35 +125,53 @@ main{
 }
 /*********************************** Home Styles ************************************/
 .home-container{
-  // Test Image until we have assets to use
-  background-image: url("../assets/images/cell-tower-1920.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 1296px;
-  height: 600px;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  z-index: 1;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+#home-images{
+	z-index: 1;
+	position: relative;
+	img{
+		height: 600px;
+		width: 100%;
+		display: block;
+	}
 }
 
-#home-content{
-  text-align: center;
-  margin-top: 15%;
-  h1{
-    font-size: 5rem;
-  }
-  h3{
-    margin-top: 0.5rem;
-    font-size:3rem;
-  }
-  button{
-    width: 25rem;
-    background-color: transparent;
-    border-width: 3px;
-    color: $black;
-  }
-}
+ #home-content{
+	 background-image: url("../assets/images/concrete_wall_2.png");
+	 width: 100%;
+	 margin:auto;
+	 padding-top: 10px;
+	 padding-bottom: 10px;
+	 position: relative;
+   text-align: center;
+	 border-bottom: 3px solid $blue;
+   h1{
+     font-size: 5rem;
+   }
+   h3{
+     margin-top: 0.5rem;
+     font-size:3rem;
+		 font-family: $body;
+
+   }
+ }
+ .home-sub-content{
+	 border-top: 3px solid $orange;
+	 &:last-of-type{
+		 border-top: none;
+		 padding-bottom: 20px;
+	 }
+	 .col-xs-6{
+		 padding-left: 40px;
+		 &:last-child{
+			 padding-left: 0;
+			 padding-right: 40px;
+		 }
+	 }
+ }
 /********************************* Services Styles *****************************/
 .services-container{
   width: 100%;
@@ -652,4 +670,7 @@ input:focus + .slider {
 }
 .fade.ng-hide {
     opacity: 0;
+}
+.blue-highlight{
+	color: $blue;
 }
