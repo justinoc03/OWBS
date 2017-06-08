@@ -5,14 +5,14 @@ $white: #ffffff;
 $lightGrey: #CECECE;
 $mediumGrey: #AAAAAA;
 $darkGrey:#848C8E;
-$black: #302D2D;
+$black: #343839;
 
 ///Fonts
-$heading: 'Neuton', serif;
+$heading: 'Roboto Slab', serif;
 $body: 'Raleway', sans-serif;
 $subHeading: 21px;
 $pageHeading: 64px;
-$jobs: 32px;
+$jobs: 18px;
 
 
 html, body {
@@ -28,8 +28,8 @@ body {
 
 h1, h2, h3, h4, h5, h6{
 	font-family: $heading;
-	font-weight: 800;
-	letter-spacing: 1px;
+	font-weight: 700;
+	letter-spacing: normal;
 }
 
 h1{
@@ -43,6 +43,33 @@ h1{
 .navbar-default{
   // Remove bootstraps default nabar border
   border-bottom: none;
+	background-color: $black
+}
+.navbar-default .navbar-nav>li>a{
+	color: $white;
+	&:hover{
+		color: $blue;
+	}
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus{
+	color: $blue !important;
+	background-color: $black !important;
+}
+.navbar-default .navbar-nav>li>a:focus{
+	color:$white;
+}
+.dropdown-menu{
+	background-color: $black;
+	border-top:none;
+}
+.dropdown-menu>li>a{
+	color: $white;
+}
+.dropdown-menu>li>a:hover{
+	background-color: $blue;
 }
 .logo{
   float:left;
@@ -68,6 +95,7 @@ h1{
 }
 .navbar-nav{
   margin-left: 50px;
+	background-color: $black;
 }
 #navShape {
 	width: 100px;
@@ -89,7 +117,7 @@ h1{
 	height: 0;
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
-	border-top: 25px solid #f8f8f8;
+	border-top: 25px solid $black;
   z-index: 998;
 }
 main{
@@ -97,35 +125,53 @@ main{
 }
 /*********************************** Home Styles ************************************/
 .home-container{
-  // Test Image until we have assets to use
-  background-image: url("../assets/images/cell-tower-1920.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 1296px;
-  height: 600px;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  z-index: 1;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+#home-images{
+	z-index: 1;
+	position: relative;
+	img{
+		height: 600px;
+		width: 100%;
+		display: block;
+	}
 }
 
-#home-content{
-  text-align: center;
-  margin-top: 15%;
-  h1{
-    font-size: 5rem;
-  }
-  h3{
-    margin-top: 0.5rem;
-    font-size:3rem;
-  }
-  button{
-    width: 25rem;
-    background-color: transparent;
-    border-width: 3px;
-    color: $black;
-  }
-}
+ #home-content{
+	 background-image: url("../assets/images/concrete_wall_2.png");
+	 width: 100%;
+	 margin:auto;
+	 padding-top: 10px;
+	 padding-bottom: 10px;
+	 position: relative;
+   text-align: center;
+	 border-bottom: 3px solid $blue;
+   h1{
+     font-size: 5rem;
+   }
+   h3{
+     margin-top: 0.5rem;
+     font-size:3rem;
+		 font-family: $body;
+
+   }
+ }
+ .home-sub-content{
+	 border-top: 3px solid $orange;
+	 &:last-of-type{
+		 border-top: none;
+		 padding-bottom: 20px;
+	 }
+	 .col-xs-6{
+		 padding-left: 40px;
+		 &:last-child{
+			 padding-left: 0;
+			 padding-right: 40px;
+		 }
+	 }
+ }
 /********************************* Services Styles *****************************/
 .services-container{
   width: 100%;
@@ -329,7 +375,7 @@ main{
 .staff-container{
 	padding-bottom: 50px;
 	h1{
-		color: $black;
+		color: $orange;
 		text-align: center;
 		margin-top: 1rem;
 		margin-bottom: 2rem;
@@ -390,7 +436,7 @@ main{
 		font-size: $jobs;
 	}
 	p{
-		font-size: $jobs;
+		font-size: $subHeading;
 	}
 	&:first-of-type{
 		border-top: 2px solid $black;
@@ -545,13 +591,14 @@ input:focus + .slider {
 }
 
 #footerSection {
-	background:#efefef;
+	background:$black;
 	width:100%;
 	height:55px;
 	position:fixed;
 	bottom:0px;
 	left:0;
   text-align: center;
+	color: $lightGrey;
 	#footer-contact, #footer-connect{
 		margin-top: 3px;
 		p{
@@ -623,4 +670,7 @@ input:focus + .slider {
 }
 .fade.ng-hide {
     opacity: 0;
+}
+.blue-highlight{
+	color: $blue;
 }
