@@ -1,16 +1,35 @@
 <div class="container services-container">
-  <h1>Services</h1>
-  <div ng-show="showServiceContent" class="fade">
+  <div class="row">
+    <h1 class=" col-md-3 menu-header">Services</h1>
+  </div>
+  <div class="row">
+  <div class="col-md-3 services-menu">
+    <ul>
+      <li>Civil</li>
+      <li>Electrical</li>
+      <li>Integration</li>
+      <li>Mainetenance &amp; Service</li>
+      <li> Tower Construction &amp; Upgrade</li>
+      <li>Tower Modification</li>
+      <li>Troubleshooting</li>
+      <li>Welding</li>
+      <li>Crane Services</li>
+      <li>DAS</li>
+    </ul>
+  </div>
+
+  <div ng-show="showServiceContent" class="fade col-md-9 services-content">
     <p>With One Way’s highly skilled team, we are capable of completely rebuilding
       brownfield sites to building brand new greenfield sites anywhere your business
       needs require. We only hire and train the best and always send our own employees
       to get the job done right the first time, every time. </p>
     <p>Although we specialize in telecom infrastructure, our capabilities stretch as far as the airwaves we build in the wireless business.</p>
-    <div class="learn-more col-md-2 col-md-offset-5" ng-click="showServices()">
+    <!-- <div class="learn-more col-md-2 col-md-offset-5" ng-click="showServices()">
       <i class="fa fa-angle-double-down" aria-hidden="true"></i>
-    </div>
+    </div> -->
 </div>
-  <div class="service-cards" ng-show="showServiceCards">
+</div>
+  <!-- <div class="service-cards" ng-show="showServiceCards">
     <section class="contain col-xs-12 col-md-4 less-margin">
       <div id="card-1" class="card" ng-click="flipCard(1)">
         <figure class="front">
@@ -111,4 +130,4 @@
         </div>
       </section>
     </div>
-</div>
+</div> -->

@@ -176,7 +176,28 @@ main{
 .services-container{
   width: 100%;
 	margin:auto;
+	.menu-header{
+		margin-top: 35px;
+	}
+	.services-menu{
 
+		border-right: 2px solid $blue;
+		ul{
+			list-style: none;
+		}
+		li{
+			font-size: 18px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			color: $orange;
+			transition: all 0.25s;
+			width: auto;
+			&:hover{
+			border-bottom: 1px solid $blue;
+			color: $blue;
+			}
+		}
+	}
 	.col-md-4{
 		width: calc(33% - 20px);
 	}
@@ -184,9 +205,11 @@ main{
 		margin-left: 0;
 	}
   h1{
-    text-align: center;
+		font-size: 36px;
+    text-align: left;
     margin-top: 1rem;
     margin-bottom: 2.5rem;
+		color: $blue;
   }
 	p{
 		font-size: 1.5em;
@@ -196,6 +219,9 @@ main{
 		&:first-of-type{
 			margin-bottom: 30px;
 		}
+	}
+	.services-content{
+		padding-top: 75px;
 	}
 	.learn-more{
 		color: $blue;

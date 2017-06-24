@@ -134,14 +134,32 @@ main {
 .services-container {
   width: 100%;
   margin: auto; }
+  .services-container .menu-header {
+    margin-top: 35px; }
+  .services-container .services-menu {
+    border-right: 2px solid #2274A5; }
+    .services-container .services-menu ul {
+      list-style: none; }
+    .services-container .services-menu li {
+      font-size: 18px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: #EE8434;
+      transition: all 0.25s;
+      width: auto; }
+      .services-container .services-menu li:hover {
+        border-bottom: 1px solid #2274A5;
+        color: #2274A5; }
   .services-container .col-md-4 {
     width: calc(33% - 20px); }
   .services-container .less-margin {
     margin-left: 0; }
   .services-container h1 {
-    text-align: center;
+    font-size: 36px;
+    text-align: left;
     margin-top: 1rem;
-    margin-bottom: 2.5rem; }
+    margin-bottom: 2.5rem;
+    color: #2274A5; }
   .services-container p {
     font-size: 1.5em;
     width: 85%;
@@ -149,6 +167,8 @@ main {
     margin-right: auto; }
     .services-container p:first-of-type {
       margin-bottom: 30px; }
+  .services-container .services-content {
+    padding-top: 75px; }
   .services-container .learn-more {
     color: #2274A5;
     text-align: center;
