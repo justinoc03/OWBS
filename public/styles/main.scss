@@ -1,6 +1,6 @@
 //////Pallette
-$blue: #2274A5;
-$orange: #EE8434;
+$blue: #008FBE;
+$orange: #FF9B42;
 $white: #ffffff;
 $lightGrey: #CECECE;
 $mediumGrey: #AAAAAA;
@@ -42,8 +42,8 @@ h1{
 // Remove bootstraps default nabar border
 .navbar-default{
   // Remove bootstraps default nabar border
-  border-bottom: none;
-	background-color: $black
+  border-bottom: 2px solid $blue;
+	background-color: $darkGrey;
 }
 .navbar-default .navbar-nav>li>a{
 	color: $white;
@@ -56,13 +56,13 @@ h1{
 .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus{
 	color: $blue !important;
-	background-color: $black !important;
+	background-color: $darkGrey !important;
 }
 .navbar-default .navbar-nav>li>a:focus{
 	color:$white;
 }
 .dropdown-menu{
-	background-color: $black;
+	background-color: $darkGrey;
 	border-top:none;
 }
 .dropdown-menu>li>a{
@@ -95,7 +95,7 @@ h1{
 }
 .navbar-nav{
   margin-left: 50px;
-	background-color: $black;
+	background-color: $darkGrey;
 }
 #navShape {
 	width: 100px;
@@ -117,7 +117,7 @@ h1{
 	height: 0;
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
-	border-top: 25px solid $black;
+	border-top: 25px solid $darkGrey;
   z-index: 998;
 }
 main{
@@ -128,6 +128,12 @@ main{
 	width: 100%;
 	padding-left: 0;
 	padding-right: 0;
+}
+.tower-image{
+	position: absolute;
+	height: 700px;
+	z-index: 9999;
+	top: 500px;
 }
 #home-images{
 	z-index: 1;
@@ -198,12 +204,7 @@ main{
 			}
 		}
 	}
-	.col-md-4{
-		width: calc(33% - 20px);
-	}
-	.less-margin{
-		margin-left: 0;
-	}
+
   h1{
 		font-size: 36px;
     text-align: left;
@@ -223,107 +224,8 @@ main{
 	.services-content{
 		padding-top: 75px;
 	}
-	.learn-more{
-		color: $blue;
-		text-align: center;
-			font-size: 6em;
-	}
-}
-// csss for card flip animation
-.contain {
-  height: 35.5rem;
-  perspective: 800px;
-	position: relative;
-	margin: 10px;
-}
-.card {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-	h3{
-		text-align: center;
-		color: $white;
-		display: block;
-		margin-top: 10rem;
-		transition: margin-top 0.5s;
-		transition-delay: 0.15s;
-	}
-}
-.card figure {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
 }
 
-.card .front {
-  background-color: #91B1BC;
-}
-#card-1 .front{
-	background-image: url("../assets/images/services/excavators-640.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-#card-2 .front{
-	background-image: url("../assets/images/services/electric-640.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-#card-3 .front{
-	background-image: url("../assets/images/services/building-640.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-#card-4 .front{
-	background-image: url("../assets/images/services/maintenance-640.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-#card-5 .front{
-	background-image: url("../assets/images/services/tower-640.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-#card-6 .front{
-	background-image: url("../assets/images/services/tower-two-640.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-#card-7 .front{
-	background-image: url("../assets/images/services/trouble-shoot-640.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-position: center;
-}
-#card-8 .front{
-	background-image: url("../assets/images/services/weld-640.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-}
-#card-9 .front{
-	background-image: url("../assets/images/services/crane-640.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-}
-.card .back {
-  background-color: #008FBE;
-  transform: rotateY( 180deg );
-}
-.card.flipped {
-  transform: rotateY( 180deg );
-	h3{
-		margin-top: 1rem;
-	}
-}
 /********************************* Who We Are **********************************/
 .who-wrapper{
 	padding-top: 5%;
@@ -618,7 +520,7 @@ input:focus + .slider {
 }
 
 #footerSection {
-	background:$black;
+	background:$darkGrey;
 	width:100%;
 	height:55px;
 	position:fixed;
@@ -666,6 +568,9 @@ input:focus + .slider {
 	}
 }
 //// Utility Classes
+.hidden{
+	display: none;
+}
 .btn-info{
 	background-color: $blue;
 	border-color: $blue;
@@ -691,13 +596,7 @@ input:focus + .slider {
 	text-align: center;
 	font-size: $subHeading;
 }
-.fade {
-    transition: all linear 1s;
-    opacity: 1;
-}
-.fade.ng-hide {
-    opacity: 0;
-}
+
 .blue-highlight{
 	color: $blue;
 }

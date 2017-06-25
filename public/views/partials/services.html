@@ -5,28 +5,67 @@
   <div class="row">
   <div class="col-md-3 services-menu">
     <ul>
-      <li>Civil</li>
-      <li>Electrical</li>
-      <li>Integration</li>
-      <li>Mainetenance &amp; Service</li>
-      <li> Tower Construction &amp; Upgrade</li>
-      <li>Tower Modification</li>
-      <li>Troubleshooting</li>
-      <li>Welding</li>
-      <li>Crane Services</li>
-      <li>DAS</li>
+      <li ng-click="showService(1)">Civil</li>
+      <li ng-click="showService(2)">Electrical</li>
+      <li ng-click="showService(3)">Integration</li>
+      <li ng-click="showService(4)">Mainetenance &amp; Service</li>
+      <li ng-click="showService(5)"> Tower Construction &amp; Upgrade</li>
+      <li ng-click="showService(6)">Tower Modification</li>
+      <li ng-click="showService(7)">Troubleshooting</li>
+      <li ng-click="showService(8)">Welding</li>
+      <li ng-click="showService(9)">Crane Services</li>
+      <li ng-click="showService(10)">DAS</li>
     </ul>
   </div>
 
-  <div ng-show="showServiceContent" class="fade col-md-9 services-content">
-    <p>With One Way’s highly skilled team, we are capable of completely rebuilding
+  <div class="col-md-9 services-content">
+    <div id="serviceLanding">
+      <p>With One Way’s highly skilled team, we are capable of completely rebuilding
       brownfield sites to building brand new greenfield sites anywhere your business
       needs require. We only hire and train the best and always send our own employees
       to get the job done right the first time, every time. </p>
-    <p>Although we specialize in telecom infrastructure, our capabilities stretch as far as the airwaves we build in the wireless business.</p>
-    <!-- <div class="learn-more col-md-2 col-md-offset-5" ng-click="showServices()">
-      <i class="fa fa-angle-double-down" aria-hidden="true"></i>
-    </div> -->
+      <p>Although we specialize in telecom infrastructure, our capabilities stretch as far as the airwaves we build in the wireless business.</p>
+    </div>
+    <div id="service-1" class="hidden" >
+        <h3> Civil </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-2" class="hidden" >
+        <h3> Electrical </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-3" class="hidden" >
+        <h3> Integration </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-4" class="hidden" >
+        <h3> Maintenance &amp; Service </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-5" class="hidden" >
+        <h3> Tower Consruction &amp; Upgrade </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-6" class="hidden" >
+        <h3> Towe Modification </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-7" class="hidden" >
+        <h3> Troubleshooting </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-8" class="hidden" >
+        <h3> Welding </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-9" class="hidden" >
+        <h3> Crane Services </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-10" class="hidden" >
+        <h3> DAS </h3>
+        <p> Details About the service </p>
+    </div>
 </div>
 </div>
   <!-- <div class="service-cards" ng-show="showServiceCards">
