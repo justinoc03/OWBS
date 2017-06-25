@@ -5,10 +5,10 @@ html, body {
 
 body {
   margin-top: 30px;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Assistant", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Slab", serif;
+  font-family: "Merriweather Sans", sans-serif;
   font-weight: 700;
   letter-spacing: normal; }
 
@@ -123,7 +123,7 @@ main {
   #home-content h3 {
     margin-top: 0.5rem;
     font-size: 3rem;
-    font-family: "Raleway", sans-serif; }
+    font-family: "Assistant", sans-serif; }
 
 .home-sub-content {
   border-top: 3px solid #FF9B42; }
@@ -147,13 +147,15 @@ main {
     .services-container .services-menu ul {
       list-style: none; }
     .services-container .services-menu li {
+      font-family: "Josefin Slab", serif;
+      letter-spacing: 2px;
       font-size: 18px;
       padding-top: 5px;
       padding-bottom: 5px;
       color: #FF9B42;
       transition: all 0.25s;
       width: auto; }
-      .services-container .services-menu li:hover {
+      .services-container .services-menu li:hover, .services-container .services-menu li.selected {
         border-bottom: 1px solid #008FBE;
         color: #008FBE; }
   .services-container h1 {

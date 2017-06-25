@@ -7,9 +7,11 @@ $mediumGrey: #AAAAAA;
 $darkGrey:#848C8E;
 $black: #343839;
 
+
 ///Fonts
-$heading: 'Roboto Slab', serif;
-$body: 'Raleway', sans-serif;
+$heading: 'Merriweather Sans', sans-serif;
+$sub-header: 'Josefin Slab', serif;
+$body: 'Assistant', sans-serif;
 $subHeading: 21px;
 $pageHeading: 64px;
 $jobs: 18px;
@@ -192,13 +194,15 @@ main{
 			list-style: none;
 		}
 		li{
+			font-family: $sub-header;
+			letter-spacing: 2px;
 			font-size: 18px;
 			padding-top: 5px;
 			padding-bottom: 5px;
 			color: $orange;
 			transition: all 0.25s;
 			width: auto;
-			&:hover{
+			&:hover, &.selected{
 			border-bottom: 1px solid $blue;
 			color: $blue;
 			}

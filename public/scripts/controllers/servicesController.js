@@ -7,6 +7,8 @@ myApp.controller("servicesController", ['$scope',"$window", function($scope, $wi
   angular.element(document.getElementById("footerSection")).css("position","fixed");
   //function to flip sercvice card
   $scope.showService = function(serviceId){
+    var menu = angular.element(document.getElementById("services-menu")).children();
+    var minusOne = Number(serviceId) - 1;
     var serviceNum = "service-" + serviceId;
     var service = angular.element(document.getElementById(serviceNum));
     if(angular.element(document.getElementById("serviceLanding")).css("display") == "block"){
@@ -15,8 +17,11 @@ myApp.controller("servicesController", ['$scope',"$window", function($scope, $wi
     for (var i = 0; i <= 10; i++) {
       if (i != serviceId){
         angular.element(document.getElementById("service-" + i)).addClass("hidden");
+        angular.element(menu[i-1]).removeClass("selected");
       }
     }
     service.removeClass('hidden');
+
+      angular.element(menu[minusOne]).addClass("selected");
   };
 }]);
