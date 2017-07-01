@@ -1,4 +1,18 @@
 /*********************************** Justin Added ************************************/
+
+/*#contactUs {
+  font-family: 'PT Sans', sans-serif;
+}*/
+
+#googleMap {
+margin: auto
+  width: 90%;
+  height: 500px;
+  border-top: 2px solid #008FBE;
+  border-bottom: 2px solid #008FBE;
+
+}
+
 /*Strong is for the bolding options in the WYSIWYG editor*/
 strong {
   text-shadow: 0px 0px black;
@@ -25,7 +39,7 @@ strong {
   left: 0;
   right: 0;
   bottom: 0;
-  
+
   -webkit-transition: .4s;
   transition: .4s;
 }
