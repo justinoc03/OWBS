@@ -20,8 +20,32 @@
 #mainContactSection {
   text-align: center;
   margin: auto;
-  margin-top: 4%;
+  margin-top: 5%;
   height: 300px;
+  margin-bottom: 15% ;
+}
+
+#mainContactForm {
+  margin: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding-bottom: 15px;
+}
+
+#contactCallUs {
+  margin: auto;
+  margin-top: 4%;
+}
+
+hr.style11 {
+	height: 6px;
+  width: 45%;
+	background: url(/assets/images/hr-11_orange.png) repeat-x 0 0;
+  border: 0;
+}
+
+.orange-highlight{
+  color: #FF9B42;
 }
 
 /*Strong is for the bolding options in the WYSIWYG editor*/

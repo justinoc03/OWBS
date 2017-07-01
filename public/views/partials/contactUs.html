@@ -7,7 +7,29 @@
   </div>
 
   <div id="mainContactSection">
-    <h3>Get in touch and get your project done The Right Way</h3>
-  </div>
+    <h3>Drop us a line and get your project done <i class="fa fa-arrow-right orange-highlight" aria-hidden="true"></i> The Right Way</h3>
+    <form id="mainContactForm">
+      <div class="">
+        <input type="text" placeholder="Your Name" maxlength="20" ng-model="job.applicantFirstName" style="height: 60px; width: 19.8%; margin-right: 5px" required>
+        <input type="email" placeholder="Your Email" ng-model="job.applicantEmail" style="height: 60px; width: 19.8%; margin-left: 5px; margin-right: 5px" required>
+        <input type="text" placeholder="Your Phone Number" ng-keypress='validatePhoneNumber(event)' mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" style="height: 60px; width: 19.8%; margin-left: 5px"  required>
 
-</div>
+        <div class="">
+          <input class="large-input" type="text" placeholder="Your Message" ng-model="job.commentsQuestions"  style="height: 100px; width: 60%; padding-right: 10px; margin-top: 15px">
+        </div>
+
+        <div class="" style="margin-top: 1%">
+          <input  type="submit" class="btn btn-info" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)"></input>
+        </div>
+      </div>
+    </form>
+
+    <hr class="style11">
+
+    <div id="contactCallUs">
+      <h3>... Or if you love to get that personalized touch of talking directly with a human, we're into that, too</h3>
+      <h1>(952) 942-0412</h1>
+    </div>
+
+
+  </div>
