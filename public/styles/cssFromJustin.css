@@ -5,12 +5,18 @@
 }*/
 
 #googleMap {
-margin: auto
+  margin: auto;
   width: 90%;
   height: 500px;
   border-top: 2px solid #008FBE;
   border-bottom: 2px solid #008FBE;
+}
 
+#mainContactSection {
+  text-align: center;
+  margin: auto;
+  margin-top: 3%;
+  height: 300px;
 }
 
 /*Strong is for the bolding options in the WYSIWYG editor*/
