@@ -248,7 +248,10 @@ app.post('/emailApplicationSendgrid', function(req, res){
 }); //end emailApplicationSendgrid
 //.................End post Route: emailApplicationSendgrid.......................//
 
-/////////////////////POST Route: emailApplicationSendgrid in DB///////////////////////////
+
+
+
+/////////////////////POST Route: emailContactUsInfoSendgrid in DB///////////////////////////
 app.post('/emailContactUsInfoSendgrid', function(req, res){
   // console.log('in emailApplicationSendgrid route req.body', req.body);
 
@@ -284,7 +287,46 @@ app.post('/emailContactUsInfoSendgrid', function(req, res){
   });
 
 }); //end emailApplicationSendgrid
-//.................End post Route: emailApplicationSendgrid.......................//
+//.................End post Route: emailContactUsInfoSendgrid.......................//
+
+/////////////////////POST Route: emailContactUsInfoSendgrid_User in DB///////////////////////////
+app.post('/emailContactUsInfoSendgrid_User', function(req, res){
+  // console.log('in emailApplicationSendgrid_User route req.body', req.body);
+
+  var name = req.body.name;
+  var email = req.body.email;
+  var phoneNumber = req.body.phoneNumber;
+  var message = req.body.message;
+
+  console.log(name);
+  console.log(email);
+  console.log(phoneNumber);
+  console.log(message);
+
+  var from_email = new helper.Email(email);
+  var to_email = new helper.Email(email);
+  var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
+  var content = new helper.Content("text/html", "Name: " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br><br> Message: " + message);
+  var mail = new helper.Mail(from_email, subject, to_email, content);
+
+  var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+  var request = sg.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: mail.toJSON()
+  });
+
+  sg.API(request, function(error, response) {
+    console.log('response statusCode', response.statusCode);
+    console.log('response body', response.body);
+    console.log('response headers', response.headers);
+
+    return res.json(error || response);
+  });
+
+}); //end emailApplicationSendgrid
+//.................End post Route: emailContactUsInfoSendgrid.......................//
+
 
 //////////////////////////////generic app.get///////////////////////////////////
 app.get("/*", function(req,res){

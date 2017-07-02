@@ -134,8 +134,23 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
         console.log('there was an error sending the email to Sendgrid', errorObject);
         defer.reject(errorObject);
       });
-      return defer.promise;
-  };
+      // return defer.promise;
 
+    $http({
+      method: 'POST',
+      url: '/emailContactUsInfoSendgrid_User',
+      data: contactInfo
+    }).then(function success(responseObject){
+        defer.resolve(responseObject);
+      }, function error(errorObject, status){
+        console.log('there was an error sending the email to Sendgrid', errorObject);
+        defer.reject(errorObject);
+      });
+      return defer.promise;
+
+
+
+
+  };
 
 }]);//end dbRoutesService
