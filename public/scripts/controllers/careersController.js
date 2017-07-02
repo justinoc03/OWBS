@@ -27,29 +27,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     console.log(profileParsed);
   };
 
-
-
-  //////////////////////////////////toast info//////////////////////////////////////////////////////////////
-  // create a simple toast:
-  // ngToast.create('a toast message...');
-
-//   ngToast.create({
-//     className: 'info',
-//     dismissOnClick: false,
-//     dismissButton: true,
-//     // timeout: 4000,
-//     content: "HELLO!"
-// });
-
-
-  // $timeout(function() {
-  //   toast();
-  // }, 0);
-  // $interval(function() {
-  //   toast();
-  // }, 5000);
-  //........................................
-
   ////////////////////Function: validatePhoneNumber ///////////////////////
   $scope.validatePhoneNumber = function(evt) {
     console.log('in validate');
@@ -107,6 +84,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     console.log(file);
     return file && base64File;
   };
+
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
     if (job.commentsQuestions === undefined){
@@ -153,12 +131,14 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
         ngToast.create({
           content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",
+          timeout: 20000,
         });
         //else statement to indiciate the email was not properly sent
       } else{
       ngToast.create({
         className: 'danger',
         content: "There was an error sending the information. Please try again or contact us",
+        timeout: 20000,
       });
     }
 
