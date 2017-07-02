@@ -188,9 +188,9 @@ app.delete('/deleteJob', function(req, res){
 }); //end getJobPostings
 //.................End Put Route: deleteJob in DB.......................//
 
-/////////////////////POST Route: newJobPosting in DB///////////////////////////
-app.post('/testEmail', function(req, res){
-  // console.log('in testEmail route req.body', req.body);
+/////////////////////POST Route: emailApplicationSendgrid in DB///////////////////////////
+app.post('/emailApplicationSendgrid', function(req, res){
+  // console.log('in emailApplicationSendgrid route req.body', req.body);
 
   var applicantFirstName = req.body.applicantFirstName;
   var applicantLastName = req.body.applicantLastName;
@@ -245,10 +245,46 @@ app.post('/testEmail', function(req, res){
     return res.json(error || response);
   });
 
-}); //end getJobPostings
-//.................End Put Route: modifyJobStatus in DB.......................//
+}); //end emailApplicationSendgrid
+//.................End post Route: emailApplicationSendgrid.......................//
 
+/////////////////////POST Route: emailApplicationSendgrid in DB///////////////////////////
+app.post('/emailContactUsInfoSendgrid', function(req, res){
+  // console.log('in emailApplicationSendgrid route req.body', req.body);
 
+  var name = req.body.name;
+  var email = req.body.email;
+  var phoneNumber = req.body.phoneNumber;
+  var message = req.body.message;
+
+  console.log(name);
+  console.log(email);
+  console.log(phoneNumber);
+  console.log(message);
+
+  // var from_email = new helper.Email(contactUsEmail);
+  // var to_email = new helper.Email("oconnor.justin.r@gmail.com");
+  // var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
+  // var content = new helper.Content("text/html", "<h3><strong>Name:</strong></h3> " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br> Message: " + message);
+  // var mail = new helper.Mail(from_email, subject, to_email, content);
+  //
+  // var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+  // var request = sg.emptyRequest({
+  //   method: 'POST',
+  //   path: '/v3/mail/send',
+  //   body: mail.toJSON()
+  // });
+  //
+  // sg.API(request, function(error, response) {
+  //   console.log('response statusCode', response.statusCode);
+  //   console.log('response body', response.body);
+  //   console.log('response headers', response.headers);
+  //
+  //   return res.json(error || response);
+  // });
+
+}); //end emailApplicationSendgrid
+//.................End post Route: emailApplicationSendgrid.......................//
 
 //////////////////////////////generic app.get///////////////////////////////////
 app.get("/*", function(req,res){
