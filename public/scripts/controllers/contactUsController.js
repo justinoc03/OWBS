@@ -2,19 +2,18 @@ myApp.controller("contactUsController", ['$scope', 'dbRoutesService', '$q', '$ht
   console.log('In contactUsController');
   $window.scrollTo(0, 0);
 
-  //////////////////////////////////toast info//////////////////////////////////////////////////////////////
+  //////////////////////////////////ngToast Test //////////////////////////////////////////////////////////////
   // create a simple toast:
-  ngToast.create('a toast message...');
-
-    ngToast.create({
-      className: 'info',
-      dismissOnClick: false,
-      dismissButton: true,
-      // timeout: 4000,
-      content: "HELLO!"
-  });
-
-  // ........................................
+  // ngToast.create('a toast message...');
+  //
+  //   ngToast.create({
+  //     className: 'info',
+  //     dismissOnClick: false,
+  //     dismissButton: true,
+  //     // timeout: 4000,
+  //     content: "HELLO!"
+  // });
+  // ...............End ngToast Test.........................
 
   //////////////////////////////Function: contactUsEmailInfo /////////////////////////////////
   $scope.contactUsEmailInfo = function(contactInfoFromUser){

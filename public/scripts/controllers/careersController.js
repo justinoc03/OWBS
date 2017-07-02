@@ -27,29 +27,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     console.log(profileParsed);
   };
 
-
-
-  //////////////////////////////////toast info//////////////////////////////////////////////////////////////
-  // create a simple toast:
-  ngToast.create('a toast message...');
-
-  ngToast.create({
-    className: 'info',
-    dismissOnClick: false,
-    dismissButton: true,
-    // timeout: 4000,
-    content: "HELLO!"
-});
-
-
-  // $timeout(function() {
-  //   toast();
-  // }, 0);
-  // $interval(function() {
-  //   toast();
-  // }, 5000);
-  //........................................
-
   ////////////////////Function: validatePhoneNumber ///////////////////////
   $scope.validatePhoneNumber = function(evt) {
     console.log('in validate');
