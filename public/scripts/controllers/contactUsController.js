@@ -48,12 +48,14 @@ myApp.controller("contactUsController", ['$scope', 'dbRoutesService', '$q', '$ht
 
         ngToast.create({
           content: "Thank you for your interest in One Way Building Services! We are currently reading through your message and will contact you in the near future.",
+          timeout: 20000,
         });
         //else statement to indiciate the email was not properly sent
       } else{
       ngToast.create({
         className: 'danger',
         content: "There was an error sending the information. Please try again or contact us",
+        timeout: 20000,
       });
     }
   //

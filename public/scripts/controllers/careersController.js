@@ -131,12 +131,14 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
         ngToast.create({
           content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",
+          timeout: 20000,
         });
         //else statement to indiciate the email was not properly sent
       } else{
       ngToast.create({
         className: 'danger',
         content: "There was an error sending the information. Please try again or contact us",
+        timeout: 20000,
       });
     }
 
