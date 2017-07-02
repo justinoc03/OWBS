@@ -28,19 +28,10 @@ myApp.controller("contactUsController", ['$scope', 'dbRoutesService', '$q', '$ht
         console.log('applicantEmail responseObject:', responseObject);
 
         // clear inputs after promise success response
-        job.applicantFirstName = null;
-        job.applicantLastName = null;
-        job.applicantEmail = null;
-        job.applicantPhone = null;
-        job.commentsQuestions = null;
-        angular.forEach(
-          angular.element("input[type='file']"),
-          function(inputElem) {
-          angular.element(inputElem).val(null);
-          });
-        file = undefined;
-        job.filePicker = undefined;
-         $scope[fileToUpload] = undefined;
+        contactInfoFromUser.name = null;
+        contactInfoFromUser.email = null;
+        contactInfoFromUser.phoneNumber = null;
+        contactInfoFromUser.message = null;
 
         ngToast.create({
           content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",

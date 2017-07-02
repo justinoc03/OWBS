@@ -262,26 +262,26 @@ app.post('/emailContactUsInfoSendgrid', function(req, res){
   console.log(phoneNumber);
   console.log(message);
 
-  // var from_email = new helper.Email(contactUsEmail);
-  // var to_email = new helper.Email("oconnor.justin.r@gmail.com");
-  // var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
-  // var content = new helper.Content("text/html", "<h3><strong>Name:</strong></h3> " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br> Message: " + message);
-  // var mail = new helper.Mail(from_email, subject, to_email, content);
-  //
-  // var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-  // var request = sg.emptyRequest({
-  //   method: 'POST',
-  //   path: '/v3/mail/send',
-  //   body: mail.toJSON()
-  // });
-  //
-  // sg.API(request, function(error, response) {
-  //   console.log('response statusCode', response.statusCode);
-  //   console.log('response body', response.body);
-  //   console.log('response headers', response.headers);
-  //
-  //   return res.json(error || response);
-  // });
+  var from_email = new helper.Email(email);
+  var to_email = new helper.Email("oconnor.justin.r@gmail.com");
+  var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
+  var content = new helper.Content("text/html", "<h3><strong>Name:</strong></h3> " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br> Message: " + message);
+  var mail = new helper.Mail(from_email, subject, to_email, content);
+
+  var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+  var request = sg.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: mail.toJSON()
+  });
+
+  sg.API(request, function(error, response) {
+    console.log('response statusCode', response.statusCode);
+    console.log('response body', response.body);
+    console.log('response headers', response.headers);
+
+    return res.json(error || response);
+  });
 
 }); //end emailApplicationSendgrid
 //.................End post Route: emailApplicationSendgrid.......................//
