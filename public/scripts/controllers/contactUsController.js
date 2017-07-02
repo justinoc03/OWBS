@@ -1,6 +1,20 @@
-myApp.controller("contactUsController", ['$scope', 'dbRoutesService', '$q', '$http', '$location','$window', function($scope, dbRoutesService, $q, $http, $location, $window){
+myApp.controller("contactUsController", ['$scope', 'dbRoutesService', '$q', '$http', 'ngToast', '$location','$window','$timeout', '$interval', function($scope, dbRoutesService, $q, $http, ngToast, $location, $window, $timeout, $interval){
   console.log('In contactUsController');
   $window.scrollTo(0, 0);
+
+  //////////////////////////////////toast info//////////////////////////////////////////////////////////////
+  // create a simple toast:
+  ngToast.create('a toast message...');
+
+    ngToast.create({
+      className: 'info',
+      dismissOnClick: false,
+      dismissButton: true,
+      // timeout: 4000,
+      content: "HELLO!"
+  });
+
+  // ........................................
 
   //////////////////////////////Function: contactUsEmailInfo /////////////////////////////////
   $scope.contactUsEmailInfo = function(contactInfoFromUser){
@@ -28,13 +42,13 @@ myApp.controller("contactUsController", ['$scope', 'dbRoutesService', '$q', '$ht
         console.log('applicantEmail responseObject:', responseObject);
 
         // clear inputs after promise success response
-        contactInfoFromUser.name = null;
-        contactInfoFromUser.email = null;
-        contactInfoFromUser.phoneNumber = null;
-        contactInfoFromUser.message = null;
+        contactInfoFromUser.name = undefined;
+        contactInfoFromUser.email = undefined;
+        contactInfoFromUser.phoneNumber = undefined;
+        contactInfoFromUser.message = undefined;
 
         ngToast.create({
-          content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",
+          content: "Thank you for your interest in One Way Building Services! We are currently reading through your message and will contact you in the near future.",
         });
         //else statement to indiciate the email was not properly sent
       } else{

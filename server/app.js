@@ -265,7 +265,7 @@ app.post('/emailContactUsInfoSendgrid', function(req, res){
   var from_email = new helper.Email(email);
   var to_email = new helper.Email("oconnor.justin.r@gmail.com");
   var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
-  var content = new helper.Content("text/html", "<h3><strong>Name:</strong></h3> " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br> Message: " + message);
+  var content = new helper.Content("text/html", "Name: " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br><br> Message: " + message);
   var mail = new helper.Mail(from_email, subject, to_email, content);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);

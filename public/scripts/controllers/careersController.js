@@ -31,15 +31,15 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
   //////////////////////////////////toast info//////////////////////////////////////////////////////////////
   // create a simple toast:
-  // ngToast.create('a toast message...');
+  ngToast.create('a toast message...');
 
-//   ngToast.create({
-//     className: 'info',
-//     dismissOnClick: false,
-//     dismissButton: true,
-//     // timeout: 4000,
-//     content: "HELLO!"
-// });
+  ngToast.create({
+    className: 'info',
+    dismissOnClick: false,
+    dismissButton: true,
+    // timeout: 4000,
+    content: "HELLO!"
+});
 
 
   // $timeout(function() {
@@ -107,7 +107,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     console.log(file);
     return file && base64File;
   };
-  
+
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
     if (job.commentsQuestions === undefined){
