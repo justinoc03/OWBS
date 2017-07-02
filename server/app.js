@@ -249,9 +249,8 @@ app.post('/emailApplicationSendgrid', function(req, res){
 //.................End post Route: emailApplicationSendgrid.......................//
 
 
-
-
-/////////////////////POST Route: emailContactUsInfoSendgrid in DB///////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////POST Route to Contact Us OWBS: emailContactUsInfoSendgrid in DB///////////////////////////
 app.post('/emailContactUsInfoSendgrid', function(req, res){
   // console.log('in emailApplicationSendgrid route req.body', req.body);
 
@@ -287,9 +286,9 @@ app.post('/emailContactUsInfoSendgrid', function(req, res){
   });
 
 }); //end emailApplicationSendgrid
-//.................End post Route: emailContactUsInfoSendgrid.......................//
+//.................End post Route to Contact Us OWBS: emailContactUsInfoSendgrid.......................//
 
-/////////////////////POST Route: emailContactUsInfoSendgrid_User in DB///////////////////////////
+/////////////////////POST Route to Contact Us Sender: emailContactUsInfoSendgrid_User in DB///////////////////////////
 app.post('/emailContactUsInfoSendgrid_User', function(req, res){
   // console.log('in emailApplicationSendgrid_User route req.body', req.body);
 
@@ -305,8 +304,8 @@ app.post('/emailContactUsInfoSendgrid_User', function(req, res){
 
   var from_email = new helper.Email(email);
   var to_email = new helper.Email(email);
-  var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
-  var content = new helper.Content("text/html", "Name: " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br><br> Message: " + message);
+  var subject =  "Thank You For Contacting One Way Building Services";
+  var content = new helper.Content("text/html", "Your message has been recieved by our staff and we will get back to you as soon as we can! <br> ---------------- <br> <strong>Your Message to Us: <br><br> Name: " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br><br> Message: " + message + "</strong><br>---------------- <br> -OWBS Team");
   var mail = new helper.Mail(from_email, subject, to_email, content);
 
   var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
@@ -325,7 +324,8 @@ app.post('/emailContactUsInfoSendgrid_User', function(req, res){
   });
 
 }); //end emailApplicationSendgrid
-//.................End post Route: emailContactUsInfoSendgrid.......................//
+//.................End post Route to Contact Us Sender: emailContactUsInfoSendgrid.......................//
+//............................................................................................................................................................................//
 
 
 //////////////////////////////generic app.get///////////////////////////////////

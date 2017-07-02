@@ -124,6 +124,7 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
     //dependency $q is used for promises when working with Async data from a database
     var defer = $q.defer();
 
+    //Route to OWBS
     $http({
       method: 'POST',
       url: '/emailContactUsInfoSendgrid',
@@ -136,6 +137,7 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
       });
       // return defer.promise;
 
+    //Route to send confirmation email to sender
     $http({
       method: 'POST',
       url: '/emailContactUsInfoSendgrid_User',
@@ -147,9 +149,6 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
         defer.reject(errorObject);
       });
       return defer.promise;
-
-
-
 
   };
 
