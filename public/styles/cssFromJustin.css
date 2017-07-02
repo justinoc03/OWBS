@@ -24,11 +24,13 @@
 
 #googleMap {
   margin: auto;
+  padding-top: 1px;
   width: 90%;
   height: 500px;
   border-top: 2px solid #008FBE;
   border-bottom: 2px solid #008FBE;
 }
+
 
 #mainContactSection {
   text-align: center;
