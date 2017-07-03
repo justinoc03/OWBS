@@ -1,6 +1,14 @@
 myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope', 'authService', function($scope, $http, $location, $rootScope, authService){
   console.log('In navController');
 
+  //auth0 login
+  $scope.auth0Login = function(){
+    var vm = this;
+    vm.authService = authService;
+    vm.authService.login();
+  };
+
+  //auth0 logout
   $scope.auth0Logout = function(nextRoute){
     var vm = this;
     vm.authService = authService;

@@ -8,24 +8,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     //functions to run on load
     $scope.getJobs();
   };
-  $scope.auth0Login = function(){
-    var vm = this;
-    vm.authService = authService;
-    vm.authService.login();
-
-  };
-
-  $scope.auth0Logout = function(){
-    var vm = this;
-    vm.authService = authService;
-    vm.authService.logout();
-
-    //redirect to careers page after logout
-    $location.path('/careers');
-    //checks localStorage to see if profile is cleared/null
-    var profileParsed = JSON.parse(localStorage.getItem('profile'));
-    console.log(profileParsed);
-  };
 
   ////////////////////Function: validatePhoneNumber ///////////////////////
   $scope.validatePhoneNumber = function(evt) {
@@ -38,24 +20,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     theEvent.returnValue = false;
     if(theEvent.preventDefault) theEvent.preventDefault();
     }
-  };
-
-
-  ////////////////////Function: adminLogin ///////////////////////
-  $scope.adminLogin = function(){
-    var modalInstance = $uibModal.open({
-      templateUrl: './views/modalViews/adminLoginModal.html',
-      controller: 'adminLoginControllerModal'
-    });
-
-    modalInstance.result.then(function(res){
-      //success
-      console.log(res);
-      console.log('logged in properly');
-    }, function(err){
-      //success
-      console.log('error loggin in');
-    });
   };
 
   ////////////////////Function: fileReaderFunction ///////////////////////
@@ -289,4 +253,23 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css("position","static");
+
+
+  // ////////////////////DEPRECATED FUNCTION (NOW USING AUTH0): adminLogin ///////////////////////
+  // $scope.adminLogin = function(){
+  //   var modalInstance = $uibModal.open({
+  //     templateUrl: './views/modalViews/adminLoginModal.html',
+  //     controller: 'adminLoginControllerModal'
+  //   });
+  //
+  //   modalInstance.result.then(function(res){
+  //     //success
+  //     console.log(res);
+  //     console.log('logged in properly');
+  //   }, function(err){
+  //     //success
+  //     console.log('error loggin in');
+  //   });
+  // };
+
 }]);

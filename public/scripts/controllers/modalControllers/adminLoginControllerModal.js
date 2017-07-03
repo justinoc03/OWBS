@@ -35,7 +35,7 @@ myApp.controller("adminLoginControllerModal", ['$scope', 'dbRoutesService', '$ui
           $scope.$close();
           $location.path('/adminEditCareers');
         } else{
-          console.log('fuck off');
+          console.log('No Good');
           sessionStorage.clear();
         }
      }, function(errorObject){
