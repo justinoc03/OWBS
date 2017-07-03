@@ -130,15 +130,15 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
         //  $scope[fileToUpload] = undefined;
 
         ngToast.create({
-          content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",
-          timeout: 20000,
+          content: "Thank you for applying to the<strong>: " + responseObject.config.data.jobPostingTitle + "</strong> position.<br><br> A confirmation email has been sent to the email address listed in your application.",
+          timeout: 30000,
         });
         //else statement to indiciate the email was not properly sent
       } else{
       ngToast.create({
         className: 'danger',
-        content: "There was an error sending the information. Please try again or contact us",
-        timeout: 20000,
+        content: "There was an error sending the application. Please try again or <a  href='#!/contactUs'>Contact Us</a>",
+        timeout: 30000,
       });
     }
 

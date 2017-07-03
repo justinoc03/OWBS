@@ -105,6 +105,7 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
     //dependency $q is used for promises when working with Async data from a database
     var defer = $q.defer();
 
+    //Route to OWBS
     $http({
       method: 'POST',
       url: '/emailApplicationSendgrid',
@@ -115,7 +116,19 @@ myApp.service('dbRoutesService', ['$http','$q'  , function($http, $q){
         console.log('there was an error sending the email to Sendgrid', errorObject);
         defer.reject(errorObject);
       });
-      return defer.promise;
+
+      //Route to send confirmation email to sender
+      $http({
+        method: 'POST',
+        url: '/emailApplicationSendgrid_User',
+        data: emailInfoToOWBS
+      }).then(function success(responseObject){
+          defer.resolve(responseObject);
+        }, function error(errorObject, status){
+          console.log('there was an error sending the email to Sendgrid', errorObject);
+          defer.reject(errorObject);
+        });
+        return defer.promise;
   };
 
   ////////////Function POST Route: sendgrid API for contactUs page info via email//////////
