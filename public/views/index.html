@@ -122,9 +122,6 @@
                     </li>
                   </ul>
                 </li>
-                <li ng-if="isAuthenticated" ng-cloak>
-                  <button ng-click="auth0Logout()">Log Out</button>
-                </li>
               </ul>
             </div>
           </div>
@@ -135,7 +132,7 @@
 
       <div ui-view></div> <!-- controller view inside main controller -->
 
-      <div id="footerSection"> <!--footerSection for contact info and such-->
+      <div id="footerSection" ng-controller="navController"> <!--footerSection for contact info and such-->
         <footer>
           <div class ="row">
             <div class="col-xs-4" id="footer-contact">
@@ -164,9 +161,13 @@
                 <!-- CC Liscense for Icons https://creativecommons.org/licenses/by/3.0/ -->
                 <img class="social-icon" src="/assets/images/icons/linkedin-icon.png" alt="">
                 <img class="social-icon" src="/assets/images/icons/facebook-icon.png" alt="">
+                <!-- auth0 login -->
+                <button ng-if="!isAuthenticated" class="btn btn-primary" ng-click="auth0Login()" ng-cloak>Auth0 Log In</button>
+                <button ng-if="isAuthenticated" class="btn-danger" ng-cloak ng-click="auth0Logout()">Log Out</button>
               </div>
             </div>
             <div class="col-xs-4" id="copyright">
+              <!-- copyright -->
               <p>&copy; 2017 One Way Building Services, Inc.</p>
             </div>
           </div>

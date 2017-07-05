@@ -8,47 +8,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     //functions to run on load
     $scope.getJobs();
   };
-  $scope.auth0Login = function(){
-    var vm = this;
-    vm.authService = authService;
-    vm.authService.login();
-
-  };
-
-  $scope.auth0Logout = function(){
-    var vm = this;
-    vm.authService = authService;
-    vm.authService.logout();
-
-    //redirect to careers page after logout
-    $location.path('/careers');
-    //checks localStorage to see if profile is cleared/null
-    var profileParsed = JSON.parse(localStorage.getItem('profile'));
-    console.log(profileParsed);
-  };
-
-
-
-  //////////////////////////////////toast info//////////////////////////////////////////////////////////////
-  // create a simple toast:
-  // ngToast.create('a toast message...');
-
-//   ngToast.create({
-//     className: 'info',
-//     dismissOnClick: false,
-//     dismissButton: true,
-//     // timeout: 4000,
-//     content: "HELLO!"
-// });
-
-
-  // $timeout(function() {
-  //   toast();
-  // }, 0);
-  // $interval(function() {
-  //   toast();
-  // }, 5000);
-  //........................................
 
   ////////////////////Function: validatePhoneNumber ///////////////////////
   $scope.validatePhoneNumber = function(evt) {
@@ -61,24 +20,6 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     theEvent.returnValue = false;
     if(theEvent.preventDefault) theEvent.preventDefault();
     }
-  };
-
-
-  ////////////////////Function: adminLogin ///////////////////////
-  $scope.adminLogin = function(){
-    var modalInstance = $uibModal.open({
-      templateUrl: './views/modalViews/adminLoginModal.html',
-      controller: 'adminLoginControllerModal'
-    });
-
-    modalInstance.result.then(function(res){
-      //success
-      console.log(res);
-      console.log('logged in properly');
-    }, function(err){
-      //success
-      console.log('error loggin in');
-    });
   };
 
   ////////////////////Function: fileReaderFunction ///////////////////////
@@ -107,6 +48,7 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
     console.log(file);
     return file && base64File;
   };
+
   //////////////////////////////Function: emailInfo /////////////////////////////////
   $scope.emailInfo = function(job, file, base64File){
     if (job.commentsQuestions === undefined){
@@ -152,13 +94,15 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
         //  $scope[fileToUpload] = undefined;
 
         ngToast.create({
-          content: "Thank you for your application for the position title: " + responseObject.config.data.jobPostingTitle + ".<br> Please contact us with any further questions!",
+          content: "Thank you for applying to the<strong>: " + responseObject.config.data.jobPostingTitle + "</strong> position.<br><br> A confirmation email has been sent to the email address listed in your application.",
+          timeout: 30000,
         });
         //else statement to indiciate the email was not properly sent
       } else{
       ngToast.create({
         className: 'danger',
-        content: "There was an error sending the information. Please try again or contact us",
+        content: "There was an error sending the application. Please try again or <a  href='#!/contactUs'>Contact Us</a>",
+        timeout: 30000,
       });
     }
 
@@ -309,4 +253,23 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
 
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css("position","static");
+
+
+  // ////////////////////DEPRECATED FUNCTION (NOW USING AUTH0): adminLogin ///////////////////////
+  // $scope.adminLogin = function(){
+  //   var modalInstance = $uibModal.open({
+  //     templateUrl: './views/modalViews/adminLoginModal.html',
+  //     controller: 'adminLoginControllerModal'
+  //   });
+  //
+  //   modalInstance.result.then(function(res){
+  //     //success
+  //     console.log(res);
+  //     console.log('logged in properly');
+  //   }, function(err){
+  //     //success
+  //     console.log('error loggin in');
+  //   });
+  // };
+
 }]);
