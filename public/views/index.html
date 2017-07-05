@@ -162,12 +162,13 @@
                 <img class="social-icon" src="/assets/images/icons/linkedin-icon.png" alt="">
                 <img class="social-icon" src="/assets/images/icons/facebook-icon.png" alt="">
                 <!-- auth0 login -->
-                <button ng-if="!isAuthenticated" class="btn btn-primary" ng-click="auth0Login()" ng-cloak>Auth0 Log In</button>
-                <button ng-if="isAuthenticated" class="btn-danger" ng-cloak ng-click="auth0Logout()">Log Out</button>
+
               </div>
             </div>
             <div class="col-xs-4" id="copyright">
               <!-- copyright -->
+              <button ng-if="!isAuthenticated" class="admin-auth" ng-click="auth0Login()" ng-cloak>Admin Log In</button>
+              <button ng-if="isAuthenticated" class="admin-auth" ng-cloak ng-click="auth0Logout()"> Admin Log Out</button>
               <p>&copy; 2017 One Way Building Services, Inc.</p>
             </div>
           </div>

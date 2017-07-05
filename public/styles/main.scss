@@ -278,7 +278,6 @@ main{
 /********************* Staff Styles *********************/
 // Staff Profile flips
 .staff{
-
   width: 250px;
   height: 250px;
   position: absolute;
@@ -543,11 +542,21 @@ input:focus + .slider {
 #headerSection {
 	padding:10px;
 }
-
+.admin-auth{
+appearance: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+background-color: transparent;
+color: $lightGrey;
+border: none;
+&:hover{
+	color: $orange;
+	}
+}
 #footerSection {
 	background:$darkGrey;
 	width:100%;
-	height:55px;
+	height: auto;
 	position:fixed;
 	bottom:0px;
 	left:0;
@@ -579,7 +588,6 @@ input:focus + .slider {
 	#copyright{
 		font-size: 8px;
 		text-align: right;
-		margin-top: 5px;
 		margin-left: -5px;
 	}
 #footer-socials{
