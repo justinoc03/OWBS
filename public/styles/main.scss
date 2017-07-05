@@ -44,7 +44,7 @@ h1{
 // Remove bootstraps default nabar border
 .navbar-default{
   // Remove bootstraps default nabar border
-  border-bottom: 2px solid $blue;
+  border:none;
 	background-color: $darkGrey;
 }
 .navbar-default .navbar-nav>li>a{
@@ -95,6 +95,7 @@ h1{
   }
 
 }
+
 .navbar-nav{
   margin-left: 50px;
 	background-color: $darkGrey;
@@ -105,7 +106,7 @@ h1{
 	background: transparent;
 	position: fixed;
   margin-left: 5%;
-  margin-top: -2em;
+  margin-top: -2.2em;
   z-index: 999;
 }
 
@@ -113,15 +114,17 @@ h1{
 #navShape:after {
 	content: "";
 	position: absolute;
-	bottom: -13px;
+	bottom: -15px;
 	left: -40px;
 	width: 0;
 	height: 0;
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
 	border-top: 25px solid $darkGrey;
-  z-index: 998;
+  z-index: 999;
 }
+
+
 main{
 	padding-top: 10px;
 }
@@ -184,6 +187,7 @@ main{
 .services-container{
   width: 100%;
 	margin:auto;
+	position: fixed;
 	.menu-header{
 		margin-top: 35px;
 	}
@@ -196,7 +200,7 @@ main{
 		li{
 			font-family: $sub-header;
 			letter-spacing: 2px;
-			font-size: 18px;
+			font-size: $subHeading;
 			padding-top: 5px;
 			padding-bottom: 5px;
 			color: $orange;
@@ -224,9 +228,26 @@ main{
 		&:first-of-type{
 			margin-bottom: 30px;
 		}
+	h3{ text-align: center;
+	}
+
 	}
 	.services-content{
-		padding-top: 75px;
+		padding-top: 5px;
+		h3{
+			text-align: center;
+		}
+		ul{
+			list-style-type: circle;
+		}
+		li{
+			font-family: $body;
+			font-size: 1.5em;
+		}
+		.service-type{
+			color: $orange;
+			text-decoration: underline;
+		}
 	}
 }
 

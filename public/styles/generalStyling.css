@@ -19,7 +19,7 @@ h1 {
 
 /********************************* Navbar ****************************************/
 .navbar-default {
-  border-bottom: 2px solid #008FBE;
+  border: none;
   background-color: #848C8E; }
 
 .navbar-default .navbar-nav > li > a {
@@ -73,20 +73,20 @@ h1 {
   background: transparent;
   position: fixed;
   margin-left: 5%;
-  margin-top: -2em;
+  margin-top: -2.2em;
   z-index: 999; }
 
 #navShape:after {
   content: "";
   position: absolute;
-  bottom: -13px;
+  bottom: -15px;
   left: -40px;
   width: 0;
   height: 0;
   border-left: 100px solid transparent;
   border-right: 100px solid transparent;
   border-top: 25px solid #848C8E;
-  z-index: 998; }
+  z-index: 999; }
 
 main {
   padding-top: 10px; }
@@ -139,7 +139,8 @@ main {
 /********************************* Services Styles *****************************/
 .services-container {
   width: 100%;
-  margin: auto; }
+  margin: auto;
+  position: fixed; }
   .services-container .menu-header {
     margin-top: 35px; }
   .services-container .services-menu {
@@ -149,7 +150,7 @@ main {
     .services-container .services-menu li {
       font-family: "Josefin Slab", serif;
       letter-spacing: 2px;
-      font-size: 18px;
+      font-size: 21px;
       padding-top: 5px;
       padding-bottom: 5px;
       color: #FF9B42;
@@ -171,8 +172,20 @@ main {
     margin-right: auto; }
     .services-container p:first-of-type {
       margin-bottom: 30px; }
+    .services-container p h3 {
+      text-align: center; }
   .services-container .services-content {
-    padding-top: 75px; }
+    padding-top: 5px; }
+    .services-container .services-content h3 {
+      text-align: center; }
+    .services-container .services-content ul {
+      list-style-type: circle; }
+    .services-container .services-content li {
+      font-family: "Assistant", sans-serif;
+      font-size: 1.5em; }
+    .services-container .services-content .service-type {
+      color: #FF9B42;
+      text-decoration: underline; }
 
 /********************************* Who We Are **********************************/
 .who-wrapper {
