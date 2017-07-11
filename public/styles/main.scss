@@ -379,7 +379,7 @@ main{
 		}
 	}
 }
-.job-posting, .apply-posting{
+.job-posting{
 	text-align: left;
 	border-bottom: 2px solid $black;
 	padding-bottom: 1%;
@@ -394,12 +394,6 @@ main{
 		border-top: 2px solid $black;
 	}
 
-	&:nth-child(odd){
-		background-color:$lightGrey;
-	}
-	&:nth-child(even){
-		background-color: $white;
-	}
 }
 .job-post-controls{
 	margin-top: 25px;
@@ -535,6 +529,63 @@ input:focus + .slider {
 }
 .job-content{
 	text-align: left;
+}
+
+.job-postings{
+	border-left: 2px solid $blue;
+	article{
+		display: none;
+	}
+}
+.job-title strong, .job-title{
+	color: $orange;
+	text-decoration: underline;
+	text-align: center;
+	font-size: 24px;
+}
+.job-header{
+	.menu-header{
+		margin-top: 35px;
+	}
+	h1{
+		font-size: 36px;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+		margin-left: 1rem;
+		color: $blue;
+
+  }
+}
+.jobs-menu{
+	ul{
+		list-style: none;
+	}
+	li{
+		font-family: $sub-header;
+		letter-spacing: 2px;
+		font-size: $subHeading;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: $orange;
+		transition: all 0.25s;
+		width: auto;
+		&:hover, &.selected{
+		border-bottom: 1px solid $blue;
+		color: $blue;
+		}
+	}
+}
+.job-load-text{
+	.subheading{
+		text-align: left;
+	}
+	h3{
+		text-align: center;
+	}
+	ul{
+		list-style: circle;
+	}
 }
 /*********************************** Footer ************************************/
 

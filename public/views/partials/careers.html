@@ -1,4 +1,3 @@
-<h1>Careers</h1>
 
 <!--///////////////////////////////////LOGINS (NONE ARE ACTIVE HERE ANYMORE)///////////////////////////////////////-->
 <!-- NOW FOUND AT THE BOTTOM OF THE INDEX PAGE auth0 login -->
@@ -11,52 +10,71 @@
 <!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
 <section>
 
-  <header class="subheading">
-    <p>When you work for One Way, you’re joining a highly successful organization at the forefront of Cellular Infrastructure. One Way offers exciting career opportunities, that extend your base knowledge.</p>
-  </header>
-
   <toast></toast>
+  <div class=" job-header row">
+    <h1 class="menu-header col-md-3"> Job Openings </h1>
 
-  <section>
-    <!-- <article class="" ng-repeat="job in jobsArray"> -->
-    <article class="apply-posting" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
-      <div class="row">
-        <div class="col-xs-offset-1 col-xs-6">
-          <h4 class="highlight-title"><strong>Job Title:</strong></h4>
-          <p>{{job.jobposting_name}}</p>
-        </div>
-        <div class=" col-xs-offset-2 col-xs-3">
-          <button class="btn btn-info" type="button" name="button" ng-click="applyNowWrapper = !applyNowWrapper">Apply Now!</button>
-        </div>
+  </div>
+  <div class="row">
+    <div class="jobs-menu col-md-3">
+      <ul ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
+        <li id="menu-item-{{$index}}" ng-click="showJob()">
+          {{job.jobposting_name}}
+        </li>
+      </ul>
+  </div>
+    <section class="job-postings col-md-9">
+    <div class="job-load-text" id="job-landing">
+      <h3>Careers Done <i class="fa fa-arrow-right blue-highlight" aria-hidden="true"></i>The Right Way</h3>
+      <div class="subheading">
+        <p>One Way Building Services is a highly successful organization founded on the principle of doing things “One Way – The Right Way”. We not only take building cellular infrastructure seriously, but also hiring the right people for the right job. </p>
+        <p>If you’re looking for an exciting career opportunity in a rewarding, team-based business where your work truly matters to the community around you, look no further. One Way is the place for you.</p>
+        <p><strong>Base Requirements for Employment Consideration:</strong></p>
+        <ul>
+          <li>Strong Work Ethic</li>
+          <li>Valid Driver’s License</li>
+          <li>Comfortable Working at Extreme Elevations</li>
+          <li>Ability to Work in Various Weather Conditions</li>
+          <li>Driving Record Acceptable to Our Insurance Carrier</li>
+          <li>Ability to Pass Pre-employment &amp; Random Substance Abuse Testing</li>
+        </ul>
       </div>
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-          <h5 class="highlight-title"> <strong>Job Description:</strong> </h5>
-          <div class="job-content" ng-bind-html="job.jobposting_description"></div>
+    </div>
+      <!-- <article class="" ng-repeat="job in jobsArray"> -->
+      <article class="apply-posting" id="job-posting-{{$index}}" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" id="job-{{$index}}">
+        <div class="row" >
+            <h4 class="job-title"><strong>{{job.jobposting_name}}</strong></h4>
         </div>
-      </div>
-        <div class="applyNow row" ng-show='applyNowWrapper'>
-          <form>
-          <div class="row">
-            <input type="text" placeholder="First Name" maxlength="20" ng-model="job.applicantFirstName" required>
-            <input type="text" placeholder="Last Name"  maxlength="40" ng-model="job.applicantLastName" required>
+        <div class="row">
+            <h5 class="highlight-title"> <strong>Job Description:</strong> </h5>
+            <div class="job-content" ng-bind-html="job.jobposting_description"></div>
           </div>
           <div class="row">
-            <input type="email" placeholder="Email" ng-model="job.applicantEmail" required>
-            <input type="text" placeholder="Phone Number" ng-keypress='validatePhoneNumber(event)' mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" required>
+            <button class="btn btn-info" type="button" name="button" ng-click="applyNowWrapper = !applyNowWrapper">Apply Now!</button>
           </div>
-          <div class="row">
-            <input class="large-input" type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions"  style="height: 50px; padding-right: 10px;">
-          </div>
-          <div class="row">
-             <input  class="btn btn-info custom-file-input" id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
-          </div>
-          <div class="row">
-            <input  type="submit" class="btn btn-info" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)"></input>
-          </div>
-          </form>
-     <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
-          <!-- br and hr just for easy reading but should delete -->
-          </div>
-    </article>
-  </section>
+          <div class="applyNow row" ng-show='applyNowWrapper'>
+            <form>
+            <div class="row">
+              <input type="text" placeholder="First Name" maxlength="20" ng-model="job.applicantFirstName" required>
+              <input type="text" placeholder="Last Name"  maxlength="40" ng-model="job.applicantLastName" required>
+            </div>
+            <div class="row">
+              <input type="email" placeholder="Email" ng-model="job.applicantEmail" required>
+              <input type="text" placeholder="Phone Number" ng-keypress='validatePhoneNumber(event)' mask="(999) 999-9999" clean="true" ng-model="job.applicantPhone" required>
+            </div>
+            <div class="row">
+              <input class="large-input" type="text" placeholder="Comments or Questions" ng-model="job.commentsQuestions"  style="height: 50px; padding-right: 10px;">
+            </div>
+            <div class="row">
+               <input  class="btn btn-info custom-file-input" id="filePicker" type="file" file-model="{{'myFile' + $index}}" ng-model="job.filePicker"/>
+            </div>
+            <div class="row">
+              <input  type="submit" class="btn btn-info" name="button" ng-click="submitJobApplication(job, 'myFile' + $index)"></input>
+            </div>
+            </form>
+       <!-- <button ng-click="testUpload('myFile' + $index)">upload me</button> -->
+            <!-- br and hr just for easy reading but should delete -->
+            </div>
+      </article>
+    </section>
+  </div>
