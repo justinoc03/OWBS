@@ -229,6 +229,14 @@ main {
   transform-style: preserve-3d;
   transition: transform 1s; }
 
+.ceo {
+  margin-top: 3%;
+  background-image: url("../assets/images/staff/tie-640.jpg");
+  background-position: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; }
+
 .staff figure {
   margin: 0;
   display: block;
@@ -245,6 +253,10 @@ main {
 
 .staff .back {
   transform: rotateX(180deg); }
+  .staff .back h3 {
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto; }
   .staff .back::after {
     border-radius: 50%;
     content: "";
@@ -289,6 +301,15 @@ main {
     margin-left: auto;
     margin-right: auto;
     color: #343839; }
+  .staff-container .ceo-text h3 {
+    color: #008FBE;
+    text-align: left;
+    font-size: 21px; }
+  .staff-container .manage-heading {
+    color: #FF9B42;
+    font-size: 36.57143px;
+    margin-bottom: 5%;
+    margin-top: 3%; }
 
 /************************************Jobs***************************************/
 .admin-edit-header {
