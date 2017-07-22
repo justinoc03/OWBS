@@ -252,11 +252,6 @@ main{
 }
 
 /********************************* Who We Are **********************************/
-.who-wrapper{
-	padding-top: 5%;
-	margin-left: 3.5%;
-	position: fixed;
-}
 .who-container{
 	margin-left: -5%;
 	h1,h3{
@@ -267,12 +262,38 @@ main{
 	}
 }
 .who-images{
+	padding-top: 5%;
 	margin-top: 1%;
+	.slick-slider{
+		width: 150px;
+		height: 150px;
+		margin-bottom: 5%;
+		.slick-slide{
+			width: 150px;
+			height: 150px;
+			img{
+				max-width: 150px;
+				max-height: 150px;
+			}
+		}
+	}
+	.image-wrapper{
+		margin-left: 15%;
+	}
 	img{
 		margin-bottom: 1%;
 		&:last-child{
 			margin-bottom: 0;
 		}
+	}
+}
+.who-content{
+	h1{
+		font-size: $pageHeading/2;
+	}
+	h3{
+		text-align: center;
+		margin-top: 10px;
 	}
 }
 /********************* Staff Styles *********************/
@@ -590,6 +611,13 @@ input:focus + .slider {
 	}
 	ul{
 		list-style: circle;
+	}
+}
+
+/**********************************Contact US **********************************/
+#contactCallUs{
+	h1{
+		font-size: $pageHeading/2;
 	}
 }
 /*********************************** Footer ************************************/

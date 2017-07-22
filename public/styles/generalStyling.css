@@ -188,11 +188,6 @@ main {
       text-decoration: underline; }
 
 /********************************* Who We Are **********************************/
-.who-wrapper {
-  padding-top: 5%;
-  margin-left: 3.5%;
-  position: fixed; }
-
 .who-container {
   margin-left: -5%; }
   .who-container h1, .who-container h3 {
@@ -201,11 +196,30 @@ main {
     margin-top: 0; }
 
 .who-images {
+  padding-top: 5%;
   margin-top: 1%; }
+  .who-images .slick-slider {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 5%; }
+    .who-images .slick-slider .slick-slide {
+      width: 150px;
+      height: 150px; }
+      .who-images .slick-slider .slick-slide img {
+        max-width: 150px;
+        max-height: 150px; }
+  .who-images .image-wrapper {
+    margin-left: 15%; }
   .who-images img {
     margin-bottom: 1%; }
     .who-images img:last-child {
       margin-bottom: 0; }
+
+.who-content h1 {
+  font-size: 32px; }
+.who-content h3 {
+  text-align: center;
+  margin-top: 10px; }
 
 /********************* Staff Styles *********************/
 .staff {
@@ -459,6 +473,10 @@ input:focus + .slider {
   text-align: center; }
 .job-load-text ul, .admin-load-text ul {
   list-style: circle; }
+
+/**********************************Contact US **********************************/
+#contactCallUs h1 {
+  font-size: 32px; }
 
 /*********************************** Footer ************************************/
 #headerSection {
