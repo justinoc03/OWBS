@@ -357,45 +357,27 @@ main{
 /************************************Jobs***************************************/
 .admin-edit-header{
 	padding: 30px 0;
-	width: 95%;
-	margin: 0 auto;
 	text-align: center;
-	font-size: $subHeading;
 	h1{
 		color: $orange;
-		font-size: $pageHeading;
+		font-size: $pageHeading/2;
 	}
 	.add-buttons{
 		display: inline-block;
 	}
 }
-.add-buttons{
-	width: 100%;
-	text-align: center;
-	button{
-		width: 25%;
-		&:first-of-type{
-			margin-right: 5%;
-		}
-	}
-}
 .job-posting{
+	border-left: 2px solid $blue;
 	text-align: left;
-	border-bottom: 2px solid $black;
-	padding-bottom: 1%;
-	padding-top: 1%;
 	h4, h5{
 		font-size: $jobs;
 	}
 	p{
 		font-size: $subHeading;
 	}
-	&:first-of-type{
-		border-top: 2px solid $black;
-	}
-
 }
 .apply-posting{
+	min-height: 450px;
 	.apply-button{
 		display: block;
 		margin-left: auto;
@@ -480,7 +462,7 @@ input:focus + .slider {
 		overflow: scroll;
 	}
 }
-.jobs-page{
+.jobs-page, .admin-page{
 	min-height: 590px;
 	padding-bottom: 1%;
 }
@@ -520,11 +502,11 @@ input:focus + .slider {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Upload Resume';
+  content: 'Upload Your Resume';
 	-webkit-user-select: none;
 	color: $white;
 	position: absolute;
-	left: 45%;
+	left: 41.5%;
 	transform: translate(-50%, 0);
 }
 .custom-file-input{
@@ -552,8 +534,14 @@ input:focus + .slider {
 	article{
 		display: none;
 	}
-
 }
+	.job-posting{
+		min-height: 350px;
+		.admin-job{
+			display: none;
+		}
+	}
+
 .job-title strong, .job-title{
 	color: $orange;
 	text-decoration: underline;
@@ -574,7 +562,7 @@ input:focus + .slider {
 
   }
 }
-.jobs-menu{
+.jobs-menu, .edit-menu{
 	ul{
 		list-style: none;
 	}
@@ -593,7 +581,7 @@ input:focus + .slider {
 		}
 	}
 }
-.job-load-text{
+.job-load-text, .admin-load-text{
 	.subheading{
 		text-align: left;
 	}

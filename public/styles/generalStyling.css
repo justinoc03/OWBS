@@ -279,40 +279,27 @@ main {
 /************************************Jobs***************************************/
 .admin-edit-header {
   padding: 30px 0;
-  width: 95%;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 21px; }
+  text-align: center; }
   .admin-edit-header h1 {
     color: #FF9B42;
-    font-size: 64px; }
+    font-size: 32px; }
   .admin-edit-header .add-buttons {
     display: inline-block; }
 
-.add-buttons {
-  width: 100%;
-  text-align: center; }
-  .add-buttons button {
-    width: 25%; }
-    .add-buttons button:first-of-type {
-      margin-right: 5%; }
-
 .job-posting {
-  text-align: left;
-  border-bottom: 2px solid #343839;
-  padding-bottom: 1%;
-  padding-top: 1%; }
+  border-left: 2px solid #008FBE;
+  text-align: left; }
   .job-posting h4, .job-posting h5 {
     font-size: 18px; }
   .job-posting p {
     font-size: 21px; }
-  .job-posting:first-of-type {
-    border-top: 2px solid #343839; }
 
-.apply-posting .apply-button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
+.apply-posting {
+  min-height: 450px; }
+  .apply-posting .apply-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
 
 .job-post-controls {
   margin-top: 25px; }
@@ -377,7 +364,7 @@ input:focus + .slider {
     margin-bottom: 3%;
     overflow: scroll; }
 
-.jobs-page {
+.jobs-page, .admin-page {
   min-height: 590px;
   padding-bottom: 1%; }
 
@@ -406,11 +393,11 @@ input:focus + .slider {
   visibility: hidden; }
 
 .custom-file-input::before {
-  content: 'Upload Resume';
+  content: 'Upload Your Resume';
   -webkit-user-select: none;
   color: #ffffff;
   position: absolute;
-  left: 45%;
+  left: 41.5%;
   transform: translate(-50%, 0); }
 
 .custom-file-input {
@@ -430,6 +417,11 @@ input:focus + .slider {
   .job-postings article {
     display: none; }
 
+.job-posting {
+  min-height: 350px; }
+  .job-posting .admin-job {
+    display: none; }
+
 .job-title strong, .job-title {
   color: #FF9B42;
   text-decoration: underline;
@@ -446,9 +438,9 @@ input:focus + .slider {
   margin-left: 1rem;
   color: #008FBE; }
 
-.jobs-menu ul {
+.jobs-menu ul, .edit-menu ul {
   list-style: none; }
-.jobs-menu li {
+.jobs-menu li, .edit-menu li {
   font-family: "Josefin Slab", serif;
   letter-spacing: 2px;
   font-size: 21px;
@@ -457,15 +449,15 @@ input:focus + .slider {
   color: #FF9B42;
   transition: all 0.25s;
   width: auto; }
-  .jobs-menu li:hover, .jobs-menu li.selected {
+  .jobs-menu li:hover, .jobs-menu li.selected, .edit-menu li:hover, .edit-menu li.selected {
     border-bottom: 1px solid #008FBE;
     color: #008FBE; }
 
-.job-load-text .subheading {
+.job-load-text .subheading, .admin-load-text .subheading {
   text-align: left; }
-.job-load-text h3 {
+.job-load-text h3, .admin-load-text h3 {
   text-align: center; }
-.job-load-text ul {
+.job-load-text ul, .admin-load-text ul {
   list-style: circle; }
 
 /*********************************** Footer ************************************/
