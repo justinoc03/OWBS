@@ -395,6 +395,13 @@ main{
 	}
 
 }
+.apply-posting{
+	.apply-button{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 .job-post-controls{
 	margin-top: 25px;
 
@@ -473,9 +480,18 @@ input:focus + .slider {
 		overflow: scroll;
 	}
 }
+.jobs-page{
+	min-height: 590px;
+	padding-bottom: 1%;
+}
+.job-postings{
+	.row{
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 .applyNow{
-	margin:auto;
-	width: 50%;
 	form{
 		padding: 10px;
 	}
@@ -536,6 +552,7 @@ input:focus + .slider {
 	article{
 		display: none;
 	}
+
 }
 .job-title strong, .job-title{
 	color: $orange;

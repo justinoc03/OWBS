@@ -309,6 +309,11 @@ main {
   .job-posting:first-of-type {
     border-top: 2px solid #343839; }
 
+.apply-posting .apply-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 .job-post-controls {
   margin-top: 25px; }
   .job-post-controls .btn {
@@ -372,24 +377,30 @@ input:focus + .slider {
     margin-bottom: 3%;
     overflow: scroll; }
 
-.applyNow {
-  margin: auto;
-  width: 50%; }
-  .applyNow form {
-    padding: 10px; }
-  .applyNow input {
-    margin-bottom: 15px;
-    margin-right: 10px;
-    width: 40%; }
-    .applyNow input.large-input {
-      width: calc(80% + 15px); }
-  .applyNow input[type=file] {
-    margin-bottom: 15px;
-    width: 82%; }
-  .applyNow input[type=submit] {
-    margin-left: 20%; }
-  .applyNow input[type=file]:focus {
-    outline: none; }
+.jobs-page {
+  min-height: 590px;
+  padding-bottom: 1%; }
+
+.job-postings .row {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.applyNow form {
+  padding: 10px; }
+.applyNow input {
+  margin-bottom: 15px;
+  margin-right: 10px;
+  width: 40%; }
+  .applyNow input.large-input {
+    width: calc(80% + 15px); }
+.applyNow input[type=file] {
+  margin-bottom: 15px;
+  width: 82%; }
+.applyNow input[type=submit] {
+  margin-left: 20%; }
+.applyNow input[type=file]:focus {
+  outline: none; }
 
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden; }

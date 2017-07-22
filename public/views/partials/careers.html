@@ -8,7 +8,7 @@
 
 
 <!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
-<section>
+<section class="jobs-page">
 
   <toast></toast>
   <div class=" job-header row">
@@ -50,9 +50,9 @@
             <div class="job-content" ng-bind-html="job.jobposting_description"></div>
           </div>
           <div class="row">
-            <button class="btn btn-info" type="button" name="button" ng-click="applyNowWrapper = !applyNowWrapper">Apply Now!</button>
+            <button class="btn btn-info apply-button" type="button" name="button" ng-click="applyNowWrapper = !applyNowWrapper">Apply Now!</button>
           </div>
-          <div class="applyNow row" ng-show='applyNowWrapper'>
+          <div class="applyNow col-md-9 col-md-offset-2" ng-show='applyNowWrapper'>
             <form>
             <div class="row">
               <input type="text" placeholder="First Name" maxlength="20" ng-model="job.applicantFirstName" required>
