@@ -100,7 +100,7 @@ h1{
   margin-left: 50px;
 	background-color: $darkGrey;
 }
-#navShape {
+#navShape, .nav-shape-shadow {
 	width: 100px;
 	height: 50px;
 	background: transparent;
@@ -109,9 +109,11 @@ h1{
   margin-top: -2.2em;
   z-index: 999;
 }
+.nav-shape-shadow{
+	margin-top: -27px;
+}
 
-
-#navShape:after {
+#navShape:after, .nav-shape-shadow:after {
 	content: "";
 	position: absolute;
 	bottom: -15px;
@@ -123,8 +125,20 @@ h1{
 	border-top: 25px solid $darkGrey;
   z-index: 999;
 }
-
-
+.nav-shape-shadow:after{
+	border-top: 29px solid $blue;
+	border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+	left: -60px;
+}
+.navbar-shadow{
+	background-color: $blue;
+	margin-top:-34px;
+	margin-left: -12px;
+	width: 103%;
+	position: fixed;
+	z-index: 998;
+}
 main{
 	padding-top: 10px;
 }

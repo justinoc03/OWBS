@@ -67,7 +67,7 @@ h1 {
   margin-left: 50px;
   background-color: #848C8E; }
 
-#navShape {
+#navShape, .nav-shape-shadow {
   width: 100px;
   height: 50px;
   background: transparent;
@@ -76,7 +76,10 @@ h1 {
   margin-top: -2.2em;
   z-index: 999; }
 
-#navShape:after {
+.nav-shape-shadow {
+  margin-top: -27px; }
+
+#navShape:after, .nav-shape-shadow:after {
   content: "";
   position: absolute;
   bottom: -15px;
@@ -87,6 +90,20 @@ h1 {
   border-right: 100px solid transparent;
   border-top: 25px solid #848C8E;
   z-index: 999; }
+
+.nav-shape-shadow:after {
+  border-top: 29px solid #008FBE;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  left: -60px; }
+
+.navbar-shadow {
+  background-color: #008FBE;
+  margin-top: -34px;
+  margin-left: -12px;
+  width: 103%;
+  position: fixed;
+  z-index: 998; }
 
 main {
   padding-top: 10px; }
