@@ -149,36 +149,32 @@ main{
 	padding-right: 0;
 }
 .tower-image{
-	position: absolute;
-	height: 700px;
-	z-index: 9999;
-	top: 500px;
+	position: relative;
+	height: 550px;
+	margin-top: -200px;
+	margin-left: -85px;
 }
 #home-images{
+	padding: 0;
 	z-index: 1;
 	position: relative;
-	height: 250px;
+	height: 400px;
 	img{
-		height: 250px;
+		height: 400px;
 
 		display: block;
 	}
 }
 
  #home-content{
-	 width: 100%;
-	 margin:auto;
-	 padding-top: 10px;
-	 padding-bottom: 10px;
-	 position: relative;
    text-align: center;
-
    h1{
-     font-size: 5rem;
+		 margin-top: 1em;
+     font-size: $pageHeading;
    }
    h3{
      margin-top: 0.5rem;
-     font-size:3rem;
+     font-size:$subHeading;
 		 font-family: $body;
 
    }
@@ -196,6 +192,45 @@ main{
 			 padding-right: 40px;
 		 }
 	 }
+ }
+ .home-paragraph{
+	 color:$white;
+	 font-size: $subHeading;
+	 font-family: $body;
+	 width: 85%;
+	 margin-left: auto;
+	 margin-right:auto;
+	 &:first-of-type{
+		 margin-top: 50px;
+	 }
+	 &:last-of-type{
+		 margin-bottom: 50px;
+	 }
+ }
+ .home-button{
+	 width: 200px;
+	 margin-left:auto;
+	 margin-right: auto;
+	 display: block;
+ }
+ .work-home-content, .work-contact-content{
+	 h3{
+		 margin-top: 50px;
+		 text-align: center;
+	 }
+	 p{
+		 color:$white;
+		 font-size: $subHeading;
+		 margin-bottom: 20px;
+	 }
+	 a{
+		 margin-bottom: 20px;
+	 }
+ }
+ .worker-image{
+	 height: 470px;
+	 position: relative;
+	 margin-top: -100px;
  }
 /********************************* Services Styles *****************************/
 .services-container{
@@ -739,7 +774,17 @@ border: none;
 		opacity:0.5;
 	}
 }
-
+.btn-default{
+	color: $white;
+	background-color: $lightGrey;
+	border-color: $lightGrey;
+	&:hover{
+		color: $white;
+		background-color: $lightGrey;
+		border-color: $lightGrey;
+		opacity:0.5;
+	}
+}
 .btn-danger{
 	background-color: $orange;
 	border-color: $orange;

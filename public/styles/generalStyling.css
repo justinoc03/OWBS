@@ -115,31 +115,28 @@ main {
   padding-right: 0; }
 
 .tower-image {
-  position: absolute;
-  height: 700px;
-  z-index: 9999;
-  top: 500px; }
+  position: relative;
+  height: 550px;
+  margin-top: -200px;
+  margin-left: -85px; }
 
 #home-images {
+  padding: 0;
   z-index: 1;
   position: relative;
-  height: 250px; }
+  height: 400px; }
   #home-images img {
-    height: 250px;
+    height: 400px;
     display: block; }
 
 #home-content {
-  width: 100%;
-  margin: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  position: relative;
   text-align: center; }
   #home-content h1 {
-    font-size: 5rem; }
+    margin-top: 1em;
+    font-size: 64px; }
   #home-content h3 {
     margin-top: 0.5rem;
-    font-size: 3rem;
+    font-size: 21px;
     font-family: "Assistant", sans-serif; }
 
 .home-sub-content {
@@ -152,6 +149,39 @@ main {
     .home-sub-content .col-xs-6:last-child {
       padding-left: 0;
       padding-right: 40px; }
+
+.home-paragraph {
+  color: #ffffff;
+  font-size: 21px;
+  font-family: "Assistant", sans-serif;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto; }
+  .home-paragraph:first-of-type {
+    margin-top: 50px; }
+  .home-paragraph:last-of-type {
+    margin-bottom: 50px; }
+
+.home-button {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.work-home-content h3, .work-contact-content h3 {
+  margin-top: 50px;
+  text-align: center; }
+.work-home-content p, .work-contact-content p {
+  color: #ffffff;
+  font-size: 21px;
+  margin-bottom: 20px; }
+.work-home-content a, .work-contact-content a {
+  margin-bottom: 20px; }
+
+.worker-image {
+  height: 470px;
+  position: relative;
+  margin-top: -100px; }
 
 /********************************* Services Styles *****************************/
 .services-container {
@@ -576,6 +606,16 @@ input:focus + .slider {
   .btn-info:hover {
     background-color: #008FBE;
     border-color: #008FBE;
+    opacity: 0.5; }
+
+.btn-default {
+  color: #ffffff;
+  background-color: #CECECE;
+  border-color: #CECECE; }
+  .btn-default:hover {
+    color: #ffffff;
+    background-color: #CECECE;
+    border-color: #CECECE;
     opacity: 0.5; }
 
 .btn-danger {
