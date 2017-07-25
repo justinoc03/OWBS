@@ -115,7 +115,7 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
     //if the job posting status is true, change to false and vice versa
     if(jobStatusToChange.jobPostingOpen === true){
       jobStatusToChange.jobPostingOpen = false;
-      
+
 
     } else {
       jobStatusToChange.jobPostingOpen = true;
@@ -160,7 +160,24 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
   };
 
   //..................................End Database calls to dbRoutesService.......................................//
+  $scope.showJob = function(){
+    console.log(this.$index);
+    var id = this.$index;
+    var postingId = "job-posting-" + id;
+    var job = angular.element(document.getElementById(postingId));
+    if(angular.element(document.getElementById("admin-landing")).css("display") == "block"){
+      angular.element(document.getElementById("admin-landing")).addClass("hidden");
+    }
+    for (var i = 0; i <= 10; i++) {
+      if (i != id){
+        angular.element(document.getElementById("job-posting-" + i)).css("display", "none");
+        // angular.element(menu[i-1]).removeClass("selected");
+      }
+    }
+    job.css('display', "block");
 
+      // angular.element(menu[minusOne]).addClass("selected");
+  };
 
   //initialize any functions on load
   $scope.init();

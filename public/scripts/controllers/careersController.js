@@ -252,8 +252,26 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
   $scope.init();
 
   // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","static");
+  angular.element(document.getElementById("footerSection")).css("position","relative");
 
+$scope.showJob = function(){
+  console.log(this.$index);
+  var id = this.$index;
+  var postingId = "job-posting-" + id;
+  var job = angular.element(document.getElementById(postingId));
+  if(angular.element(document.getElementById("job-landing")).css("display") == "block"){
+    angular.element(document.getElementById("job-landing")).addClass("hidden");
+  }
+  for (var i = 0; i <= 10; i++) {
+    if (i != id){
+      angular.element(document.getElementById("job-posting-" + i)).css("display", "none");
+      // angular.element(menu[i-1]).removeClass("selected");
+    }
+  }
+  job.css('display', "block");
+
+    // angular.element(menu[minusOne]).addClass("selected");
+};
 
   // ////////////////////DEPRECATED FUNCTION (NOW USING AUTH0): adminLogin ///////////////////////
   // $scope.adminLogin = function(){

@@ -1,114 +1,85 @@
 <div class="container services-container">
-  <h1>Services</h1>
-  <div ng-show="showServiceContent" class="fade">
-    <p>With One Way’s highly skilled team, we are capable of completely rebuilding
+  <div class="row">
+    <h1 class=" col-md-3 menu-header">Our Services</h1>
+  </div>
+  <div class="row">
+  <div class="col-md-3 services-menu">
+    <ul id="services-menu">
+      <li ng-click="showService(1)">Civil</li>
+      <li ng-click="showService(2)">Electrical</li>
+      <li ng-click="showService(3)">Integration</li>
+      <li ng-click="showService(4)">Mainetenance &amp; Service</li>
+      <li ng-click="showService(5)"> Tower Construction &amp; Upgrade</li>
+      <li ng-click="showService(6)">Tower Modification</li>
+      <li ng-click="showService(7)">Troubleshooting</li>
+      <li ng-click="showService(8)">Welding</li>
+      <li ng-click="showService(9)">Crane Services</li>
+      <li ng-click="showService(10)">DAS</li>
+    </ul>
+  </div>
+
+  <div class="col-md-9 services-content">
+    <div id="serviceLanding">
+    <h3>There’s only One Way <i class="fa fa-arrow-right blue-highlight" aria-hidden="true"></i>The Right Way</h3>
+      <p>With One Way’s highly skilled team, we are capable of completely rebuilding
       brownfield sites to building brand new greenfield sites anywhere your business
       needs require. We only hire and train the best and always send our own employees
       to get the job done right the first time, every time. </p>
-    <p>Although we specialize in telecom infrastructure, our capabilities stretch as far as the airwaves we build in the wireless business.</p>
-    <div class="learn-more col-md-2 col-md-offset-5" ng-click="showServices()">
-      <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+      <p>Although we specialize in telecom infrastructure, our capabilities stretch as far as the airwaves we build in the wireless business.</p>
+    </div>
+    <div id="service-1" class="hidden" >
+        <h3 class="service-type"> Civil </h3>
+        <p> Our Civil Department can provide the necessary elements required to complete a full Cellular Telecommunications build-out. Our crews are capable of building poured-wall foundations, excavation and earthmoving, placing grounding wire, ground rods, and ground wells. We also provide cad-weld installations to the specifications of our clients. </p>
+          <img class="col-md-4 col-md-offset-1" src="../assets/images/services/building-640.jpg">
+          <ul class="col-md-3">
+              <li>CDL</li>
+              <li>Underground Piping</li>
+              <li>Excavation</li>
+              <li>Masonry</li>
+              <li>All Types of Wall </li>
+          </ul>
+            <ul class="col-md-3">
+                <li>Per Footing</li>
+                <li>Fencing</li>
+                <li>Sprinkler Systems</li>
+                <li>Foundation Modification &amp; Repair</li>
+            </ul>
+        </div>
+    <div id="service-2" class="hidden" >
+        <h3 class="service-type"> Electrical </h3>
+        <p> The Electrical Department provides complete turn-key cellular telecommunications installations.  We have a fully equipped staff of licensed electricians capable of working on any size project in multiple states. Some of our electrical services include: </p>
+    </div>
+    <div id="service-3" class="hidden" >
+        <h3 class="service-type"> Integration </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-4" class="hidden" >
+        <h3 class="service-type"> Maintenance &amp; Service </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-5" class="hidden" >
+        <h3 class="service-type"> Tower Consruction &amp; Upgrade </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-6" class="hidden" >
+        <h3 class="service-type"> Tower Modification </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-7" class="hidden" >
+        <h3 class="service-type"> Troubleshooting </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-8" class="hidden" >
+        <h3 class="service-type"> Welding </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-9" class="hidden" >
+        <h3 class="service-type"> Crane Services </h3>
+        <p> Details About the service </p>
+    </div>
+    <div id="service-10" class="hidden" >
+        <h3 class="service-type"> DAS </h3>
+        <p> Details About the service </p>
     </div>
 </div>
-  <div class="service-cards" ng-show="showServiceCards">
-    <section class="contain col-xs-12 col-md-4 less-margin">
-      <div id="card-1" class="card" ng-click="flipCard(1)">
-        <figure class="front">
-          <h3> Civil </h3>
-        </figure>
-        <figure class="back">
-          <h3> Civil </h3>
-          <p> Details About the service </p>
-        </figure>
-      </div>
-    </section>
-      <section class="contain col-xs-12 col-md-4">
-        <div id="card-2" class="card" ng-click="flipCard(2)">
-          <figure class="front">
-            <h3> Electrical </h3>
-          </figure>
-          <figure class="back">
-            <h3> Electrical </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-      <section class="contain col-xs-12 col-md-4">
-        <div id="card-3" class="card" ng-click="flipCard(3)">
-          <figure class="front">
-            <h3> Integration </h3>
-          </figure>
-          <figure class="back">
-            <h3> Integration </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-      <section class="contain col-xs-12 col-md-4 less-margin">
-        <div id="card-4" class="card" ng-click="flipCard(4)">
-          <figure class="front">
-            <h3> Maintenance &amp; Service </h3>
-          </figure>
-          <figure class="back">
-            <h3> Maintenance &amp; Service </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-      <section class="contain col-xs-12 col-md-4">
-        <div id="card-5" class="card" ng-click="flipCard(5)">
-          <figure class="front">
-            <h3> Tower Construction &amp; Upgrade </h3>
-          </figure>
-          <figure class="back">
-            <h3> Tower Construction &amp; Upgrade </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-      <section class="contain col-xs-12 col-md-4">
-        <div id="card-6" class="card" ng-click="flipCard(6)">
-          <figure class="front">
-            <h3> Tower Modification </h3>
-          </figure>
-          <figure class="back">
-            <h3> Tower Modification </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-      <section class="contain col-xs-12 col-md-4 less-margin">
-        <div id="card-7" class="card" ng-click="flipCard(7)">
-          <figure class="front">
-            <h3> Troubleshooting </h3>
-          </figure>
-          <figure class="back">
-            <h3> Troubleshooting </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-      <section class="contain col-xs-12 col-md-4">
-        <div id="card-8" class="card" ng-click="flipCard(8)">
-          <figure class="front">
-            <h3> Welding </h3>
-          </figure>
-          <figure class="back">
-            <h3> Welding </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-      <section class="contain col-xs-12 col-md-4">
-        <div id="card-9" class="card" ng-click="flipCard(9)">
-          <figure class="front">
-            <h3> Crane Services </h3>
-          </figure>
-          <figure class="back">
-            <h3> Crane Services </h3>
-            <p> Details About the service </p>
-          </figure>
-        </div>
-      </section>
-    </div>
 </div>

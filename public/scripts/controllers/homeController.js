@@ -9,11 +9,11 @@ myApp.controller("homeController", ['$scope', '$http', '$location', function($sc
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 7000,
     arrows: false,
     pauseOnHover: false,
     pauseOnFocus: false
   });
   // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","relative");
+  angular.element(document.getElementById("footerSection")).css({"position":"relative", "margin-top":" -11px"});
 }]);

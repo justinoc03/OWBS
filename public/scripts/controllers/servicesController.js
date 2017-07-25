@@ -6,13 +6,22 @@ myApp.controller("servicesController", ['$scope',"$window", function($scope, $wi
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css("position","fixed");
   //function to flip sercvice card
-  $scope.flipCard = function(cardId){
-    var cardNum = "card-" + cardId;
-    var card = angular.element(document.getElementById(cardNum));
-    card.toggleClass('flipped');
-  };
-  $scope.showServices = function(){
-    $scope.showServiceCards = true;
-    $scope.showServiceContent = false;
+  $scope.showService = function(serviceId){
+    var menu = angular.element(document.getElementById("services-menu")).children();
+    var minusOne = Number(serviceId) - 1;
+    var serviceNum = "service-" + serviceId;
+    var service = angular.element(document.getElementById(serviceNum));
+    if(angular.element(document.getElementById("serviceLanding")).css("display") == "block"){
+      angular.element(document.getElementById("serviceLanding")).addClass("hidden");
+    }
+    for (var i = 0; i <= 10; i++) {
+      if (i != serviceId){
+        angular.element(document.getElementById("service-" + i)).addClass("hidden");
+        angular.element(menu[i-1]).removeClass("selected");
+      }
+    }
+    service.removeClass('hidden');
+
+      angular.element(menu[minusOne]).addClass("selected");
   };
 }]);

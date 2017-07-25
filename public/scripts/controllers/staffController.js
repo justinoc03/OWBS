@@ -2,7 +2,7 @@ myApp.controller("staffController", ['$scope','$window', function($scope, $windo
   console.log('In staffController');
   $window.scrollTo(0, 0);
   // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","fixed");
+  angular.element(document.getElementById("footerSection")).css("position","relative");
   $scope.staffToggle = function(staffId){
       var staffNum = "staff-" + staffId;
       var staffMember = angular.element(document.getElementById(staffNum));

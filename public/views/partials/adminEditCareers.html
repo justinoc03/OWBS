@@ -1,47 +1,65 @@
 
 <!--///////////////////////////////////Main Careers Section///////////////////////////////////////-->
-<section>
-  <header class="admin-edit-header">
-    <h1>Admin Portal</h1>
-    <p>Control Available Job Postings below. You can add, edit, delete, and turn on/off a posting.</p>
-    <div class="add-buttons">
-      <button class=" btn btn-info" type="button" name="button" ng-click="startAddNewJob()">Add a New Job</button>
-      <button class=" btn btn-info" type="button" name="button" ng-click="getJobs()">Refresh Posts</button>
+<div class="admin-page">
+  <section>
+    <header class="admin-edit-header row">
+      <div class="col-md-3">
+      <h1>Admin Portal</h1>
+      <div class="add-buttons">
+        <button class=" btn btn-info" type="button" name="button" ng-click="startAddNewJob()">Add a New Job</button>
+        <!-- <button class=" btn btn-info" type="button" name="button" ng-click="getJobs()">Refresh Posts</button>
+      </div> -->
+      </div>
+    </header>
+  </section>
+  <section class="posting-section row">
+    <div class="col-md-3 jobs-menu">
+      <ul ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
+        <li id="menu-item-{{$index}}" ng-click="showJob()">
+          {{job.jobposting_name}}
+        </li>
+      </ul>
     </div>
-  </header>
-</section>
-<section class="posting-section">
-  <article class="job-posting" ng-repeat="job in jobsArray">
-  <!-- <article class="" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" > -->
-    <div class="row">
-      <div class="col-xs-6 col-xs-offset-1">
-        <h4 class="highlight-title"><strong>Job Title:</strong></h4>
-        <p>{{job.jobposting_name}}</p>
+
+    <article class="job-posting col-md-9" >
+      <div class="admin-load-text" id="admin-landing">
+        <h3>Welcome to the Admin Portal</h3>
+        <div class="subheading">
+          <p>From here you can control all of the job postings on the career page. You'll be able to add, edit, delete and disable the individual postings. Chose an option on the left to get started. </p>
+        </div>
+      </div>
+      <div  class="admin-job" ng-repeat="job in jobsArray" id="job-posting-{{$index}}">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-1">
+            <h4 class="highlight-title"><strong>Job Title:</strong></h4>
+            <p>{{job.jobposting_name}}</p>
+          </div>
+        </div>
+        <!-- <button  class="btn btn-info" type="button" name="button" ng-click="editPostNowWrapper= !editPostNowWrapper">View Post Details</button> -->
+        <!-- ng-show='editPostNowWrapper' may need to ad dback in bellow / uncomment above-->
+      <div class="row">
+        <div class="editPostNow col-xs-10 col-xs-offset-1" >
+          <h4 class="highlight-title" ><strong>Description:</strong></h4>
+          <div ng-bind-html="job.jobposting_description"></div>
+        </div>
+      </div>
+        <!-- switch -->
+      <div class="row">
+        <div class="job-post-controls  col-xs-offset-1 col-xs-6">
+          <button type="button" name="button"  class="btn btn-danger" ng-click="deleteJobPosting(job)">Delete Post</button>
+          <button type="button" name="button" class="btn btn-info" ng-click="editJobPost(job)">Edit Post</button>
+          <div class="onOffSwitch">
+            <p> Off </p>
+            <label class="switch">
+              <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="changePostStatus(job)" >
+                <div class="slider round">
+                </div>
+            </label>
+            <p> On </p>
+        </div>
+        </div>
       </div>
     </div>
-    <!-- <button  class="btn btn-info" type="button" name="button" ng-click="editPostNowWrapper= !editPostNowWrapper">View Post Details</button> -->
-    <!-- ng-show='editPostNowWrapper' may need to ad dback in bellow / uncomment above-->
-  <div class="row">
-    <div class="editPostNow col-xs-10 col-xs-offset-1" >
-      <h4 class="highlight-title" ><strong>Description:</strong></h4>
-      <div ng-bind-html="job.jobposting_description"></div>
-    </div>
-  </div>
-    <!-- switch -->
-  <div class="row">
-    <div class="job-post-controls  col-xs-offset-1 col-xs-6">
-      <button type="button" name="button"  class="btn btn-danger" ng-click="deleteJobPosting(job)">Delete Post</button>
-      <button type="button" name="button" class="btn btn-info" ng-click="editJobPost(job)">Edit Post</button>
-      <div class="onOffSwitch">
-        <p> Off </p>
-        <label class="switch">
-          <input type="checkbox" ng-checked="{{job.jobposting_open}}"  ng-model="onOffSlider" ng-click="changePostStatus(job)" >
-            <div class="slider round">
-            </div>
-        </label>
-        <p> On </p>
-    </div>
-    </div>
-  </div>
-  </article>
-</section>
+    </article>
+  </section>
+</div>
