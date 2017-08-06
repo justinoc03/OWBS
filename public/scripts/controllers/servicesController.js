@@ -5,6 +5,7 @@ myApp.controller("servicesController", ['$scope',"$window", function($scope, $wi
   $window.scrollTo(0, 0);
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css("position","fixed");
+
   //function to flip sercvice card
   $scope.showService = function(serviceId){
     var menu = angular.element(document.getElementById("services-menu")).children();
