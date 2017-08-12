@@ -10,9 +10,17 @@
   padding-bottom: 10%;
 }
 
+.services-container .services-content {
+  padding-left: 3%;
+}
+
+.services-container .services-content .service-type {
+  text-align: right
+}
+
 #servicesLandingStatic {
   text-align: center;
-  padding-bottom: 3%;
+  padding-bottom: 10%;
 }
 
 #servicesLandingDetails {
