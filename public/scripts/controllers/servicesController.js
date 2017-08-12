@@ -25,5 +25,5 @@ myApp.controller("servicesController", ['$scope',"$window", function($scope, $wi
   };
 
   // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","fixed");
+  angular.element(document.getElementById("footerSection")).css("position","relative");
 }]);

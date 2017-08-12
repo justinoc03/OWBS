@@ -15,7 +15,14 @@
 }
 
 .services-container .services-content .service-type {
-  text-align: right
+  /*text-align: right;*/
+}
+
+.whoWeAreContainer {
+  /*margin: auto;*/
+  position: static ;
+  /*min-height: 100%;*/
+  padding-bottom: 25%;
 }
 
 #servicesLandingStatic {
