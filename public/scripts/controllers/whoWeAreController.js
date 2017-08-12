@@ -43,5 +43,5 @@ myApp.controller("whoWeAreController", ['$scope', '$http', '$location','$window'
         slider3.slick("slickPlay");
       },secondDelay);
   // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","fixed");
+  angular.element(document.getElementById("footerSection")).css("position","relative");
 }]);

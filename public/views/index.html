@@ -14,10 +14,10 @@
     <script src="/vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
     <script src="/vendors/bootstrap.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/styles/generalStyling.css">
-    <link rel="stylesheet" href="/styles/cssFromJustin.css">
     <link rel="stylesheet" href="/vendors/ngToast.min.css">
     <link rel="stylesheet" href="/vendors/ngToast-animations.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.css">
+    <link rel="stylesheet" href="/styles/cssFromJustin.css">
 
     <!-- Source client.js, Angular, and Angular Routes -->
     <script src="/vendors/angular.js"></script>
@@ -78,7 +78,7 @@
         </div>
         <nav ng-controller="navController" class="navbar navbar-default navbar-toggleable-md navbar-fixed-top" >
             <div class="logo">
-              <img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box">
+              <a href="#!/home"><img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box"></a>
             </div>
           <div class="container mainNav">
             <!-- navigation button for smaller screens (phones/tablets) -->
@@ -171,7 +171,8 @@
             <div class="col-xs-4" id="copyright">
               <!-- copyright -->
               <button ng-if="!isAuthenticated" class="admin-auth" ng-click="auth0Login()" ng-cloak>Admin Log In</button>
-              <button ng-if="isAuthenticated" class="admin-auth" ng-cloak ng-click="auth0Logout()"> Admin Log Out</button>
+              <a ng-if="isAuthenticated" ng-cloak href="#!/adminEditCareers" class="admin-auth">Admin Portal Access</a>
+              <button ng-if="isAuthenticated" class="admin-auth" ng-cloak ng-click="auth0Logout()">Admin Log Out</button>
               <p>&copy; 2017 One Way Building Services, Inc.</p>
             </div>
           </div>

@@ -41,33 +41,3 @@
     <a href="#!/contactUs" class="btn btn-default home-button">Contact Us</a>
   </div>
 </div>
-<script>
-var animateTower = function(){
-    setTimeout(function() {
-      document.getElementById("center").setAttribute("fill", "#EE8434");
-    },500);
-    setTimeout(function() {
-      document.getElementById("center").setAttribute("fill", "#343839");
-      document.getElementById("first-ray").setAttribute("fill", "#EE8434");
-    },1000);
-    setTimeout(function() {
-      document.getElementById("first-ray").setAttribute("fill", "#343839");
-      document.getElementById("second-ray").setAttribute("fill", "#EE8434");
-    },1500);
-    setTimeout(function() {
-      document.getElementById("second-ray").setAttribute("fill", "#343839");
-      document.getElementById("third-ray").setAttribute("fill", "#EE8434");
-    },2000);
-    setTimeout(function() {
-      document.getElementById("third-ray").setAttribute("fill", "#343839");
-      document.getElementById("fourth-ray").setAttribute("fill", "#EE8434");
-    },2500);
-    setTimeout(function() {
-      document.getElementById("fourth-ray").setAttribute("fill", "#343839");
-    },3000);
-  }
-  animateTower();
-  setInterval(function() {
-  animateTower();
-}, 3100);
-</script>

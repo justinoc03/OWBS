@@ -3,8 +3,6 @@ myApp.controller("servicesController", ['$scope',"$window", function($scope, $wi
   $scope.showServiceCards = false;
   $scope.showServiceContent = true;
   $window.scrollTo(0, 0);
-  // set footer position for page
-  angular.element(document.getElementById("footerSection")).css("position","fixed");
 
   //function to flip sercvice card
   $scope.showService = function(serviceId){
@@ -25,4 +23,7 @@ myApp.controller("servicesController", ['$scope',"$window", function($scope, $wi
 
       angular.element(menu[minusOne]).addClass("selected");
   };
+
+  // set footer position for page
+  angular.element(document.getElementById("footerSection")).css("position","relative");
 }]);
