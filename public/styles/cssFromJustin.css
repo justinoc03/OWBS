@@ -21,105 +21,246 @@ h1, h2, h3, h4, h5, h6 {
 .mainNav {
   padding-right: 2%;
   font-size: 17px;
-  background-color:
 }
 
-  /********************************* Navbar ****************************************/
-  .navbar-default {
-    border: none;
-    background-color: #ffffff; }
+/********************************* Navbar ****************************************/
+.navbar-default {
+  border: none;
+  background-color: #ffffff; }
 
-  .navbar-default .navbar-nav > li > a {
-    color: #008FBE; }
-    .navbar-default .navbar-nav > li > a:hover {
-      color: #ffffff; }
-
-  .navbar-default .navbar-nav > .open > a,
-  .navbar-nav > .open > a:hover,
-  .navbar-default .navbar-nav > .open > a:focus {
-    color: #EE8434 !important;
-    background-color: #ffffff !important; }
-
-  .navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a {
+  color: #008FBE; }
+  .navbar-default .navbar-nav > li > a:hover {
     color: #008FBE; }
 
-  .dropdown > a {
-    cursor: pointer;
-  }
+.navbar-default .navbar-nav > .open > a,
+.navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #EE8434 !important;
+  background-color: #ffffff !important; }
 
-  .mainNav > * li:hover {
-    background-color: #EE8434;
-    color: green;
-  }
+.navbar-default .navbar-nav > li > a:focus {
+  color: #008FBE; }
 
-  .dropdown-menu {
-    background-color: #ffffff;
-    border-top: none; }
+.dropdown > a {
+  cursor: pointer;
+}
 
-  .dropdown-menu > li > a {
-    color: #008FBE; }
+/*.mainNav > * li:hover {
+  background-color: #EE8434;
+}*/
 
-  .dropdown-menu > li > a:hover {
-    background-color: #008FBE; }
+.dropdown-menu {
+  background-color: #ffffff;
+  border-top: none; }
 
-  .logo {
-    float: left;
-    margin-left: 11rem;
-    margin-top: 0.5rem; }
-    @media (max-width: 375px) {
-      .logo {
-        margin-left: 6.25rem; } }
-    @media (min-width: 376px) and (max-width: 667px) {
-      .logo {
-        margin-left: 8rem; } }
-    @media (min-width: 668px) and (max-width: 768px) {
-      .logo {
-        margin-left: 8.5rem; } }
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .logo {
-        margin-left: 9rem; } }
+.dropdown-menu > li > a {
+  color: #008FBE; }
 
-  .navbar-nav {
-    margin-left: 50px;
-    background-color: #ffffff; }
+.dropdown-menu > li > a:hover {
+  background-color: #008FBE; }
 
-  #navShape, .nav-shape-shadow {
-    width: 100px;
-    height: 50px;
-    background: transparent;
-    position: fixed;
-    margin-left: 5%;
-    margin-top: -2.2em;
-    z-index: 999; }
+.logo {
+  float: left;
+  margin-left: 11rem;
+  margin-top: 0.5rem; }
+  @media (max-width: 375px) {
+    .logo {
+      margin-left: 6.25rem; } }
+  @media (min-width: 376px) and (max-width: 667px) {
+    .logo {
+      margin-left: 8rem; } }
+  @media (min-width: 668px) and (max-width: 768px) {
+    .logo {
+      margin-left: 8.5rem; } }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .logo {
+      margin-left: 9rem; } }
 
-  .nav-shape-shadow {
-    margin-top: -27px; }
+.navbar-nav {
+  margin-left: 50px;
+  /*background-color: #ffffff; */
+}
 
-  #navShape:after, .nav-shape-shadow:after {
-    content: "";
+#navShape, .nav-shape-shadow {
+  width: 100px;
+  height: 50px;
+  background: transparent;
+  position: fixed;
+  margin-left: 5%;
+  margin-top: -2.2em;
+  z-index: 999; }
+
+.nav-shape-shadow {
+  margin-top: -15px; }
+
+#navShape:after, .nav-shape-shadow:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: -40px;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 25px solid #ffffff;
+  z-index: 999; }
+
+.nav-shape-shadow:after {
+  border-top: 29px solid #008FBE;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  left: -60px; }
+
+.navbar-shadow {
+  background-color: #008FBE;
+  margin-top: -24px;
+  margin-left: -12px;
+  width: 103%;
+  position: fixed;
+  z-index: 998; }
+
+
+
+/*/////////// Circle behind ///////*/
+#myNavbar > ul > li:before, #myNavbar > ul > li:after {
     position: absolute;
-    bottom: -15px;
-    left: -40px;
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 25px solid #ffffff;
-    z-index: 999; }
+    top: 22px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 4px dashed #EE8434;
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: -1;
+}
 
-  .nav-shape-shadow:after {
-    border-top: 29px solid #008FBE;
-    border-left: 120px solid transparent;
-    border-right: 120px solid transparent;
-    left: -60px; }
+#myNavbar > ul > li:after {
+    border-width: 2px;
+    transition: all 0.4s;
+}
 
-  .navbar-shadow {
-    background-color: #008FBE;
-    margin-top: -24px;
-    margin-left: -12px;
-    width: 103%;
-    position: fixed;
-    z-index: 998; }
+#myNavbar > ul > li:hover:before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+#myNavbar > ul > li:hover:after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1.3);
+}
+
+
+/* /////////// Pull Right  ///////*/
+/*#myNavbar > ul > li:before {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    content: '';
+    background: #EE8434;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+#myNavbar > ul > li:hover:before {
+    width: 100%;
+}*/
+
+/* Pull down  */
+/*#myNavbar > ul > li:before
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    top: 0px;
+    content: '';
+    background: #EE8434;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+#myNavbar > ul > li:hover:before
+{
+    height: 100%;
+}*/
+
+/* Top and Bottom borders go out */
+/*#myNavbar > ul > li:before, #myNavbar > ul > li:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #EE8434;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+#myNavbar > ul > li:before
+{
+    top: 0px;
+    transform: translateY(10px);
+}
+
+#myNavbar > ul > li:after
+{
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+#myNavbar > ul > li:hover:before, #myNavbar > ul > li:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}*/
+
+/* Top border go down and Left border appears */
+/*#myNavbar > ul > li:before
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 0px;
+    background: #EE8434;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+#myNavbar > ul > li:after
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #EE8434;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+#myNavbar > ul > li:hover:before
+{
+    height: 100%;
+}
+
+#myNavbar > ul > li:hover:after
+{
+    opacity: 0;
+    top: 100%;
+}*/
+
+
 /********************************* Navbar END ****************************************/
 
 
