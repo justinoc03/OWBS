@@ -4,6 +4,20 @@
   font-family: 'PT Sans', sans-serif;
 }*/
 
+/*body {
+  font-family: "Montserrat", sans-serif;
+}*/
+
+nav {
+  font-family: "Montserrat", sans-serif;
+}
+
+.mainNav {
+  padding-right: 2%;
+  font-size: 17px;
+  color: #EE8434;
+}
+
 /* fixes the services page issue where the user is unable to scroll*/
 .services-container {
   position: static;
@@ -23,6 +37,33 @@
   position: static ;
   /*min-height: 100%;*/
   padding-bottom: 25%;
+}
+
+.since1977 {
+  border-top: 2px solid #EE8434;
+
+  background-color:#2274A5;
+}
+
+.work-the-right-way{
+  height: 200px;
+  margin-top: 1%;
+  background-color:#CECECE;
+}
+
+.work-home-content h3 {
+  margin-top: 7px;
+  font-size:;
+}
+
+.work-home-content p{
+  font-size: 18px;
+}
+
+.work-contact-content{
+  height: 200px;
+  margin-top: 1%;
+  background-color:#EE8434;
 }
 
 #servicesLandingStatic {
