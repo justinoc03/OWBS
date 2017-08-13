@@ -18,7 +18,7 @@ h1 {
   text-align: center; }
 
 /********************************* Navbar ****************************************/
-.navbar-default {
+/*.navbar-default {
   border: none;
   background-color: #848C8E; }
 
@@ -103,7 +103,7 @@ h1 {
   margin-left: -12px;
   width: 103%;
   position: fixed;
-  z-index: 998; }
+  z-index: 998; }*/
 
 main {
   padding-top: 10px; }
