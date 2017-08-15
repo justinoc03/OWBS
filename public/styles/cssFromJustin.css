@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 #myNavbar > ul > li:before, #myNavbar > ul > li:after {
     position: absolute;
     top: 24px;
-    left: 55%;
+    left: 50%;
     width: 40px;
     height: 40px;
     border: 4px dashed #EE8434;
@@ -260,8 +260,104 @@ h1, h2, h3, h4, h5, h6 {
     top: 100%;
 }*/
 
-
 /********************************* Navbar END ****************************************/
+
+/********************************* Home Page ****************************************/
+#home-images {
+  padding: 0;
+  z-index: 1;
+  position: relative;
+  height: inherit;
+}
+  #home-images img {
+    height: inherit;
+    display: block;
+  }
+
+  .since1977 {
+    border-top: 2px solid #EE8434;
+    background-color:#2274A5;
+    padding-bottom: 20px;
+    margin-bottom: 5%;
+  }
+
+  .work-the-right-way{
+    height: 200px;
+    margin-top: 1%;
+    background-color:#CECECE;
+    /*border-top: 2px solid #EE8434;*/
+  }
+
+  /*.work-home-content h3 {
+    margin-top: 7px;
+    font-size:;
+  }*/
+
+  /*.work-home-content p{
+    font-size: 18px;
+  }*/
+
+  .work-contact-content{
+    /*height: 200px;
+    margin-top: 1%;*/
+    background-color:#EE8434;
+    /*margin-bottom: 5%;*/
+  }
+
+.work-home-content h3, .work-contact-content h3 {
+  margin-top: 7px;
+  text-align: center; }
+.work-home-content p, .work-contact-content p {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 20px; }
+.work-home-content a, .work-contact-content a {
+  margin-bottom: 20px; }
+
+.worker-image {
+  height: 470px;
+  position: relative;
+  margin-top: -100px; }
+
+/********************************* Home Page END ****************************************/
+
+/********************************* Page Headers ****************************************/
+.menu-header   {
+  margin-top: 35px;
+  font-size: 36px;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  margin-left: 3rem;
+  color: #008FBE; }
+
+.contact-us-header {
+  margin-left: 4.5rem;
+}
+
+.about-us-header, .our-staff-header {
+  margin-left: 5.5rem;
+}
+
+.photo-header, .careers-header {
+  margin-left: 7.5rem;
+}
+.video-header {
+  margin-left: 8.1rem;
+}
+
+.staff-container .manage-heading {
+  color: #FF9B42;
+  font-size: 36.57143px;
+  margin-bottom: 5%;
+  margin-top: 7%; }
+
+  .staff-container .ceo-heading {
+    margin-bottom: 2%;
+    margin-top: 1%; }
+
+/********************************* Page Headers END ****************************************/
+
+
 
 
 /* fixes the services page issue where the user is unable to scroll*/
@@ -279,7 +375,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 .whoWeAreContainer {
   /*margin: auto;*/
   position: static ;
@@ -287,32 +382,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 25%;
 }
 
-.since1977 {
-  border-top: 2px solid #EE8434;
 
-  background-color:#2274A5;
-}
-
-.work-the-right-way{
-  height: 200px;
-  margin-top: 1%;
-  background-color:#CECECE;
-}
-
-.work-home-content h3 {
-  margin-top: 7px;
-  font-size:;
-}
-
-.work-home-content p{
-  font-size: 18px;
-}
-
-.work-contact-content{
-  height: 200px;
-  margin-top: 1%;
-  background-color:#EE8434;
-}
 
 #servicesLandingStatic {
   text-align: center;
