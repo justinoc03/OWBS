@@ -268,6 +268,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   position: relative;
   height: inherit;
+  min-height: 800px;
 }
   #home-images img {
     height: inherit;
@@ -318,6 +319,30 @@ h1, h2, h3, h4, h5, h6 {
   height: 470px;
   position: relative;
   margin-top: -100px; }
+
+
+  /*/////////////Animation/////////////////////*/
+  .animateMe {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+         }
+
+         @-webkit-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+         }
+
+         @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+         }
+
+         .fadeIn {
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+         }
 
 /********************************* Home Page END ****************************************/
 

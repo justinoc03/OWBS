@@ -120,7 +120,7 @@ main {
   margin-top: -200px;
   margin-left: -85px; }
 
-#home-images {
+/*#home-images {
   padding: 0;
   z-index: 1;
   position: relative;
@@ -128,7 +128,7 @@ main {
 }
   #home-images img {
     height: 400px;
-    display: block; }
+    display: block; }*/
 
 #home-content {
   text-align: center; }
