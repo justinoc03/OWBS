@@ -13,18 +13,10 @@
   <toast></toast>
   <div class=" job-header row">
     <h1 class="menu-header col-md-3 careers-header">Careers</h1>
+  </div>
 
-  </div>
   <div class="row">
-    <div class="jobs-menu col-md-3">
-      <ul ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
-        <li id="menu-item-{{$index}}" ng-click="showJob()">
-          {{job.jobposting_name}}
-        </li>
-      </ul>
-  </div>
-    <section class="job-postings col-md-9">
-    <div class="job-load-text" id="job-landing">
+    <div class="job-load-text" id="job-landing-static">
       <h3>Careers Done <i class="fa fa-arrow-right orange-highlight" aria-hidden="true"></i>The Right Way</h3>
       <div class="subheading">
         <p>One Way Building Services is a highly successful organization founded on the principle of doing things “One Way – The Right Way”. We not only take building cellular infrastructure seriously, but also hiring the right people for the right job. </p>
@@ -40,6 +32,30 @@
         </ul>
       </div>
     </div>
+    <div class="jobs-menu col-md-3">
+      <ul ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
+        <li id="menu-item-{{$index}}" ng-click="showJob()">
+          {{job.jobposting_name}}
+        </li>
+      </ul>
+  </div>
+    <section class="job-postings col-md-9">
+    <!-- <div class="job-load-text" id="job-landing">
+      <h3>Careers Done <i class="fa fa-arrow-right orange-highlight" aria-hidden="true"></i>The Right Way</h3>
+      <div class="subheading">
+        <p>One Way Building Services is a highly successful organization founded on the principle of doing things “One Way – The Right Way”. We not only take building cellular infrastructure seriously, but also hiring the right people for the right job. </p>
+        <p>If you’re looking for an exciting career opportunity in a rewarding, team-based business where your work truly matters to the community around you, look no further. One Way is the place for you.</p>
+        <p><strong>Base Requirements for Employment Consideration:</strong></p>
+        <ul>
+          <li>Strong Work Ethic</li>
+          <li>Valid Driver’s License</li>
+          <li>Comfortable Working at Extreme Elevations</li>
+          <li>Ability to Work in Various Weather Conditions</li>
+          <li>Driving Record Acceptable to Our Insurance Carrier</li>
+          <li>Ability to Pass Pre-employment &amp; Random Substance Abuse Testing</li>
+        </ul>
+      </div>
+    </div> -->
       <!-- <article class="" ng-repeat="job in jobsArray"> -->
       <article class="apply-posting" id="job-posting-{{$index}}" ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" id="job-{{$index}}">
         <div class="row" >
