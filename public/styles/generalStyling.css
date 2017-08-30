@@ -18,7 +18,7 @@ h1 {
   text-align: center; }
 
 /********************************* Navbar ****************************************/
-.navbar-default {
+/*.navbar-default {
   border: none;
   background-color: #848C8E; }
 
@@ -103,7 +103,7 @@ h1 {
   margin-left: -12px;
   width: 103%;
   position: fixed;
-  z-index: 998; }
+  z-index: 998; }*/
 
 main {
   padding-top: 10px; }
@@ -120,14 +120,15 @@ main {
   margin-top: -200px;
   margin-left: -85px; }
 
-#home-images {
+/*#home-images {
   padding: 0;
   z-index: 1;
   position: relative;
-  height: 400px; }
+  height: 400px;
+}
   #home-images img {
     height: 400px;
-    display: block; }
+    display: block; }*/
 
 #home-content {
   text-align: center; }
@@ -352,11 +353,11 @@ main {
     color: #008FBE;
     text-align: left;
     font-size: 21px; }
-  .staff-container .manage-heading {
+  /*.staff-container .manage-heading {
     color: #FF9B42;
     font-size: 36.57143px;
     margin-bottom: 5%;
-    margin-top: 3%; }
+    margin-top: 3%; }*/
 
 /************************************Jobs***************************************/
 .admin-edit-header {
@@ -510,7 +511,7 @@ input:focus + .slider {
   text-align: center;
   font-size: 24px; }
 
-.job-header .menu-header {
+/*.job-header .menu-header {
   margin-top: 35px; }
 .job-header h1 {
   font-size: 36px;
@@ -518,7 +519,7 @@ input:focus + .slider {
   margin-top: 1rem;
   margin-bottom: 2.5rem;
   margin-left: 1rem;
-  color: #008FBE; }
+  color: #008FBE; }*/
 
 .jobs-menu ul, .edit-menu ul {
   list-style: none; }

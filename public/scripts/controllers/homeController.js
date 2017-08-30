@@ -54,6 +54,8 @@ myApp.controller("homeController", ['$scope', '$http', '$location', '$interval',
     pauseOnHover: false,
     pauseOnFocus: false
   });
+
+
   // set footer position for page
   angular.element(document.getElementById("footerSection")).css({"position":"relative", "margin-top":" -11px"});
 }]);

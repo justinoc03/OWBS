@@ -26,4 +26,6 @@ myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope',
 
   }; //end auth0Logout
 
+
+
 }]);
