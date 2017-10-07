@@ -173,10 +173,13 @@ myApp.controller("careersController", ['$scope', 'dbRoutesService', '$timeout', 
       //success
       console.log(jobPostingsFromDB.data);
       for (var i = 0; i < jobPostingsFromDB.data.length; i++) {
-        if(jobPostingsFromDB.data[i].jobposting_open){
-          $scope.jobsArray.push(jobPostingsFromDB.data[i]);
-        }
+        $scope.jobsArray.push(jobPostingsFromDB.data[i]);
+        // if(jobPostingsFromDB.data[i].jobposting_open){
+        //   $scope.jobsArray.push(jobPostingsFromDB.data[i]);
+          // console.log("$scope.jobsArray:", $scope.jobsArray);
+        // }
       }
+      console.log("$scope.jobsArray:", $scope.jobsArray);
     }, function(errorObject){
       //err
     });

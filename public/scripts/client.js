@@ -6,9 +6,10 @@ var init = function(){
   console.log("ClientJS is sourced");
 };
 
-window.onunload = function () {
-    localStorage.clear();
-};
+//////////////////On page unload, clear localStorage//////////////////
+// window.onunload = function () {
+//     localStorage.clear();
+// };
 
 //////////////////Create Angular App//////////////////
 var myApp = angular.module("myApp", ['ui.bootstrap', 'ui.router', 'angularTrix', 'ngSanitize', 'ngMask', 'ngAnimate', 'ngToast', 'auth0.lock', 'angular-jwt']);

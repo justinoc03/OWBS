@@ -14,7 +14,7 @@
   </section>
   <section class="posting-section row">
     <div class="col-md-3 jobs-menu">
-      <ul ng-repeat="job in jobsArray" ng-show="job.jobposting_open == true" >
+      <ul ng-repeat="job in jobsArray"  >
         <li id="menu-item-{{$index}}" ng-click="showJob()">
           {{job.jobposting_name}}
         </li>
