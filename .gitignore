@@ -1,3 +1,6 @@
 *.log
 node_modules/
 .DS_Store
+.sass-cache/**
+sendgrid.env
+sendgrid.env
