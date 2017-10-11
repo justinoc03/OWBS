@@ -8,6 +8,12 @@ var urlencodedParser = bodyParser.urlencoded({limit: '50mb', extended: true} );
 var port = process.env.PORT || 9000;
 var pg = require('pg');
 var connectionString = 'postgress://localhost:5432/OWBS';
+var os = require('os');
+
+console.log(os.type());
+console.log(os.release());
+console.log(os.platform());
+
 
 if(process.env.DATABASE_URL !== undefined) {
     console.log('env connection string');
