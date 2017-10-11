@@ -4,7 +4,9 @@
     <meta charset="utf-8">
 
     <!-- Source fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Assistant|Josefin+Slab|Merriweather+Sans" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e46de2dc0e.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!-- Source Bootstrap, Custom Styling, and JQuery for bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,33 +15,71 @@
     <script src="/vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
     <script src="/vendors/bootstrap.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/styles/generalStyling.css">
+    <link rel="stylesheet" href="/vendors/ngToast.min.css">
+    <link rel="stylesheet" href="/vendors/ngToast-animations.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.css">
+    <link rel="stylesheet" href="/styles/cssFromJustin.css">
 
     <!-- Source client.js, Angular, and Angular Routes -->
     <script src="/vendors/angular.js"></script>
     <script src="/vendors/angular-route.min.js"></script>
+    <script src="/vendors/ui-bootstrap-tpls.js" charset="utf-8"></script>
     <script src="/scripts/client.js"></script>
+    <script src="/vendors/angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/navController.js"></script>
     <script src="/scripts/controllers/homeController.js"></script>
     <script src="/scripts/controllers/whoWeAreController.js"></script>
     <script src="/scripts/controllers/redirectNoticeController.js"></script>
     <script src="/scripts/controllers/servicesController.js"></script>
     <script src="/scripts/controllers/careersController.js"></script>
-    <script src="/scripts/controllers/mediaController.js"></script>
+    <script src="/scripts/controllers/photoController.js"></script>
+    <script src="/scripts/controllers/videoController.js"></script>
     <script src="/scripts/controllers/staffController.js"></script>
+    <script src="/scripts/controllers/adminEditCareersController.js"></script>
+    <script src="/scripts/controllers/contactUsController.js"></script>
+    <script src="/scripts/controllers/modalControllers/createJobPostControllerModal.js"></script>
+    <script src="/scripts/controllers/modalControllers/editJobPostControllerModal.js"></script>
+    <script src="/scripts/controllers/modalControllers/adminLoginControllerModal.js"></script>
+    <script src="/scripts/services/dbRoutesService.js" charset="utf-8"></script>
+    <script src="/scripts/services/auth0Service.js" charset="utf-8"></script>
+    <script src="/scripts/client.run.js" charset="utf-8"></script>
 
-    <title>One Way Building Services</title>
+    <script src="vendors/angular-animate.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-sanitize.min.js"></script>
+    <script src="vendors/ngToast.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.js"></script>
+    <script src="vendors/angular-trix.min.js"></script>
+    <script src='vendors/ngMask.min.js'></script>
+    <script src='vendors/slick.min.js'></script>
+    <link rel="stylesheet" href="vendors/slick.css">
+    <!-- auth0 -->
+    <script type="text/javascript" src="https://cdn.auth0.com/js/lock/10.13/lock.min.js"></script>
+    <script src="/vendors/auth0.js"></script>
+    <script src="/vendors/angular-lock.js"></script>
+    <script src="/vendors/angular-jwt.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <title>OWBS</title>
   </head>
 
-  <!--///////////////////////////////////BODY//////////////////////////////////////-->
+  <!--///////////////////////////////////BODY///////////////////////////////////////-->
   <body>
     <div id="mainBodyWrapper">  <!--mainBodyWrapper container-->
+
       <div id="headerSection">  <!--header container-->
-
       <!-- shape that appears underneath the navbar -->
-      <div id="navShape"></div>
+        <div class="nav-shape-shadow"></div>
+        <div id="navShape"></div>
 
-        <!-- navbar -->
-        <nav class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
-          <div class="container mainNav">
+          <!-- navbar -->
+          <div class="navbar navbar-default navbar-shadow">
+          </div>
+          <nav ng-controller="navController" class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
+            <div class="logo">
+              <a href="#!/home"><img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box"></a>
+            </div>
+          <div class="mainNav navbar-right">
             <!-- navigation button for smaller screens (phones/tablets) -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="icon-bar"></span>
@@ -50,26 +90,37 @@
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
                 <li>
-                  <a href="#!/home">Home</a>
+                  <a href="#!/home">HOME</a>
                 </li>
                 <li>
-                  <a href="#!/services">Services</a>
+                  <a href="#!/services">SERVICES</a>
                 </li>
-                <li>
-                  <a  href="#!/media">Media</a>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown">MEDIA<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#!/photos">PHOTOS</a>
+                    </li>
+                    <li>
+                      <a href="#!/videos">VIDEOS</a>
+                    </li>
+                  </ul>
                 </li>
                 <!-- start of dropdown menu -->
                 <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
+                  <a class="dropdown-toggle" data-toggle="dropdown">ABOUT<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="#!/whoWeAre">Our Story</a>
+                      <a href="#!/whoWeAre">OUR STORY</a>
                     </li>
                     <li>
-                      <a  href="#!/staff">Staff</a>
+                      <a  href="#!/staff">STAFF</a>
                     </li>
                     <li>
-                      <a  href="#!/careers">Careers</a>
+                      <a  href="#!/careers">CAREERS</a>
+                    </li>
+                    <li>
+                      <a  href="#!/contactUs">CONTACT US</a>
                     </li>
                   </ul>
                 </li>
@@ -80,16 +131,52 @@
 
       </div> <!--end of headerSection-->
 
-      <div id="contentSection"> <!--Main page content goes here (angular-routing will fill this section)-->
-        <main ng-view></main> <!-- controller view inside main controller -->
-      </div> <!--end of contentSection-->
 
-      <div id="footerSection"> <!--footerSection for contact info and such-->
+      <div ui-view></div> <!-- controller view inside main controller -->
+
+      <div id="footerSection" ng-controller="navController"> <!--footerSection for contact info and such-->
         <footer>
-          <h4>Test Footer</h4>
+          <div class ="row">
+            <div class="col-xs-4" id="footer-contact">
+              <p>Contact</p>
+            </div>
+            <div class="col-xs-4" id="footer-connect">
+              <p> Connect </p>
+            </div>
+          </div>
+          <div class ="row">
+            <div class="col-xs-2">
+              <div id="footer-address">
+                <p>6811 Washington Avenue South</p>
+                <p>Edina, MN 55439</p>
+              </div>
+            </div>
+              <div class="col-xs-2">
+                <div id="footer-nums">
+                  <p>Phone: (952) 942-0412</p>
+                  <p>Fax:(952) 942-0526</p>
+                </div>
+              </div>
+            <div class ="col-xs-4">
+              <div id="footer-socials">
+                <!-- Icons from here https://www.iconfinder.com/iconsets/free-social-media-4 -->
+                <!-- CC Liscense for Icons https://creativecommons.org/licenses/by/3.0/ -->
+                <img class="social-icon" src="/assets/images/icons/linkedin-icon.png" alt="">
+                <img class="social-icon" src="/assets/images/icons/facebook-icon.png" alt="">
+                <!-- auth0 login -->
+
+              </div>
+            </div>
+            <div class="col-xs-4" id="copyright">
+              <!-- copyright -->
+              <button ng-if="!isAuthenticated" class="admin-auth" ng-click="auth0Login()" ng-cloak>Admin Log In</button>
+              <a ng-if="isAuthenticated" ng-cloak href="#!/adminEditCareers" class="admin-auth">Admin Portal Access</a>
+              <button ng-if="isAuthenticated" class="admin-auth" ng-cloak ng-click="auth0Logout()">Admin Log Out</button>
+              <p>&copy; 2017 One Way Building Services, Inc.</p>
+            </div>
+          </div>
         </footer>
       </div> <!--end of footerSection-->
-
 
     </div> <!--end of mainBodyWrapper-->
   </body>
