@@ -10,7 +10,7 @@ var pg = require('pg');
 
 //used to check which OS/version is being used for dev purposes
 var os = require('os');
-if (os.type == "Darwin") {
+if (os.type() == "Darwin") {
   console.log('OSX');
   var connectionString = 'postgres://localhost:5432/OWBS';
 } else{
@@ -23,7 +23,7 @@ if(process.env.DATABASE_URL !== undefined) {
     connectionString = process.env.DATABASE_URL;
     pg.defaults.ssl = true;
 } else {
-  if (os.type == "Darwin") {
+  if (os.type() == "Darwin") {
     console.log('OSX');
     var connectionString = 'postgres://localhost:5432/OWBS';
   } else{
