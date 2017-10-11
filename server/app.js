@@ -7,14 +7,14 @@ var bpJason = bodyParser.json({limit: '50mb'});
 var urlencodedParser = bodyParser.urlencoded({limit: '50mb', extended: true} );
 var port = process.env.PORT || 9000;
 var pg = require('pg');
-var connectionString = 'postgress://localhost:5432/OWBS';
+var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
 
 if(process.env.DATABASE_URL !== undefined) {
     console.log('env connection string');
     connectionString = process.env.DATABASE_URL;
     pg.defaults.ssl = true;
 } else {
-    connectionString = 'postgres://localhost:5432/OWBS';
+    connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
 }
 
 // use public,bodyParserJson,urlencodedParser
