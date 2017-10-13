@@ -18,6 +18,7 @@ if (os.type() == "Darwin") {
   var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
 }
 
+
 if(process.env.DATABASE_URL !== undefined) {
     console.log('env connection string');
     connectionString = process.env.DATABASE_URL;

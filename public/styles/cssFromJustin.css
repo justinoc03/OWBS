@@ -12,11 +12,20 @@ nav {
   font-family: "Montserrat", sans-serif;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: normal; }
+
+.services-container .services-menu li {
+  font-family: "Montserrat", serif;
+  font-size: 18px;
+}
+.jobs-menu li, .edit-menu li {
+  font-family: "Montserrat", serif;
+  font-size: 18px;
+}
+
 
 .mainNav {
   padding-right: 2%;

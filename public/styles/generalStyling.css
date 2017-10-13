@@ -196,9 +196,9 @@ main {
     .services-container .services-menu ul {
       list-style: none; }
     .services-container .services-menu li {
-      font-family: "Josefin Slab", serif;
+      /*font-family: "Josefin Slab", serif;*/
       letter-spacing: 2px;
-      font-size: 21px;
+      /*font-size: 21px;*/
       padding-top: 5px;
       padding-bottom: 5px;
       color: #FF9B42;
@@ -524,7 +524,7 @@ input:focus + .slider {
 .jobs-menu ul, .edit-menu ul {
   list-style: none; }
 .jobs-menu li, .edit-menu li {
-  font-family: "Josefin Slab", serif;
+  /*font-family: "Josefin Slab", serif;*/
   letter-spacing: 2px;
   font-size: 21px;
   padding-top: 5px;
