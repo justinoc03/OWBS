@@ -1,6 +1,16 @@
 myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope', 'authService', function($scope, $http, $location, $rootScope, authService){
   console.log('In navController');
 
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 100) {
+    $('nav').addClass('shrink');
+    $('.navbar-shadow').addClass('shrink');
+  } else {
+    $('nav').removeClass('shrink');
+    $('.navbar-shadow').removeClass('shrink');
+  }
+});
+
   //auth0 login
   $scope.auth0Login = function(){
     var vm = this;
