@@ -3,6 +3,7 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
   $scope.init = function(){
     $scope.verifyUser();
   };
+  $scope.lastJobID = "";
 
   $scope.verifyUser = function(){
     console.log("hit verify employee");
@@ -127,11 +128,18 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
       $timeout(function(){
        $scope.getJobs();
      }, 250);
+     //timeout to wait for function to finish
+     console.log(lastJobID);
+     $timeout(function(){
+      $scope.displayLastJob(lastJobID);
+    }, 300);
 
       console.log('new jobsArray:', $scope.jobsArray);
     }, function(errorObject){
       //err
     });
+
+
   };//end changePostStatus
 
   ////////////////////Function: startAddNewJob ///////////////////////
@@ -159,6 +167,8 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
   $scope.showJob = function(){
     console.log(this.$index);
     var id = this.$index;
+    lastJobID = id;
+    console.log(lastJobID);
     var postingId = "job-posting-" + id;
     var job = angular.element(document.getElementById(postingId));
     if(angular.element(document.getElementById("admin-landing")).css("display") == "block"){
@@ -175,6 +185,25 @@ myApp.controller("adminEditCareersController", ['$scope', 'dbRoutesService', '$t
       // angular.element(menu[minusOne]).addClass("selected");
   };
 
+  $scope.displayLastJob = function(lastJobID){
+    console.log('in displayLastJob');
+    console.log(lastJobID);
+    var id = lastJobID;
+    var postingId = "job-posting-" + id;
+    var job = angular.element(document.getElementById(postingId));
+    if(angular.element(document.getElementById("admin-landing")).css("display") == "block"){
+      angular.element(document.getElementById("admin-landing")).addClass("hidden");
+    }
+    for (var i = 0; i <= 10; i++) {
+      if (i != id){
+        angular.element(document.getElementById("job-posting-" + i)).css("display", "none");
+        // angular.element(menu[i-1]).removeClass("selected");
+      }
+    }
+    job.css('display', "block");
+
+      // angular.element(menu[minusOne]).addClass("selected");
+  };
   //initialize any functions on load
   $scope.init();
   // set footer position for page
