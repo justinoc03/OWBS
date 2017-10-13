@@ -5,9 +5,13 @@ $(window).scroll(function () {
   if ($(document).scrollTop() > 100) {
     $('nav').addClass('shrink');
     $('.navbar-shadow').addClass('shrink');
+    $('.nav-shape-shadow').addClass('shrink');
+    $('#navShape').addClass('shrink');
   } else {
     $('nav').removeClass('shrink');
     $('.navbar-shadow').removeClass('shrink');
+    $('.nav-shape-shadow').removeClass('shrink');
+    $('#navShape').removeClass('shrink');
   }
 });
 
