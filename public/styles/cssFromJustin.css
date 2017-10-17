@@ -37,9 +37,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /********************************* Navbar ****************************************/
+
+/****Navbar scroll transition****/
+nav.navbar, .navbar-shadow{
+  /*background-color:#ccc;*/
+  height:80px;
+   // Animation
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+   position: fixed;
+}
+
+#navShape:after, .nav-shape-shadow:after {
+  /*background-color:#ccc;*/
+   // Animation
+   -webkit-transition: all 0.4s ease;
+   transition: all 18s ease;
+   position: relative;
+}
+
+nav.navbar.shrink, .navbar-shadow.shrink {
+  height: 50px;
+}
+
+/*#navShape.shrink, .nav-shape-shadow.shrink {
+  min-height: 100px;
+}*/
+/****Navbar scroll transition end****/
+
 .navbar-default {
   border: none;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+}
 
 .navbar-default .navbar-nav > li > a {
   color: #008FBE; }
@@ -103,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5%;
   margin-top: -2.2em;
   z-index: 999; }
+
 
 .nav-shape-shadow {
   margin-top: -26px; }
@@ -406,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /********************************* Page Headers ****************************************/
 .menu-header   {
-  margin-top: 35px;
+  margin-top: 55px;
   font-size: 36px;
   text-align: left;
   margin-bottom: 2.5rem;
