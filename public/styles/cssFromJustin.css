@@ -37,9 +37,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /********************************* Navbar ****************************************/
+
 /****Navbar scroll transition****/
 nav.navbar, .navbar-shadow{
   /*background-color:#ccc;*/
+  height:80px;
    // Animation
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
@@ -55,12 +57,12 @@ nav.navbar, .navbar-shadow{
 }
 
 nav.navbar.shrink, .navbar-shadow.shrink {
-  min-height: 100px;
+  height: 50px;
 }
 
-#navShape.shrink, .nav-shape-shadow.shrink {
+/*#navShape.shrink, .nav-shape-shadow.shrink {
   min-height: 100px;
-}
+}*/
 /****Navbar scroll transition end****/
 
 .navbar-default {
@@ -130,6 +132,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   margin-left: 5%;
   margin-top: -2.2em;
   z-index: 999; }
+
 
 .nav-shape-shadow {
   margin-top: -26px; }
@@ -433,7 +436,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 /********************************* Page Headers ****************************************/
 .menu-header   {
-  margin-top: 35px;
+  margin-top: 55px;
   font-size: 36px;
   text-align: left;
   margin-bottom: 2.5rem;

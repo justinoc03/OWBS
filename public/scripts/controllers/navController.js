@@ -2,16 +2,16 @@ myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope',
   console.log('In navController');
 
 $(window).scroll(function () {
-  if ($(document).scrollTop() > 100) {
+  if ($(document).scrollTop() > 15) {
     $('nav').addClass('shrink');
     $('.navbar-shadow').addClass('shrink');
     $('.nav-shape-shadow').addClass('shrink');
-    $('#navShape').addClass('shrink');
+    // $('#navShape').addClass('shrink');
   } else {
     $('nav').removeClass('shrink');
     $('.navbar-shadow').removeClass('shrink');
     $('.nav-shape-shadow').removeClass('shrink');
-    $('#navShape').removeClass('shrink');
+    // $('#navShape').removeClass('shrink');
   }
 });
 
