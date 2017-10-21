@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 .services-container .services-menu li {
   font-family: "Montserrat", serif;
   font-size: 18px;
+  cursor: pointer;
 }
 .jobs-menu li, .edit-menu li {
   font-family: "Montserrat", serif;
@@ -42,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 nav.navbar, .navbar-shadow{
   /*background-color:#ccc;*/
   height:80px;
-   // Animation
+   /*Animation Below*/
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
    position: fixed;
@@ -406,7 +407,9 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   position: relative;
   margin-top: -80px; }
 
-
+#contactUsButton{
+  color: black;
+}
   /*/////////////Home Screen Animations/////////////////////*/
   /*fade in animation*/
 .animateHomeImage {
@@ -485,6 +488,8 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
   /********************************* Careers Page END ****************************************/
 
+  /********************************* Services Page  ****************************************/
+
 /* fixes the services page issue where the user is unable to scroll*/
 .services-container {
   position: static;
@@ -517,6 +522,11 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 #servicesLandingDetails {
   text-align: center;
 }
+
+
+
+/********************************* Services Page END ****************************************/
+
 
 /*Overlay is for the div covering the google map on Contact Us Page*/
 .overlay {

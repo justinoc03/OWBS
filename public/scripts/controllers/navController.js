@@ -6,12 +6,12 @@ $(window).scroll(function () {
     $('nav').addClass('shrink');
     $('.navbar-shadow').addClass('shrink');
     $('.nav-shape-shadow').addClass('shrink');
-    // $('#navShape').addClass('shrink');
+    $('#smallLogo').addClass('hide');
   } else {
     $('nav').removeClass('shrink');
     $('.navbar-shadow').removeClass('shrink');
     $('.nav-shape-shadow').removeClass('shrink');
-    // $('#navShape').removeClass('shrink');
+    $('#smallLogo').removeClass('hide');
   }
 });
 
