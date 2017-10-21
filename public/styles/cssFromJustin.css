@@ -64,6 +64,19 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   height: 50px;
 }
 
+#myNavbar {
+  /*background-color:#ccc;*/
+  margin-top: 30px;
+   // Animation
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+   position: relative;
+}
+
+#myNavbar.moveDown{
+  margin-top: 10px;
+}
+
 /*#navShape.shrink, .nav-shape-shadow.shrink {
   min-height: 100px;
 }*/
@@ -98,30 +111,54 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 .dropdown-menu {
   background-color: #ffffff;
-  border-top: none; }
+  border-top: none;
+}
 
 .dropdown-menu > li > a {
-  color: #008FBE; }
+  color: #008FBE;
+}
 
 .dropdown-menu > li > a:hover {
-  background-color: #008FBE; }
+  background-color: #008FBE;
+}
 
-.logo {
+#smallLogo {
   float: left;
   margin-left: 11rem;
   margin-top: 0.5rem; }
-  @media (max-width: 375px) {
-    .logo {
-      margin-left: 6.25rem; } }
-  @media (min-width: 376px) and (max-width: 667px) {
-    .logo {
-      margin-left: 8rem; } }
-  @media (min-width: 668px) and (max-width: 768px) {
-    .logo {
-      margin-left: 8.5rem; } }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .logo {
-      margin-left: 9rem; } }
+@media (max-width: 375px) {
+  .logo {
+    margin-left: 6.25rem; } }
+@media (min-width: 376px) and (max-width: 667px) {
+  .logo {
+    margin-left: 8rem; } }
+@media (min-width: 668px) and (max-width: 768px) {
+  .logo {
+    margin-left: 8.5rem; } }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    margin-left: 9rem;
+  }
+}
+
+#largeLogo {
+  float: left;
+  margin-left: 5rem;
+  margin-top: 0.5rem; }
+@media (max-width: 375px) {
+  .logo {
+    margin-left: 6.25rem; } }
+@media (min-width: 376px) and (max-width: 667px) {
+  .logo {
+    margin-left: 8rem; } }
+@media (min-width: 668px) and (max-width: 768px) {
+  .logo {
+    margin-left: 8.5rem; } }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    margin-left: 9rem;
+  }
+}
 
 .navbar-nav {
   margin-left: 50px;

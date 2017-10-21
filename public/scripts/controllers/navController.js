@@ -1,4 +1,4 @@
-myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope', 'authService', function($scope, $http, $location, $rootScope, authService){
+myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope', 'authService', '$timeout', function($scope, $http, $location, $rootScope, authService, $timeout){
   console.log('In navController');
   $('#smallLogo').addClass('hide');
 
@@ -9,12 +9,14 @@ $(window).scroll(function () {
     $('.nav-shape-shadow').addClass('shrink');
     $('#largeLogo').addClass('hide');
     $('#smallLogo').removeClass('hide');
+    $('#myNavbar').addClass('moveDown');
   } else {
     $('nav').removeClass('shrink');
     $('.navbar-shadow').removeClass('shrink');
     $('.nav-shape-shadow').removeClass('shrink');
     $('#largeLogo').removeClass('hide');
     $('#smallLogo').addClass('hide');
+    $('#myNavbar').removeClass('moveDown');
   }
 });
 
