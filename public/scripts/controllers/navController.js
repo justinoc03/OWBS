@@ -1,17 +1,20 @@
 myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope', 'authService', function($scope, $http, $location, $rootScope, authService){
   console.log('In navController');
+  $('#smallLogo').addClass('hide');
 
 $(window).scroll(function () {
   if ($(document).scrollTop() > 15) {
     $('nav').addClass('shrink');
     $('.navbar-shadow').addClass('shrink');
     $('.nav-shape-shadow').addClass('shrink');
-    $('#smallLogo').addClass('hide');
+    $('#largeLogo').addClass('hide');
+    $('#smallLogo').removeClass('hide');
   } else {
     $('nav').removeClass('shrink');
     $('.navbar-shadow').removeClass('shrink');
     $('.nav-shape-shadow').removeClass('shrink');
-    $('#smallLogo').removeClass('hide');
+    $('#largeLogo').removeClass('hide');
+    $('#smallLogo').addClass('hide');
   }
 });
 

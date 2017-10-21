@@ -27,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
 }
 
-
 .mainNav {
   padding-right: 2%;
   font-size: 17px;
@@ -38,6 +37,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /********************************* Navbar ****************************************/
+
+/*#smallLogo.largeLogo{
+  background: url("/assets/images/onewaylogo.png") no-repeat;
+}*/
 
 /****Navbar scroll transition****/
 nav.navbar, .navbar-shadow{

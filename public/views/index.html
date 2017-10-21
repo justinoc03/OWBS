@@ -76,9 +76,11 @@
           <div class="navbar navbar-default navbar-shadow">
           </div>
           <nav ng-controller="navController" id="navItUp" class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
-            <div id="smallLogo" class="logo">
-              <a href="#!/home"><img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box"></a>
+            <div  class="logo">
+              <a id="largeLogo" href="#!/home"><img src="/assets/images/onewaylogo.png" alt="One Way Logo Blue Finger in a box"></a>
+              <a id="smallLogo" ng-cloak href="#!/home"><img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box"></a>
             </div>
+
           <div class="mainNav navbar-right">
             <!-- navigation button for smaller screens (phones/tablets) -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
