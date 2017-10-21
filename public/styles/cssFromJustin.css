@@ -124,8 +124,8 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 #smallLogo {
   float: left;
-  margin-left: 11rem;
-  margin-top: 0.5rem; }
+  margin-left: 108px;
+  margin-top: 13px; }
 @media (max-width: 375px) {
   .logo {
     margin-left: 6.25rem; } }
@@ -170,7 +170,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   height: 50px;
   background: transparent;
   position: fixed;
-  margin-left: 5%;
+  margin-left: 60px;
   margin-top: -2.2em;
   z-index: 999; }
 
