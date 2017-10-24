@@ -8,6 +8,11 @@
   font-family: "Montserrat", sans-serif;
 }*/
 
+#mainBodyWrapper{
+  display: static;
+}
+
+
 nav {
   font-family: "Montserrat", sans-serif;
 }
@@ -25,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 .jobs-menu li, .edit-menu li {
   font-family: "Montserrat", serif;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .mainNav {
@@ -34,7 +40,18 @@ h1, h2, h3, h4, h5, h6 {
 
 #footerSection {
   border-top: 2px solid #008FBE;
+  position: absolute;
+  bottom: ;
+  width: 100%;
+
 }
+
+#headerSection{
+
+}
+
+
+
 
 /********************************* Navbar ****************************************/
 
@@ -143,8 +160,8 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 #largeLogo {
   float: left;
-  margin-left: 5rem;
-  margin-top: 0.5rem; }
+  margin-left: 50px;
+  margin-top: 0px; }
 @media (max-width: 375px) {
   .logo {
     margin-left: 6.25rem; } }
@@ -352,6 +369,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   z-index: 1;
   position: relative;
   height: inherit;
+  /*height: 600px;*/
   min-height: 800px;
 }
   #home-images img {
@@ -514,6 +532,10 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 /********************************* Page Headers END ****************************************/
 
 /********************************* Careers Page ****************************************/
+.careers-container {
+  position: static;
+  padding-bottom: 10%;
+}
 
 .jobs-menu {
   border-right: 2px solid #008FBE; }
@@ -567,6 +589,12 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 /********************************* Services Page END ****************************************/
 
+/********************************* ContactUs Page  ****************************************/
+
+.contactUs-container {
+  position: static;
+  padding-bottom: 10%;
+}
 
 /*Overlay is for the div covering the google map on Contact Us Page*/
 .overlay {
@@ -613,8 +641,26 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 #contactCallUs {
   margin: auto;
+  margin-bottom: 4%;
   margin-top: 4%;
+  display: block;
 }
+
+#contactUsNumber {
+  display: block;
+}
+
+/********************************* ContactUs Page END ****************************************/
+
+/********************************* Photo and Video Pages  ****************************************/
+.photo-container {
+  position: static;
+  bottom: 0;
+  padding-bottom: 10%;
+}
+
+
+/********************************* Photo and Video Pages END ****************************************/
 
 hr.style1 {
 	height: 6px;

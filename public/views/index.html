@@ -65,7 +65,6 @@
 
   <!--///////////////////////////////////BODY///////////////////////////////////////-->
   <body>
-    <div id="mainBodyWrapper">  <!--mainBodyWrapper container-->
 
       <div id="headerSection">  <!--header container-->
       <!-- shape that appears underneath the navbar -->
@@ -134,7 +133,11 @@
       </div> <!--end of headerSection-->
 
 
+    <div id="mainBodyWrapper">  <!--mainBodyWrapper container-->
+
+      </div>
       <div ui-view></div> <!-- controller view inside main controller -->
+    </div> <!--end of mainBodyWrapper-->
 
       <div id="footerSection" ng-controller="navController"> <!--footerSection for contact info and such-->
         <footer>
@@ -180,7 +183,8 @@
         </footer>
       </div> <!--end of footerSection-->
 
-    </div> <!--end of mainBodyWrapper-->
+
+
   </body>
 
 </html>
