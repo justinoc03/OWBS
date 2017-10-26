@@ -361,6 +361,14 @@ nav.navbar.shrink, .navbar-shadow.shrink {
     top: 100%;
 }*/
 
+.blueHash {
+  background-image: url("/assets/images/staff/texture.jpg");
+  background-repeat: repeat;
+  height: 24px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
 /********************************* Navbar END ****************************************/
 
 /********************************* Home Page ****************************************/
@@ -500,9 +508,10 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   margin-top: 55px;
   font-size: 36px;
   text-align: left;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   margin-left: 3rem;
-  color: #008FBE; }
+  color: #008FBE;
+}
 
 .contact-us-header {
   margin-left: 4.5rem;
