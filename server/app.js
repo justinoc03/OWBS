@@ -8,30 +8,44 @@ var urlencodedParser = bodyParser.urlencoded({limit: '50mb', extended: true} );
 var port = process.env.PORT || 9000;
 var pg = require('pg');
 
+/////////////////////////////FOR MAC AND PC///////////////////////////////////////
 //check which OS/version is being used for developing on windows or OSX
-var os = require('os');
-if (os.type() == "Darwin") {
-  // console.log('OSX');
-  var connectionString = 'postgres://localhost:5432/OWBS';
-} else{
-  // console.log('surface');
-  var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
-}
+// var os = require('os');
+// if (os.type() == "Darwin") {
+//   // console.log('OSX');
+//   var connectionString = 'postgres://localhost:5432/OWBS';
+// } else{
+//   // console.log('surface');
+//   var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
+// }
+//
+// if(process.env.DATABASE_URL !== undefined) {
+//     console.log('env connection string');
+//     connectionString = process.env.DATABASE_URL;
+//     pg.defaults.ssl = true;
+// } else {
+//   if (os.type() == "Darwin") {
+//     // console.log('OSX');
+//     var connectionString = 'postgres://localhost:5432/OWBS';
+//   }
+//   else{
+//     // console.log('surface');
+//     var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
+//   }
+// }
 
+///////////////FOR MAC/////////////////////////////////////////////
+var connectionString = 'postgres://localhost:5432/OWBS';
 
 if(process.env.DATABASE_URL !== undefined) {
     console.log('env connection string');
     connectionString = process.env.DATABASE_URL;
     pg.defaults.ssl = true;
 } else {
-  if (os.type() == "Darwin") {
-    // console.log('OSX');
     var connectionString = 'postgres://localhost:5432/OWBS';
-  } else{
-    // console.log('surface');
-    var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
   }
-}
+/////////////////FOR MAC END//////////////////////////////////////  
+
 
 // use public,bodyParserJson,urlencodedParser
 app.use(express.static('public'));

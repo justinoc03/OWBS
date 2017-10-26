@@ -65,7 +65,6 @@
 
   <!--///////////////////////////////////BODY///////////////////////////////////////-->
   <body>
-    <div id="mainBodyWrapper">  <!--mainBodyWrapper container-->
 
       <div id="headerSection">  <!--header container-->
       <!-- shape that appears underneath the navbar -->
@@ -76,9 +75,11 @@
           <div class="navbar navbar-default navbar-shadow">
           </div>
           <nav ng-controller="navController" id="navItUp" class="navbar navbar-default navbar-toggleable-md navbar-fixed-top">
-            <div class="logo">
-              <a href="#!/home"><img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box"></a>
+            <div  class="logo">
+              <a id="largeLogo" href="#!/home"><img src="/assets/images/onewaylogo.png" alt="One Way Logo Blue Finger in a box"></a>
+              <a id="smallLogo" ng-cloak href="#!/home"><img src="/assets/images/onewaylogo-notext.png" alt="One Way Logo Blue Finger in a box"></a>
             </div>
+
           <div class="mainNav navbar-right">
             <!-- navigation button for smaller screens (phones/tablets) -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -120,7 +121,7 @@
                       <a  href="#!/careers">CAREERS</a>
                     </li>
                     <li>
-                      <a  href="#!/contactUs">CONTACT US</a>
+                      <a href="#!/contactUs">CONTACT US</a>
                     </li>
                   </ul>
                 </li>
@@ -132,7 +133,11 @@
       </div> <!--end of headerSection-->
 
 
+    <div id="mainBodyWrapper">  <!--mainBodyWrapper container-->
+
+      </div>
       <div ui-view></div> <!-- controller view inside main controller -->
+    </div> <!--end of mainBodyWrapper-->
 
       <div id="footerSection" ng-controller="navController"> <!--footerSection for contact info and such-->
         <footer>
@@ -178,7 +183,8 @@
         </footer>
       </div> <!--end of footerSection-->
 
-    </div> <!--end of mainBodyWrapper-->
+
+
   </body>
 
 </html>
