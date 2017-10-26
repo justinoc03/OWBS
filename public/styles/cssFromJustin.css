@@ -540,6 +540,20 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 /********************************* Page Headers END ****************************************/
 
+/********************************* About Us Page ****************************************/
+.ceo {
+  margin-top: 3%;
+  background-image: url("../assets/images/staff/gary_bormes_v2.jpg");
+  background-size: 250px 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid #008FBE;
+}
+/********************************* About Us Page END ****************************************/
+
 /********************************* Careers Page ****************************************/
 .careers-container {
   position: static;
