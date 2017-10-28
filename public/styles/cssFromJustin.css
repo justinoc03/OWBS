@@ -589,6 +589,11 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   /*text-align: right;*/
 }
 
+.services-content{
+  /*background-image: url('../assets/images/staff/new hand logo v2.jpg');*/
+  /*background-repeat: no-repeat;*/
+}
+
 
 .whoWeAreContainer {
   /*margin: auto;*/
@@ -602,10 +607,29 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 #servicesLandingStatic {
   text-align: center;
   padding-bottom: 7%;
+  /*background-color: lightgrey;*/
 }
 
 #servicesLandingDetails {
   text-align: center;
+}
+
+#serviceLanding {
+  /*background-image: url('../assets/images/staff/new hand logo v2.jpg');*/
+  /*margin-left: -0px;*/
+  /*margin-top: -50px;*/
+  /*height: 80%;
+  width: 80%;*/
+}
+
+#serviceLanding img {
+  /*background-image: url('../assets/images/staff/new hand logo v2.jpg');*/
+  /*margin-left: -0px;*/
+  /*margin-top: -50px;*/
+  /*height: 530px;
+  width: 530px;*/
+  margin-left: 80px;
+  margin-top: -60px;
 }
 
 
