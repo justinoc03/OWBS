@@ -434,13 +434,18 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   font-size: 55px;
 }
 
-  .since1977 {
-    border-top: 2px solid #EE8434;
-    background-color:#2274A5;
-    padding-bottom: 20px;
-    margin-bottom: 5%;
-    text-align: center;
-  }
+.since1977Title {
+  text-align: center;
+  margin-bottom: -25px;
+}
+
+.since1977 {
+  border-top: 2px solid #EE8434;
+  background-color:#2274A5;
+  padding-bottom: 20px;
+  margin-bottom: 5%;
+  text-align: center;
+}
 
   .work-the-right-way{
     background-color:#CECECE;
@@ -484,6 +489,12 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   height: 550px;
   margin-top: -100px;
   margin-left: -85px; }
+
+  .bottomSVGLine {
+    height: 0px;
+    /*background-color: #343839;*/
+    margin-top: -20px;
+  }
 
   /*/////////////Home Screen Animations/////////////////////*/
   /*fade in animation*/
