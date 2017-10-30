@@ -378,7 +378,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   position: relative;
   height: inherit;
   /*height: 600px;*/
-  min-height: 800px;
+  /*min-height: 800px;*/
 }
   #home-images img {
     height: inherit;
