@@ -1,6 +1,12 @@
 myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootScope, authService, lock, authManager){
   console.log('in run function');
 
+  $window.ga('create', 'UA-104691101-1', 'auto');
+  
+  $rootScope.$on('$stateChangeSuccess', function (event) {
+    $window.ga('send', 'pageview', $location.path());
+});
+
   // Put the authService on $rootScope so its methods
   // can be accessed from the nav bar
   $rootScope.authService = authService;
