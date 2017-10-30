@@ -1,8 +1,8 @@
-myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', function($rootScope, authService, lock, authManager){
+myApp.run( ['$rootScope', 'authService', 'lock', 'authManager', '$window', '$location', function($rootScope, authService, lock, authManager, $window, $location){
   console.log('in run function');
 
   $window.ga('create', 'UA-104691101-1', 'auto');
-  
+
   $rootScope.$on('$stateChangeSuccess', function (event) {
     $window.ga('send', 'pageview', $location.path());
 });
