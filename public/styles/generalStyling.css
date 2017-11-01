@@ -8,7 +8,7 @@ body {
   font-family: "Assistant", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Merriweather Sans", sans-serif;
+  /*font-family: "Merriweather Sans", sans-serif;*/
   font-weight: 700;
   letter-spacing: normal; }
 
@@ -509,11 +509,11 @@ input:focus + .slider {
   .job-posting .admin-job {
     display: none; }
 
-.job-title strong, .job-title {
+/*.job-title strong, .job-title {
   color: #FF9B42;
   text-decoration: underline;
   text-align: center;
-  font-size: 24px; }
+  font-size: 24px; }*/
 
 /*.job-header .menu-header {
   margin-top: 35px; }
