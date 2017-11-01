@@ -289,7 +289,7 @@ main {
   border: 5px solid #008FBE;
 }*/
 
-.staff figure {
+/*.staff figure {
   margin: 0;
   display: block;
   position: absolute;
@@ -322,14 +322,14 @@ main {
     position: absolute;
     z-index: -1;
     -webkit-filter: grayscale(2);
-    /* Old WebKit */
+     Old WebKit
     filter: grayscale(2); }
 
 .staff.flipped {
-  transform: rotateX(180deg); }
+  transform: rotateX(180deg); }*/
 
 /***********************************Staff styles********************************/
-.staff-container {
+/*.staff-container {
   padding-bottom: 50px; }
   .staff-container h1 {
     color: #FF9B42;
@@ -356,7 +356,7 @@ main {
   .staff-container .ceo-text h3 {
     color: #008FBE;
     text-align: left;
-    font-size: 21px; }
+    font-size: 21px; }*/
   /*.staff-container .manage-heading {
     color: #FF9B42;
     font-size: 36.57143px;
