@@ -44,7 +44,7 @@ if(process.env.DATABASE_URL !== undefined) {
 } else {
     var connectionString = 'postgres://localhost:5432/OWBS';
   }
-/////////////////FOR MAC END//////////////////////////////////////  
+/////////////////FOR MAC END//////////////////////////////////////
 
 
 // use public,bodyParserJson,urlencodedParser
@@ -244,7 +244,7 @@ app.post('/emailApplicationSendgrid', function(req, res){
   console.log(base64File);
 
   var from_email = new helper.Email(applicantEmail);
-  var to_email = new helper.Email("oconnor.justin.r@gmail.com");
+  var to_email = new helper.Email("cchristison@owbs.net");
   var subject =  jobPostingTitle + " application received from: " + applicantFirstName + " " + applicantLastName;
   var content = new helper.Content("text/html", "<h3><strong>Position: </strong>" + jobPostingTitle + "</h3> <h3><strong>Applicant Information:</strong></h3> <blockquote>Applicant Name: " + applicantFirstName + " " + applicantLastName + "<br> Applicant Email: " + applicantEmail + "<br> Applicant Phone: " + applicantPhone + "</blockquote><h3><strong>Comments/Questions:</strong></h3> " + "<blockquote>" + commentsQuestions + '</blockquote>');
   var mail = new helper.Mail(from_email, subject, to_email, content);
@@ -356,7 +356,7 @@ app.post('/emailContactUsInfoSendgrid', function(req, res){
   console.log(message);
 
   var from_email = new helper.Email(email);
-  var to_email = new helper.Email("oconnor.justin.r@gmail.com");
+  var to_email = new helper.Email("cchristison@owbs.net");
   var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
   var content = new helper.Content("text/html", "Name: " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br><br> Message: " + message);
   var mail = new helper.Mail(from_email, subject, to_email, content);

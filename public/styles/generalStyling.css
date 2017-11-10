@@ -8,7 +8,7 @@ body {
   font-family: "Assistant", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Merriweather Sans", sans-serif;
+  /*font-family: "Merriweather Sans", sans-serif;*/
   font-weight: 700;
   letter-spacing: normal; }
 
@@ -114,11 +114,11 @@ main {
   padding-left: 0;
   padding-right: 0; }
 
-.tower-image {
+/*.tower-image {
   position: relative;
   height: 550px;
   margin-top: -200px;
-  margin-left: -85px; }
+  margin-left: -85px; }*/
 
 /*#home-images {
   padding: 0;
@@ -277,7 +277,7 @@ main {
   transform-style: preserve-3d;
   transition: transform 1s; }
 
-.ceo {
+/*.ceo {
   margin-top: 3%;
   background-image: url("../assets/images/staff/gary_bormes_v2.jpg");
   background-size: 250px 250px;
@@ -287,9 +287,9 @@ main {
   height: 250px;
   border-radius: 50%;
   border: 5px solid #008FBE;
-}
+}*/
 
-.staff figure {
+/*.staff figure {
   margin: 0;
   display: block;
   position: absolute;
@@ -322,14 +322,14 @@ main {
     position: absolute;
     z-index: -1;
     -webkit-filter: grayscale(2);
-    /* Old WebKit */
+     Old WebKit
     filter: grayscale(2); }
 
 .staff.flipped {
-  transform: rotateX(180deg); }
+  transform: rotateX(180deg); }*/
 
 /***********************************Staff styles********************************/
-.staff-container {
+/*.staff-container {
   padding-bottom: 50px; }
   .staff-container h1 {
     color: #FF9B42;
@@ -356,7 +356,7 @@ main {
   .staff-container .ceo-text h3 {
     color: #008FBE;
     text-align: left;
-    font-size: 21px; }
+    font-size: 21px; }*/
   /*.staff-container .manage-heading {
     color: #FF9B42;
     font-size: 36.57143px;
@@ -509,11 +509,11 @@ input:focus + .slider {
   .job-posting .admin-job {
     display: none; }
 
-.job-title strong, .job-title {
+/*.job-title strong, .job-title {
   color: #FF9B42;
   text-decoration: underline;
   text-align: center;
-  font-size: 24px; }
+  font-size: 24px; }*/
 
 /*.job-header .menu-header {
   margin-top: 35px; }
