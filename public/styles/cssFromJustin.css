@@ -735,16 +735,18 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 }
 
 .services-container .services-content {
-  padding-left: 3%;
+  margin-top: -25px;
 }
 
-.services-container .services-content .service-type {
-  /*text-align: right;*/
+.service-type {
+  background-color: green;
+  height: 100px;
 }
 
-.services-content{
-  /*background-image: url('../assets/images/staff/new hand logo v2.jpg');*/
-  /*background-repeat: no-repeat;*/
+
+.serviceBullets{
+  width: 80%;
+  margin-left: 10%;
 }
 
 
@@ -782,8 +784,9 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   /*height: 530px;
   width: 530px;*/
   margin-left: 80px;
-  margin-top: -60px;
+  /*margin-top: -60px;*/
 }
+
 
 
 
