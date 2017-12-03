@@ -232,8 +232,9 @@ main {
       font-family: "Assistant", sans-serif;
       font-size: 1.5em; }
     .services-container .services-content .service-type {
-      color: #FF9B42;
-      text-decoration: underline; }
+      /*color: #FF9B42;*/
+      /*text-decoration: underline; */
+    }
 
 /********************************* Who We Are **********************************/
 .who-container {
