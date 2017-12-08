@@ -192,7 +192,8 @@ main {
   .services-container .menu-header {
     margin-top: 35px; }
   .services-container .services-menu {
-    border-right: 2px solid #008FBE; }
+    /*border-right: 2px solid #008FBE; */
+  }
     .services-container .services-menu ul {
       list-style: none; }
     .services-container .services-menu li {
@@ -232,8 +233,9 @@ main {
       font-family: "Assistant", sans-serif;
       font-size: 1.5em; }
     .services-container .services-content .service-type {
-      color: #FF9B42;
-      text-decoration: underline; }
+      /*color: #FF9B42;*/
+      /*text-decoration: underline; */
+    }
 
 /********************************* Who We Are **********************************/
 .who-container {
