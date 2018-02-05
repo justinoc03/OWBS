@@ -453,17 +453,19 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   text-align: center;
 }
 
-  .work-the-right-way{
-    background-color:#CECECE;
-    /*border-top: 2px solid #EE8434;*/
-    padding-left: 50px;
-    margin-bottom: 100px;
-  }
+.work-the-right-way{
+  background-color:#CECECE;
+  /*border-top: 2px solid #EE8434;*/
+  padding-left: 50px;
+  /* margin-bottom: 100px; */
+  padding-bottom: 20px;
+  margin-bottom: 5%;
+}
 
-  .work-contact-content{
+.work-contact-content{
     padding-left: 5%;
     background-color:#EE8434;
-  }
+}
 
 .work-home-content h3, .work-contact-content h3 {
   margin-top: 2%;
@@ -474,8 +476,13 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   font-size: 18px;
   margin-bottom: 20px; }
 .work-home-content a {
+  float: right; 
   margin-bottom: 20px;
-  float: right; }
+  /* position higher: */
+  /* position: relative;
+    top: -31px; */
+  
+}
 
 .work-contact-content a {
   margin-bottom: 20px;

@@ -169,7 +169,7 @@ main {
   margin-right: auto;
   display: block; }
 
-.work-home-content h3, .work-contact-content h3 {
+/* .work-home-content h3, .work-contact-content h3 {
   margin-top: 50px;
   text-align: center; }
 .work-home-content p, .work-contact-content p {
@@ -177,7 +177,7 @@ main {
   font-size: 21px;
   margin-bottom: 20px; }
 .work-home-content a, .work-contact-content a {
-  margin-bottom: 20px; }
+  margin-bottom: 20px; } */
 
 .worker-image {
   height: 470px;
