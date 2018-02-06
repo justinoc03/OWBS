@@ -6,6 +6,7 @@ Corrections made:
 
 Home page:
 - [x] Join our team button loses focus, doesn't stay in box.
+- [x] Get in touch text disappears off left side.
 - [ ] Menu bar text positions incorrectly.
 - [ ] Tower image doesn't resize.
 - [ ] Address formats incorrectly.

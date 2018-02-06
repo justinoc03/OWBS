@@ -462,11 +462,6 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   margin-bottom: 5%;
 }
 
-.work-contact-content{
-    padding-left: 5%;
-    background-color:#EE8434;
-}
-
 .work-home-content h3, .work-contact-content h3 {
   margin-top: 2%;
   margin-bottom: 2%;
@@ -483,6 +478,12 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 #join-btn {
   position: relative;
   left: 33%;
+}
+
+.work-contact-content{
+  /* padding-left: 5%; */
+  background-color:#EE8434;
+  padding-left: 50px;
 }
 
 .work-contact-content a {
