@@ -475,13 +475,14 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   color: #ffffff;
   font-size: 18px;
   margin-bottom: 20px; }
-.work-home-content a {
+/* .work-home-content a {
   float: right; 
-  margin-bottom: 20px;
-  /* position higher: */
-  /* position: relative;
-    top: -31px; */
-  
+  margin-bottom: 20px;  
+} */
+
+#join-btn {
+  position: relative;
+  left: 33%;
 }
 
 .work-contact-content a {
