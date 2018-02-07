@@ -460,6 +460,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   /* margin-bottom: 100px; */
   padding-bottom: 20px;
   margin-bottom: 5%;
+  overflow: auto;
 }
 
 .work-home-content h3, .work-contact-content h3 {
@@ -476,8 +477,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 } */
 
 #join-btn {
-  position: relative;
-  left: 33%;
+  float: right;
 }
 
 .work-contact-content{
