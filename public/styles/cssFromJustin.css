@@ -401,6 +401,13 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   right: 0;
 }
 
+/* HIDE BANNER AND TOWER IMG WHEN SMALLER THAN 991PX */
+@media screen and (max-width: 991px){
+  #hideOnSm {
+    display: none;
+  }
+}
+
 /*//////ANIMATION: Top and Bottom borders go out /////////*/
 .image-text-float:after
 {
