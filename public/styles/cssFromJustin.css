@@ -401,6 +401,13 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   right: 0;
 }
 
+/* HIDE BANNER AND TOWER IMG WHEN SMALLER THAN 991PX */
+@media screen and (max-width: 991px){
+  #hideOnSm {
+    display: none;
+  }
+}
+
 /*//////ANIMATION: Top and Bottom borders go out /////////*/
 .image-text-float:after
 {
@@ -453,17 +460,15 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   text-align: center;
 }
 
-  .work-the-right-way{
-    background-color:#CECECE;
-    /*border-top: 2px solid #EE8434;*/
-    padding-left: 50px;
-    margin-bottom: 100px;
-  }
-
-  .work-contact-content{
-    padding-left: 5%;
-    background-color:#EE8434;
-  }
+.work-the-right-way{
+  background-color:#CECECE;
+  /*border-top: 2px solid #EE8434;*/
+  padding-left: 50px;
+  /* margin-bottom: 100px; */
+  padding-bottom: 20px;
+  margin-bottom: 5%;
+  overflow: auto;
+}
 
 .work-home-content h3, .work-contact-content h3 {
   margin-top: 2%;
@@ -473,9 +478,20 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   color: #ffffff;
   font-size: 18px;
   margin-bottom: 20px; }
-.work-home-content a {
-  margin-bottom: 20px;
-  float: right; }
+/* .work-home-content a {
+  float: right; 
+  margin-bottom: 20px;  
+} */
+
+#join-btn {
+  float: right;
+}
+
+.work-contact-content{
+  /* padding-left: 5%; */
+  background-color:#EE8434;
+  padding-left: 50px;
+}
 
 .work-contact-content a {
   margin-bottom: 20px;
@@ -492,8 +508,10 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 .tower-image {
   position: relative;
-  height: 550px;
-  margin-top: -100px;
+  /* height: 550px; */
+  max-height: 100%;
+  max-height: 550px;
+  /* margin-top: -100px; */
   margin-left: -85px; }
 
   .bottomSVGLine {
