@@ -692,6 +692,11 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   padding-bottom: 10%;
 }
 
+.careersBulletList li {
+  list-style-type: disc;
+  font-size: 19px;
+}
+
 .jobs-menu li, .edit-menu li {
   letter-spacing: normal;
   font-size: 18px;
@@ -699,6 +704,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 .jobs-menu {
   border-right: 2px solid #008FBE;
+  margin-left: -3%;
  }
 
 .job-postings {
@@ -735,18 +741,33 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 }
 
 .services-container .services-content {
-  padding-left: 3%;
+  margin-top: -25px;
 }
 
-.services-container .services-content .service-type {
-  /*text-align: right;*/
+
+
+.service-type {
+  width: 100%;
+  /*margin-left: -1.5%;*/
+  background-color:rgba(0, 143, 190, 1);
+  /*background-color: #008FBE;*/
+  height: 100px;
+  font-size: 30px;
+  height: 60px;
+  padding-top: 13px;
+  color: white;
+  border-radius: 10px;
 }
 
-.services-content{
-  /*background-image: url('../assets/images/staff/new hand logo v2.jpg');*/
-  /*background-repeat: no-repeat;*/
+.serviceBulletList{
+  width: 80%;
+  margin-left: 10%;
+  font-size: 12px;
 }
 
+.serviceBulletList Li{
+  list-style-type: disc;
+}
 
 .whoWeAreContainer {
   /*margin: auto;*/
@@ -754,8 +775,6 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   /*min-height: 100%;*/
   padding-bottom: 25%;
 }
-
-
 
 #servicesLandingStatic {
   text-align: center;
@@ -782,9 +801,8 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   /*height: 530px;
   width: 530px;*/
   margin-left: 80px;
-  margin-top: -60px;
+  /*margin-top: -60px;*/
 }
-
 
 
 /********************************* Services Page END ****************************************/
@@ -874,8 +892,8 @@ hr.style2 {
   width: 28%;
 	background: url(/assets/images/icons/hr-11_orange.png) repeat-x 0 0;
   border: 0;
-
 }
+
 
 .orange-highlight{
   color: #FF9B42;
