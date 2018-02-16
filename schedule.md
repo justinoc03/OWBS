@@ -18,3 +18,8 @@ Navbar:
 
 Other pages:
 - [ ] Address formats incorrectly.
+
+
+DELETIONS:
+
+Removed id="navItUp" from index.html <nav> tag
