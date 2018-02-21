@@ -148,8 +148,9 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 #smallLogo {
   float: left;
-  margin-left: 108px;
-  margin-top: 13px; }
+  margin-left: 50px;
+  margin-top: 20px; 
+}
 @media (max-width: 375px) {
   .logo {
     margin-left: 6.25rem; } }
