@@ -149,8 +149,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 #smallLogo {
   float: left;
   margin-left: 50px;
-  margin-top: 20px; 
-}
+  margin-top: 20px; }
 @media (max-width: 375px) {
   .logo {
     margin-left: 6.25rem; } }
@@ -171,15 +170,27 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   margin-left: 50px;
   margin-top: 0px; }
 @media (max-width: 375px) {
+  #largeLogo {
+    margin-left: -20px;
+  }
   .logo {
     margin-left: 6.25rem; } }
 @media (min-width: 376px) and (max-width: 667px) {
+  #largeLogo {
+    margin-left: -20px;
+  }
   .logo {
     margin-left: 8rem; } }
 @media (min-width: 668px) and (max-width: 768px) {
+  #largeLogo {
+    margin-left: -20px;
+  }
   .logo {
     margin-left: 8.5rem; } }
 @media (min-width: 769px) and (max-width: 1024px) {
+  #largeLogo {
+    margin-left: -40px;
+  }
   .logo {
     margin-left: 9rem;
   }

@@ -13,6 +13,8 @@ Home page:
 - [x] Tower img should disappear on sm screen.
 
 Navbar:
+- [x] Menu text gets pushed off by largeLogo.
+- [x] Menu button gets pushed off row - place logo further left.
 - [ ] Menu bar text positions incorrectly.
 - [x] Logo should move further to left.
 - [ ] "About" link background changes to white when selected (bg should be transparent?):
