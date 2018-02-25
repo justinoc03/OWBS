@@ -183,13 +183,13 @@ nav.navbar.shrink, .navbar-shadow.shrink {
     margin-left: 8rem; } }
 @media (min-width: 668px) and (max-width: 768px) {
   #largeLogo {
-    margin-left: -20px;
+    margin-left: -50px;
   }
   .logo {
     margin-left: 8.5rem; } }
 @media (min-width: 769px) and (max-width: 1024px) {
   #largeLogo {
-    margin-left: -40px;
+    margin-left: -50px;
   }
   .logo {
     margin-left: 9rem;
