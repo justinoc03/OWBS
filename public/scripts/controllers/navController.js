@@ -6,21 +6,23 @@ myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope',
     if ($(document).scrollTop() > 15) {
       // $('nav').addClass('shrink');
       // $('.navbar-shadow').addClass('shrink');
-      // $('.nav-shape-shadow').addClass('shrink');
+      $('.nav-shape-shadow').addClass('shrink');
       $('#largeLogo').addClass('hide');
       $('#smallLogo').removeClass('hide');
       // $('#myNavbar').addClass('moveDown');
       // mike added:
       $('#largeLogo2').addClass('hide');
+      $('#navbarShadowTest').addClass('shrink');  
     } else {
       // $('nav').removeClass('shrink');
       // $('.navbar-shadow').removeClass('shrink');
-      // $('.nav-shape-shadow').removeClass('shrink');
+      $('.nav-shape-shadow').removeClass('shrink');
       $('#largeLogo').removeClass('hide');
       $('#smallLogo').addClass('hide');
       // $('#myNavbar').removeClass('moveDown');
       //mike added:
       $('#largeLogo2').removeClass('hide');
+      $('#navbarShadowTest').removeClass('shrink');
     }
   });
 
