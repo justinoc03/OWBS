@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: -12px;
   width: 103%;
   height: 10px;
-  margin-top: 12px;
+  margin-top: 22px;
   /* position: fixed; */
   /* z-index: 998; */
 }
@@ -99,7 +99,7 @@ nav.navbar, #navbarShadowTest{
 /* determines height of navbar when scrolling */
 nav.navbar.shrink, #navbarShadowTest.shrink {
   /* height: 50px; */
-  margin-top: -20px;
+  margin-top: -7px;
 }
 
 #myNavbar {
@@ -196,8 +196,8 @@ nav.navbar.shrink, #navbarShadowTest.shrink {
 }
 
 #largeLogo2 {
-  margin-top: -22px;
-  margin-left: 50px;
+  margin-top: -9px;
+  margin-left: 15px;
 }
 
 #largeLogo {
