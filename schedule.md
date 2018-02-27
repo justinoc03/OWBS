@@ -22,6 +22,7 @@ Navbar:
     .navbar-default .navbar-nav > .open > a:focus {
         color: #EE8434 !important;
         background-color: #ffffff !important; }
+- [ ] Navbar shrinking doesn't work?
 
 Other pages:
 - [ ] Address formats incorrectly.

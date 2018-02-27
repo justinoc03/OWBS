@@ -66,6 +66,16 @@ h1, h2, h3, h4, h5, h6 {
 }*/
 
 
+#navShadowTest {
+  background-color: #008FBE;
+  /* margin-top: -33px; */
+  margin-left: -12px;
+  width: 103%;
+  height: 10px;
+  margin-top: 12px;
+  /* position: fixed; */
+  /* z-index: 998; */
+}
 
 #myNavbar {
   /*background-color:#ccc;*/
@@ -201,6 +211,50 @@ h1, h2, h3, h4, h5, h6 {
   /*background-color: #ffffff; */
 }
 
+/* ***** navtest */
+#navShapeTest, #navShapeShadowTest {
+  width: 100px;
+  height: 50px;
+  background: transparent;
+  /* background-color: red; */
+  position: fixed;
+  margin-left: 60px;
+  margin-top: -2.2em;
+  z-index: 999;
+}
+
+#navShapeShadowTest {
+  margin-top: -26px; 
+}
+
+#navShapeTest:after, #navShapeShadowTest:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: -40px;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 25px solid #ffffff;
+  z-index: 999; }
+
+.navShapeShadowTest:after {
+  border-top: 29px solid #008FBE;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  left: -60px; }
+
+#navbarShadowTest {
+  background-color: #008FBE;
+  margin-top: -33px;
+  margin-left: -12px;
+  width: 103%;
+  position: fixed;
+  z-index: 998; 
+}
+/* END TEST ******* */
+
 #navShape, .nav-shape-shadow {
   width: 100px;
   height: 50px;
@@ -217,7 +271,8 @@ h1, h2, h3, h4, h5, h6 {
 #navShape:after, .nav-shape-shadow:after {
   content: "";
   position: absolute;
-  bottom: -15px;
+  /* bottom: -15px; */
+  bottom: 4px;
   left: -40px;
   width: 0;
   height: 0;
