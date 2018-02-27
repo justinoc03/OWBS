@@ -65,28 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   background: url("/assets/images/onewaylogo.png") no-repeat;
 }*/
 
-/****Navbar scroll transition****/
-nav.navbar, .navbar-shadow{
-  /*background-color:#ccc;*/
-  height:80px;
-   /*Animation Below*/
-   /* creates navbar-shadow animation when scrolling */
-   -webkit-transition: all 0.4s ease;
-   transition: all 0.4s ease;
-   position: fixed;
-}
 
-#navShape:after, .nav-shape-shadow:after {
-  /*background-color:#ccc;*/
-    /* Animation */
-   -webkit-transition: all 0.4s ease;
-   transition: all 18s ease;
-   position: relative;
-}
-
-nav.navbar.shrink, .navbar-shadow.shrink {
-  height: 50px;
-}
 
 #myNavbar {
   /*background-color:#ccc;*/
@@ -175,6 +154,15 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   .logo {
     margin-left: 9rem;
   }
+}
+
+.navbar-header {
+  min-height: 70px;
+}
+
+#largeLogo2 {
+  margin-top: -22px;
+  margin-left: 50px;
 }
 
 #largeLogo {

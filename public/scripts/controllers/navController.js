@@ -10,6 +10,8 @@ myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope',
       $('#largeLogo').addClass('hide');
       $('#smallLogo').removeClass('hide');
       $('#myNavbar').addClass('moveDown');
+      // mike added:
+      $('#largeLogo2').addClass('hide');
     } else {
       $('nav').removeClass('shrink');
       $('.navbar-shadow').removeClass('shrink');
@@ -17,6 +19,8 @@ myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope',
       $('#largeLogo').removeClass('hide');
       $('#smallLogo').addClass('hide');
       $('#myNavbar').removeClass('moveDown');
+      //mike added:
+      $('#largeLogo2').removeClass('hide');
     }
   });
 
@@ -45,6 +49,9 @@ myApp.controller("navController", ['$scope', '$http', '$location', '$rootScope',
 
   }; //end auth0Logout
 
-
+  // mike added:
+  $scope.isNavCollapsed = true;
+  // $scope.isCollapsed = false;
+  // $scope.isCollapsedHorizontal = false;
 
 }]);
