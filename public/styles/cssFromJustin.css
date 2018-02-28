@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mainNav {
-  padding-right: 2%;
+  padding-right: 25%;
   font-size: 17px;
 }
 
@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #headerSection{
-
+  padding: 8px;
 }
 
 
@@ -71,14 +71,15 @@ h1, h2, h3, h4, h5, h6 {
   /* margin-top: -33px; */
   margin-left: -12px;
   width: 103%;
-  height: 10px;
-  margin-top: 22px;
-  /* position: fixed; */
-  /* z-index: 998; */
+  height: 88px;
+  /* margin-top: 13px; */
+  position: fixed;
+  z-index: 998;
+  top: 0px;
 }
 
 /****Navbar scroll transition****/
-nav.navbar, #navbarShadowTest{
+nav.navbar, #navbarShadowTest, .navbar-header, .navbar-header-min {
   /*background-color:#ccc;*/
   /* height:80px; */
    /*Animation Below*/
@@ -98,8 +99,8 @@ nav.navbar, #navbarShadowTest{
 
 /* determines height of navbar when scrolling */
 nav.navbar.shrink, #navbarShadowTest.shrink {
-  /* height: 50px; */
-  margin-top: -7px;
+  height: 59px;
+  /* margin-top: -32px; */
 }
 
 #myNavbar {
@@ -109,6 +110,7 @@ nav.navbar.shrink, #navbarShadowTest.shrink {
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
    position: relative;
+   margin-right: 10px;
 }
 
 #myNavbar.moveDown{
@@ -161,9 +163,10 @@ nav.navbar.shrink, #navbarShadowTest.shrink {
 }
 
 #smallLogo {
-  float: left;
+  /* float: left; */
   margin-left: 110px;
-  margin-top: 20px; }
+  margin-top: 20px; 
+  position: fixed; }
 @media (max-width: 375px) {
   #smallLogo {
     margin-left: 44px;
@@ -192,12 +195,16 @@ nav.navbar.shrink, #navbarShadowTest.shrink {
 }
 
 .navbar-header {
-  min-height: 70px;
+  min-height: 81px;
+}
+
+.navbar-header.min {
+  min-height: 53px;
 }
 
 #largeLogo2 {
-  margin-top: -9px;
-  margin-left: 15px;
+  margin-top: -15px;
+  margin-left: 13px;
 }
 
 #largeLogo {
@@ -285,12 +292,13 @@ nav.navbar.shrink, #navbarShadowTest.shrink {
   background: transparent;
   position: fixed;
   margin-left: 60px;
-  margin-top: -2.2em;
+  /* margin-top: -2.2em; */
+  margin-top: -3.7em;
   z-index: 999; }
 
 
 .nav-shape-shadow {
-  margin-top: -26px; }
+  margin-top: -47px; }
 
 #navShape:after, .nav-shape-shadow:after {
   content: "";

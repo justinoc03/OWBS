@@ -88,6 +88,9 @@
     }
   </style>
   <div id="headerSection">
+    <!-- line underneath navbar -->
+    <div id="navbarShadowTest">
+      </div>
     <!--header container-->
     <!-- shape that appears underneath the navbar -->
     <div class="nav-shape-shadow"></div>
@@ -111,12 +114,61 @@
           </div>
         </div>
 
-        <!-- line underneath navbar -->
-        <div id="navbarShadowTest">
-        </div>
+        
+        <!-- <div class="navbar navbar-default navbar-shadow">
+        </div> -->
         <!-- <div id="navShapeShadowTest"></div>
           <div id="navShapeTest"></div> -->
-        <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+          <!-- navbar links with dropdown menu -->
+        <div class="collapse navbar-collapse navbar-right mainNav" id="myNavbar" uib-collapse="isNavCollapsed">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#!/home">HOME</a>
+              </li>
+              <li>
+                <a href="#!/services">SERVICES</a>
+              </li>
+              <!-- <li>
+                    <a href="#!/photos">PHOTOS</a>
+                  </li> -->
+              <!-- <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">MEDIA<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="#!/photos">PHOTOS</a>
+                      </li>
+                      <li>
+                        <a href="#!/videos">VIDEOS</a>
+                      </li>
+                    </ul>
+                  </li> -->
+              <li>
+                <a href="#!/careers">CAREERS</a>
+              </li>
+              <!-- start of dropdown menu -->
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">ABOUT
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#!/whoWeAre">OUR STORY</a>
+                  </li>
+                  <!-- <li>
+                        <a  href="#!/staff">STAFF</a>
+                      </li> -->
+                  <!-- <li>
+                        <a  href="#!/careers">CAREERS</a>
+                      </li> -->
+                  <li>
+                    <a href="#!/contactUs">CONTACT US</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+  
+        <!-- <div id="myNavbar" class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
           <ul class="nav navbar-nav">
             <li>
               <a href="#">Link 1</a>
@@ -125,7 +177,7 @@
               <a href="#">Link 2</a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </nav>
     </div>
   </div>
