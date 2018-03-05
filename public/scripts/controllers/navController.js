@@ -45,6 +45,16 @@ $(window).scroll(function () {
 
   }; //end auth0Logout
 
+  /* Open when someone clicks on the span element */
+  $scope.openNav = function() {
+    console.log('openNav called');
+    document.getElementById("myNavFull").style.width = "100%";
+  }
 
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  $scope.closeNav = function() {
+    console.log('closeNav called');
+    document.getElementById("myNavFull").style.width = "0%";
+  }
 
 }]);
