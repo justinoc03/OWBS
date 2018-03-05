@@ -81,45 +81,20 @@
 <!--///////////////////////////////////BODY///////////////////////////////////////-->
 
 <body>
-  <!-- TEST SEGMENT -->
-  <!-- <div ng-controller="navController"> -->
-
-  <!-- <div id="myNavFull" class="overlayFull">
-
-      <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
-
-
-      <div class="overlayFull-content">
-        <a href="#!/home" ng-click="closeNav()">About</a>
-        <a href="#!/services">Services</a>
-        <a href="#!/careers">Careers</a>
-        <a href="#">Contact</a>
-      </div>
-
-    </div> -->
-
-  <!-- <span ng-click="openNav()">open</span>
-    <button n ng-click="testFunc()">CLICK HERE</button>
-  </div> -->
-  <!-- END TEST SEGMENT -->
-
-
   <div id="headerSection">
-    <!-- FULL SCREEN MENU -->
+    <!-- FULL SCREEN MENU DIV AND CONTENT -->
     <div id="myNavFull" ng-controller="navController" class="overlayFull">
-
       <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
-
-
       <div class="overlayFull-content">
-        <a href="#!/home" ng-click="closeNav()">About</a>
-        <a href="#!/services">Services</a>
-        <a href="#!/careers">Careers</a>
-        <a href="#">Contact</a>
+        <a href="#!/home" ng-click="closeNav()">Home</a>
+        <a href="#!/services" ng-click="closeNav()">Services</a>
+        <a href="#!/careers" ng-click="closeNav()">Careers</a>
+        <a href="#!/whoWeAre" ng-click="closeNav()">Our Story</a>
+        <a href="#!/contactUs" ng-click="closeNav()">Contact Us</a>
       </div>
-    <!-- END FULL SCREEN MENU -->
-
     </div>
+    <!-- END FULL SCREEN MENU --
+      
     <!--header container-->
     <!-- shape that appears underneath the navbar -->
     <div class="nav-shape-shadow"></div>
@@ -140,18 +115,21 @@
 
       <div class="mainNav navbar-right">
         <!-- navigation button for smaller screens (phones/tablets) -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+        </button> -->
+        <button class="navbar-toggle" ng-click="openNav()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </button>
         <!-- navbar links with dropdown menu -->
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li>
-              <!-- <a href="#!/home">HOME</a> -->
-              <!-- <span ng-click="openNav()">open</span> -->
-              <button ng-click="openNav()">OPEN</button>
+              <a href="#!/home">HOME</a>
             </li>
             <li>
               <a href="#!/services">SERVICES</a>
