@@ -19,3 +19,13 @@ Navbar:
 
 Other pages:
 - [ ] Address formats incorrectly.
+
+Services:
+- [ ] image - add padding, disappear on mobile.
+    #serviceLanding img {
+        top: 16px;
+        position: relative;
+    }
+
+Careers:
+[ ] Job postings overlap.
