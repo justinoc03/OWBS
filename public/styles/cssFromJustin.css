@@ -902,9 +902,15 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   /*height: 530px;
   width: 530px;*/
   margin-left: 80px;
+  position: relative;
+  top: 16px;
   /*margin-top: -60px;*/
 }
 
+@media (max-width: 550px) {
+  .longText {
+    font-size: 16pt;
+}
 
 /********************************* Services Page END ****************************************/
 
