@@ -13,8 +13,19 @@ Home page:
 - [x] Tower img should disappear on sm screen.
 
 Navbar:
-- [ ] Menu bar text positions incorrectly.
-- [ ] Logo should move further to left.
+- [x] Menu bar text positions incorrectly.
+- [x] Small logo should move further to left.
+- [x] New fullscreen navbar added
 
 Other pages:
 - [ ] Address formats incorrectly.
+
+Services:
+- [ ] image - add padding, disappear on mobile.
+    #serviceLanding img {
+        top: 16px;
+        position: relative;
+    }
+
+Careers:
+[ ] Job postings overlap.

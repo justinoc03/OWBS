@@ -61,6 +61,65 @@ h1, h2, h3, h4, h5, h6 {
 
 /********************************* Navbar ****************************************/
 
+/* The Overlay (background) */
+.overlayFull {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgb(0, 20, 40, 0.9); /* Blue w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+  
+/* Position the content inside the overlay */
+.overlayFull-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlayFull a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  /* color: #818181; */
+  font-family: "Montserrat", sans-serif;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlayFull a:hover, .overlayFull a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlayFull .closebtn {
+  position: absolute;
+  top: 75px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlayFull a {font-size: 20px}
+  .overlayFull .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+
 /*#smallLogo.largeLogo{
   background: url("/assets/images/onewaylogo.png") no-repeat;
 }*/
@@ -77,7 +136,7 @@ nav.navbar, .navbar-shadow{
 
 #navShape:after, .nav-shape-shadow:after {
   /*background-color:#ccc;*/
-   // Animation
+   /* Animation */
    -webkit-transition: all 0.4s ease;
    transition: all 18s ease;
    position: relative;
@@ -90,7 +149,7 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 #myNavbar {
   /*background-color:#ccc;*/
   margin-top: 30px;
-   // Animation
+   /* Animation */
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
    position: relative;
@@ -147,18 +206,30 @@ nav.navbar.shrink, .navbar-shadow.shrink {
 
 #smallLogo {
   float: left;
-  margin-left: 108px;
-  margin-top: 13px; }
+  margin-left: 110px;
+  margin-top: 20px; }
 @media (max-width: 375px) {
+  #smallLogo {
+    margin-left: 44px;
+  }
   .logo {
     margin-left: 6.25rem; } }
 @media (min-width: 376px) and (max-width: 667px) {
+  #smallLogo {
+    margin-left: 28px;
+  }
   .logo {
     margin-left: 8rem; } }
 @media (min-width: 668px) and (max-width: 768px) {
+  #smallLogo {
+    margin-left: 24px;
+  }
   .logo {
     margin-left: 8.5rem; } }
 @media (min-width: 769px) and (max-width: 1024px) {
+  #smallLogo {
+    margin-left: 20px;
+  }
   .logo {
     margin-left: 9rem;
   }
@@ -169,15 +240,27 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   margin-left: 50px;
   margin-top: 0px; }
 @media (max-width: 375px) {
+  #largeLogo {
+    margin-left: -20px;
+  }
   .logo {
     margin-left: 6.25rem; } }
 @media (min-width: 376px) and (max-width: 667px) {
+  #largeLogo {
+    margin-left: -20px;
+  }
   .logo {
     margin-left: 8rem; } }
 @media (min-width: 668px) and (max-width: 768px) {
+  #largeLogo {
+    margin-left: -50px;
+  }
   .logo {
     margin-left: 8.5rem; } }
 @media (min-width: 769px) and (max-width: 1024px) {
+  #largeLogo {
+    margin-left: -50px;
+  }
   .logo {
     margin-left: 9rem;
   }
