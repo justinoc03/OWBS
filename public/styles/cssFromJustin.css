@@ -907,9 +907,18 @@ nav.navbar.shrink, .navbar-shadow.shrink {
   /*margin-top: -60px;*/
 }
 
+@media (max-width: 1000px) {
+  #serviceLanding img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 0px;
+  }
+}
+
 @media (max-width: 550px) {
   .longText {
     font-size: 16pt;
+  }
 }
 
 /********************************* Services Page END ****************************************/

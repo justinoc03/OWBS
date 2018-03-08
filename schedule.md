@@ -21,7 +21,7 @@ Other pages:
 - [ ] Address formats incorrectly.
 
 Services:
-- [ ] image - add padding, disappear/resize on mobile?
+- [x] image - add padding, disappear/resize on mobile?
     #serviceLanding img {
         top: 16px;
         position: relative;
