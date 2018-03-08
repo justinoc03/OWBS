@@ -21,11 +21,12 @@ Other pages:
 - [ ] Address formats incorrectly.
 
 Services:
-- [ ] image - add padding, disappear on mobile.
+- [ ] image - add padding, disappear/resize on mobile?
     #serviceLanding img {
         top: 16px;
         position: relative;
     }
+- [x] Longer text for job descriptions gets cut off. Resize text smaller.
 
 Careers:
 [ ] Job postings overlap.
