@@ -7,6 +7,9 @@ var bpJason = bodyParser.json({limit: '50mb'});
 var urlencodedParser = bodyParser.urlencoded({limit: '50mb', extended: true} );
 var port = process.env.PORT || 9000;
 var pg = require('pg');
+var pool = new pg.Pool()
+
+
 
 /////////////////////////////FOR MAC AND PC///////////////////////////////////////
 //check which OS/version is being used for developing on windows or OSX
@@ -16,7 +19,7 @@ if (os.type() == "Darwin") {
   var connectionString = 'postgres://localhost:5432/OWBS';
 } else{
   // console.log('surface');
-  var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
+  var connectionString = 'postgres://justinoc03:griffin5@localhost:5432/OWBS';
 }
 
 if(process.env.DATABASE_URL !== undefined) {
@@ -30,7 +33,7 @@ if(process.env.DATABASE_URL !== undefined) {
   }
   else{
     // console.log('surface');
-    var connectionString = 'postgres://postgres:gamez1@localhost:5432/OWBS';
+    var connectionString = 'postgres://justinoc03:griffin5@localhost:5432/OWBS';
   }
 }
 
@@ -66,7 +69,7 @@ var helper = require('sendgrid').mail;
 app.get('/getJobPostings', function(req, res){
   console.log('in getJobPostings route');
 
-  pg.connect(connectionString, function (err, client, done){
+  pool.connect(connectionString, function (err, client, done){
     if(err){
       console.log(err);
     } else{
@@ -96,7 +99,8 @@ app.post('/newJobPosting', function(req, res){
     var jobPostingOpen = req.body.jobPostingOpen;
     var jobPostingStart = 'now()';
 
-  pg.connect(connectionString, function (err, client, done){
+  pool.connect(connectionString, function (err, client, done){
+  
     if(err){
       console.log(err);
     } else{
