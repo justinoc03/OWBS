@@ -356,7 +356,7 @@ app.post('/emailContactUsInfoSendgrid', function(req, res){
   console.log(message);
 
   var from_email = new helper.Email(email);
-  var to_email = new helper.Email("cchristison@owbs.net");
+  var to_email = new helper.Email("justin.oc03@gmail.com");
   var subject =  name + " has sent a message to One Way Building Services via owbs.net ";
   var content = new helper.Content("text/html", "Name: " + name + "<br> Email: " + email + "<br> Phone Number: " + phoneNumber + "<br><br> Message: " + message);
   var mail = new helper.Mail(from_email, subject, to_email, content);
