@@ -244,7 +244,7 @@ app.post('/emailApplicationSendgrid', function(req, res){
   console.log(base64File);
 
   var from_email = new helper.Email(applicantEmail);
-  var to_email = new helper.Email("cchristison@owbs.net");
+  var to_email = new helper.Email("justin.oc03@gmail.com");
   var subject =  jobPostingTitle + " application received from: " + applicantFirstName + " " + applicantLastName;
   var content = new helper.Content("text/html", "<h3><strong>Position: </strong>" + jobPostingTitle + "</h3> <h3><strong>Applicant Information:</strong></h3> <blockquote>Applicant Name: " + applicantFirstName + " " + applicantLastName + "<br> Applicant Email: " + applicantEmail + "<br> Applicant Phone: " + applicantPhone + "</blockquote><h3><strong>Comments/Questions:</strong></h3> " + "<blockquote>" + commentsQuestions + '</blockquote>');
   var mail = new helper.Mail(from_email, subject, to_email, content);
