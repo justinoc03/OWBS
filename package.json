@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/justinoc03/OWBS#readme",
   "dependencies": {
-    "angular": "^1.6.2",
+    "angular": "^1.7.9",
     "angular-animate": "^1.6.2",
     "angular-jwt": "^0.1.9",
     "angular-lock": "^2.0.2",
